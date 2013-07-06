@@ -1,12 +1,6 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2012
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WPFToolkit", "WPFToolkit.csproj", "{9606A078-7135-4CE7-879E-39FCF527F1A3}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WPFToolkitDesign", "WPFToolkitDesign\WPFToolkitDesign.csproj", "{8A781058-1211-40D8-9FF4-2EA8CDB31603}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WPFToolkitVisualStudioDesign", "WPFToolkitVisualStudioDesign\WPFToolkitVisualStudioDesign.csproj", "{9AE2A89E-CDE8-42B1-AE01-C297265B5F08}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Controls.DataVisualization.Toolkit", "DataVisualization\Controls.DataVisualization.Toolkit.csproj", "{066FB4E3-8F9C-42D0-9982-8B1F238FAF63}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Controls.DataVisualization.Toolkit.Design", "DataVisualization.Design\Controls.DataVisualization.Toolkit.Design.csproj", "{C4F02A37-6902-4867-BBEF-4303A9700727}"
@@ -36,24 +30,6 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{9606A078-7135-4CE7-879E-39FCF527F1A3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{9606A078-7135-4CE7-879E-39FCF527F1A3}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{9606A078-7135-4CE7-879E-39FCF527F1A3}.Release with Code Analysis|Any CPU.ActiveCfg = Release with Code Analysis|Any CPU
-		{9606A078-7135-4CE7-879E-39FCF527F1A3}.Release with Code Analysis|Any CPU.Build.0 = Release with Code Analysis|Any CPU
-		{9606A078-7135-4CE7-879E-39FCF527F1A3}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{9606A078-7135-4CE7-879E-39FCF527F1A3}.Release|Any CPU.Build.0 = Release|Any CPU
-		{8A781058-1211-40D8-9FF4-2EA8CDB31603}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{8A781058-1211-40D8-9FF4-2EA8CDB31603}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{8A781058-1211-40D8-9FF4-2EA8CDB31603}.Release with Code Analysis|Any CPU.ActiveCfg = Release with Code Analysis|Any CPU
-		{8A781058-1211-40D8-9FF4-2EA8CDB31603}.Release with Code Analysis|Any CPU.Build.0 = Release with Code Analysis|Any CPU
-		{8A781058-1211-40D8-9FF4-2EA8CDB31603}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{8A781058-1211-40D8-9FF4-2EA8CDB31603}.Release|Any CPU.Build.0 = Release|Any CPU
-		{9AE2A89E-CDE8-42B1-AE01-C297265B5F08}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{9AE2A89E-CDE8-42B1-AE01-C297265B5F08}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{9AE2A89E-CDE8-42B1-AE01-C297265B5F08}.Release with Code Analysis|Any CPU.ActiveCfg = Release|Any CPU
-		{9AE2A89E-CDE8-42B1-AE01-C297265B5F08}.Release with Code Analysis|Any CPU.Build.0 = Release|Any CPU
-		{9AE2A89E-CDE8-42B1-AE01-C297265B5F08}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{9AE2A89E-CDE8-42B1-AE01-C297265B5F08}.Release|Any CPU.Build.0 = Release|Any CPU
 		{066FB4E3-8F9C-42D0-9982-8B1F238FAF63}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{066FB4E3-8F9C-42D0-9982-8B1F238FAF63}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{066FB4E3-8F9C-42D0-9982-8B1F238FAF63}.Release with Code Analysis|Any CPU.ActiveCfg = Release with Code Analysis|Any CPU
