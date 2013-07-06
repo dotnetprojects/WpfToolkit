@@ -1,6 +1,6 @@
 ﻿
-Microsoft Visual Studio Solution File, Format Version 10.00
-# Visual Studio 2008
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WPFToolkit", "WPFToolkit.csproj", "{9606A078-7135-4CE7-879E-39FCF527F1A3}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WPFToolkitDesign", "WPFToolkitDesign\WPFToolkitDesign.csproj", "{8A781058-1211-40D8-9FF4-2EA8CDB31603}"
