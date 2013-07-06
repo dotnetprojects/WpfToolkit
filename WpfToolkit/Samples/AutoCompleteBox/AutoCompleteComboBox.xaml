@@ -1,0 +1,230 @@
+﻿<!--
+// (c) Copyright Microsoft Corporation.
+// This source is subject to the Microsoft Public License (Ms-PL).
+// Please see http://go.microsoft.com/fwlink/?LinkID=131993] for details.
+// All other rights reserved.
+-->
+
+<!-- 
+
+    Important sample note:
+    The purpose of this example is to demonstrate a ComboBox-like template and 
+    set of properties for AutoCompleteBox that provides some level of "editable 
+    ComboBox" support.
+
+    This is not intended to be a drop-in replacement for a WPF editable combo 
+    box.
+
+    -->
+
+<UserControl x:Class="System.Windows.Controls.Samples.AutoCompleteComboBox"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" 
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" 
+    xmlns:input="clr-namespace:System.Windows.Controls;assembly=System.Windows.Controls.Input.Toolkit">
+    <StackPanel>
+        <StackPanel.Resources>
+
+            <!-- Custom toggle button template -->
+            <Style x:Key="ComboToggleButton" TargetType="ToggleButton">
+                <Setter Property="Foreground" Value="#FF333333"/>
+                <Setter Property="IsTabStop" Value="False" />
+                <Setter Property="Background" Value="#FF1F3B53"/>
+                <Setter Property="Padding" Value="0"/>
+                <Setter Property="Template">
+                    <Setter.Value>
+                        <ControlTemplate TargetType="ToggleButton">
+                            <Grid>
+                                <Rectangle Fill="Transparent" />
+                                <ContentPresenter
+                            x:Name="contentPresenter"
+                            Content="{TemplateBinding Content}"
+                            ContentTemplate="{TemplateBinding ContentTemplate}"
+                            HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
+                            VerticalAlignment="{TemplateBinding VerticalContentAlignment}"
+                            Margin="{TemplateBinding Padding}"/>
+                            </Grid>
+                        </ControlTemplate>
+                    </Setter.Value>
+                </Setter>
+            </Style>
+
+            <!-- Custom control template used for the IntelliSense sample -->
+            <Style x:Key="AutoCompleteComboBoxStyle" TargetType="input:AutoCompleteBox">
+
+                <!-- ComboBox should not perform text completion by default -->
+                <Setter Property="IsTextCompletionEnabled" Value="False" />
+
+                <!-- The minimum prefix length should be 0 for combo box scenarios -->
+                <Setter Property="MinimumPrefixLength" Value="0" />
+
+                <!-- Regular template values -->
+                <Setter Property="Background" Value="#FF1F3B53"/>
+                <Setter Property="IsTabStop" Value="False" />
+                <Setter Property="HorizontalContentAlignment" Value="Left"/>
+                <Setter Property="BorderBrush">
+                    <Setter.Value>
+                        <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                            <GradientStop Color="#FFA3AEB9" Offset="0"/>
+                            <GradientStop Color="#FF8399A9" Offset="0.375"/>
+                            <GradientStop Color="#FF718597" Offset="0.375"/>
+                            <GradientStop Color="#FF617584" Offset="1"/>
+                        </LinearGradientBrush>
+                    </Setter.Value>
+                </Setter>
+                <Setter Property="Template">
+                    <Setter.Value>
+                        <ControlTemplate TargetType="input:AutoCompleteBox">
+                            <Grid Margin="{TemplateBinding Padding}">
+                                <TextBox IsTabStop="True" x:Name="Text" Style="{TemplateBinding TextBoxStyle}" Margin="0" />
+                                <ToggleButton 
+                                HorizontalAlignment="Right"
+                                VerticalAlignment="Center"
+                                Style="{StaticResource ComboToggleButton}"
+                                Margin="0"
+                                HorizontalContentAlignment="Center" 
+                                Background="{TemplateBinding Background}" 
+                                BorderThickness="0" 
+                                Height="16" Width="16"
+                                Click="DropDownToggle_Click">
+                                    <ToggleButton.Content>
+                                        <Path x:Name="BtnArrow" Height="4" Width="8" Stretch="Uniform" Data="F1 M 301.14,-189.041L 311.57,-189.041L 306.355,-182.942L 301.14,-189.041 Z " 
+                                          Margin="0,0,6,0" HorizontalAlignment="Right">
+                                            <Path.Fill>
+                                                <SolidColorBrush x:Name="BtnArrowColor" Color="#FF333333"/>
+                                            </Path.Fill>
+                                        </Path>
+                                    </ToggleButton.Content>
+                                </ToggleButton>
+                                <Popup x:Name="Popup">
+                                    <Border x:Name="PopupBorder" HorizontalAlignment="Stretch" Opacity="1.0" BorderThickness="0" CornerRadius="3">
+                                        <Border.RenderTransform>
+                                            <TranslateTransform X="2" Y="2" />
+                                        </Border.RenderTransform>
+                                        <Border.Background>
+                                            <SolidColorBrush Color="#11000000" />
+                                        </Border.Background>
+                                        <Border HorizontalAlignment="Stretch" BorderThickness="0" CornerRadius="3">
+                                            <Border.Background>
+                                                <SolidColorBrush Color="#11000000" />
+                                            </Border.Background>
+                                            <Border.RenderTransform>
+                                                <TransformGroup>
+                                                    <ScaleTransform />
+                                                    <SkewTransform />
+                                                    <RotateTransform />
+                                                    <TranslateTransform X="-1" Y="-1" />
+                                                </TransformGroup>
+                                            </Border.RenderTransform>
+                                            <Border HorizontalAlignment="Stretch" Opacity="1.0" Padding="2" BorderThickness="2" BorderBrush="{TemplateBinding BorderBrush}" CornerRadius="3">
+                                                <Border.RenderTransform>
+                                                    <TransformGroup>
+                                                        <ScaleTransform />
+                                                        <SkewTransform />
+                                                        <RotateTransform />
+                                                        <TranslateTransform X="-2" Y="-2" />
+                                                    </TransformGroup>
+                                                </Border.RenderTransform>
+                                                <Border.Background>
+                                                    <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                                                        <GradientStop Color="#FFDDDDDD" Offset="0"/>
+                                                        <GradientStop Color="#AADDDDDD" Offset="1"/>
+                                                    </LinearGradientBrush>
+                                                </Border.Background>
+                                                <ListBox x:Name="Selector" ScrollViewer.HorizontalScrollBarVisibility="Auto" ScrollViewer.VerticalScrollBarVisibility="Auto" ItemTemplate="{TemplateBinding ItemTemplate}" />
+                                            </Border>
+                                        </Border>
+                                    </Border>
+                                </Popup>
+                            </Grid>
+                        </ControlTemplate>
+                    </Setter.Value>
+                </Setter>
+            </Style>
+
+            <!-- DataTemplate for IntelliSense entries -->
+            <DataTemplate x:Key="IntelliSenseDataTemplate">
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="16" />
+                        <ColumnDefinition />
+                    </Grid.ColumnDefinitions>
+                    <ContentPresenter Content="{Binding Icon}" />
+                    <TextBlock Foreground="{Binding ForegroundColor}" Padding="6, 0, 0, 0" Text="{Binding Name}" Grid.Column="1" />
+                </Grid>
+            </DataTemplate>
+
+            <!-- DataTemplate for controls -->
+            <DataTemplate x:Key="ControlDictionaryDataTemplate">
+                <Grid>
+                    <TextBlock Text="{Binding Key}" />
+                </Grid>
+            </DataTemplate>
+
+        </StackPanel.Resources>
+
+        <!-- IntelliSense-style AutoCompleteBox -->
+        <ContentControl Content="API Explorer" Style="{StaticResource Header}" />
+        
+
+        <TextBlock Style="{StaticResource Information}">
+            This AutoCompleteBox control has been styled to look and 
+            act much like the standard editable ComboBox control. It also 
+            provides suggestions using the Contains FilterMode.
+        </TextBlock>
+
+        <Grid Margin="4">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="130" />
+                <ColumnDefinition />
+            </Grid.ColumnDefinitions>
+            <TextBlock Width="130" Margin="5">Type:</TextBlock>
+            <input:AutoCompleteBox
+                x:Name="ControlPicker"
+                Style="{StaticResource AutoCompleteComboBoxStyle}"
+                ItemTemplate="{StaticResource ControlDictionaryDataTemplate}"
+                Width="400" 
+                HorizontalAlignment="Left"
+                MinimumPopulateDelay="0"
+                MinimumPrefixLength="0"
+                IsTextCompletionEnabled="False"
+                FilterMode="None"
+                Opacity="0.75"
+                Grid.Column="1"
+            />
+        </Grid>
+        
+        <Grid Margin="4">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="130" />
+                <ColumnDefinition />
+            </Grid.ColumnDefinitions>
+            <TextBlock Width="130" Margin="5">API ComboBox:</TextBlock>
+            <input:AutoCompleteBox 
+                x:Name="ControlApi" 
+                ItemTemplate="{StaticResource IntelliSenseDataTemplate}"
+                Style="{StaticResource AutoCompleteComboBoxStyle}"
+                Width="400"
+                IsTextCompletionEnabled="False"
+                MinimumPrefixLength="0"
+                MinimumPopulateDelay="200"
+                IsEnabled="False"
+                HorizontalAlignment="Left"
+                Grid.Column="1"
+                Opacity="0.75"
+                />
+        </Grid>
+
+        <Grid Margin="4">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="130" />
+                <ColumnDefinition />
+            </Grid.ColumnDefinitions>
+            <TextBlock Width="130" Margin="5">Selected Item:</TextBlock>
+            <StackPanel Orientation="Horizontal" Grid.Column="1">
+                <ContentPresenter MaxHeight="16" MaxWidth="16" x:Name="IntelliSenseIcon" Margin="5" />
+                <TextBlock Margin="5" FontSize="18" x:Name="SelectedInformation" />
+            </StackPanel>
+        </Grid>
+
+    </StackPanel>
+</UserControl>

@@ -1,0 +1,161 @@
+﻿<!--
+// (c) Copyright Microsoft Corporation.
+// This source is subject to the Microsoft Public License (Ms-PL).
+// Please see http://go.microsoft.com/fwlink/?LinkID=131993] for details.
+// All other rights reserved.
+-->
+
+<UserControl x:Class="System.Windows.Controls.Samples.AutoCompleteLambda"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" 
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" 
+    xmlns:controls="clr-namespace:Microsoft.Windows.Controls;assembly=WPFToolkit"
+    xmlns:input="clr-namespace:System.Windows.Controls;assembly=System.Windows.Controls.Input.Toolkit">
+    <StackPanel>
+        <StackPanel.Resources>
+
+            <!-- DataTemplate for airports -->
+            <DataTemplate x:Key="AirportDataTemplate">
+                <Grid Width="370">
+                    <Grid.Background>
+                        <SolidColorBrush Color="#aa000000" />
+                    </Grid.Background>
+                    <TextBlock Foreground="#22ffffff" Margin="4,0,2,0" FontSize="34" Text="{Binding CodeFaa}" />
+                    <StackPanel HorizontalAlignment="Right" Margin="0, 0, 8, 0">
+                        <TextBlock HorizontalAlignment="Right" Foreground="White" 
+                               Text="{Binding LimitedName}" Padding="2" />
+                        <TextBlock HorizontalAlignment="Right" Foreground="White" 
+                               FontSize="14" Text="{Binding City}" Padding="2" />
+                        <TextBlock HorizontalAlignment="Right" Foreground="White" 
+                               FontSize="14" Text="{Binding State}" Padding="2" />
+                    </StackPanel>
+                </Grid>
+            </DataTemplate>
+        </StackPanel.Resources>
+
+        <!-- Custom lambda and template -->
+        <ContentControl Content="ItemFilter with a lambda &amp; a custom DataTemplate" Style="{StaticResource Header}" />
+        
+        <StackPanel>
+            <TextBlock Style="{StaticResource Information}">
+                Search for and select your airports. Once you have made your 
+                selections, click to search for tickets using Bing Travel.
+            </TextBlock>
+            
+            <Grid Margin="0, 16, 0, 16">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="180" />
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+                
+                <TextBlock Padding="5">Departure:</TextBlock>
+                
+                <StackPanel Grid.Column="1">
+                    <input:AutoCompleteBox 
+                        x:Name="DepartureAirport" 
+                        MinimumPrefixLength="1" 
+                        FilterMode="Custom" 
+                        Width="400" 
+                        IsTextCompletionEnabled="False"
+                        HorizontalAlignment="Left" 
+                        ItemTemplate="{StaticResource AirportDataTemplate}" 
+                        />
+                    <controls:DatePicker 
+                        x:Name="DepartureDate" 
+                        HorizontalAlignment="Left"
+                        Width="125" />
+                </StackPanel>
+            </Grid>
+
+            <Grid Margin="0, 16, 0, 16">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="180" />
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+
+                <TextBlock Padding="5">Arrival:</TextBlock>
+
+                <StackPanel Grid.Column="1">
+                    <input:AutoCompleteBox 
+                        x:Name="ArrivalAirport" 
+                        MinimumPrefixLength="1" 
+                        FilterMode="Custom" 
+                        IsTextCompletionEnabled="False"
+                        Width="400" 
+                        HorizontalAlignment="Left" 
+                        ItemTemplate="{StaticResource AirportDataTemplate}" 
+                        />
+                    <controls:DatePicker 
+                        x:Name="ArrivalDate" 
+                        HorizontalAlignment="Left"
+                        Width="125" />
+                </StackPanel>
+            </Grid>
+
+            <Grid Margin="0, 16, 0, 16">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="180" />
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+
+                <StackPanel Orientation="Horizontal">
+                    <TextBlock Padding="5">Passengers:</TextBlock>
+                    <TextBlock Padding="5" Margin="5,0,0,0" Text="{Binding ElementName=Passengers,Path=Value}" />
+                </StackPanel>
+                
+
+                <Slider
+                    Minimum="1"
+                    Maximum="5"
+                    SmallChange="1"
+                    TickPlacement="BottomRight"
+                    Width="100"
+                    HorizontalAlignment="Left"
+                    Value="1"
+                    x:Name="Passengers"
+                    Grid.Column="1" />
+            </Grid>
+
+            <Grid Margin="0, 16, 0, 16">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="180" />
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+
+                <TextBlock Padding="5">Book flight:</TextBlock>
+
+                <Button x:Name="BookFlight" 
+                        IsEnabled="False"
+                        Grid.Column="1"
+                        Padding="6"
+                        HorizontalContentAlignment="Left"
+                        HorizontalAlignment="Left"
+                        Content="Search Bing Travel..."
+                        />
+            </Grid>
+
+            <ContentControl Content="Customizing the filter algorithm" Style="{StaticResource Header}" />
+            <TextBlock Style="{StaticResource Information}">
+            The above sample uses a custom ItemFilter lambda to match several 
+            airport properties against the search string, allowing a user to type an 
+            airport code, city name, or airport name into the field.
+
+            <LineBreak /><LineBreak />
+
+            Each filter method takes two parameters: the search string (the 
+            value of the text box), a second item parameter, and then returns 
+            either true or false. A true return value means that the item 
+            should appear in the list of suggestions offered by the 
+            AutoCompleteBox control.
+
+            <LineBreak /><LineBreak />
+
+            As a developer, you can take the search string and tokenize it, 
+            parse it for an expression or words, or find a new creative way 
+            of searching through your data and surfacing it through the control.
+            </TextBlock>
+
+
+        </StackPanel>
+      
+    </StackPanel>
+</UserControl>

@@ -1,0 +1,12 @@
+﻿<!--=================================================================
+Copyright (C) Microsoft Corporation.  All rights reserved.
+==================================================================-->
+
+<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    <ResourceDictionary.MergedDictionaries>
+        <ResourceDictionary Source="/WPFToolkit;component/DataGrid/Themes/Aero.NormalColor.xaml" />
+        <ResourceDictionary Source="/WPFToolkit;component/Calendar/Themes/Aero.NormalColor.xaml" />
+        <ResourceDictionary Source="/WPFToolkit;component/DatePicker/Themes/Aero.NormalColor.xaml" />
+    </ResourceDictionary.MergedDictionaries>
+</ResourceDictionary>

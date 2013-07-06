@@ -1,0 +1,945 @@
+﻿<!--
+// (c) Copyright Microsoft Corporation.
+// This source is subject to [###LICENSE_NAME###].
+// Please see [###LICENSE_LINK###] for details.
+// All other rights reserved.
+-->
+
+<UserControl x:Class="System.Windows.Controls.Samples.DataGridAutoCompleteBox"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" 
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" 
+    xmlns:samples="clr-namespace:System.Windows.Controls.Samples;assembly=System.Windows.Controls.Samples"
+    xmlns:data="clr-namespace:System.Windows.Controls;assembly=System.Windows.Controls.Data"
+    xmlns:input="clr-namespace:System.Windows.Controls;assembly=System.Windows.Controls.Input">
+    <StackPanel>
+        <StackPanel.Resources>
+            <Style x:Key="DataGridAutoCompleteTemplate" TargetType="input:AutoCompleteBox">
+                <Setter Property="Background" Value="#FF1F3B53"/>
+                <Setter Property="IsTabStop" Value="False" />
+                <Setter Property="HorizontalContentAlignment" Value="Left"/>
+                <Setter Property="BorderBrush">
+                    <Setter.Value>
+                        <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                            <GradientStop Color="#FFA3AEB9" Offset="0"/>
+                            <GradientStop Color="#FF8399A9" Offset="0.375"/>
+                            <GradientStop Color="#FF718597" Offset="0.375"/>
+                            <GradientStop Color="#FF617584" Offset="1"/>
+                        </LinearGradientBrush>
+                    </Setter.Value>
+                </Setter>
+                <Setter Property="Template">
+                    <Setter.Value>
+                        <ControlTemplate TargetType="input:AutoCompleteBox">
+                            <Grid Margin="{TemplateBinding Padding}">
+                                <VisualStateManager.VisualStateGroups>
+                                    <VisualStateGroup x:Name="PopupStates">
+                                        <VisualStateGroup.Transitions>
+                                            <VisualTransition GeneratedDuration="0:0:0.2" To="PopupOpened" />
+                                            <VisualTransition GeneratedDuration="0:0:0.5" To="PopupClosed" />
+                                        </VisualStateGroup.Transitions>
+                                        <VisualState x:Name="PopupOpened">
+                                            <Storyboard>
+                                                <DoubleAnimation Storyboard.TargetName="PopupBorder" Storyboard.TargetProperty="Opacity" To="1.0" />
+                                            </Storyboard>
+                                        </VisualState>
+                                        <VisualState x:Name="PopupClosed">
+                                            <Storyboard>
+                                                <DoubleAnimation Storyboard.TargetName="PopupBorder" Storyboard.TargetProperty="Opacity" To="0.0" />
+                                            </Storyboard>
+                                        </VisualState>
+                                    </VisualStateGroup>
+                                </VisualStateManager.VisualStateGroups>
+                                <TextBox IsTabStop="True" x:Name="Text" Style="{TemplateBinding TextBoxStyle}" Margin="0" />
+                                <Popup x:Name="Popup">
+                                    <Border x:Name="PopupBorder" HorizontalAlignment="Stretch" Opacity="0.0" BorderThickness="0" CornerRadius="3">
+                                        <Border.RenderTransform>
+                                            <TranslateTransform X="2" Y="2" />
+                                        </Border.RenderTransform>
+                                        <Border.Background>
+                                            <SolidColorBrush Color="#11000000" />
+                                        </Border.Background>
+                                        <Border HorizontalAlignment="Stretch" BorderThickness="0" CornerRadius="3">
+                                            <Border.Background>
+                                                <SolidColorBrush Color="#11000000" />
+                                            </Border.Background>
+                                            <Border.RenderTransform>
+                                                <TransformGroup>
+                                                    <ScaleTransform />
+                                                    <SkewTransform />
+                                                    <RotateTransform />
+                                                    <TranslateTransform X="-1" Y="-1" />
+                                                </TransformGroup>
+                                            </Border.RenderTransform>
+                                            <Border HorizontalAlignment="Stretch" Opacity="1.0" Padding="1" BorderThickness="1" BorderBrush="{TemplateBinding BorderBrush}" CornerRadius="3">
+                                                <Border.RenderTransform>
+                                                    <TransformGroup>
+                                                        <ScaleTransform />
+                                                        <SkewTransform />
+                                                        <RotateTransform />
+                                                        <TranslateTransform X="-2" Y="-2" />
+                                                    </TransformGroup>
+                                                </Border.RenderTransform>
+                                                <Border.Background>
+                                                    <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                                                        <GradientStop Color="#FFDDDDDD" Offset="0"/>
+                                                        <GradientStop Color="#AADDDDDD" Offset="1"/>
+                                                    </LinearGradientBrush>
+                                                </Border.Background>
+                                                <samples:DataGridSelectionAdapter 
+                                                x:Name="SelectionAdapter" 
+                                                AutoGenerateColumns="False"
+                                                IsReadOnly="True">
+                                                    <samples:DataGridSelectionAdapter.Columns>
+                                                        <data:DataGridTextColumn Header="" FontWeight="Bold" Foreground="#CC000000" Binding="{Binding CodeFaa}" />
+                                                        <data:DataGridTextColumn Header="Airport" Binding="{Binding LimitedName}" />
+                                                        <data:DataGridTextColumn Header="City" Binding="{Binding City}" />
+                                                        <data:DataGridTextColumn Header="State" Binding="{Binding State}" />
+                                                    </samples:DataGridSelectionAdapter.Columns>
+                                                </samples:DataGridSelectionAdapter>
+                                            </Border>
+                                        </Border>
+                                    </Border>
+                                </Popup>
+                            </Grid>
+                        </ControlTemplate>
+                    </Setter.Value>
+                </Setter>
+            </Style>
+        </StackPanel.Resources>
+            <ContentControl Content="AutoCompleteBox with a DataGrid DropDown" Style="{StaticResource Header}" />
+
+        <StackPanel>
+            
+            <TextBlock Style="{StaticResource Information}" UseLayoutRounding="False">
+                This sample uses a custom ISelectionAdapter that derives from the 
+                Silverlight DataGrid.
+            </TextBlock>
+            
+            <input:AutoCompleteBox
+                x:Name="MyAutoCompleteBox"
+                Style="{StaticResource DataGridAutoCompleteTemplate}" 
+                />
+        </StackPanel>
+        
+        <src:SourceViewer xmlns:src="clr-namespace:System.Windows.Controls.Samples;assembly=System.Windows.Controls.Samples.Common" xmlns:sys="clr-namespace:System;assembly=mscorlib">
+  <src:SourceFile Path="DataGridAutoCompleteBox.xaml">
+    <src:SourceFile.Source>
+      <sys:String>&lt;!--
+// (c) Copyright Microsoft Corporation.
+// This source is subject to [###LICENSE_NAME###].
+// Please see [###LICENSE_LINK###] for details.
+// All other rights reserved.
+--&gt;
+
+&lt;UserControl x:Class="System.Windows.Controls.Samples.DataGridAutoCompleteBox"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" 
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" 
+    xmlns:samples="clr-namespace:System.Windows.Controls.Samples;assembly=System.Windows.Controls.Samples"
+    xmlns:data="clr-namespace:System.Windows.Controls;assembly=System.Windows.Controls.Data"
+    xmlns:input="clr-namespace:System.Windows.Controls;assembly=System.Windows.Controls.Input"&gt;
+    &lt;StackPanel&gt;
+        &lt;StackPanel.Resources&gt;
+            &lt;Style x:Key="DataGridAutoCompleteTemplate" TargetType="input:AutoCompleteBox"&gt;
+                &lt;Setter Property="Background" Value="#FF1F3B53"/&gt;
+                &lt;Setter Property="IsTabStop" Value="False" /&gt;
+                &lt;Setter Property="HorizontalContentAlignment" Value="Left"/&gt;
+                &lt;Setter Property="BorderBrush"&gt;
+                    &lt;Setter.Value&gt;
+                        &lt;LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0"&gt;
+                            &lt;GradientStop Color="#FFA3AEB9" Offset="0"/&gt;
+                            &lt;GradientStop Color="#FF8399A9" Offset="0.375"/&gt;
+                            &lt;GradientStop Color="#FF718597" Offset="0.375"/&gt;
+                            &lt;GradientStop Color="#FF617584" Offset="1"/&gt;
+                        &lt;/LinearGradientBrush&gt;
+                    &lt;/Setter.Value&gt;
+                &lt;/Setter&gt;
+                &lt;Setter Property="Template"&gt;
+                    &lt;Setter.Value&gt;
+                        &lt;ControlTemplate TargetType="input:AutoCompleteBox"&gt;
+                            &lt;Grid Margin="{TemplateBinding Padding}"&gt;
+                                &lt;VisualStateManager.VisualStateGroups&gt;
+                                    &lt;VisualStateGroup x:Name="PopupStates"&gt;
+                                        &lt;VisualStateGroup.Transitions&gt;
+                                            &lt;VisualTransition GeneratedDuration="0:0:0.2" To="PopupOpened" /&gt;
+                                            &lt;VisualTransition GeneratedDuration="0:0:0.5" To="PopupClosed" /&gt;
+                                        &lt;/VisualStateGroup.Transitions&gt;
+                                        &lt;VisualState x:Name="PopupOpened"&gt;
+                                            &lt;Storyboard&gt;
+                                                &lt;DoubleAnimation Storyboard.TargetName="PopupBorder" Storyboard.TargetProperty="Opacity" To="1.0" /&gt;
+                                            &lt;/Storyboard&gt;
+                                        &lt;/VisualState&gt;
+                                        &lt;VisualState x:Name="PopupClosed"&gt;
+                                            &lt;Storyboard&gt;
+                                                &lt;DoubleAnimation Storyboard.TargetName="PopupBorder" Storyboard.TargetProperty="Opacity" To="0.0" /&gt;
+                                            &lt;/Storyboard&gt;
+                                        &lt;/VisualState&gt;
+                                    &lt;/VisualStateGroup&gt;
+                                &lt;/VisualStateManager.VisualStateGroups&gt;
+                                &lt;TextBox IsTabStop="True" x:Name="Text" Style="{TemplateBinding TextBoxStyle}" Margin="0" /&gt;
+                                &lt;Popup x:Name="Popup"&gt;
+                                    &lt;Border x:Name="PopupBorder" HorizontalAlignment="Stretch" Opacity="0.0" BorderThickness="0" CornerRadius="3"&gt;
+                                        &lt;Border.RenderTransform&gt;
+                                            &lt;TranslateTransform X="2" Y="2" /&gt;
+                                        &lt;/Border.RenderTransform&gt;
+                                        &lt;Border.Background&gt;
+                                            &lt;SolidColorBrush Color="#11000000" /&gt;
+                                        &lt;/Border.Background&gt;
+                                        &lt;Border HorizontalAlignment="Stretch" BorderThickness="0" CornerRadius="3"&gt;
+                                            &lt;Border.Background&gt;
+                                                &lt;SolidColorBrush Color="#11000000" /&gt;
+                                            &lt;/Border.Background&gt;
+                                            &lt;Border.RenderTransform&gt;
+                                                &lt;TransformGroup&gt;
+                                                    &lt;ScaleTransform /&gt;
+                                                    &lt;SkewTransform /&gt;
+                                                    &lt;RotateTransform /&gt;
+                                                    &lt;TranslateTransform X="-1" Y="-1" /&gt;
+                                                &lt;/TransformGroup&gt;
+                                            &lt;/Border.RenderTransform&gt;
+                                            &lt;Border HorizontalAlignment="Stretch" Opacity="1.0" Padding="1" BorderThickness="1" BorderBrush="{TemplateBinding BorderBrush}" CornerRadius="3"&gt;
+                                                &lt;Border.RenderTransform&gt;
+                                                    &lt;TransformGroup&gt;
+                                                        &lt;ScaleTransform /&gt;
+                                                        &lt;SkewTransform /&gt;
+                                                        &lt;RotateTransform /&gt;
+                                                        &lt;TranslateTransform X="-2" Y="-2" /&gt;
+                                                    &lt;/TransformGroup&gt;
+                                                &lt;/Border.RenderTransform&gt;
+                                                &lt;Border.Background&gt;
+                                                    &lt;LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0"&gt;
+                                                        &lt;GradientStop Color="#FFDDDDDD" Offset="0"/&gt;
+                                                        &lt;GradientStop Color="#AADDDDDD" Offset="1"/&gt;
+                                                    &lt;/LinearGradientBrush&gt;
+                                                &lt;/Border.Background&gt;
+                                                &lt;samples:DataGridSelectionAdapter 
+                                                x:Name="SelectionAdapter" 
+                                                AutoGenerateColumns="False"
+                                                IsReadOnly="True"&gt;
+                                                    &lt;samples:DataGridSelectionAdapter.Columns&gt;
+                                                        &lt;data:DataGridTextColumn Header="" FontWeight="Bold" Foreground="#CC000000" Binding="{Binding CodeFaa}" /&gt;
+                                                        &lt;data:DataGridTextColumn Header="Airport" Binding="{Binding LimitedName}" /&gt;
+                                                        &lt;data:DataGridTextColumn Header="City" Binding="{Binding City}" /&gt;
+                                                        &lt;data:DataGridTextColumn Header="State" Binding="{Binding State}" /&gt;
+                                                    &lt;/samples:DataGridSelectionAdapter.Columns&gt;
+                                                &lt;/samples:DataGridSelectionAdapter&gt;
+                                            &lt;/Border&gt;
+                                        &lt;/Border&gt;
+                                    &lt;/Border&gt;
+                                &lt;/Popup&gt;
+                            &lt;/Grid&gt;
+                        &lt;/ControlTemplate&gt;
+                    &lt;/Setter.Value&gt;
+                &lt;/Setter&gt;
+            &lt;/Style&gt;
+        &lt;/StackPanel.Resources&gt;
+            &lt;ContentControl Content="AutoCompleteBox with a DataGrid DropDown" Style="{StaticResource Header}" /&gt;
+
+        &lt;StackPanel&gt;
+            
+            &lt;TextBlock Style="{StaticResource Information}" UseLayoutRounding="False"&gt;
+                This sample uses a custom ISelectionAdapter that derives from the 
+                Silverlight DataGrid.
+            &lt;/TextBlock&gt;
+            
+            &lt;input:AutoCompleteBox
+                x:Name="MyAutoCompleteBox"
+                Style="{StaticResource DataGridAutoCompleteTemplate}" 
+                /&gt;
+        &lt;/StackPanel&gt;
+    &lt;/StackPanel&gt;
+&lt;/UserControl&gt;
+</sys:String>
+    </src:SourceFile.Source>
+  </src:SourceFile>
+  <src:SourceFile Path="DataGridAutoCompleteBox.xaml.cs">
+    <src:SourceFile.Source>
+      <sys:String>// (c) Copyright Microsoft Corporation.
+// This source is subject to [###LICENSE_NAME###].
+// Please see [###LICENSE_LINK###] for details.
+// All other rights reserved.
+
+using System;
+using System.Globalization;
+using System.Windows;
+using System.Windows.Controls;
+using System.ComponentModel;
+
+namespace System.Windows.Controls.Samples
+{
+    /// &lt;summary&gt;
+    /// A sample AutoCompleteBox with a DataGrid selection adapter.
+    /// &lt;/summary&gt;
+    [Sample("DataGrid", DifficultyLevel.Advanced)]
+    [Category("AutoCompleteBox")]
+    public partial class DataGridAutoCompleteBox : UserControl
+    {
+        /// &lt;summary&gt;
+        /// Initializes a new instance of the type.
+        /// &lt;/summary&gt;
+        public DataGridAutoCompleteBox()
+        {
+            InitializeComponent();
+            Loaded += OnLoaded;
+        }
+
+        /// &lt;summary&gt;
+        /// Handle the loaded event.
+        /// &lt;/summary&gt;
+        /// &lt;param name="sender"&gt;The source object.&lt;/param&gt;
+        /// &lt;param name="e"&gt;The event data.&lt;/param&gt;
+        private void OnLoaded(object sender, RoutedEventArgs e)
+        {
+            // Bind to the sample airport data
+            MyAutoCompleteBox.ItemsSource = Airport.SampleAirports;
+            
+            // A custom search, the same that is used in the basic lambda file
+            MyAutoCompleteBox.FilterMode = AutoCompleteFilterMode.Custom;
+            MyAutoCompleteBox.ItemFilter = (search, item) =&gt;
+            {
+                Airport airport = item as Airport;
+                if (airport != null)
+                {
+                    // Interested in: Name, City, FAA code
+                    string filter = search.ToUpper(CultureInfo.InvariantCulture);
+                    return (airport.CodeFaa.ToUpper(CultureInfo.InvariantCulture).Contains(filter)
+                        || airport.City.ToUpper(CultureInfo.InvariantCulture).Contains(filter)
+                        || airport.Name.ToUpper(CultureInfo.InvariantCulture).Contains(filter));
+                }
+
+                return false;
+            };
+        }
+    }
+}</sys:String>
+    </src:SourceFile.Source>
+  </src:SourceFile>
+  <src:SourceFile Path="DataGridAutoCompleteBox.xaml.vb">
+    <src:SourceFile.Source>
+      <sys:String>' (c) Copyright Microsoft Corporation.
+' This source is subject to [###LICENSE_NAME###].
+' Please see [###LICENSE_LINK###] for details.
+' All other rights reserved.
+
+Imports Microsoft.VisualBasic
+Imports System
+Imports System.Globalization
+Imports System.Windows
+Imports System.Windows.Controls
+Imports System.ComponentModel
+
+''' &lt;summary&gt;
+''' A sample AutoCompleteBox with a DataGrid selection adapter.
+''' &lt;/summary&gt;
+&lt;Sample("DataGrid", DifficultyLevel.Advanced), Category("AutoCompleteBox")&gt; _
+Partial Public Class DataGridAutoCompleteBox
+    Inherits UserControl
+    ''' &lt;summary&gt;
+    ''' Initializes a new instance of the type.
+    ''' &lt;/summary&gt;
+    Public Sub New()
+        InitializeComponent()
+    End Sub
+
+    ''' &lt;summary&gt;
+    ''' Handle the loaded event.
+    ''' &lt;/summary&gt;
+    ''' &lt;param name="sender"&gt;The source object.&lt;/param&gt;
+    ''' &lt;param name="e"&gt;The event data.&lt;/param&gt;
+    Private Sub OnLoaded(ByVal sender As Object, ByVal e As RoutedEventArgs) Handles Me.Loaded
+        ' Bind to the sample airport data
+        MyAutoCompleteBox.ItemsSource = Airport.SampleAirports
+
+        ' A custom search, the same that is used in the basic lambda file
+        MyAutoCompleteBox.FilterMode = AutoCompleteFilterMode.Custom
+        MyAutoCompleteBox.ItemFilter = AddressOf MyItemFilter
+    End Sub
+
+    ''' &lt;summary&gt;
+    ''' AutoComplete search predicate
+    ''' &lt;/summary&gt;
+    ''' &lt;param name="search"&gt;The search string.&lt;/param&gt;
+    ''' &lt;param name="item"&gt;The target object.&lt;/param&gt;
+    Private Function MyItemFilter(ByVal search As String, ByVal item As Object) As Boolean
+        Dim airport As Airport = TryCast(item, Airport)
+        If airport IsNot Nothing Then
+            Dim filter As String = search.ToUpper(CultureInfo.InvariantCulture)
+            Return (airport.CodeFaa.ToUpper(CultureInfo.InvariantCulture).Contains(filter) OrElse _
+                    airport.City.ToUpper(CultureInfo.InvariantCulture).Contains(filter) OrElse _
+                    airport.Name.ToUpper(CultureInfo.InvariantCulture).Contains(filter))
+        End If
+        Return False
+    End Function
+End Class
+</sys:String>
+    </src:SourceFile.Source>
+  </src:SourceFile>
+  <src:SourceFile Path="DataGridSelectionAdapter.cs">
+    <src:SourceFile.Source>
+      <sys:String>// (c) Copyright Microsoft Corporation.
+// This source is subject to [###LICENSE_NAME###].
+// Please see [###LICENSE_LINK###] for details.
+// All other rights reserved.
+
+using System;
+using System.Collections;
+using System.Collections.ObjectModel;
+using System.Collections.Specialized;
+using System.Windows;
+using System.Windows.Automation.Peers;
+using System.Windows.Controls;
+using System.Windows.Input;
+
+namespace System.Windows.Controls.Samples
+{
+    /// &lt;summary&gt;
+    /// An implementation of ISelectionAdapter for the DataGrid control. This 
+    /// adapter, unlike the standard SelectorSelectionAdapter, actually derives 
+    /// directly from DataGrid.
+    /// &lt;/summary&gt;
+    public class DataGridSelectionAdapter : DataGrid, ISelectionAdapter
+    {
+        /// &lt;summary&gt;
+        /// Gets or sets a value indicating whether the selection should be 
+        /// ignored. Since the DataGrid automatically selects the first row 
+        /// whenever the data changes, this simple implementation only works 
+        /// with key navigation and mouse clicks. This prevents the text box 
+        /// of the AutoCompleteBox control from being updated continuously.
+        /// &lt;/summary&gt;
+        private bool IgnoreAnySelection { get; set; }
+
+        /// &lt;summary&gt;
+        /// Gets or sets a value indicating whether the selection change event 
+        /// should not be fired.
+        /// &lt;/summary&gt;
+        private bool IgnoringSelectionChanged { get; set; }
+
+        /// &lt;summary&gt;
+        /// Occurs when the currently selected item changes.
+        /// &lt;/summary&gt;
+        public new event SelectionChangedEventHandler SelectionChanged;
+
+        /// &lt;summary&gt;
+        /// An event that indicates that a selection is complete and has been 
+        /// made, effectively a commit action.
+        /// &lt;/summary&gt;
+        public event RoutedEventHandler Commit;
+
+        /// &lt;summary&gt;
+        /// An event that indicates that the selection operation has been 
+        /// canceled.
+        /// &lt;/summary&gt;
+        public event RoutedEventHandler Cancel;
+
+        /// &lt;summary&gt;
+        /// Initializes a new instance of the SelectorSelectionAdapter class.
+        /// &lt;/summary&gt;
+        public DataGridSelectionAdapter()
+        {
+            base.SelectionChanged += OnSelectionChanged;
+            MouseLeftButtonUp += OnSelectorMouseLeftButtonUp;
+        }
+
+        /// &lt;summary&gt;
+        /// Gets or sets the selected item through the adapter.
+        /// &lt;/summary&gt;
+        public new object SelectedItem
+        {
+            get
+            {
+                return base.SelectedItem;
+            }
+
+            set
+            {
+                IgnoringSelectionChanged = true;
+                base.SelectedItem = value;
+                IgnoringSelectionChanged = false;
+            }
+        }
+
+        /// &lt;summary&gt;
+        /// Handles the mouse left button up event on the selector control.
+        /// &lt;/summary&gt;
+        /// &lt;param name="sender"&gt;The source object.&lt;/param&gt;
+        /// &lt;param name="e"&gt;The event data.&lt;/param&gt;
+        private void OnSelectorMouseLeftButtonUp(object sender, MouseButtonEventArgs e)
+        {
+            IgnoreAnySelection = false;
+
+            OnSelectionChanged(this, null);
+            OnCommit(this, new RoutedEventArgs());
+        }
+
+        /// &lt;summary&gt;
+        /// Handles the SelectionChanged event on the Selector control.
+        /// &lt;/summary&gt;
+        /// &lt;param name="sender"&gt;The source object.&lt;/param&gt;
+        /// &lt;param name="e"&gt;The selection changed event data.&lt;/param&gt;
+        private void OnSelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            if (IgnoringSelectionChanged)
+            {
+                return;
+            }
+
+            if (IgnoreAnySelection)
+            {
+                return;
+            }
+
+            SelectionChangedEventHandler handler = this.SelectionChanged;
+            if (handler != null)
+            {
+                handler(sender, e);
+            }
+        }
+
+        /// &lt;summary&gt;
+        /// Gets or sets the items source.
+        /// &lt;/summary&gt;
+        public new IEnumerable ItemsSource
+        {
+            get { return base.ItemsSource; }
+            
+            set
+            {
+                if (base.ItemsSource != null)
+                {
+                    INotifyCollectionChanged notify = base.ItemsSource as INotifyCollectionChanged;
+                    if (notify != null)
+                    {
+                        notify.CollectionChanged -= OnCollectionChanged;
+                    }
+                }
+
+                base.ItemsSource = value;
+
+                if (base.ItemsSource != null)
+                {
+                    INotifyCollectionChanged notify = base.ItemsSource as INotifyCollectionChanged;
+                    if (notify != null)
+                    {
+                        notify.CollectionChanged += OnCollectionChanged;
+                    }
+                }
+            }
+        }
+
+        /// &lt;summary&gt;
+        /// Handles the CollectionChanged event, resetting the selection 
+        /// ignore flag.
+        /// &lt;/summary&gt;
+        /// &lt;param name="sender"&gt;The source object.&lt;/param&gt;
+        /// &lt;param name="e"&gt;The event data.&lt;/param&gt;
+        private void OnCollectionChanged(object sender, NotifyCollectionChangedEventArgs e)
+        {
+            IgnoreAnySelection = true;
+        }
+
+        /// &lt;summary&gt;
+        /// Gets the observable collection set by AutoCompleteBox.
+        /// &lt;/summary&gt;
+        private ObservableCollection&lt;object&gt; Items
+        {
+            get { return ItemsSource as ObservableCollection&lt;object&gt;; }
+        }
+
+        /// &lt;summary&gt;
+        /// Increment the selected index, or wrap.
+        /// &lt;/summary&gt;
+        private void SelectedIndexIncrement()
+        {
+            SelectedIndex = SelectedIndex + 1 &gt;= Items.Count ? -1 : SelectedIndex + 1;
+            ScrollIntoView(SelectedItem, this.Columns[0]);
+        }
+
+        /// &lt;summary&gt;
+        /// Decrement the SelectedIndex, or wrap around, inside the nested 
+        /// SelectionAdapter's control.
+        /// &lt;/summary&gt;
+        private void SelectedIndexDecrement()
+        {
+            int index = SelectedIndex;
+            if (index &gt;= 0)
+            {
+                SelectedIndex--;
+            }
+            else if (index == -1)
+            {
+                SelectedIndex = Items.Count - 1;
+            }
+
+            ScrollIntoView(SelectedItem, this.Columns[0]);
+        }
+
+        /// &lt;summary&gt;
+        /// Process a key down event.
+        /// &lt;/summary&gt;
+        /// &lt;param name="e"&gt;The key event arguments object.&lt;/param&gt;
+        public void HandleKeyDown(KeyEventArgs e)
+        {
+            switch (e.Key)
+            {
+                case Key.Enter:
+                    OnCommit(this, e);
+                    e.Handled = true;
+                    break;
+
+                case Key.Up:
+                    IgnoreAnySelection = false; 
+                    SelectedIndexDecrement();
+                    e.Handled = true;
+                    break;
+
+                case Key.Down:
+                    if ((ModifierKeys.Alt &amp; Keyboard.Modifiers) == ModifierKeys.None)
+                    {
+                        IgnoreAnySelection = false;
+                        SelectedIndexIncrement();
+                        e.Handled = true;
+                    }
+                    break;
+
+                case Key.Escape:
+                    OnCancel(this, e);
+                    e.Handled = true;
+                    break;
+
+                default:
+                    break;
+            }
+        }
+
+        /// &lt;summary&gt;
+        /// Fires the Commit event.
+        /// &lt;/summary&gt;
+        /// &lt;param name="sender"&gt;The source object.&lt;/param&gt;
+        /// &lt;param name="e"&gt;The event data.&lt;/param&gt;
+        private void OnCommit(object sender, RoutedEventArgs e)
+        {
+            RoutedEventHandler handler = Commit;
+            if (handler != null)
+            {
+                handler(sender, e);
+            }
+
+            AfterAdapterAction();
+        }
+
+        /// &lt;summary&gt;
+        /// Fires the Cancel event.
+        /// &lt;/summary&gt;
+        /// &lt;param name="sender"&gt;The source object.&lt;/param&gt;
+        /// &lt;param name="e"&gt;The event data.&lt;/param&gt;
+        private void OnCancel(object sender, RoutedEventArgs e)
+        {
+            RoutedEventHandler handler = Cancel;
+            if (handler != null)
+            {
+                handler(sender, e);
+            }
+
+            AfterAdapterAction();
+        }
+
+        /// &lt;summary&gt;
+        /// Change the selection after the actions are complete.
+        /// &lt;/summary&gt;
+        private void AfterAdapterAction()
+        {
+            IgnoringSelectionChanged = true;
+            SelectedItem = null;
+            SelectedIndex = -1;
+            IgnoringSelectionChanged = false;
+
+            // Reset, to ignore any future changes
+            IgnoreAnySelection = true;
+        }
+
+        /// &lt;summary&gt;
+        /// Initializes a new instance of a DataGridAutomationPeer.
+        /// &lt;/summary&gt;
+        /// &lt;returns&gt;Returns a new DataGridAutomationPeer.&lt;/returns&gt;
+        public AutomationPeer CreateAutomationPeer()
+        {
+            return new DataGridAutomationPeer(this);
+        }
+    }
+}</sys:String>
+    </src:SourceFile.Source>
+  </src:SourceFile>
+  <src:SourceFile Path="DataGridSelectionAdapter.vb">
+    <src:SourceFile.Source>
+      <sys:String>' (c) Copyright Microsoft Corporation.
+' This source is subject to [###LICENSE_NAME###].
+' Please see [###LICENSE_LINK###] for details.
+' All other rights reserved.
+
+
+Imports Microsoft.VisualBasic
+Imports System
+Imports System.Collections
+Imports System.Collections.ObjectModel
+Imports System.Collections.Specialized
+Imports System.Windows
+Imports System.Windows.Automation.Peers
+Imports System.Windows.Controls
+Imports System.Windows.Input
+
+''' &lt;summary&gt;
+''' An implementation of ISelectionAdapter for the DataGrid control. This 
+''' adapter, unlike the standard SelectorSelectionAdapter, actually derives 
+''' directly from DataGrid.
+''' &lt;/summary&gt;
+Public Class DataGridSelectionAdapter
+    Inherits DataGrid
+    Implements ISelectionAdapter
+    ''' &lt;summary&gt;
+    ''' Gets or sets a value indicating whether the selection should be 
+    ''' ignored. Since the DataGrid automatically selects the first row 
+    ''' whenever the data changes, this simple implementation only works 
+    ''' with key navigation and mouse clicks. This prevents the text box 
+    ''' of the AutoCompleteBox control from being updated continuously.
+    ''' &lt;/summary&gt;
+    Private privateIgnoreAnySelection As Boolean
+    Private Property IgnoreAnySelection() As Boolean
+        Get
+            Return privateIgnoreAnySelection
+        End Get
+        Set(ByVal value As Boolean)
+            privateIgnoreAnySelection = value
+        End Set
+    End Property
+
+    ''' &lt;summary&gt;
+    ''' Gets or sets a value indicating whether the selection change event 
+    ''' should not be fired.
+    ''' &lt;/summary&gt;
+    Private privateIgnoringSelectionChanged As Boolean
+    Private Property IgnoringSelectionChanged() As Boolean
+        Get
+            Return privateIgnoringSelectionChanged
+        End Get
+        Set(ByVal value As Boolean)
+            privateIgnoringSelectionChanged = value
+        End Set
+    End Property
+
+    ''' &lt;summary&gt;
+    ''' Occurs when the currently selected item changes.
+    ''' &lt;/summary&gt;
+    Public Shadows Event SelectionChanged As SelectionChangedEventHandler Implements ISelectionAdapter.SelectionChanged
+
+    ''' &lt;summary&gt;
+    ''' An event that indicates that a selection is complete and has been 
+    ''' made, effectively a commit action.
+    ''' &lt;/summary&gt;
+    Public Event Commit As RoutedEventHandler Implements ISelectionAdapter.Commit
+
+    ''' &lt;summary&gt;
+    ''' An event that indicates that the selection operation has been 
+    ''' canceled.
+    ''' &lt;/summary&gt;
+    Public Event Cancel As RoutedEventHandler Implements ISelectionAdapter.Cancel
+
+    ''' &lt;summary&gt;
+    ''' Gets or sets the selected item through the adapter.
+    ''' &lt;/summary&gt;
+    Public Shadows Property SelectedItem() As Object Implements ISelectionAdapter.SelectedItem
+        Get
+            Return MyBase.SelectedItem
+        End Get
+
+        Set(ByVal value As Object)
+            IgnoringSelectionChanged = True
+            MyBase.SelectedItem = value
+            IgnoringSelectionChanged = False
+        End Set
+    End Property
+
+    ''' &lt;summary&gt;
+    ''' Handles the mouse left button up event on the selector control.
+    ''' &lt;/summary&gt;
+    ''' &lt;param name="sender"&gt;The source object.&lt;/param&gt;
+    ''' &lt;param name="e"&gt;The event data.&lt;/param&gt;
+    Private Sub OnSelectorMouseLeftButtonUp(ByVal sender As Object, ByVal e As MouseButtonEventArgs) Handles Me.MouseLeftButtonUp
+        IgnoreAnySelection = False
+
+        OnSelectionChanged(Me, Nothing)
+        OnCommit(Me, New RoutedEventArgs())
+    End Sub
+
+    ''' &lt;summary&gt;
+    ''' Handles the SelectionChanged event on the Selector control.
+    ''' &lt;/summary&gt;
+    ''' &lt;param name="sender"&gt;The source object.&lt;/param&gt;
+    ''' &lt;param name="e"&gt;The selection changed event data.&lt;/param&gt;
+    Private Shadows Sub OnSelectionChanged(ByVal sender As Object, ByVal e As SelectionChangedEventArgs) Handles MyBase.SelectionChanged
+        If IgnoringSelectionChanged Then
+            Return
+        End If
+
+        If IgnoreAnySelection Then
+            Return
+        End If
+
+        Dim handler As SelectionChangedEventHandler = Me.SelectionChangedEvent
+        If handler IsNot Nothing Then
+            handler(sender, e)
+        End If
+    End Sub
+
+    ''' &lt;summary&gt;
+    ''' Gets or sets the items source.
+    ''' &lt;/summary&gt;
+    Public Shadows Property ItemsSource() As IEnumerable Implements ISelectionAdapter.ItemsSource
+        Get
+            Return MyBase.ItemsSource
+        End Get
+
+        Set(ByVal value As IEnumerable)
+            If MyBase.ItemsSource IsNot Nothing Then
+                Dim notify As INotifyCollectionChanged = TryCast(MyBase.ItemsSource, INotifyCollectionChanged)
+                If notify IsNot Nothing Then
+                    RemoveHandler notify.CollectionChanged, AddressOf OnCollectionChanged
+                End If
+            End If
+
+            MyBase.ItemsSource = value
+
+            If MyBase.ItemsSource IsNot Nothing Then
+                Dim notify As INotifyCollectionChanged = TryCast(MyBase.ItemsSource, INotifyCollectionChanged)
+                If notify IsNot Nothing Then
+                    AddHandler notify.CollectionChanged, AddressOf OnCollectionChanged
+                End If
+            End If
+        End Set
+    End Property
+
+    ''' &lt;summary&gt;
+    ''' Handles the CollectionChanged event, resetting the selection 
+    ''' ignore flag.
+    ''' &lt;/summary&gt;
+    ''' &lt;param name="sender"&gt;The source object.&lt;/param&gt;
+    ''' &lt;param name="e"&gt;The event data.&lt;/param&gt;
+    Private Sub OnCollectionChanged(ByVal sender As Object, ByVal e As NotifyCollectionChangedEventArgs)
+        IgnoreAnySelection = True
+    End Sub
+
+    ''' &lt;summary&gt;
+    ''' Gets the observable collection set by AutoCompleteBox.
+    ''' &lt;/summary&gt;
+    Private ReadOnly Property Items() As ObservableCollection(Of Object)
+        Get
+            Return TryCast(ItemsSource, ObservableCollection(Of Object))
+        End Get
+    End Property
+
+    ''' &lt;summary&gt;
+    ''' Increment the selected index, or wrap.
+    ''' &lt;/summary&gt;
+    Private Sub SelectedIndexIncrement()
+        SelectedIndex = If(SelectedIndex + 1 &gt;= Items.Count, -1, SelectedIndex + 1)
+        ScrollIntoView(SelectedItem, Me.Columns(0))
+    End Sub
+
+    ''' &lt;summary&gt;
+    ''' Decrement the SelectedIndex, or wrap around, inside the nested 
+    ''' SelectionAdapter's control.
+    ''' &lt;/summary&gt;
+    Private Sub SelectedIndexDecrement()
+        Dim index As Integer = SelectedIndex
+        If index &gt;= 0 Then
+            SelectedIndex -= 1
+        ElseIf index = -1 Then
+            SelectedIndex = Items.Count - 1
+        End If
+
+        ScrollIntoView(SelectedItem, Me.Columns(0))
+    End Sub
+
+    ''' &lt;summary&gt;
+    ''' Process a key down event.
+    ''' &lt;/summary&gt;
+    ''' &lt;param name="e"&gt;The key event arguments object.&lt;/param&gt;
+    Public Sub HandleKeyDown(ByVal e As KeyEventArgs) Implements ISelectionAdapter.HandleKeyDown
+        Select Case e.Key
+            Case Key.Enter
+                OnCommit(Me, e)
+                e.Handled = True
+
+            Case Key.Up
+                IgnoreAnySelection = False
+                SelectedIndexDecrement()
+                e.Handled = True
+
+            Case Key.Down
+                If (ModifierKeys.Alt And Keyboard.Modifiers) = ModifierKeys.None Then
+                    IgnoreAnySelection = False
+                    SelectedIndexIncrement()
+                    e.Handled = True
+                End If
+
+            Case Key.Escape
+                OnCancel(Me, e)
+                e.Handled = True
+
+            Case Else
+        End Select
+    End Sub
+
+    ''' &lt;summary&gt;
+    ''' Fires the Commit event.
+    ''' &lt;/summary&gt;
+    ''' &lt;param name="sender"&gt;The source object.&lt;/param&gt;
+    ''' &lt;param name="e"&gt;The event data.&lt;/param&gt;
+    Private Sub OnCommit(ByVal sender As Object, ByVal e As RoutedEventArgs)
+        Dim handler As RoutedEventHandler = CommitEvent
+        If handler IsNot Nothing Then
+            handler(sender, e)
+        End If
+
+        AfterAdapterAction()
+    End Sub
+
+    ''' &lt;summary&gt;
+    ''' Fires the Cancel event.
+    ''' &lt;/summary&gt;
+    ''' &lt;param name="sender"&gt;The source object.&lt;/param&gt;
+    ''' &lt;param name="e"&gt;The event data.&lt;/param&gt;
+    Private Sub OnCancel(ByVal sender As Object, ByVal e As RoutedEventArgs)
+        Dim handler As RoutedEventHandler = CancelEvent
+        If handler IsNot Nothing Then
+            handler(sender, e)
+        End If
+
+        AfterAdapterAction()
+    End Sub
+
+    ''' &lt;summary&gt;
+    ''' Change the selection after the actions are complete.
+    ''' &lt;/summary&gt;
+    Private Sub AfterAdapterAction()
+        IgnoringSelectionChanged = True
+        SelectedItem = Nothing
+        SelectedIndex = -1
+        IgnoringSelectionChanged = False
+
+        ' Reset, to ignore any future changes
+        IgnoreAnySelection = True
+    End Sub
+
+    ''' &lt;summary&gt;
+    ''' Initializes a new instance of a DataGridAutomationPeer.
+    ''' &lt;/summary&gt;
+    ''' &lt;returns&gt;Returns a new DataGridAutomationPeer.&lt;/returns&gt;
+    Public Function CreateAutomationPeer() As AutomationPeer Implements ISelectionAdapter.CreateAutomationPeer
+        Return New DataGridAutomationPeer(Me)
+    End Function
+End Class
+</sys:String>
+    </src:SourceFile.Source>
+  </src:SourceFile>
+</src:SourceViewer>
+    </StackPanel>
+</UserControl>

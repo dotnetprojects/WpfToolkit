@@ -1,0 +1,212 @@
+﻿<!--=================================================================
+Copyright (C) Microsoft Corporation.  All rights reserved.
+==================================================================-->
+    
+<UserControl x:Class="Microsoft.Windows.Controls.Design.VisualStudio.EditDataGridColumnsUserInterface"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" 
+    xmlns:local="clr-namespace:Microsoft.Windows.Controls.Design.VisualStudio">
+    <UserControl.CommandBindings>
+        <CommandBinding Command="{x:Static local:EditDataGridColumnsUserInterface.ResetPropertyValue}"
+                    Executed="ResetPropertyValueHandler" />
+    </UserControl.CommandBindings>
+
+    <UserControl.Resources>
+        <local:VisibilityToBooleanConverter x:Key="VisibilityToBooleanConverterKey"/>
+    </UserControl.Resources>
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="10" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="10" />
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="10" />
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="10" />
+        </Grid.ColumnDefinitions>
+        
+        <StackPanel Grid.Row="1" Grid.Column="1" Grid.IsSharedSizeScope="True">
+            <StackPanel.Resources>
+            
+                <Style TargetType="Label">
+                    <Setter Property="Margin" Value="2"/>
+                </Style>
+                <Style TargetType="TextBox">
+                    <Setter Property="Margin" Value="2"/>
+                </Style>
+                <Style TargetType="ComboBox">
+                    <Setter Property="Margin" Value="2"/>
+                </Style>
+                <Style TargetType="Button">
+                    <Setter Property="Margin" Value="2"/>
+                </Style>
+                <Style TargetType="CheckBox">
+                    <Setter Property="Margin" Value="2"/>
+                </Style>
+                
+                <Style TargetType="Button" x:Key="ResetButton">
+                    <Setter Property="Margin" Value="2"/>
+                    <Setter Property="Command" Value="{x:Static local:EditDataGridColumnsUserInterface.ResetPropertyValue}"/>
+                    <Setter Property="ToolTip" Value="Clear Property Value" />
+                    <Setter Property="ContentTemplate">
+                        <Setter.Value>
+                            <DataTemplate>
+                                <Grid VerticalAlignment="Center">
+                                    <Path HorizontalAlignment="Left" VerticalAlignment="Top" Width="16.575" Height="15.013" Fill="#FFFF0000" Stretch="Fill" Data="M2.1923326,13.126918 C2.1923326,13.126918 9.1242888,3.5218058 11.44987,4.1032011 13.775452,4.6845965 11.006801,6.2345933 11.006801,6.2345933 L2.7678984,12.676864 z" Margin="0,1.221,0,0"/>
+                                    <Path HorizontalAlignment="Left" VerticalAlignment="Top" Width="12.077" Height="14.755" Fill="#FFFF0000" Stretch="Fill" Data="M4.5860118,1.5306513 C4.1381923,2.7258072 11.531427,12.355297 15.344682,14.995039 17.329125,16.368778 11.249546,6.4430705 10.861957,6.4430705 10.474368,6.4430705 5.1923887,-0.087668306 4.5860118,1.5306513 z" Margin="2.832,1.183,0,0"/>
+                                    <Path HorizontalAlignment="Left" Margin="10.032,2.432,0,0" VerticalAlignment="Top" Width="6.52" Height="5.383" Fill="#FFAB0404" Stretch="Fill" Data="M8.3585482,7.6118008 C8.3585482,7.6118008 9.3829609,6.4793429 10.484053,5.7423106 13.2862,3.8666516 12.129617,5.3933616 12.129617,5.3933616 L8.6703291,8.0523064 z"/>
+                                    <Path HorizontalAlignment="Left" Margin="0.287,8.6,0,0" VerticalAlignment="Top" Width="8.35" Height="7.361" Fill="#FFAB0404" Stretch="Fill" Data="M2.9934119,12.280726 C2.9934119,12.280726 5.089625,10.252776 6.167291,9.3225421 7.981912,7.7561752 7.4187557,8.9838185 7.4187557,8.9838185 L2.3691003,12.962527 z"/>
+                                    <Path HorizontalAlignment="Left" Margin="2.815,1.686,0,0" VerticalAlignment="Top" Width="4.308" Height="6.059" Fill="#FFAB0404" Stretch="Fill" Data="M9.0912287,5.4815006 C9.0912287,5.4815006 8.3470667,4.9998377 8.3478827,3.5762162 8.3480212,3.3346328 10.995948,6.9120685 10.995948,6.9120685 L10.684377,7.2172575 z"/>
+                                    <Path HorizontalAlignment="Left" Margin="7.841,8.657,0,0" VerticalAlignment="Top" Width="6.912" Height="7.304" Fill="#FFAB0404" Stretch="Fill" Data="M11.86076,8.6826086 C11.86076,8.6826086 10.862828,7.9143165 11.929675,7.7667842 12.168981,7.733691 15.684906,12.169333 15.684906,12.169333 L14.649119,11.36494 z"/>
+                                </Grid>
+                            </DataTemplate>
+                        </Setter.Value>
+                    </Setter>
+                </Style>
+            </StackPanel.Resources>
+            
+            <Grid >
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto" SharedSizeGroup="ColName"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="Auto"/>
+                </Grid.ColumnDefinitions>
+                <Label Content="Header:" />
+                <TextBox Text="{Binding Header}" Grid.Column="1"/>
+                <Button Style="{StaticResource ResetButton}" CommandParameter="Header" Grid.Column="2"/>
+            </Grid>
+
+            <Control Height="10"/> <!--Spacer-->
+
+            <Grid Visibility="{Binding ShowBindingField}">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto" SharedSizeGroup="ColName"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="Auto"/>
+                </Grid.ColumnDefinitions>
+                <Label Content="Binding:"/>
+                <ComboBox Name="bindingComboBox" DisplayMemberPath="Name" SelectedValuePath="Name" SelectedValue="{Binding BindingPropertyName}" Grid.Column="1"/>
+                <Button Style="{StaticResource ResetButton}" CommandParameter="Binding" Grid.Column="2"/>
+            </Grid>
+
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto" SharedSizeGroup="ColName"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="Auto"/>
+                </Grid.ColumnDefinitions>
+                <Label Content="ClipboardContentBinding:"/>
+                <ComboBox Name="clipboardContentBindingComboBox" DisplayMemberPath="Name" SelectedValuePath="Name" SelectedValue="{Binding ClipboardContentBindingPropertyName}" Grid.Column="1"/>
+                <Button Style="{StaticResource ResetButton}" CommandParameter="ClipboardContentBinding" Grid.Column="2"/>
+            </Grid>
+
+            <Control Height="10"/><!--Spacer-->
+            
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto" SharedSizeGroup="ColName"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="Auto"/>
+                </Grid.ColumnDefinitions>
+                <Label Content="SortMemberPath:"/>
+                <TextBox Text="{Binding SortMemberPath}" Grid.Column="1" />
+                <Button Style="{StaticResource ResetButton}" CommandParameter="SortMemberPath" Grid.Column="2"/>
+            </Grid>
+
+            <Control Height="10"/> <!--Spacer-->
+
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto" SharedSizeGroup="ColName"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="Auto"/>
+                </Grid.ColumnDefinitions>
+                <Label Content="Width:"/>
+                <TextBox Text="{Binding Width}" Grid.Column="1"/>
+                <Button Style="{StaticResource ResetButton}" CommandParameter="Width" Grid.Column="2"/>
+            </Grid>
+
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto" SharedSizeGroup="ColName"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="Auto"/>
+                </Grid.ColumnDefinitions>
+                <Label Content="MinWidth:"/>
+                <TextBox Text="{Binding MinWidth}" Grid.Column="1"/>
+                <Button Style="{StaticResource ResetButton}" CommandParameter="MinWidth" Grid.Column="2"/>
+            </Grid>
+
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto" SharedSizeGroup="ColName"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="Auto"/>
+                </Grid.ColumnDefinitions>
+                <Label Content="MaxWidth:"/>
+                <TextBox Text="{Binding MaxWidth}" Grid.Column="1"/>
+                <Button Style="{StaticResource ResetButton}" CommandParameter="MaxWidth" Grid.Column="2"/>
+            </Grid>
+        
+            <Control Height="10"/> <!--Spacer-->
+
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto" SharedSizeGroup="ColName"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="Auto"/>
+                </Grid.ColumnDefinitions>
+                <Label Content="CanUserReorder:"/>
+                <CheckBox IsChecked="{Binding CanUserReorder}" Grid.Column="1" VerticalAlignment="Center"/>
+                <Button Style="{StaticResource ResetButton}" CommandParameter="CanUserReorder" Grid.Column="2"/>
+            </Grid>
+
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto" SharedSizeGroup="ColName"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="Auto"/>
+                </Grid.ColumnDefinitions>
+                <Label Content="CanUserResize:"/>
+                <CheckBox IsChecked="{Binding CanUserResize}" Grid.Column="1" VerticalAlignment="Center"/>
+                <Button Style="{StaticResource ResetButton}" CommandParameter="CanUserResize" Grid.Column="2"/>
+            </Grid>
+
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto" SharedSizeGroup="ColName"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="Auto"/>
+                </Grid.ColumnDefinitions>
+                <Label Content="CanUserSort:"/>
+                <CheckBox IsChecked="{Binding CanUserSort}" Grid.Column="1" VerticalAlignment="Center"/>
+                <Button Style="{StaticResource ResetButton}" CommandParameter="CanUserSort" Grid.Column="2"/>
+            </Grid>
+
+            <Control Height="10"/> <!--Spacer-->
+
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto" SharedSizeGroup="ColName"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="Auto"/>
+                </Grid.ColumnDefinitions>
+                <Label Content="IsReadOnly:"/>
+                <CheckBox IsChecked="{Binding IsReadOnly}" Grid.Column="1" VerticalAlignment="Center"/>
+                <Button Style="{StaticResource ResetButton}" CommandParameter="IsReadOnly" Grid.Column="2"/>
+            </Grid>
+
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto" SharedSizeGroup="ColName"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="Auto"/>
+                </Grid.ColumnDefinitions>
+                <Label Content="Visibility:"/>
+                <CheckBox IsChecked="{Binding Visibility, Converter={StaticResource VisibilityToBooleanConverterKey}}" Grid.Column="1" VerticalAlignment="Center"/>
+                <Button Style="{StaticResource ResetButton}" CommandParameter="Visibility" Grid.Column="2"/>
+            </Grid>
+        </StackPanel>
+    </Grid>
+</UserControl>

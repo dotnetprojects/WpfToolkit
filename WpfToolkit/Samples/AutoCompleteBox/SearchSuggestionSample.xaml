@@ -1,0 +1,82 @@
+﻿<!--
+// (c) Copyright Microsoft Corporation.
+// This source is subject to the Microsoft Public License (Ms-PL).
+// Please see http://go.microsoft.com/fwlink/?LinkID=131993] for details.
+// All other rights reserved.
+-->
+
+<UserControl x:Class="System.Windows.Controls.Samples.SearchSuggestionSample"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" 
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:system="clr-namespace:System;assembly=mscorlib"
+    xmlns:samplesCommon="clr-namespace:System.Windows.Controls.Samples"
+    xmlns:input="clr-namespace:System.Windows.Controls;assembly=System.Windows.Controls.Input.Toolkit">
+
+    <UserControl.Resources>
+        <ImageBrush x:Key="SearchSuggestionsImageBrush" ImageSource="Venice.jpg" Stretch="None" />
+        
+        <Style x:Key="SearchTextBoxStyle" TargetType="TextBox">
+            <Setter Property="Background" Value="#AAFFFFFF" />
+            <Setter Property="FontFamily" Value="Verdana" />
+            <Setter Property="FontSize" Value="18" />
+            <Setter Property="Padding" Value="2" />
+        </Style>
+    </UserControl.Resources>
+    
+    <StackPanel>
+        <ContentControl Content="Bing Search Suggestions" Style="{StaticResource Header}" />
+
+        <!-- AutoCompleteBox example -->
+        <Grid Width="650" Height="406" Background="{StaticResource SearchSuggestionsImageBrush}">
+            <StackPanel Width="490" Orientation="Horizontal" VerticalAlignment="Top" Margin="10,119,10,0">
+
+                <Image Source="Bing.png" Stretch="None" />
+
+                <Grid Width="300" Height="34" Margin="8,0,0,0">
+
+                    <input:AutoCompleteBox 
+                        FilterMode="None"
+                        x:Name="Search" 
+                        TextBoxStyle="{StaticResource SearchTextBoxStyle}"
+                        IsEnabled="False" />
+                    <Button x:Name="Go" Cursor="Hand" IsEnabled="False" Width="32" Height="32" HorizontalAlignment="Right" BorderThickness="0,0,0,0" RenderTransformOrigin="0.5,0.5">
+                        <Button.RenderTransform>
+                            <TransformGroup>
+                                <ScaleTransform ScaleX="0.85" ScaleY="0.85"/>
+                                <SkewTransform/>
+                                <RotateTransform/>
+                                <TranslateTransform/>
+                            </TransformGroup>
+                        </Button.RenderTransform>
+                        <Button.Template>
+                            <ControlTemplate TargetType="Button">
+                                <Grid Margin="0" x:Name="RootElement">
+                                    <Rectangle Margin="0" Stroke="#FF000000" StrokeThickness="0" RadiusX="2.5" RadiusY="2.5">
+                                        <Rectangle.Fill>
+                                            <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                                                <GradientStop Color="#FFFCAA24" Offset="0" />
+                                                <GradientStop Color="#FFFF860A" Offset="1" />
+                                            </LinearGradientBrush>
+                                        </Rectangle.Fill>
+                                    </Rectangle>
+                                    <Ellipse Height="16.105" Margin="0,6.438,5,0" VerticalAlignment="Top" Stroke="#FFFFFFFF" StrokeThickness="2" Width="15.938" HorizontalAlignment="Right"/>
+                                    <Path Height="7.875" HorizontalAlignment="Left" Margin="7.754,0,0,6.467" VerticalAlignment="Bottom" Width="7.75" Fill="#FFFFFFFF" Stretch="Fill" Stroke="#FFFFFFFF" StrokeThickness="2" Data="M14.097251,19.182762 L8.7665224,24.552877"/>
+                                </Grid>
+                            </ControlTemplate>
+                        </Button.Template>
+                    </Button>
+                </Grid>
+            </StackPanel>
+
+
+            <!-- Hosting warning message -->
+            <StackPanel x:Name="HostingWarning" Background="#88000000">
+                <StackPanel Background="#aaffffff" Margin="6">
+                    <TextBlock Margin="6" FontWeight="Bold">This sample must be hosted on a web server.</TextBlock>
+                    <TextBlock Margin="6" TextWrapping="Wrap">A cross-domain web service call can only be made when the page is hosted from a server via the HTTP scheme. Consider hosting this using IIS, the built-in Web Development Server in Visual Studio, or another server technology. At this time, this sample is also not supported in Out of Browser scenarios.</TextBlock>
+                </StackPanel>
+            </StackPanel>
+
+        </Grid>
+    </StackPanel>
+</UserControl>

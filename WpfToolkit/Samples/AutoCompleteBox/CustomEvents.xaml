@@ -1,0 +1,103 @@
+﻿<!--
+// (c) Copyright Microsoft Corporation.
+// This source is subject to the Microsoft Public License (Ms-PL).
+// Please see http://go.microsoft.com/fwlink/?LinkID=131993] for details.
+// All other rights reserved.
+-->
+
+<UserControl x:Class="System.Windows.Controls.Samples.CustomEvents"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" 
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" 
+    xmlns:input="clr-namespace:System.Windows.Controls;assembly=System.Windows.Controls.Input.Toolkit">
+    <StackPanel>
+
+        <ContentControl Content="Populating and Populated events" Style="{StaticResource Header}" />
+        <StackPanel>
+            <TextBlock Style="{StaticResource Information}">
+                The AutoCompleteBox control is able to work with unbound data as 
+                well. By subscribing to the Populating event of an 
+                AutoCompleteBox control, as a developer you can cancel the 
+                population, change ItemsSource data, or otherwise react to the 
+                input before the control provides suggestions.
+            </TextBlock>
+        </StackPanel>
+
+        <ContentControl Content="Text completion off" Style="{StaticResource Header}" />
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="230" />
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition />
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition />
+                <RowDefinition />
+            </Grid.RowDefinitions>
+            <TextBlock Padding="5">Immediate population:</TextBlock>
+
+            <input:AutoCompleteBox 
+                x:Name="NowAutoComplete" 
+                FilterMode="None"
+                IsTextCompletionEnabled="False"
+                Grid.Column="1" 
+                Margin="0, 0, 0, 12"
+                Tag="Value1"
+                SelectionChanged="OnSelectionChanged"
+                />
+            <ContentPresenter x:Name="Value1" Grid.Column="2" />
+
+            <TextBlock Padding="5" Grid.Row="1">Delayed population:</TextBlock>
+
+            <input:AutoCompleteBox 
+                x:Name="LaterAutoComplete" 
+                FilterMode="None"
+                IsTextCompletionEnabled="False"
+                Grid.Row="1" 
+                Grid.Column="1" 
+                Tag="Value2"
+                SelectionChanged="OnSelectionChanged"
+            />
+            <ContentPresenter x:Name="Value2" Grid.Row="1" Grid.Column="2" />
+
+        </Grid>
+
+        <ContentControl Content="Text completion on" Style="{StaticResource Header}" />
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="230" />
+                <ColumnDefinition />
+                <ColumnDefinition />
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition />
+                <RowDefinition />
+            </Grid.RowDefinitions>
+            <TextBlock Padding="5">Immediate population:</TextBlock>
+
+            <input:AutoCompleteBox 
+                x:Name="NowAutoComplete2" 
+                FilterMode="None"
+                IsTextCompletionEnabled="True"
+                Grid.Column="1" 
+                Margin="0, 0, 0, 12"
+                Tag="Value3"
+                SelectionChanged="OnSelectionChanged"
+                />
+            <ContentPresenter x:Name="Value3" Grid.Column="2"/>
+
+            <TextBlock Padding="5" Grid.Row="1">Delayed population:</TextBlock>
+
+            <input:AutoCompleteBox
+                x:Name="LaterAutoComplete2"
+                FilterMode="None"
+                IsTextCompletionEnabled="True"
+                Grid.Row="1"
+                Grid.Column="1"
+                Tag="Value4"
+                SelectionChanged="OnSelectionChanged"
+                />
+            <ContentPresenter x:Name="Value4"  Grid.Row="1" Grid.Column="2"/>
+            
+        </Grid>
+    </StackPanel>
+</UserControl>

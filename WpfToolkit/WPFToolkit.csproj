@@ -1,0 +1,330 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="3.5" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{9606A078-7135-4CE7-879E-39FCF527F1A3}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Microsoft.Windows.Controls</RootNamespace>
+    <AssemblyName>WPFToolkit</AssemblyName>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <WarningLevel>4</WarningLevel>
+    <TargetFrameworkSubset>Client</TargetFrameworkSubset>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <RunCodeAnalysis>false</RunCodeAnalysis>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release with Code Analysis|AnyCPU' ">
+    <OutputPath>bin\Release with Code Analysis\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <RunCodeAnalysis>true</RunCodeAnalysis>
+    <CodeAnalysisUseTypeNameInSuppression>true</CodeAnalysisUseTypeNameInSuppression>
+    <CodeAnalysisModuleSuppressionsFile>GlobalSuppressions.cs</CodeAnalysisModuleSuppressionsFile>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRules>+Microsoft.Design#CA1008;+Microsoft.Design#CA1009;+Microsoft.Design#CA1011;+Microsoft.Design#CA1012;+Microsoft.Design#CA1014;+Microsoft.Design#CA1017;+Microsoft.Design#CA1018;+Microsoft.Design#CA1019;+Microsoft.Design#CA1023;+Microsoft.Design#CA1025;+Microsoft.Design#CA1026;+Microsoft.Design#CA1027;+Microsoft.Design#CA1028;+Microsoft.Design#CA1030;+Microsoft.Design#CA1032;+Microsoft.Design#CA1034;+Microsoft.Design#CA1036;+Microsoft.Design#CA1038;+Microsoft.Design#CA1039;+Microsoft.Design#CA1040;+Microsoft.Design#CA1041;+Microsoft.Design#CA1043;+Microsoft.Design#CA1044;+Microsoft.Design#CA1045;+Microsoft.Design#CA1046;+Microsoft.Design#CA1050;+Microsoft.Design#CA1051;+Microsoft.Design#CA1052;+Microsoft.Design#CA1053;+Microsoft.Design#CA1054;+Microsoft.Design#CA1055;+Microsoft.Design#CA1056;+Microsoft.Design#CA1057;+Microsoft.Design#CA1058;+Microsoft.Design#CA1059;+Microsoft.Globalization#CA1300;+Microsoft.Globalization#CA1301;+Microsoft.Globalization#CA1304;+Microsoft.Globalization#CA1305;+Microsoft.Globalization#CA1306;+Microsoft.Globalization#CA1307;+Microsoft.Globalization#CA1309;+Microsoft.Globalization#CA2101;+Microsoft.Interoperability#CA1401;+Microsoft.Interoperability#CA1402;+Microsoft.Interoperability#CA1403;+Microsoft.Interoperability#CA1404;+Microsoft.Interoperability#CA1405;+Microsoft.Interoperability#CA1406;+Microsoft.Interoperability#CA1408;+Microsoft.Interoperability#CA1413;+Microsoft.MSInternal#CA903;+Microsoft.MSInternal#CA904;+Microsoft.Naming#CA1700;+Microsoft.Naming#CA1701;+Microsoft.Naming#CA1702;+Microsoft.Naming#CA1703;+Microsoft.Naming#CA1704;+Microsoft.Naming#CA1707;+Microsoft.Naming#CA1708;+Microsoft.Naming#CA1709;+Microsoft.Naming#CA1710;+Microsoft.Naming#CA1711;+Microsoft.Naming#CA1712;+Microsoft.Naming#CA1713;+Microsoft.Naming#CA1714;+Microsoft.Naming#CA1715;+Microsoft.Naming#CA1716;+Microsoft.Naming#CA1719;+Microsoft.Naming#CA1720;+Microsoft.Naming#CA1721;+Microsoft.Naming#CA1722;+Microsoft.Naming#CA1724;+Microsoft.Performance#CA1811;+Microsoft.Performance#CA1812;+Microsoft.Performance#CA1813;+Microsoft.Performance#CA1815;+Microsoft.Performance#CA1816;+Microsoft.Performance#CA1819;+Microsoft.Portability#CA1900;+Microsoft.Portability#CA1901;+Microsoft.Reliability#CA2001;+Microsoft.Reliability#CA2002;+Microsoft.Reliability#CA2004;+Microsoft.Reliability#CA2006;+Microsoft.Security#CA2102;+Microsoft.Security#CA2103;+Microsoft.Security#CA2104;+Microsoft.Security#CA2105;+Microsoft.Security#CA2106;+Microsoft.Security#CA2107;+Microsoft.Security#CA2108;+Microsoft.Security#CA2109;+Microsoft.Security#CA2111;+Microsoft.Security#CA2112;+Microsoft.Security#CA2114;+Microsoft.Security#CA2115;+Microsoft.Security#CA2116;+Microsoft.Security#CA2117;+Microsoft.Security#CA2118;+Microsoft.Security#CA2119;+Microsoft.Security#CA2120;+Microsoft.Security#CA2121;+Microsoft.Security#CA2122;+Microsoft.Security#CA2123;+Microsoft.Security#CA2124;+Microsoft.Security#CA2126;+Microsoft.Security#CA2127;+Microsoft.Security#CA2128;+Microsoft.Security#CA2129;+Microsoft.Usage#CA1806;+Microsoft.Usage#CA2207;+Microsoft.Usage#CA2208;+Microsoft.Usage#CA2211;+Microsoft.Usage#CA2213;+Microsoft.Usage#CA2214;+Microsoft.Usage#CA2216;+Microsoft.Usage#CA2217;+Microsoft.Usage#CA2218;+Microsoft.Usage#CA2220;+Microsoft.Usage#CA2221;+Microsoft.Usage#CA2224;+Microsoft.Usage#CA2225;+Microsoft.Usage#CA2227;+Microsoft.Usage#CA2228;+Microsoft.Usage#CA2229;+Microsoft.Usage#CA2230;+Microsoft.Usage#CA2233;+Microsoft.Usage#CA2234;+Microsoft.Usage#CA2235;+Microsoft.Usage#CA2236;+Microsoft.Usage#CA2237;+Microsoft.Usage#CA2240; </CodeAnalysisRules>
+    <CodeAnalysisRules>
+      -Microsoft.Design#CA1000;-Microsoft.Design#CA1001;-Microsoft.Design#CA1002;-Microsoft.Design#CA1003;-Microsoft.Design#CA1004;-Microsoft.Design#CA1005;-Microsoft.Design#CA1006;-Microsoft.Design#CA1007;-Microsoft.Design#CA1010;-Microsoft.Design#CA1013;-Microsoft.Design#CA1016;-Microsoft.Design#CA1020;-Microsoft.Design#CA1021;-Microsoft.Design#CA1024;-Microsoft.Design#CA1031;-Microsoft.Design#CA1033;-Microsoft.Design#CA1035;-Microsoft.Design#CA1047;-Microsoft.Design#CA1048;-Microsoft.Design#CA1049;-Microsoft.Design#CA1060;-Microsoft.Design#CA1061;-Microsoft.Design#CA1063;-Microsoft.Design#CA1064;-Microsoft.Design#CA1065;-Microsoft.Design#CA2210;-Microsoft.Globalization#CA1302;-Microsoft.Globalization#CA1308;-Microsoft.Interoperability#CA1400;-Microsoft.Interoperability#CA1407;-Microsoft.Interoperability#CA1409;-Microsoft.Interoperability#CA1410;-Microsoft.Interoperability#CA1411;-Microsoft.Interoperability#CA1412;-Microsoft.Interoperability#CA1414;-Microsoft.Interoperability#CA1415;-Microsoft.Maintainability#CA1500;-Microsoft.Maintainability#CA1501;-Microsoft.Maintainability#CA1502;-Microsoft.Maintainability#CA1504;-Microsoft.Maintainability#CA1505;-Microsoft.Maintainability#CA1506;-Microsoft.Mobility#CA1600;-Microsoft.Mobility#CA1601;-Microsoft.MSInternal#CA900;-Microsoft.MSInternal#CA901;-Microsoft.MSInternal#CA905;-Microsoft.MSInternal#CA908;-Microsoft.Naming#CA1717;-Microsoft.Naming#CA1725;-Microsoft.Naming#CA1726;-Microsoft.Performance#CA1800;-Microsoft.Performance#CA1802;-Microsoft.Performance#CA1804;-Microsoft.Performance#CA1809;-Microsoft.Performance#CA1810;-Microsoft.Performance#CA1814;-Microsoft.Performance#CA1820;-Microsoft.Performance#CA1821;-Microsoft.Performance#CA1822;-Microsoft.Performance#CA1823;-Microsoft.Performance#CA1824;-Microsoft.Reliability#CA2003;-Microsoft.Usage#CA1801;-Microsoft.Usage#CA2200;-Microsoft.Usage#CA2201;-Microsoft.Usage#CA2205;-Microsoft.Usage#CA2212;-Microsoft.Usage#CA2219;-Microsoft.Usage#CA2222;-Microsoft.Usage#CA2223;-Microsoft.Usage#CA2226;-Microsoft.Usage#CA2231;-Microsoft.Usage#CA2232;-Microsoft.Usage#CA2238;-Microsoft.Usage#CA2239;-Microsoft.Usage#CA2242;-Microsoft.Usage#CA2243;-Microsoft.Design#CA1062;-Microsoft.Globalization#CA1303;-Microsoft.Reliability#CA2000;-Microsoft.Security#CA2100;-Microsoft.Usage#CA2202;-Microsoft.Naming#CA2204;-Microsoft.Usage#CA2215;-Microsoft.Usage#CA2241;
+    </CodeAnalysisRules>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.XML" />
+    <Reference Include="UIAutomationProvider" />
+    <Reference Include="UIAutomationTypes" />
+    <Reference Include="WindowsBase" />
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+  </ItemGroup>
+  <ItemGroup>
+    <Page Include="Calendar\Themes\Aero.NormalColor.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Calendar\Themes\Classic.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Calendar\Themes\Generic.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Calendar\Themes\Luna.HomeStead.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Calendar\Themes\Luna.Metallic.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Calendar\Themes\Luna.NormalColor.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Calendar\Themes\Royale.NormalColor.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="DataGrid\Themes\Aero.NormalColor.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="DataGrid\Themes\Classic.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="DataGrid\Themes\Generic.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="DataGrid\Themes\Luna.HomeStead.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="DataGrid\Themes\Luna.Metallic.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="DataGrid\Themes\Luna.NormalColor.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="DataGrid\Themes\Royale.NormalColor.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="DatePicker\Themes\Aero.NormalColor.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="DatePicker\Themes\Classic.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="DatePicker\Themes\Generic.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="DatePicker\Themes\Luna.HomeStead.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="DatePicker\Themes\Luna.Metallic.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="DatePicker\Themes\Luna.NormalColor.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="DatePicker\Themes\Royale.NormalColor.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Themes\Aero.NormalColor.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Themes\Classic.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Themes\Generic.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Themes\Luna.HomeStead.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Themes\Luna.Metallic.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Themes\Luna.NormalColor.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Themes\Royale.NormalColor.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AssemblyAttrs.cs" />
+    <Compile Include="AssemblyInfo.cs" />
+    <Compile Include="Calendar\Microsoft\Windows\Automation\Peers\CalendarAutomationPeer.cs" />
+    <Compile Include="Calendar\Microsoft\Windows\Automation\Peers\CalendarButtonAutomationPeer.cs" />
+    <Compile Include="Calendar\Microsoft\Windows\Automation\Peers\CalendarDayButtonAutomationPeer.cs" />
+    <Compile Include="Calendar\Microsoft\Windows\Controls\Calendar.cs" />
+    <Compile Include="Calendar\Microsoft\Windows\Controls\CalendarBlackoutDatesCollection.cs" />
+    <Compile Include="Calendar\Microsoft\Windows\Controls\CalendarButton.cs" />
+    <Compile Include="Calendar\Microsoft\Windows\Controls\CalendarDateChangedEventArgs.cs" />
+    <Compile Include="Calendar\Microsoft\Windows\Controls\CalendarDateRange.cs" />
+    <Compile Include="Calendar\Microsoft\Windows\Controls\CalendarDateRangeChangingEventArgs.cs" />
+    <Compile Include="Calendar\Microsoft\Windows\Controls\CalendarDayButton.cs" />
+    <Compile Include="Calendar\Microsoft\Windows\Controls\CalendarItem.cs" />
+    <Compile Include="Calendar\Microsoft\Windows\Controls\CalendarMode.cs" />
+    <Compile Include="Calendar\Microsoft\Windows\Controls\CalendarModeChangedEventArgs.cs" />
+    <Compile Include="Calendar\Microsoft\Windows\Controls\CalendarSelectionChangedEventArgs.cs" />
+    <Compile Include="Calendar\Microsoft\Windows\Controls\CalendarSelectionMode.cs" />
+    <Compile Include="Calendar\Microsoft\Windows\Controls\DateTimeHelper.cs" />
+    <Compile Include="Calendar\Microsoft\Windows\Controls\KeyboardHelper.cs" />
+    <Compile Include="Calendar\Microsoft\Windows\Controls\SelectedDatesCollection.cs" />
+    <Compile Include="Calendar\Microsoft\Windows\Controls\VisualStates.cs" />
+    <Compile Include="DataGrid\Microsoft\Windows\Automation\Peers\DataGridCellItemAutomationPeer.cs" />
+    <Compile Include="DataGrid\Microsoft\Windows\Automation\Peers\DataGridAutomationPeer.cs" />
+    <Compile Include="DataGrid\Microsoft\Windows\Automation\Peers\DataGridCellAutomationPeer.cs" />
+    <Compile Include="DataGrid\Microsoft\Windows\Automation\Peers\DataGridColumnHeaderAutomationPeer.cs" />
+    <Compile Include="DataGrid\Microsoft\Windows\Automation\Peers\DataGridColumnHeadersPresenterAutomationPeer.cs" />
+    <Compile Include="DataGrid\Microsoft\Windows\Automation\Peers\DataGridDetailsPresenterAutomationPeer.cs" />
+    <Compile Include="DataGrid\Microsoft\Windows\Automation\Peers\DataGridItemAutomationPeer.cs" />
+    <Compile Include="DataGrid\Microsoft\Windows\Automation\Peers\DataGridRowAutomationPeer.cs" />
+    <Compile Include="DataGrid\Microsoft\Windows\Automation\Peers\DataGridRowHeaderAutomationPeer.cs" />
+    <Compile Include="DataGrid\Microsoft\Windows\Controls\DataGridCellEditEndingEventArgs.cs" />
+    <Compile Include="DataGrid\Microsoft\Windows\Controls\DataGridEditAction.cs" />
+    <Compile Include="DataGrid\Microsoft\Windows\Controls\DataGridRowEditEndingEventArgs.cs" />
+    <Compile Include="DataGrid\Microsoft\Windows\Controls\BooleanToSelectiveScrollingOrientationConverter.cs" />
+    <Compile Include="DataGrid\Microsoft\Windows\Controls\ClipboardHelper.cs" />
+    <Compile Include="DataGrid\Microsoft\Windows\Controls\ColumnHeaderCollection.cs" />
+    <Compile Include="DataGrid\Microsoft\Windows\Controls\ContainerTracking.cs" />
+    <Compile Include="DataGrid\Microsoft\Windows\Controls\DataGrid.cs" />
+    <Compile Include="DataGrid\Microsoft\Windows\Controls\DataGridAutoGeneratingColumnEventArgs.cs" />
+    <Compile Include="DataGrid\Microsoft\Windows\Controls\DataGridBeginningEditEventArgs.cs" />
+    <Compile Include="DataGrid\Microsoft\Windows\Controls\DataGridBoundColumn.cs" />
+    <Compile Include="DataGrid\Microsoft\Windows\Controls\DataGridCell.cs" />
+    <Compile Include="DataGrid\Microsoft\Windows\Controls\DataGridCellClipboardEventArgs.cs" />
+    <Compile Include="DataGrid\Microsoft\Windows\Controls\DataGridCellInfo.cs" />
+    <Compile Include="DataGrid\Microsoft\Windows\Controls\DataGridCellsPanel.cs" />
+    <Compile Include="DataGrid\Microsoft\Windows\Controls\Primitives\DataGridCellsPresenter.cs" />
+    <Compile Include="DataGrid\Microsoft\Windows\Controls\DataGridCheckBoxColumn.cs" />
+    <Compile Include="DataGrid\Microsoft\Windows\Controls\DataGridClipboardCellContent.cs" />
+    <Compile Include="DataGrid\Microsoft\Windows\Controls\DataGridClipboardCopyMode.cs" />
+    <Compile Include="DataGrid\Microsoft\Windows\Controls\DataGridColumn.cs" />
+    <Compile Include="DataGrid\Microsoft\Windows\Controls\DataGridColumnCollection.cs" />
+    <Compile Include="DataGrid\Microsoft\Windows\Controls\DataGridColumnDropSeparator.cs" />
+    <Compile Include="DataGrid\Microsoft\Windows\Controls\DataGridColumnEventArgs.cs" />
+    <Compile Include="DataGrid\Microsoft\Windows\Controls\DataGridColumnFloatingHeader.cs" />
+    <Compile Include="DataGrid\Microsoft\Windows\Controls\Primitives\DataGridColumnHeader.cs" />
+    <Compile Include="DataGrid\Microsoft\Windows\Controls\Primitives\DataGridColumnHeadersPresenter.cs" />
+    <Compile Include="DataGrid\Microsoft\Windows\Controls\DataGridColumnReorderingEventArgs.cs" />
+    <Compile Include="DataGrid\Microsoft\Windows\Controls\DataGridComboBoxColumn.cs" />
+    <Compile Include="DataGrid\Microsoft\Windows\Controls\Primitives\DataGridDetailsPresenter.cs" />
+    <Compile Include="DataGrid\Microsoft\Windows\Controls\DataGridEditingUnit.cs" />
+    <Compile Include="DataGrid\Microsoft\Windows\Controls\DataGridGridLinesVisibility.cs" />
+    <Compile Include="DataGrid\Microsoft\Windows\Controls\DataGridHeaderBorder.cs" />
+    <Compile Include="DataGrid\Microsoft\Windows\Controls\DataGridHeadersVisibility.cs" />
+    <Compile Include="DataGrid\Microsoft\Windows\Controls\DataGridHeadersVisibilityToVisibilityConverter.cs" />
+    <Compile Include="DataGrid\Microsoft\Windows\Controls\DataGridHelper.cs" />
+    <Compile Include="DataGrid\Microsoft\Windows\Controls\DataGridHyperlinkColumn.cs" />
+    <Compile Include="DataGrid\Microsoft\Windows\Controls\DataGridItemAttachedStorage.cs" />
+    <Compile Include="DataGrid\Microsoft\Windows\Controls\DataGridLength.cs" />
+    <Compile Include="DataGrid\Microsoft\Windows\Controls\DataGridLengthConverter.cs" />
+    <Compile Include="DataGrid\Microsoft\Windows\Controls\DataGridLengthUnitType.cs" />
+    <Compile Include="DataGrid\Microsoft\Windows\Controls\DataGridPreparingCellForEditEventArgs.cs" />
+    <Compile Include="DataGrid\Microsoft\Windows\Controls\DataGridRow.cs" />
+    <Compile Include="DataGrid\Microsoft\Windows\Controls\DataGridRowEventArgs.cs" />
+    <Compile Include="DataGrid\Microsoft\Windows\Controls\DataGridRowDetailsEventArgs.cs" />
+    <Compile Include="DataGrid\Microsoft\Windows\Controls\DataGridRowDetailsVisibilityMode.cs" />
+    <Compile Include="DataGrid\Microsoft\Windows\Controls\DataGridRowClipboardEventArgs.cs" />
+    <Compile Include="DataGrid\Microsoft\Windows\Controls\Primitives\DataGridRowHeader.cs" />
+    <Compile Include="DataGrid\Microsoft\Windows\Controls\Primitives\DataGridRowsPresenter.cs" />
+    <Compile Include="DataGrid\Microsoft\Windows\Controls\DataGridSelectionMode.cs" />
+    <Compile Include="DataGrid\Microsoft\Windows\Controls\DataGridSelectionUnit.cs" />
+    <Compile Include="DataGrid\Microsoft\Windows\Controls\DataGridSortingEventArgs.cs" />
+    <Compile Include="DataGrid\Microsoft\Windows\Controls\DataGridSortingEventHandler.cs" />
+    <Compile Include="DataGrid\Microsoft\Windows\Controls\DataGridTemplateColumn.cs" />
+    <Compile Include="DataGrid\Microsoft\Windows\Controls\DataGridTextColumn.cs" />
+    <Compile Include="DataGrid\Microsoft\Windows\Controls\DoubleUtil.cs" />
+    <Compile Include="DataGrid\Microsoft\Windows\Controls\InitializingNewItemEventArgs.cs" />
+    <Compile Include="DataGrid\Microsoft\Windows\Controls\InitializingNewItemEventHandler.cs" />
+    <Compile Include="DataGrid\Microsoft\Windows\Controls\IProvideDataGridColumn.cs" />
+    <Compile Include="DataGrid\Microsoft\Windows\Controls\MultipleCopiesCollection.cs" />
+    <Compile Include="DataGrid\Microsoft\Windows\Controls\NotificationTarget.cs" />
+    <Compile Include="DataGrid\Microsoft\Windows\Controls\RealizedColumnsBlock.cs" />
+    <Compile Include="DataGrid\Microsoft\Windows\Controls\SelectedCellsChangedEventArgs.cs" />
+    <Compile Include="DataGrid\Microsoft\Windows\Controls\SelectedCellsChangedEventHandler.cs" />
+    <Compile Include="DataGrid\Microsoft\Windows\Controls\SelectedCellsCollection.cs" />
+    <Compile Include="DataGrid\Microsoft\Windows\Controls\Primitives\SelectiveScrollingGrid.cs" />
+    <Compile Include="DataGrid\Microsoft\Windows\Controls\SelectiveScrollingOrientation.cs" />
+    <Compile Include="DataGrid\Microsoft\Windows\Controls\VirtualizedCellInfoCollection.cs" />
+    <Compile Include="DataGrid\Microsoft\Windows\Controls\WeakHashtable.cs" />
+    <Compile Include="DatePicker\Microsoft\Windows\Automation\Peers\DatePickerAutomationPeer.cs" />
+    <Compile Include="DatePicker\Microsoft\Windows\Controls\DatePicker.cs" />
+    <Compile Include="DatePicker\Microsoft\Windows\Controls\DatePickerDateValidationErrorEventArgs.cs" />
+    <Compile Include="DatePicker\Microsoft\Windows\Controls\DatePickerFormat.cs" />
+    <Compile Include="DatePicker\Microsoft\Windows\Controls\DatePickerTextBox.cs" />
+    <Compile Include="GlobalSuppressions.cs" />
+    <Compile Include="Resources\SR.cs" />
+    <Compile Include="Resources\SRID.cs" />
+    <Compile Include="VSM\VisualStateManager\Microsoft\Windows\Controls\ButtonBaseBehavior.cs" />
+    <Compile Include="VSM\VisualStateManager\Microsoft\Windows\Controls\ControlBehavior.cs" />
+    <Compile Include="VSM\VisualStateManager\Microsoft\Windows\Controls\ListBoxItemBehavior.cs" />
+    <Compile Include="VSM\VisualStateManager\Microsoft\Windows\Controls\ProgressBarBehavior.cs" />
+    <Compile Include="VSM\VisualStateManager\Microsoft\Windows\Controls\TextBoxBaseBehavior.cs" />
+    <Compile Include="VSM\VisualStateManager\Microsoft\Windows\Controls\ToggleButtonBehavior.cs" />
+    <Compile Include="VSM\VisualStateManager\Microsoft\Windows\Controls\TypeHandlerFactory.cs" />
+    <Compile Include="VSM\VisualStateManager\Microsoft\Windows\Controls\VisualStateBehavior.cs" />
+    <Compile Include="VSM\VisualStateManager\Microsoft\Windows\Controls\VisualStateBehaviorFactory.cs" />
+    <Compile Include="VSM\VisualStateManager\System\Windows\TemplateVisualStateAttribute.cs" />
+    <Compile Include="VSM\VisualStateManager\System\Windows\VisualState.cs" />
+    <Compile Include="VSM\VisualStateManager\System\Windows\VisualStateChangedEventArgs.cs" />
+    <Compile Include="VSM\VisualStateManager\System\Windows\VisualStateGroup.cs" />
+    <Compile Include="VSM\VisualStateManager\System\Windows\VisualStateManager.cs" />
+    <Compile Include="VSM\VisualStateManager\System\Windows\VisualTransition.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <AppDesigner Include="DataGrid\Properties\" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Resources\ExceptionStringTable.txt">
+      <Type>Resx</Type>
+      <WithCulture>false</WithCulture>
+      <ManifestResourceName>ExceptionStringTable</ManifestResourceName>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Calendar.Icon.bmp" />
+    <EmbeddedResource Include="DataGrid.Icon.bmp" />
+    <EmbeddedResource Include="DatePicker.Icon.bmp" />
+    <EmbeddedResource Include="DataGrid.Expression.Icon.png" />
+    <EmbeddedResource Include="DataGridColumn.Expression.Icon.png" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

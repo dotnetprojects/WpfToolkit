@@ -1,0 +1,226 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="3.5" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{50A16FB2-1BE3-4C26-94F5-EC0FEBC70C28}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>System.Windows.Controls.Samples</RootNamespace>
+    <AssemblyName>WPFToolkitSamples</AssemblyName>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml.Linq">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data.DataSetExtensions">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+    <Reference Include="UIAutomationProvider">
+      <RequiredTargetFramework>3.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="WindowsBase">
+      <RequiredTargetFramework>3.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="PresentationCore">
+      <RequiredTargetFramework>3.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="PresentationFramework">
+      <RequiredTargetFramework>3.0</RequiredTargetFramework>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <ApplicationDefinition Include="App.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </ApplicationDefinition>
+    <Page Include="Accordion\AccordionSample.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Accordion\AccordionShowcase.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Accordion\AccordionUsage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="AutoCompleteBox\AutoCompleteBoxSample.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="AutoCompleteBox\AutoCompleteComboBox.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="AutoCompleteBox\AutoCompleteLambda.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="AutoCompleteBox\CustomEvents.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="AutoCompleteBox\SearchSuggestionSample.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="MainWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Rating\RatingSample.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Compile Include="App.xaml.cs">
+      <DependentUpon>App.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="MainWindow.xaml.cs">
+      <DependentUpon>MainWindow.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Accordion\AccordionSample.xaml.cs">
+      <DependentUpon>AccordionSample.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Accordion\AccordionShowcase.xaml.cs">
+      <DependentUpon>AccordionShowcase.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Accordion\AccordionUsage.xaml.cs">
+      <DependentUpon>AccordionUsage.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="AutoCompleteBox\AutoCompleteBoxSample.xaml.cs">
+      <DependentUpon>AutoCompleteBoxSample.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="AutoCompleteBox\AutoCompleteComboBox.xaml.cs">
+      <DependentUpon>AutoCompleteComboBox.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="AutoCompleteBox\AutoCompleteLambda.xaml.cs">
+      <DependentUpon>AutoCompleteLambda.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="AutoCompleteBox\CustomEvents.xaml.cs">
+      <DependentUpon>CustomEvents.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="AutoCompleteBox\DataGridSelectionAdapter.cs" />
+    <Compile Include="AutoCompleteBox\DictionaryKeyValueConverter.cs" />
+    <Compile Include="AutoCompleteBox\RandomEmployeeDetails.cs" />
+    <Compile Include="AutoCompleteBox\SampleEmployeeCollection.cs" />
+    <Compile Include="AutoCompleteBox\SearchSuggestionSample.xaml.cs">
+      <DependentUpon>SearchSuggestionSample.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Common\BusinessObjects\Airport.cs" />
+    <Compile Include="Common\BusinessObjects\City.cs" />
+    <Compile Include="Common\BusinessObjects\Customer.cs" />
+    <Compile Include="Common\BusinessObjects\CustomerList.cs" />
+    <Compile Include="Common\BusinessObjects\Department.cs" />
+    <Compile Include="Common\BusinessObjects\Employee.cs" />
+    <Compile Include="Common\BusinessObjects\Feature.cs" />
+    <Compile Include="Common\BusinessObjects\MemberInfoData.cs" />
+    <Compile Include="Common\BusinessObjects\ObjectCollection.cs" />
+    <Compile Include="Common\BusinessObjects\Photograph.cs" />
+    <Compile Include="Common\BusinessObjects\Words.cs" />
+    <Compile Include="Common\GridLengthAnimation.cs" />
+    <Compile Include="Common\SharedResources.cs" />
+    <Compile Include="Common\WebServiceHelper.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <Compile Include="Rating\RatingSample.xaml.cs">
+      <DependentUpon>RatingSample.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <AppDesigner Include="Properties\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\DataVisualization\Controls.DataVisualization.Toolkit.csproj">
+      <Project>{066FB4E3-8F9C-42D0-9982-8B1F238FAF63}</Project>
+      <Name>Controls.DataVisualization.Toolkit</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Input\Controls.Input.Toolkit.csproj">
+      <Project>{83E92AA1-85BC-4B5A-A126-CDCCF2C6E968}</Project>
+      <Name>Controls.Input.Toolkit</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Layout\Controls.Layout.Toolkit.csproj">
+      <Project>{82123C26-FFD4-455D-B5D9-78E72F465961}</Project>
+      <Name>Controls.Layout.Toolkit</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\WPFToolkit.csproj">
+      <Project>{9606A078-7135-4CE7-879E-39FCF527F1A3}</Project>
+      <Name>WPFToolkit</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="AutoCompleteBox\Bing.png" />
+    <Resource Include="AutoCompleteBox\Venice.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Accordion\Bing.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Rating\Images\Casablanca.jpg" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

@@ -1,0 +1,318 @@
+﻿<!--
+// (c) Copyright Microsoft Corporation.
+// This source is subject to the Microsoft Public License (Ms-PL).
+// Please see http://go.microsoft.com/fwlink/?LinkID=131993] for details.
+// All other rights reserved.
+-->
+
+<UserControl x:Class="System.Windows.Controls.Samples.AutoCompleteBoxSample"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" 
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:toolkit="clr-namespace:System.Windows.Controls;assembly=WPFToolkit"
+    xmlns:system="clr-namespace:System;assembly=mscorlib"
+    xmlns:samples="clr-namespace:System.Windows.Controls.Samples"
+    xmlns:controls="clr-namespace:System.Windows.Controls;assembly=PresentationFramework"
+    xmlns:input="clr-namespace:System.Windows.Controls;assembly=System.Windows.Controls.Input.Toolkit">
+
+    <UserControl.Resources>
+        <samples:SampleEmployeeCollection x:Key="SampleEmployees" />
+    </UserControl.Resources>
+
+    <StackPanel>
+
+        <ContentControl Content="AutoCompleteBox" Style="{StaticResource Header}" />
+        <TextBlock Style="{StaticResource Information}">
+            AutoCompleteBox is a control that provides suggested items for a 
+            TextBox. It can be bound to rich data objects, exposes a 
+            SelectedItem property, and is highly customizable and extensible.
+            
+            <LineBreak /><LineBreak />
+            
+            The following sections cover key properties and settings that 
+            customize the way that AutoCompleteBox behaves.
+            <LineBreak />
+        </TextBlock>
+
+        <controls:TabControl>
+            <controls:TabItem Header="IsTextCompletionEnabled">
+                <StackPanel>
+                    <TextBlock Style="{StaticResource Information}">
+                        IsTextCompletionEnabled will automatically select the 
+                        best matching suggestion when one becomes available. The
+                        text will be automatically completed for you. 
+                        IsTextCompletionEnabled is set to False by default.
+                    </TextBlock>
+
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="230" />
+                            <ColumnDefinition Width="250" />
+                            <ColumnDefinition />
+                        </Grid.ColumnDefinitions>
+                        <Grid.RowDefinitions>
+                            <RowDefinition />
+                            <RowDefinition />
+                        </Grid.RowDefinitions>
+
+                        <TextBlock Padding="5" Grid.Row="0">Default:</TextBlock>
+                        <input:AutoCompleteBox 
+                            IsTextCompletionEnabled="False" 
+                            Width="230"
+                            Grid.Row="0" Grid.Column="1" Margin="0, 8, 0, 8" HorizontalAlignment="Left"
+                            ItemsSource="{StaticResource SampleEmployees}"
+                            Tag="Value1"
+                            SelectionChanged="OnSelectionChanged"
+                        />
+                        <ContentPresenter Name="Value1" Grid.Row="0" Grid.Column="2" />
+
+                        <TextBlock Padding="5" Grid.Row="1">IsTextCompletionEnabled:</TextBlock>
+                        <input:AutoCompleteBox 
+                            IsTextCompletionEnabled="True"
+                            Width="230"
+                            Grid.Row="1" Grid.Column="1" Margin="0, 8, 0, 8" HorizontalAlignment="Left"
+                            ItemsSource="{StaticResource SampleEmployees}"
+                            Tag="Value2"
+                            SelectionChanged="OnSelectionChanged"
+                        />
+                        <ContentPresenter Grid.Row="1" Name="Value2" Grid.Column="2" />
+
+                    </Grid>
+                </StackPanel>
+            </controls:TabItem>
+            <controls:TabItem Header="FilterMode">
+                <StackPanel>
+                    <TextBlock Style="{StaticResource Information}">
+            FilterMode makes it easy to customize the search filter that is 
+            used on the text. The default value is StartsWith: a case-insensitive 
+            search filter that compares the start of strings.
+            
+            <LineBreak /><LineBreak />
+            
+            Other FilterMode values of interest are:<LineBreak />
+            • Contains: Search within the entire string for the search text<LineBreak />
+            • None: No filtering. Return everything in the ItemsSource collection.
+            
+            <LineBreak />
+                    </TextBlock>
+
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="230" />
+                            <ColumnDefinition Width="250" />
+                            <ColumnDefinition />
+                        </Grid.ColumnDefinitions>
+                        <Grid.RowDefinitions>
+                            <RowDefinition />
+                            <RowDefinition />
+                            <RowDefinition />
+                        </Grid.RowDefinitions>
+
+                        <TextBlock Padding="5">StartsWith (Default):</TextBlock>
+
+                        <input:AutoCompleteBox 
+                            ItemsSource="{StaticResource SampleEmployees}"
+                            Tag="Value3"
+                            SelectionChanged="OnSelectionChanged"
+                            Width="230" 
+                            Grid.Column="1"
+                            Margin="0, 8, 0, 8"
+                            HorizontalAlignment="Left"
+                        />
+                        <ContentPresenter Name="Value3" Grid.Column="2" />
+
+                        <TextBlock Padding="5" Grid.Row="1">Contains:</TextBlock>
+                        <input:AutoCompleteBox 
+                            FilterMode="Contains" 
+                            MinimumPrefixLength="1" 
+                            ItemsSource="{StaticResource SampleEmployees}"
+                            Tag="Value4"
+                            SelectionChanged="OnSelectionChanged"
+                            Width="230" 
+                            Grid.Row="1"
+                            Grid.Column="1"
+                            Margin="0, 8, 0, 8"
+                            HorizontalAlignment="Left"
+                        />
+                        <ContentPresenter Name="Value4" Grid.Row="1" Grid.Column="2" />
+
+                        <TextBlock Padding="5" Grid.Row="2">StartsWithCaseSensitive:</TextBlock>
+
+                        <input:AutoCompleteBox 
+                            FilterMode="StartsWithCaseSensitive"
+                            ItemsSource="{StaticResource SampleEmployees}"
+                            Tag="Value5"
+                            SelectionChanged="OnSelectionChanged"
+                            Width="230"
+                            Grid.Row="2"
+                            Grid.Column="1"
+                            Margin="0, 8, 0, 8"
+                            HorizontalAlignment="Left"
+                        />
+                        <ContentPresenter Name="Value5" Grid.Row="2" Grid.Column="2" />
+
+                    </Grid>
+                </StackPanel>
+            </controls:TabItem>
+
+            <controls:TabItem Header="MinimumPopulateDelay">
+                <StackPanel>
+                    <TextBlock Style="{StaticResource Information}">
+            The MinimumPopulateDelay sets the minimum type that must elapse 
+            after typing has started and the control waits to filter and find 
+            suggestions. Setting this to a higher number than the default (0) 
+            will reduce the load on suggestion web services, or complex data 
+            filtering. MinimumPopulateDelay has been set to 200ms in this 
+            example.
+            <LineBreak />
+                    </TextBlock>
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="230" />
+                            <ColumnDefinition Width="250" />
+                            <ColumnDefinition />
+                        </Grid.ColumnDefinitions>
+                        <Grid.RowDefinitions>
+                            <RowDefinition />
+                            <RowDefinition />
+                        </Grid.RowDefinitions>
+                        <TextBlock Padding="5">Month:</TextBlock>
+                        <input:AutoCompleteBox 
+                            MinimumPopulateDelay="200"
+                            Tag="Value6"
+                            SelectionChanged="OnSelectionChanged"
+                            Grid.Column="1"
+                            HorizontalAlignment="Left"
+                            Width="230"
+                            x:Name="DynamicDelayAutoCompleteBox"
+                            >
+                            <input:AutoCompleteBox.ItemsSource>
+                                <samples:ObjectCollection>
+                                    <system:String>January</system:String>
+                                    <system:String>February</system:String>
+                                    <system:String>March</system:String>
+                                    <system:String>April</system:String>
+                                    <system:String>May</system:String>
+                                    <system:String>June</system:String>
+                                    <system:String>July</system:String>
+                                    <system:String>August</system:String>
+                                    <system:String>September</system:String>
+                                    <system:String>October</system:String>
+                                    <system:String>November</system:String>
+                                    <system:String>December</system:String>
+                                </samples:ObjectCollection>
+                            </input:AutoCompleteBox.ItemsSource>
+                        </input:AutoCompleteBox>
+                        <ContentPresenter Name="Value6" Grid.Column="2" />
+                        
+                        <TextBlock Padding="5" Grid.Row="1">Minimum Delay:</TextBlock>
+                        <StackPanel Orientation="Horizontal" Grid.Row="1" Grid.Column="1" Margin="8">
+                            <TextBlock>0</TextBlock>
+                            <Slider x:Name="SetDelay" Minimum="0" Value="200" SmallChange="50" LargeChange="200" Maximum="1000" Width="200" />
+                            <TextBlock>1 second</TextBlock>
+                        </StackPanel>
+                        <StackPanel Grid.Row="1" Grid.Column="2" Margin="8" Orientation="Horizontal">
+                            <TextBlock Text="Value:" />
+                            <TextBlock Margin="4,0,0,0" Text="{Binding ElementName=SetDelay,Path=Value}" />
+                        </StackPanel>
+                    </Grid>
+                </StackPanel>
+            </controls:TabItem>
+
+            <controls:TabItem Header="MinimumPrefixLength">
+                <StackPanel>
+                    <TextBlock Style="{StaticResource Information}">
+            The MinimumPrefixLength sets the minimum number of characters that 
+            must be typed before suggestions appear.
+            
+            <LineBreak /><LineBreak />
+            
+            The default value is 1. In this example, there is a collection of 
+            thousands of words. To make more appropriate suggestions, the value 
+            of MinimumPrefixLength has been set to 2. For example, search for 
+            "th".
+            <LineBreak />
+                    </TextBlock>
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="230" />
+                            <ColumnDefinition Width="250" />
+                            <ColumnDefinition />
+                        </Grid.ColumnDefinitions>
+                        <Grid.RowDefinitions>
+                            <RowDefinition />
+                            <RowDefinition />
+                        </Grid.RowDefinitions>
+                        <TextBlock Padding="5">Word lookup:</TextBlock>
+                        <input:AutoCompleteBox
+                            x:Name="WordComplete" 
+                            MinimumPopulateDelay="200"
+                            MinimumPrefixLength="2"
+                            Tag="Value7"
+                            SelectionChanged="OnSelectionChanged"
+                            Width="230" 
+                            Grid.Column="1"
+                            Margin="0, 8, 0, 8"
+                            HorizontalAlignment="Left" />
+                        <ContentPresenter Name="Value7" Grid.Column="2" />
+                        
+                        <TextBlock Padding="5" Grid.Row="1">Minimum Length:</TextBlock>
+                        <StackPanel Orientation="Horizontal" Grid.Row="1" Grid.Column="1" Margin="8">
+                            <TextBlock>-1</TextBlock>
+                            <Slider x:Name="SetPrefixLength" Minimum="-1" Value="2" Maximum="8" SmallChange="1" LargeChange="2" Width="200" />
+                            <TextBlock>8</TextBlock>
+                        </StackPanel>
+                        <StackPanel Grid.Row="1" Grid.Column="2" Margin="8" Orientation="Horizontal">
+                            <TextBlock Text="Value:" />
+                            <TextBlock Margin="4,0,0,0" Text="{Binding ElementName=SetPrefixLength,Path=Value}" />
+                        </StackPanel>
+                    </Grid>
+                </StackPanel>
+            </controls:TabItem>
+            <controls:TabItem Header="ValueMemberBinding">
+                <StackPanel>
+                    <TextBlock Style="{StaticResource Information}">
+                        The ValueMemberBinding can be used to select the string 
+                        value used inside the text box whenever an item is 
+                        selected or searched for.
+                    </TextBlock>
+
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="230" />
+                            <ColumnDefinition Width="250" />
+                            <ColumnDefinition />
+                        </Grid.ColumnDefinitions>
+                        <Grid.RowDefinitions>
+                            <RowDefinition />
+                            <RowDefinition />
+                        </Grid.RowDefinitions>
+
+                        <TextBlock Padding="5" Grid.Row="0">Name:</TextBlock>
+                        <input:AutoCompleteBox 
+                            IsTextCompletionEnabled="False" 
+                            Width="230" 
+                            Grid.Row="0" Grid.Column="1" Margin="0, 8, 0, 8" HorizontalAlignment="Left"
+                            ItemsSource="{StaticResource SampleEmployees}"
+                            ValueMemberBinding="{Binding DisplayName}"
+                            Tag="Value8"
+                            SelectionChanged="OnSelectionChanged"
+                        />
+                        <ContentPresenter Name="Value8" Grid.Row="0" Grid.Column="2" />
+                        
+                        <TextBlock Padding="5" Grid.Row="1">First name:</TextBlock>
+                        <input:AutoCompleteBox 
+                            IsTextCompletionEnabled="False" 
+                            Width="230" 
+                            Grid.Row="1" Grid.Column="1" Margin="0, 8, 0, 8" HorizontalAlignment="Left"
+                            ItemsSource="{StaticResource SampleEmployees}"
+                            ValueMemberBinding="{Binding FirstName}"
+                            Tag="Value9"
+                            SelectionChanged="OnSelectionChanged"
+                        />
+                        <ContentPresenter Name="Value9" Grid.Row="1" Grid.Column="2" />
+                    </Grid>
+                </StackPanel>
+            </controls:TabItem>
+        </controls:TabControl>
+    </StackPanel>
+</UserControl>

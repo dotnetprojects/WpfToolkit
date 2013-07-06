@@ -1,0 +1,203 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="3.5" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{51F777F6-2EC8-487A-B114-875D5B3303B1}</ProjectGuid>
+    <OutputType>library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>System.Windows.Controls.DataVisualization.Design</RootNamespace>
+    <AssemblyName>System.Windows.Controls.DataVisualization.Toolkit.VisualStudio.Design</AssemblyName>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>..\bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE;NO_EASING_FUNCTIONS</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>..\bin\Release\</OutputPath>
+    <DefineConstants>TRACE;NO_EASING_FUNCTIONS</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release with Code Analysis|AnyCPU' ">
+    <OutputPath>bin\Release with Code Analysis\</OutputPath>
+    <DefineConstants>TRACE;NO_EASING_FUNCTIONS</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <RunCodeAnalysis>true</RunCodeAnalysis>
+    <CodeAnalysisUseTypeNameInSuppression>true</CodeAnalysisUseTypeNameInSuppression>
+    <CodeAnalysisModuleSuppressionsFile>..\GlobalSuppressions.cs</CodeAnalysisModuleSuppressionsFile>
+    <ErrorReport>prompt</ErrorReport>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Core">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="WindowsBase">
+      <RequiredTargetFramework>3.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="PresentationCore">
+      <RequiredTargetFramework>3.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="PresentationFramework">
+      <RequiredTargetFramework>3.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Xml.Linq">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="Microsoft.Windows.Design">
+      <HintPath>..\..\ExternalTools\VisualStudio\Microsoft.Windows.Design.dll</HintPath>
+      <SpecificVersion>False</SpecificVersion>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Microsoft.Windows.Design.Extensibility">
+      <HintPath>..\..\ExternalTools\VisualStudio\Microsoft.Windows.Design.Extensibility.dll</HintPath>
+      <SpecificVersion>False</SpecificVersion>
+      <Private>False</Private>
+    </Reference>
+    <ProjectReference Include="..\DataVisualization\Controls.DataVisualization.Toolkit.csproj">
+      <Project>{066FB4E3-8F9C-42D0-9982-8B1F238FAF63}</Project>
+      <Name>Controls.DataVisualization.Toolkit</Name>
+      <Aliases>Silverlight</Aliases>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="..\DataVisualization.Design\AreaSeriesMetadata.cs">
+      <Link>AreaSeriesMetadata.cs</Link>
+    </Compile>
+    <Compile Include="..\DataVisualization.Design\AxisLabelMetadata.cs">
+      <Link>AxisLabelMetadata.cs</Link>
+    </Compile>
+    <Compile Include="..\DataVisualization.Design\AxisMetadata.cs">
+      <Link>AxisMetadata.cs</Link>
+    </Compile>
+    <Compile Include="..\DataVisualization.Design\BarSeriesMetadata.cs">
+      <Link>BarSeriesMetadata.cs</Link>
+    </Compile>
+    <Compile Include="..\DataVisualization.Design\BubbleDataPointMetadata.cs">
+      <Link>BubbleDataPointMetadata.cs</Link>
+    </Compile>
+    <Compile Include="..\DataVisualization.Design\BubbleSeriesMetadata.cs">
+      <Link>BubbleSeriesMetadata.cs</Link>
+    </Compile>
+    <Compile Include="..\DataVisualization.Design\CategoryAxisMetadata.cs">
+      <Link>CategoryAxisMetadata.cs</Link>
+    </Compile>
+    <Compile Include="..\DataVisualization.Design\ChartMetadata.cs">
+      <Link>ChartMetadata.cs</Link>
+    </Compile>
+    <Compile Include="..\DataVisualization.Design\ColumnSeriesMetadata.cs">
+      <Link>ColumnSeriesMetadata.cs</Link>
+    </Compile>
+    <Compile Include="..\DataVisualization.Design\DataPointMetadata.cs">
+      <Link>DataPointMetadata.cs</Link>
+    </Compile>
+    <Compile Include="..\DataVisualization.Design\DataPointSeriesMetadata.cs">
+      <Link>DataPointSeriesMetadata.cs</Link>
+    </Compile>
+    <Compile Include="..\DataVisualization.Design\DateTimeAxisMetadata.cs">
+      <Link>DateTimeAxisMetadata.cs</Link>
+    </Compile>
+    <Compile Include="..\DataVisualization.Design\DisplayAxisMetadata.cs">
+      <Link>DisplayAxisMetadata.cs</Link>
+    </Compile>
+    <Compile Include="..\DataVisualization.Design\Extensions.cs">
+      <Link>Extensions.cs</Link>
+    </Compile>
+    <Compile Include="..\DataVisualization.Design\LegendItemMetadata.cs">
+      <Link>LegendItemMetadata.cs</Link>
+    </Compile>
+    <Compile Include="..\DataVisualization.Design\LegendMetadata.cs">
+      <Link>LegendMetadata.cs</Link>
+    </Compile>
+    <Compile Include="..\DataVisualization.Design\LinearAxisMetadata.cs">
+      <Link>LinearAxisMetadata.cs</Link>
+    </Compile>
+    <Compile Include="..\DataVisualization.Design\LineSeriesMetadata.cs">
+      <Link>LineSeriesMetadata.cs</Link>
+    </Compile>
+    <Compile Include="..\DataVisualization.Design\MetadataBase.cs">
+      <Link>MetadataBase.cs</Link>
+    </Compile>
+    <Compile Include="..\DataVisualization.Design\NumericAxisMetadata.cs">
+      <Link>NumericAxisMetadata.cs</Link>
+    </Compile>
+    <Compile Include="..\DataVisualization.Design\PieDataPointMetadata.cs">
+      <Link>PieDataPointMetadata.cs</Link>
+    </Compile>
+    <Compile Include="..\DataVisualization.Design\PieSeriesMetadata.cs">
+      <Link>PieSeriesMetadata.cs</Link>
+    </Compile>
+    <Compile Include="..\DataVisualization.Design\RangeAxisMetadata.cs">
+      <Link>RangeAxisMetadata.cs</Link>
+    </Compile>
+    <Compile Include="..\DataVisualization.Design\ScatterSeriesMetadata.cs">
+      <Link>ScatterSeriesMetadata.cs</Link>
+    </Compile>
+    <Compile Include="..\DataVisualization.Design\SeriesMetadata.cs">
+      <Link>SeriesMetadata.cs</Link>
+    </Compile>
+    <Compile Include="..\DataVisualization.Design\TextBoxEditor.cs">
+      <Link>TextBoxEditor.cs</Link>
+    </Compile>
+    <Compile Include="..\DataVisualization.Design\TitleMetadata.cs">
+      <Link>TitleMetadata.cs</Link>
+    </Compile>
+    <Compile Include="..\DataVisualization.Design\TreeMapMetadata.cs">
+      <Link>TreeMapMetadata.cs</Link>
+    </Compile>
+    <Compile Include="GlobalSuppressions.cs" />
+    <Compile Include="MetadataRegistration.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <AppDesigner Include="Properties\" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="System.Windows.Controls.DataVisualization\TreeMap.bmp" />
+    <EmbeddedResource Include="System.Windows.Controls.DataVisualization.Charting\AreaSeries.bmp" />
+    <EmbeddedResource Include="System.Windows.Controls.DataVisualization.Charting\Axis.bmp" />
+    <EmbeddedResource Include="System.Windows.Controls.DataVisualization.Charting\BarSeries.bmp" />
+    <EmbeddedResource Include="System.Windows.Controls.DataVisualization.Charting\BubbleSeries.bmp" />
+    <EmbeddedResource Include="System.Windows.Controls.DataVisualization.Charting\CategoryAxis.bmp" />
+    <EmbeddedResource Include="System.Windows.Controls.DataVisualization.Charting\Chart.bmp" />
+    <EmbeddedResource Include="System.Windows.Controls.DataVisualization.Charting\ColumnSeries.bmp" />
+    <EmbeddedResource Include="System.Windows.Controls.DataVisualization.Charting\DateTimeAxis.bmp" />
+    <EmbeddedResource Include="System.Windows.Controls.DataVisualization.Charting\LinearAxis.bmp" />
+    <EmbeddedResource Include="System.Windows.Controls.DataVisualization.Charting\LineSeries.bmp" />
+    <EmbeddedResource Include="System.Windows.Controls.DataVisualization.Charting\PieSeries.bmp" />
+    <EmbeddedResource Include="System.Windows.Controls.DataVisualization.Charting\ScatterSeries.bmp" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

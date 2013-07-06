@@ -1,0 +1,327 @@
+﻿<!--
+// (c) Copyright Microsoft Corporation.
+// This source is subject to the Microsoft Public License (Ms-PL).
+// Please see http://go.microsoft.com/fwlink/?LinkID=131993] for details.
+// All other rights reserved.
+-->
+
+<ResourceDictionary xmlns:input="clr-namespace:System.Windows.Controls" xmlns:inputPrimitivesToolkit="clr-namespace:System.Windows.Controls" xmlns:inputToolkit="clr-namespace:System.Windows.Controls" xmlns:inputToolkitPrimitives="clr-namespace:System.Windows.Controls.Primitives" xmlns:sys="clr-namespace:System;assembly=mscorlib" xmlns:vsm="clr-namespace:System.Windows;assembly=WPFToolkit"  xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation">
+
+    <!--  CommonValidationToolTipTemplate  -->
+    <ControlTemplate x:Key="CommonValidationToolTipTemplate" TargetType="ToolTip">
+        <Grid x:Name="Root" Margin="5,0" RenderTransformOrigin="0,0" Opacity="0">
+            <Grid.RenderTransform>
+                <TranslateTransform x:Name="Translation" X="-25" />
+            </Grid.RenderTransform>
+
+            <vsm:VisualStateManager.VisualStateGroups>
+                <vsm:VisualStateGroup Name="OpenStates">
+                    <vsm:VisualStateGroup.Transitions>
+                        <vsm:VisualTransition GeneratedDuration="0" />
+                        <vsm:VisualTransition To="Open" GeneratedDuration="0:0:0.2">
+                            <Storyboard>
+                                <DoubleAnimation Storyboard.TargetName="Translation" Storyboard.TargetProperty="X" To="0" Duration="0:0:0.2" />
+                                <DoubleAnimation Storyboard.TargetName="Root" Storyboard.TargetProperty="Opacity" To="1" Duration="0:0:0.2" />
+                            </Storyboard>
+                        </vsm:VisualTransition>
+                    </vsm:VisualStateGroup.Transitions>
+                    <vsm:VisualState x:Name="Closed">
+                        <Storyboard>
+                            <DoubleAnimation Storyboard.TargetName="Root" Storyboard.TargetProperty="Opacity" To="0" Duration="0" />
+                        </Storyboard>
+                    </vsm:VisualState>
+                    <vsm:VisualState x:Name="Open">
+                        <Storyboard>
+                            <DoubleAnimation Storyboard.TargetName="Translation" Storyboard.TargetProperty="X" To="0" Duration="0" />
+                            <DoubleAnimation Storyboard.TargetName="Root" Storyboard.TargetProperty="Opacity" To="1" Duration="0" />
+                        </Storyboard>
+                    </vsm:VisualState>
+                </vsm:VisualStateGroup>
+            </vsm:VisualStateManager.VisualStateGroups>
+
+            <Border Margin="4,4,-4,-4" Background="#052A2E31" CornerRadius="5" />
+            <Border Margin="3,3,-3,-3" Background="#152A2E31" CornerRadius="4" />
+            <Border Margin="2,2,-2,-2" Background="#252A2E31" CornerRadius="3" />
+            <Border Margin="1,1,-1,-1" Background="#352A2E31" CornerRadius="2" />
+
+            <Border Background="#FFDC000C" CornerRadius="2">
+                <TextBlock Foreground="White" Margin="8,4,8,4" MaxWidth="250" TextWrapping="Wrap" Text="{Binding (Validation.Errors)[0].ErrorContent}" />
+            </Border>
+        </Grid>
+    </ControlTemplate>
+
+    <!--  input:AutoCompleteBox  -->
+    <Style TargetType="input:AutoCompleteBox">
+        <Setter Property="IsTabStop" Value="False" />
+        <Setter Property="Padding" Value="2" />
+        <Setter Property="BorderThickness" Value="1" />
+        <Setter Property="BorderBrush">
+            <Setter.Value>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="#FFA3AEB9" Offset="0" />
+                    <GradientStop Color="#FF8399A9" Offset="0.375" />
+                    <GradientStop Color="#FF718597" Offset="0.375" />
+                    <GradientStop Color="#FF617584" Offset="1" />
+                </LinearGradientBrush>
+            </Setter.Value>
+        </Setter>
+        <Setter Property="Background" Value="#FFFFFFFF" />
+        <Setter Property="Foreground" Value="#FF000000" />
+        <Setter Property="MinWidth" Value="45" />
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="input:AutoCompleteBox">
+                    <Grid Opacity="{TemplateBinding Opacity}">
+                        <TextBox Padding="{TemplateBinding Padding}" Background="{TemplateBinding Background}" IsTabStop="True" x:Name="Text" Style="{TemplateBinding TextBoxStyle}" BorderThickness="{TemplateBinding BorderThickness}" BorderBrush="{TemplateBinding BorderBrush}" Foreground="{TemplateBinding Foreground}" Margin="0" />
+                        <Border x:Name="ValidationErrorElement" Visibility="Collapsed" BorderBrush="#FFDB000C" BorderThickness="1" CornerRadius="1">
+                            <ToolTipService.ToolTip>
+                                <ToolTip x:Name="validationTooltip" DataContext="{Binding RelativeSource={RelativeSource TemplatedParent}}" Template="{StaticResource CommonValidationToolTipTemplate}" Placement="Right" PlacementTarget="{Binding RelativeSource={RelativeSource TemplatedParent}}">
+                                    <ToolTip.Triggers>
+                                        <EventTrigger RoutedEvent="Canvas.Loaded">
+                                            <BeginStoryboard>
+                                                <Storyboard>
+                                                    <ObjectAnimationUsingKeyFrames Storyboard.TargetName="validationTooltip" Storyboard.TargetProperty="IsHitTestVisible">
+                                                        <DiscreteObjectKeyFrame KeyTime="0">
+                                                            <DiscreteObjectKeyFrame.Value>
+                                                                <sys:Boolean>true</sys:Boolean>
+                                                            </DiscreteObjectKeyFrame.Value>
+                                                        </DiscreteObjectKeyFrame>
+                                                    </ObjectAnimationUsingKeyFrames>
+                                                </Storyboard>
+                                            </BeginStoryboard>
+                                        </EventTrigger>
+                                    </ToolTip.Triggers>
+                                </ToolTip>
+                            </ToolTipService.ToolTip>
+                            <Grid Height="12" HorizontalAlignment="Right" Margin="1,-4,-4,0" VerticalAlignment="Top" Width="12" Background="Transparent">
+                                <Path Fill="#FFDC000C" Margin="1,3,0,0" Data="M 1,0 L6,0 A 2,2 90 0 1 8,2 L8,7 z" />
+                                <Path Fill="#ffffff" Margin="1,3,0,0" Data="M 0,0 L2,0 L 8,6 L8,8" />
+                            </Grid>
+                        </Border>
+                        <Popup x:Name="Popup">
+                            <Grid Opacity="{TemplateBinding Opacity}" Background="{TemplateBinding Background}" >
+                            <Border x:Name="PopupBorder" HorizontalAlignment="Stretch" Opacity="0" BorderThickness="0">
+                                <Border.RenderTransform>
+                                    <TranslateTransform X="1" Y="1" />
+                                </Border.RenderTransform>
+                                <Border.Background>
+                                    <SolidColorBrush Color="#11000000" />
+                                </Border.Background>
+                                    <Border HorizontalAlignment="Stretch" Opacity="1.0" Padding="0" BorderThickness="{TemplateBinding BorderThickness}" BorderBrush="{TemplateBinding BorderBrush}" CornerRadius="0">
+                                            <Border.RenderTransform>
+                                                <TransformGroup>
+                                                    <TranslateTransform X="-1" Y="-1" />
+                                                </TransformGroup>
+                                            </Border.RenderTransform>
+                                            <Border.Background>
+                                                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                                                    <GradientStop Color="#FFDDDDDD" Offset="0" />
+                                                    <GradientStop Color="#AADDDDDD" Offset="1" />
+                                                </LinearGradientBrush>
+                                            </Border.Background>
+                                            <ListBox x:Name="Selector" ScrollViewer.HorizontalScrollBarVisibility="Auto" ScrollViewer.VerticalScrollBarVisibility="Auto" ItemContainerStyle="{TemplateBinding ItemContainerStyle}" Background="{TemplateBinding Background}" Foreground="{TemplateBinding Foreground}" BorderThickness="0" ItemTemplate="{TemplateBinding ItemTemplate}" />
+                                    </Border>
+                                </Border>
+                            </Grid>
+                        </Popup>
+                        <vsm:VisualStateManager.VisualStateGroups>
+                            <vsm:VisualStateGroup x:Name="PopupStates">
+                                <vsm:VisualStateGroup.Transitions>
+                                    <vsm:VisualTransition GeneratedDuration="0:0:0.1" To="PopupOpened" />
+                                    <vsm:VisualTransition GeneratedDuration="0:0:0.2" To="PopupClosed" />
+                                </vsm:VisualStateGroup.Transitions>
+                                <vsm:VisualState x:Name="PopupOpened">
+                                    <Storyboard>
+                                        <DoubleAnimation Storyboard.TargetName="PopupBorder" Storyboard.TargetProperty="Opacity" To="1.0" Duration="0:0:0.1" />
+                                    </Storyboard>
+                                </vsm:VisualState>
+                                <vsm:VisualState x:Name="PopupClosed">
+                                    <Storyboard>
+                                        <DoubleAnimation Storyboard.TargetName="PopupBorder" Storyboard.TargetProperty="Opacity" To="0" Duration="0:0:0.2" />
+                                    </Storyboard>
+                                </vsm:VisualState>
+                            </vsm:VisualStateGroup>
+                            <vsm:VisualStateGroup x:Name="ValidationStates">
+                                <vsm:VisualState x:Name="Valid" />
+                                <vsm:VisualState x:Name="InvalidUnfocused">
+                                    <Storyboard>
+                                        <ObjectAnimationUsingKeyFrames Storyboard.TargetName="ValidationErrorElement" Storyboard.TargetProperty="Visibility">
+                                            <DiscreteObjectKeyFrame KeyTime="0">
+                                                <DiscreteObjectKeyFrame.Value>
+                                                    <Visibility>Visible</Visibility>
+                                                </DiscreteObjectKeyFrame.Value>
+                                            </DiscreteObjectKeyFrame>
+                                        </ObjectAnimationUsingKeyFrames>
+                                    </Storyboard>
+                                </vsm:VisualState>
+                                <vsm:VisualState x:Name="InvalidFocused">
+                                    <Storyboard>
+                                        <ObjectAnimationUsingKeyFrames Storyboard.TargetName="ValidationErrorElement" Storyboard.TargetProperty="Visibility">
+                                            <DiscreteObjectKeyFrame KeyTime="0">
+                                                <DiscreteObjectKeyFrame.Value>
+                                                    <Visibility>Visible</Visibility>
+                                                </DiscreteObjectKeyFrame.Value>
+                                            </DiscreteObjectKeyFrame>
+                                        </ObjectAnimationUsingKeyFrames>
+                                        <ObjectAnimationUsingKeyFrames Storyboard.TargetName="validationTooltip" Storyboard.TargetProperty="IsOpen">
+                                            <DiscreteObjectKeyFrame KeyTime="0">
+                                                <DiscreteObjectKeyFrame.Value>
+                                                    <sys:Boolean>True</sys:Boolean>
+                                                </DiscreteObjectKeyFrame.Value>
+                                            </DiscreteObjectKeyFrame>
+                                        </ObjectAnimationUsingKeyFrames>
+                                    </Storyboard>
+                                </vsm:VisualState>
+                            </vsm:VisualStateGroup>
+                        </vsm:VisualStateManager.VisualStateGroups>
+                    </Grid>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <!--  inputToolkit:Rating  -->
+    <Style TargetType="inputToolkit:Rating">
+        <Setter Property="Background" Value="#FFFFFFFF" />
+        <Setter Property="BorderBrush" Value="#FF545454" />
+        <Setter Property="BorderThickness" Value="0" />
+        <Setter Property="Foreground">
+            <Setter.Value>
+                <RadialGradientBrush Center="0.548,0.475" GradientOrigin="0.484,0.537">
+                    <GradientStop Color="#FFB10000" Offset="1" />
+                    <GradientStop Color="#FFF70000" />
+                    <GradientStop Color="#FFFA0000" Offset="0.043" />
+                </RadialGradientBrush>
+            </Setter.Value>
+        </Setter>
+        <Setter Property="ItemsPanel">
+            <Setter.Value>
+                <ItemsPanelTemplate>
+                    <StackPanel Orientation="Horizontal" />
+                </ItemsPanelTemplate>
+            </Setter.Value>
+        </Setter>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="inputToolkit:Rating">
+                    <Grid x:Name="Root">
+                        <vsm:VisualStateManager.VisualStateGroups>
+                            <vsm:VisualStateGroup x:Name="CommonStates">
+                                <vsm:VisualState x:Name="Normal" />
+                                <vsm:VisualState x:Name="MouseOver" />
+                                <vsm:VisualState x:Name="Pressed" />
+                                <vsm:VisualState x:Name="Disabled" />
+                                <vsm:VisualState x:Name="ReadOnly">
+                                    <Storyboard>
+                                        <DoubleAnimationUsingKeyFrames BeginTime="00:00:00" Duration="00:00:00.0010000" Storyboard.TargetName="ReadOnlyVisualElement" Storyboard.TargetProperty="(UIElement.Opacity)">
+                                            <SplineDoubleKeyFrame KeyTime="00:00:00" Value="0.03" />
+                                        </DoubleAnimationUsingKeyFrames>
+                                    </Storyboard>
+                                </vsm:VisualState>
+                            </vsm:VisualStateGroup>
+                            <vsm:VisualStateGroup x:Name="FocusStates">
+                                <vsm:VisualState x:Name="Focused" />
+                                <vsm:VisualState x:Name="Unfocused" />
+                            </vsm:VisualStateGroup>
+                        </vsm:VisualStateManager.VisualStateGroups>
+                        <Border Background="{TemplateBinding Background}" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}">
+                            <ItemsPresenter />
+                        </Border>
+                        <Border x:Name="ReadOnlyVisualElement" IsHitTestVisible="False" Opacity="0" Background="#83FFFFFF" BorderBrush="#A5F7F7F7" BorderThickness="{TemplateBinding BorderThickness}" />
+                        <Border x:Name="DisabledVisualElement" IsHitTestVisible="False" Opacity="0" Background="#FF4D4D4D" BorderBrush="#A5F7F7F7" BorderThickness="{TemplateBinding BorderThickness}" />
+                        <Rectangle x:Name="FocusVisualElement" StrokeThickness="1" RadiusX="1" RadiusY="1" IsHitTestVisible="false" Visibility="Collapsed" />
+                    </Grid>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <!--  inputToolkit:RatingItem  -->
+    <Style TargetType="inputToolkit:RatingItem">
+        <Setter Property="BorderBrush" Value="#FF545454" />
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="inputToolkit:RatingItem">
+                    <Grid Background="{TemplateBinding Background}" Width="20">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="20" />
+                            <RowDefinition Height="Auto" />
+                        </Grid.RowDefinitions>
+                        <vsm:VisualStateManager.VisualStateGroups>
+                            <vsm:VisualStateGroup x:Name="CommonStates">
+                                <vsm:VisualState x:Name="Normal" />
+                                <vsm:VisualState x:Name="MouseOver">
+                                    <Storyboard>
+                                        <DoubleAnimationUsingKeyFrames Storyboard.TargetName="MouseOverRatingItem" Storyboard.TargetProperty="(UIElement.Opacity)">
+                                            <SplineDoubleKeyFrame KeyTime="00:00:00" Value="1" />
+                                        </DoubleAnimationUsingKeyFrames>
+                                        <DoubleAnimationUsingKeyFrames Storyboard.TargetName="MouseOverHighlight" Storyboard.TargetProperty="(UIElement.Opacity)">
+                                            <SplineDoubleKeyFrame KeyTime="00:00:00" Value="0.325" />
+                                        </DoubleAnimationUsingKeyFrames>
+                                        <ColorAnimationUsingKeyFrames Storyboard.TargetName="MouseOverHighlight" Storyboard.TargetProperty="(Shape.Fill).(SolidColorBrush.Color)">
+                                            <SplineColorKeyFrame KeyTime="00:00:00" Value="#FF6E0000" />
+                                        </ColorAnimationUsingKeyFrames>
+                                    </Storyboard>
+                                </vsm:VisualState>
+                                <vsm:VisualState x:Name="Pressed">
+                                    <Storyboard>
+                                        <ColorAnimationUsingKeyFrames Storyboard.TargetName="PressedRatingItem" Storyboard.TargetProperty="(Shape.Fill).(SolidColorBrush.Color)">
+                                            <SplineColorKeyFrame KeyTime="00:00:00" Value="#FFFEFEFE" />
+                                        </ColorAnimationUsingKeyFrames>
+                                        <DoubleAnimationUsingKeyFrames Storyboard.TargetName="PressedRatingItem" Storyboard.TargetProperty="(UIElement.Opacity)">
+                                            <SplineDoubleKeyFrame KeyTime="00:00:00" Value="0.39" />
+                                        </DoubleAnimationUsingKeyFrames>
+                                    </Storyboard>
+                                </vsm:VisualState>
+                                <vsm:VisualState x:Name="Disabled">
+                                    <Storyboard>
+                                        <DoubleAnimationUsingKeyFrames  Storyboard.TargetName="DisabledRatingItem" Storyboard.TargetProperty="(UIElement.Opacity)">
+                                            <SplineDoubleKeyFrame KeyTime="00:00:00" Value="1" />
+                                        </DoubleAnimationUsingKeyFrames>
+                                        <DoubleAnimationUsingKeyFrames  Storyboard.TargetName="DisabledRatingItemBackground" Storyboard.TargetProperty="(UIElement.Opacity)">
+                                            <SplineDoubleKeyFrame KeyTime="00:00:00" Value="1" />
+                                        </DoubleAnimationUsingKeyFrames>
+                                    </Storyboard>
+                                </vsm:VisualState>
+                                <vsm:VisualState x:Name="ReadOnly">
+                                    <Storyboard>
+                                        <DoubleAnimationUsingKeyFrames Storyboard.TargetName="ReadOnlyRatingItem" Storyboard.TargetProperty="(UIElement.Opacity)">
+                                            <SplineDoubleKeyFrame KeyTime="00:00:00" Value="1" />
+                                        </DoubleAnimationUsingKeyFrames>
+                                    </Storyboard>
+                                </vsm:VisualState>
+                            </vsm:VisualStateGroup>
+                            <vsm:VisualStateGroup x:Name="FocusStates">
+                                <vsm:VisualState x:Name="Focused">
+                                    <Storyboard />
+                                </vsm:VisualState>
+                                <vsm:VisualState x:Name="Unfocused" />
+                            </vsm:VisualStateGroup>
+                            <vsm:VisualStateGroup x:Name="FillStates">
+                                <vsm:VisualState x:Name="Empty" />
+                                <vsm:VisualState x:Name="Partial" />
+                                <vsm:VisualState x:Name="Filled" />
+                            </vsm:VisualStateGroup>
+                        </vsm:VisualStateManager.VisualStateGroups>
+                        <Border Background="#02FFFFFF" BorderThickness="0" />
+                        <Path x:Name="DefaultRatingItem" Fill="White" Stretch="Fill" Stroke="{TemplateBinding BorderBrush}" StrokeLineJoin="Round" StrokeThickness="0.4" VerticalAlignment="Stretch" Opacity="1" Data="M15,0 L18.6,11.373603 L30,11.459046 L20.824955,18.573566 L24.270519,30 L15,23.023449 L5.7294912,30 L9.1750822,18.573566 L0,11.459046 L11.399999,11.373603 z" />
+                        <inputToolkitPrimitives:LinearClipper RatioVisible="{TemplateBinding DisplayValue}" ExpandDirection="Right">
+                            <Path Fill="{TemplateBinding Foreground}" Stretch="Fill" Stroke="{x:Null}" StrokeLineJoin="Round" VerticalAlignment="Stretch" Opacity="1" Data="M15,0 L18.6,11.373603 L30,11.459046 L20.824955,18.573566 L24.270519,30 L15,23.023449 L5.7294912,30 L9.1750822,18.573566 L0,11.459046 L11.399999,11.373603 z" />
+                        </inputToolkitPrimitives:LinearClipper>
+                        <Path x:Name="MouseOverRatingItem" Fill="{TemplateBinding Foreground}" Stretch="Fill" Stroke="{x:Null}" StrokeLineJoin="Round" VerticalAlignment="Stretch" Opacity="0" Data="M15,0 L18.6,11.373603 L30,11.459046 L20.824955,18.573566 L24.270519,30 L15,23.023449 L5.7294912,30 L9.1750822,18.573566 L0,11.459046 L11.399999,11.373603 z" />
+                        <Path x:Name="MouseOverHighlight" Fill="#FFFFFFFF" Stretch="Fill" Stroke="{x:Null}" StrokeLineJoin="Round" VerticalAlignment="Stretch" Opacity="0" Data="M15,0 L18.6,11.373603 L30,11.459046 L20.824955,18.573566 L24.270519,30 L15,23.023449 L5.7294912,30 L9.1750822,18.573566 L0,11.459046 L11.399999,11.373603 z" />
+                        <Path x:Name="PressedRatingItem" Stretch="Fill" Stroke="{x:Null}" StrokeLineJoin="Round" VerticalAlignment="Stretch" Data="M15,0 L18.6,11.373603 L30,11.459046 L20.824955,18.573566 L24.270519,30 L15,23.023449 L5.7294912,30 L9.1750822,18.573566 L0,11.459046 L11.399999,11.373603 z" Fill="#82000000" Opacity="0" />
+                        <Path x:Name="FocusRatingItem" Stretch="Fill" Stroke="#FF6DBDD1" StrokeLineJoin="Round" StrokeThickness="0.01" VerticalAlignment="Stretch" Opacity="0" Data="M15,0 L18.6,11.373603 L30,11.459046 L20.824955,18.573566 L24.270519,30 L15,23.023449 L5.7294912,30 L9.1750822,18.573566 L0,11.459046 L11.399999,11.373603 z" />
+                        <Path x:Name="ReadOnlyRatingItem" Fill="#18FFFFFF" Stretch="Fill" Stroke="{TemplateBinding BorderBrush}" StrokeLineJoin="Round" StrokeThickness="0.4" VerticalAlignment="Stretch" Data="M15,0 L18.6,11.373603 L30,11.459046 L20.824955,18.573566 L24.270519,30 L15,23.023449 L5.7294912,30 L9.1750822,18.573566 L0,11.459046 L11.399999,11.373603 z" IsHitTestVisible="False" Opacity="0" />
+                        <Path x:Name="DisabledRatingItemBackground" Stretch="Fill" Stroke="{x:Null}" StrokeLineJoin="Round" VerticalAlignment="Stretch" Data="M15,0 L18.6,11.373603 L30,11.459046 L20.824955,18.573566 L24.270519,30 L15,23.023449 L5.7294912,30 L9.1750822,18.573566 L0,11.459046 L11.399999,11.373603 z" Fill="Gainsboro" Opacity="0" />
+                        <inputToolkitPrimitives:LinearClipper x:Name="DisabledRatingItem" RatioVisible="{TemplateBinding DisplayValue}" ExpandDirection="Right" Opacity="0">
+                            <Path Stretch="Fill" Stroke="{x:Null}" StrokeLineJoin="Round" VerticalAlignment="Stretch" Opacity="1" Data="M15,0 L18.6,11.373603 L30,11.459046 L20.824955,18.573566 L24.270519,30 L15,23.023449 L5.7294912,30 L9.1750822,18.573566 L0,11.459046 L11.399999,11.373603 z" Fill="#FF5E5E5E" />
+                        </inputToolkitPrimitives:LinearClipper>
+                        <ContentPresenter x:Name="Content" Cursor="{TemplateBinding Cursor}" HorizontalAlignment="Left" Margin="{TemplateBinding Padding}" ContentTemplate="{TemplateBinding ContentTemplate}" Grid.RowSpan="2" Grid.Row="1" />
+                    </Grid>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+</ResourceDictionary>

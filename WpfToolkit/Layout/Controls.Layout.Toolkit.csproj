@@ -1,0 +1,131 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="3.5" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{82123C26-FFD4-455D-B5D9-78E72F465961}</ProjectGuid>
+    <OutputType>library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>System.Windows.Controls</RootNamespace>
+    <AssemblyName>System.Windows.Controls.Layout.Toolkit</AssemblyName>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <WarningLevel>4</WarningLevel>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+    <TargetFrameworkSubset>Client</TargetFrameworkSubset>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <DocumentationFile>System.Windows.Controls.Layout.Toolkit.XML</DocumentationFile>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <DocumentationFile>System.Windows.Controls.Layout.Toolkit.XML</DocumentationFile>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+    <Reference Include="UIAutomationProvider">
+      <RequiredTargetFramework>3.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="UIAutomationTypes">
+      <RequiredTargetFramework>3.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="WindowsBase" />
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+  </ItemGroup>
+  <ItemGroup>
+    <Page Include="Themes\Generic.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="..\Common\System\Windows\Controls\BindingEvaluator.cs">
+      <Link>Common\BindingEvaluator.cs</Link>
+    </Compile>
+    <Compile Include="..\Common\System\Windows\Controls\Extensions.cs">
+      <Link>Common\Extensions.cs</Link>
+    </Compile>
+    <Compile Include="..\Common\System\Windows\Controls\InteractionHelper.cs">
+      <Link>Common\InteractionHelper.cs</Link>
+    </Compile>
+    <Compile Include="..\Common\System\Windows\Controls\ItemsControlHelper.cs">
+      <Link>Common\ItemsControlHelper.cs</Link>
+    </Compile>
+    <Compile Include="..\Common\System\Windows\Controls\IUpdateVisualState.cs">
+      <Link>Common\IUpdateVisualState.cs</Link>
+    </Compile>
+    <Compile Include="..\Common\System\Windows\Controls\VisualStates.cs">
+      <Link>Common\VisualStates.cs</Link>
+    </Compile>
+    <Compile Include="..\Common\System\Windows\Controls\VisualTreeExtensions.cs">
+      <Link>Common\VisualTreeExtensions.cs</Link>
+    </Compile>
+    <Compile Include="..\Common\System\Windows\Controls\WeakEventListener.cs">
+      <Link>Common\WeakEventListener.cs</Link>
+    </Compile>
+    <Compile Include="Accordion\System\Windows\Automation\Peers\AccordionAutomationPeer.cs" />
+    <Compile Include="Accordion\System\Windows\Automation\Peers\AccordionItemAutomationPeer.cs" />
+    <Compile Include="Accordion\System\Windows\Automation\Peers\AccordionItemWrapperAutomationPeer.cs" />
+    <Compile Include="Accordion\System\Windows\Controls\Accordion.cs" />
+    <Compile Include="Accordion\System\Windows\Controls\AccordionAction.cs" />
+    <Compile Include="Accordion\System\Windows\Controls\AccordionButton.cs" />
+    <Compile Include="Accordion\System\Windows\Controls\AccordionItem.cs" />
+    <Compile Include="Accordion\System\Windows\Controls\AccordionSelectionMode.cs" />
+    <Compile Include="Accordion\System\Windows\Controls\ExpandableContentControl.cs" />
+    <Compile Include="Accordion\System\Windows\Controls\SelectionSequence.cs" />
+    <Compile Include="GlobalSuppressions.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="TransitioningContentControl\System\Windows\Controls\TransitioningContentControl.cs" />
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <AppDesigner Include="Properties\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\WPFToolkit.csproj">
+      <Project>{9606A078-7135-4CE7-879E-39FCF527F1A3}</Project>
+      <Name>WPFToolkit</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

@@ -1,0 +1,56 @@
+﻿<!--=================================================================
+Copyright (C) Microsoft Corporation.  All rights reserved.
+==================================================================-->
+    
+<UserControl x:Class="Microsoft.Windows.Controls.Design.VisualStudio.AddDataGridColumnsUserInterface"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" Height="384" Width="820">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="25" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="10" />
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="10" />
+            <ColumnDefinition Width="Auto" MinWidth="120" />
+            <ColumnDefinition Width="10" />
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="10" />
+        </Grid.ColumnDefinitions>
+
+        <Label Grid.Column="1" Grid.Row="0">Available Properties:</Label>
+        <ListBox Grid.Column="1" Grid.Row="1" SelectionMode="Extended" Name="dataSourceColumnsListBox" />
+
+        <Label Grid.Column="3" Grid.Row="0">Operation:</Label>
+        <StackPanel Grid.Column="3" Grid.Row="1">
+            <Grid Margin="0,2,0,2" >
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <Label>Type:</Label>
+                <ComboBox Grid.Column="1" Name="columnTypeComboBox" VerticalContentAlignment="Center"/>
+            </Grid>
+            <Button Margin="0,2,0,2" Name="CreateUnboundButton" Click="CreateUnboundButton_Click" HorizontalAlignment="Center" Width="85">Add Unbound</Button>
+            <Button Margin="0,2,0,2" Name="CreateAllButton" Click="CreateAllButton_Click" HorizontalAlignment="Center" Width="85">Add All</Button>
+            <Button Margin="0,2,0,2" Name="NoneButton" Click="NoneButton_Click" HorizontalAlignment="Center" Width="85">Clear</Button>
+            
+            <Button Margin="0,20,0,2" Name="AddButton" Click="AddButton_Click" HorizontalAlignment="Center"><Path Fill="Black" Stretch="Fill" Data="M100,50 L50,0 50,30 0,30 0,70 50,70, 50,100 z" Width="10" Height="10" Margin="3"/></Button>
+            <Button Margin="0,2,0,2" Name="RemoveButton" Click="RemoveButton_Click" HorizontalAlignment="Center"><Path Fill="Black" Stretch="Fill" Data="M0,50 L50,0 50,30 100,30 100,70 50,70, 50,100 z" Width="10" Height="10" Margin="3"/></Button>
+        </StackPanel>
+
+        <Label Grid.Column="5" Grid.Row="0">DataGrid Columns:</Label>
+        <ListBox Grid.Column="5" Grid.Row="1" SelectionMode="Extended" Name="datagridColumnsListBox">
+            <ListBox.ItemTemplate>
+                <DataTemplate>
+                    <StackPanel Orientation="Horizontal">
+                        <Button Content="Edit..." Grid.Column="1" Margin="2" Click="EditColumn_Click"/>
+                        <TextBlock Text="{Binding Name}" Margin="2" />
+                    </StackPanel>
+                </DataTemplate>
+            </ListBox.ItemTemplate>
+        </ListBox>
+    </Grid>
+</UserControl>
