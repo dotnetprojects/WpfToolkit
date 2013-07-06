@@ -5,7 +5,7 @@
 // All other rights reserved.
 -->
 
-<ResourceDictionary xmlns:input="clr-namespace:System.Windows.Controls" xmlns:inputPrimitivesToolkit="clr-namespace:System.Windows.Controls" xmlns:inputToolkit="clr-namespace:System.Windows.Controls" xmlns:inputToolkitPrimitives="clr-namespace:System.Windows.Controls.Primitives" xmlns:sys="clr-namespace:System;assembly=mscorlib" xmlns:vsm="clr-namespace:System.Windows;assembly=WPFToolkit"  xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation">
+<ResourceDictionary xmlns:input="clr-namespace:System.Windows.Controls" xmlns:inputToolkit="clr-namespace:System.Windows.Controls" xmlns:inputToolkitPrimitives="clr-namespace:System.Windows.Controls.Primitives" xmlns:sys="clr-namespace:System;assembly=mscorlib" xmlns:vsm="clr-namespace:System.Windows;assembly=WPFToolkit"  xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation">
 
     <!--  CommonValidationToolTipTemplate  -->
     <ControlTemplate x:Key="CommonValidationToolTipTemplate" TargetType="ToolTip">
@@ -14,30 +14,30 @@
                 <TranslateTransform x:Name="Translation" X="-25" />
             </Grid.RenderTransform>
 
-            <vsm:VisualStateManager.VisualStateGroups>
-                <vsm:VisualStateGroup Name="OpenStates">
-                    <vsm:VisualStateGroup.Transitions>
-                        <vsm:VisualTransition GeneratedDuration="0" />
-                        <vsm:VisualTransition To="Open" GeneratedDuration="0:0:0.2">
+            <VisualStateManager.VisualStateGroups>
+                <VisualStateGroup Name="OpenStates">
+                    <VisualStateGroup.Transitions>
+                        <VisualTransition GeneratedDuration="0" />
+                        <VisualTransition To="Open" GeneratedDuration="0:0:0.2">
                             <Storyboard>
                                 <DoubleAnimation Storyboard.TargetName="Translation" Storyboard.TargetProperty="X" To="0" Duration="0:0:0.2" />
                                 <DoubleAnimation Storyboard.TargetName="Root" Storyboard.TargetProperty="Opacity" To="1" Duration="0:0:0.2" />
                             </Storyboard>
-                        </vsm:VisualTransition>
-                    </vsm:VisualStateGroup.Transitions>
-                    <vsm:VisualState x:Name="Closed">
+                        </VisualTransition>
+                    </VisualStateGroup.Transitions>
+                    <VisualState x:Name="Closed">
                         <Storyboard>
                             <DoubleAnimation Storyboard.TargetName="Root" Storyboard.TargetProperty="Opacity" To="0" Duration="0" />
                         </Storyboard>
-                    </vsm:VisualState>
-                    <vsm:VisualState x:Name="Open">
+                    </VisualState>
+                    <VisualState x:Name="Open">
                         <Storyboard>
                             <DoubleAnimation Storyboard.TargetName="Translation" Storyboard.TargetProperty="X" To="0" Duration="0" />
                             <DoubleAnimation Storyboard.TargetName="Root" Storyboard.TargetProperty="Opacity" To="1" Duration="0" />
                         </Storyboard>
-                    </vsm:VisualState>
-                </vsm:VisualStateGroup>
-            </vsm:VisualStateManager.VisualStateGroups>
+                    </VisualState>
+                </VisualStateGroup>
+            </VisualStateManager.VisualStateGroups>
 
             <Border Margin="4,4,-4,-4" Background="#052A2E31" CornerRadius="5" />
             <Border Margin="3,3,-3,-3" Background="#152A2E31" CornerRadius="4" />
@@ -124,26 +124,26 @@
                                 </Border>
                             </Grid>
                         </Popup>
-                        <vsm:VisualStateManager.VisualStateGroups>
-                            <vsm:VisualStateGroup x:Name="PopupStates">
-                                <vsm:VisualStateGroup.Transitions>
-                                    <vsm:VisualTransition GeneratedDuration="0:0:0.1" To="PopupOpened" />
-                                    <vsm:VisualTransition GeneratedDuration="0:0:0.2" To="PopupClosed" />
-                                </vsm:VisualStateGroup.Transitions>
-                                <vsm:VisualState x:Name="PopupOpened">
+                        <VisualStateManager.VisualStateGroups>
+                            <VisualStateGroup x:Name="PopupStates">
+                                <VisualStateGroup.Transitions>
+                                    <VisualTransition GeneratedDuration="0:0:0.1" To="PopupOpened" />
+                                    <VisualTransition GeneratedDuration="0:0:0.2" To="PopupClosed" />
+                                </VisualStateGroup.Transitions>
+                                <VisualState x:Name="PopupOpened">
                                     <Storyboard>
                                         <DoubleAnimation Storyboard.TargetName="PopupBorder" Storyboard.TargetProperty="Opacity" To="1.0" Duration="0:0:0.1" />
                                     </Storyboard>
-                                </vsm:VisualState>
-                                <vsm:VisualState x:Name="PopupClosed">
+                                </VisualState>
+                                <VisualState x:Name="PopupClosed">
                                     <Storyboard>
                                         <DoubleAnimation Storyboard.TargetName="PopupBorder" Storyboard.TargetProperty="Opacity" To="0" Duration="0:0:0.2" />
                                     </Storyboard>
-                                </vsm:VisualState>
-                            </vsm:VisualStateGroup>
-                            <vsm:VisualStateGroup x:Name="ValidationStates">
-                                <vsm:VisualState x:Name="Valid" />
-                                <vsm:VisualState x:Name="InvalidUnfocused">
+                                </VisualState>
+                            </VisualStateGroup>
+                            <VisualStateGroup x:Name="ValidationStates">
+                                <VisualState x:Name="Valid" />
+                                <VisualState x:Name="InvalidUnfocused">
                                     <Storyboard>
                                         <ObjectAnimationUsingKeyFrames Storyboard.TargetName="ValidationErrorElement" Storyboard.TargetProperty="Visibility">
                                             <DiscreteObjectKeyFrame KeyTime="0">
@@ -153,8 +153,8 @@
                                             </DiscreteObjectKeyFrame>
                                         </ObjectAnimationUsingKeyFrames>
                                     </Storyboard>
-                                </vsm:VisualState>
-                                <vsm:VisualState x:Name="InvalidFocused">
+                                </VisualState>
+                                <VisualState x:Name="InvalidFocused">
                                     <Storyboard>
                                         <ObjectAnimationUsingKeyFrames Storyboard.TargetName="ValidationErrorElement" Storyboard.TargetProperty="Visibility">
                                             <DiscreteObjectKeyFrame KeyTime="0">
@@ -171,9 +171,9 @@
                                             </DiscreteObjectKeyFrame>
                                         </ObjectAnimationUsingKeyFrames>
                                     </Storyboard>
-                                </vsm:VisualState>
-                            </vsm:VisualStateGroup>
-                        </vsm:VisualStateManager.VisualStateGroups>
+                                </VisualState>
+                            </VisualStateGroup>
+                        </VisualStateManager.VisualStateGroups>
                     </Grid>
                 </ControlTemplate>
             </Setter.Value>
@@ -205,25 +205,25 @@
             <Setter.Value>
                 <ControlTemplate TargetType="inputToolkit:Rating">
                     <Grid x:Name="Root">
-                        <vsm:VisualStateManager.VisualStateGroups>
-                            <vsm:VisualStateGroup x:Name="CommonStates">
-                                <vsm:VisualState x:Name="Normal" />
-                                <vsm:VisualState x:Name="MouseOver" />
-                                <vsm:VisualState x:Name="Pressed" />
-                                <vsm:VisualState x:Name="Disabled" />
-                                <vsm:VisualState x:Name="ReadOnly">
+                        <VisualStateManager.VisualStateGroups>
+                            <VisualStateGroup x:Name="CommonStates">
+                                <VisualState x:Name="Normal" />
+                                <VisualState x:Name="MouseOver" />
+                                <VisualState x:Name="Pressed" />
+                                <VisualState x:Name="Disabled" />
+                                <VisualState x:Name="ReadOnly">
                                     <Storyboard>
                                         <DoubleAnimationUsingKeyFrames BeginTime="00:00:00" Duration="00:00:00.0010000" Storyboard.TargetName="ReadOnlyVisualElement" Storyboard.TargetProperty="(UIElement.Opacity)">
                                             <SplineDoubleKeyFrame KeyTime="00:00:00" Value="0.03" />
                                         </DoubleAnimationUsingKeyFrames>
                                     </Storyboard>
-                                </vsm:VisualState>
-                            </vsm:VisualStateGroup>
-                            <vsm:VisualStateGroup x:Name="FocusStates">
-                                <vsm:VisualState x:Name="Focused" />
-                                <vsm:VisualState x:Name="Unfocused" />
-                            </vsm:VisualStateGroup>
-                        </vsm:VisualStateManager.VisualStateGroups>
+                                </VisualState>
+                            </VisualStateGroup>
+                            <VisualStateGroup x:Name="FocusStates">
+                                <VisualState x:Name="Focused" />
+                                <VisualState x:Name="Unfocused" />
+                            </VisualStateGroup>
+                        </VisualStateManager.VisualStateGroups>
                         <Border Background="{TemplateBinding Background}" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}">
                             <ItemsPresenter />
                         </Border>
@@ -247,10 +247,10 @@
                             <RowDefinition Height="20" />
                             <RowDefinition Height="Auto" />
                         </Grid.RowDefinitions>
-                        <vsm:VisualStateManager.VisualStateGroups>
-                            <vsm:VisualStateGroup x:Name="CommonStates">
-                                <vsm:VisualState x:Name="Normal" />
-                                <vsm:VisualState x:Name="MouseOver">
+                        <VisualStateManager.VisualStateGroups>
+                            <VisualStateGroup x:Name="CommonStates">
+                                <VisualState x:Name="Normal" />
+                                <VisualState x:Name="MouseOver">
                                     <Storyboard>
                                         <DoubleAnimationUsingKeyFrames Storyboard.TargetName="MouseOverRatingItem" Storyboard.TargetProperty="(UIElement.Opacity)">
                                             <SplineDoubleKeyFrame KeyTime="00:00:00" Value="1" />
@@ -262,8 +262,8 @@
                                             <SplineColorKeyFrame KeyTime="00:00:00" Value="#FF6E0000" />
                                         </ColorAnimationUsingKeyFrames>
                                     </Storyboard>
-                                </vsm:VisualState>
-                                <vsm:VisualState x:Name="Pressed">
+                                </VisualState>
+                                <VisualState x:Name="Pressed">
                                     <Storyboard>
                                         <ColorAnimationUsingKeyFrames Storyboard.TargetName="PressedRatingItem" Storyboard.TargetProperty="(Shape.Fill).(SolidColorBrush.Color)">
                                             <SplineColorKeyFrame KeyTime="00:00:00" Value="#FFFEFEFE" />
@@ -272,8 +272,8 @@
                                             <SplineDoubleKeyFrame KeyTime="00:00:00" Value="0.39" />
                                         </DoubleAnimationUsingKeyFrames>
                                     </Storyboard>
-                                </vsm:VisualState>
-                                <vsm:VisualState x:Name="Disabled">
+                                </VisualState>
+                                <VisualState x:Name="Disabled">
                                     <Storyboard>
                                         <DoubleAnimationUsingKeyFrames  Storyboard.TargetName="DisabledRatingItem" Storyboard.TargetProperty="(UIElement.Opacity)">
                                             <SplineDoubleKeyFrame KeyTime="00:00:00" Value="1" />
@@ -282,27 +282,27 @@
                                             <SplineDoubleKeyFrame KeyTime="00:00:00" Value="1" />
                                         </DoubleAnimationUsingKeyFrames>
                                     </Storyboard>
-                                </vsm:VisualState>
-                                <vsm:VisualState x:Name="ReadOnly">
+                                </VisualState>
+                                <VisualState x:Name="ReadOnly">
                                     <Storyboard>
                                         <DoubleAnimationUsingKeyFrames Storyboard.TargetName="ReadOnlyRatingItem" Storyboard.TargetProperty="(UIElement.Opacity)">
                                             <SplineDoubleKeyFrame KeyTime="00:00:00" Value="1" />
                                         </DoubleAnimationUsingKeyFrames>
                                     </Storyboard>
-                                </vsm:VisualState>
-                            </vsm:VisualStateGroup>
-                            <vsm:VisualStateGroup x:Name="FocusStates">
-                                <vsm:VisualState x:Name="Focused">
+                                </VisualState>
+                            </VisualStateGroup>
+                            <VisualStateGroup x:Name="FocusStates">
+                                <VisualState x:Name="Focused">
                                     <Storyboard />
-                                </vsm:VisualState>
-                                <vsm:VisualState x:Name="Unfocused" />
-                            </vsm:VisualStateGroup>
-                            <vsm:VisualStateGroup x:Name="FillStates">
-                                <vsm:VisualState x:Name="Empty" />
-                                <vsm:VisualState x:Name="Partial" />
-                                <vsm:VisualState x:Name="Filled" />
-                            </vsm:VisualStateGroup>
-                        </vsm:VisualStateManager.VisualStateGroups>
+                                </VisualState>
+                                <VisualState x:Name="Unfocused" />
+                            </VisualStateGroup>
+                            <VisualStateGroup x:Name="FillStates">
+                                <VisualState x:Name="Empty" />
+                                <VisualState x:Name="Partial" />
+                                <VisualState x:Name="Filled" />
+                            </VisualStateGroup>
+                        </VisualStateManager.VisualStateGroups>
                         <Border Background="#02FFFFFF" BorderThickness="0" />
                         <Path x:Name="DefaultRatingItem" Fill="White" Stretch="Fill" Stroke="{TemplateBinding BorderBrush}" StrokeLineJoin="Round" StrokeThickness="0.4" VerticalAlignment="Stretch" Opacity="1" Data="M15,0 L18.6,11.373603 L30,11.459046 L20.824955,18.573566 L24.270519,30 L15,23.023449 L5.7294912,30 L9.1750822,18.573566 L0,11.459046 L11.399999,11.373603 z" />
                         <inputToolkitPrimitives:LinearClipper RatioVisible="{TemplateBinding DisplayValue}" ExpandDirection="Right">

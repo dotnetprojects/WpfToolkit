@@ -8,7 +8,6 @@
 <UserControl x:Class="System.Windows.Controls.Samples.AutoCompleteLambda"
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" 
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" 
-    xmlns:controls="clr-namespace:Microsoft.Windows.Controls;assembly=WPFToolkit"
     xmlns:input="clr-namespace:System.Windows.Controls;assembly=System.Windows.Controls.Input.Toolkit">
     <StackPanel>
         <StackPanel.Resources>
@@ -59,7 +58,7 @@
                         HorizontalAlignment="Left" 
                         ItemTemplate="{StaticResource AirportDataTemplate}" 
                         />
-                    <controls:DatePicker 
+                    <DatePicker 
                         x:Name="DepartureDate" 
                         HorizontalAlignment="Left"
                         Width="125" />
@@ -84,7 +83,7 @@
                         HorizontalAlignment="Left" 
                         ItemTemplate="{StaticResource AirportDataTemplate}" 
                         />
-                    <controls:DatePicker 
+                    <DatePicker 
                         x:Name="ArrivalDate" 
                         HorizontalAlignment="Left"
                         Width="125" />

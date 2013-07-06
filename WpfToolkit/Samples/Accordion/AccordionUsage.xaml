@@ -9,7 +9,6 @@
   xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
   xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
   xmlns:layoutToolkit="clr-namespace:System.Windows.Controls;assembly=System.Windows.Controls.Layout.Toolkit"
-  xmlns:vsm="clr-namespace:System.Windows;assembly=WPFToolkit"
   xmlns:layoutToolkitPrimitives="clr-namespace:System.Windows.Controls.Primitives;assembly=System.Windows.Controls.Layout.Toolkit"
   xmlns:sys="clr-namespace:System;assembly=mscorlib">
     <StackPanel>
@@ -287,17 +286,17 @@
                 TargetType="layoutToolkit:AccordionItem">
                                 <Grid
                   Background="Transparent">
-                                    <vsm:VisualStateManager.VisualStateGroups>
+                                    <VisualStateManager.VisualStateGroups>
                                         <!-- CommonState -->
-                                        <vsm:VisualStateGroup
+                                        <VisualStateGroup
                       x:Name="CommonStates">
-                                            <vsm:VisualStateGroup.Transitions>
-                                                <vsm:VisualTransition
+                                            <VisualStateGroup.Transitions>
+                                                <VisualTransition
                           GeneratedDuration="0" />
-                                            </vsm:VisualStateGroup.Transitions>
-                                            <vsm:VisualState
+                                            </VisualStateGroup.Transitions>
+                                            <VisualState
                         x:Name="Normal" />
-                                            <vsm:VisualState
+                                            <VisualState
                         x:Name="Disabled">
                                                 <Storyboard>
                                                     <DoubleAnimation
@@ -306,12 +305,12 @@
                             Storyboard.TargetProperty="(UIElement.Opacity)"
                             To="1" />
                                                 </Storyboard>
-                                            </vsm:VisualState>
-                                        </vsm:VisualStateGroup>
+                                            </VisualState>
+                                        </VisualStateGroup>
                                         <!-- FocusStates -->
-                                        <vsm:VisualStateGroup
+                                        <VisualStateGroup
                       x:Name="FocusStates">
-                                            <vsm:VisualState
+                                            <VisualState
                         x:Name="Focused">
                                                 <Storyboard>
                                                     <ObjectAnimationUsingKeyFrames
@@ -325,19 +324,19 @@
                                                         </DiscreteObjectKeyFrame>
                                                     </ObjectAnimationUsingKeyFrames>
                                                 </Storyboard>
-                                            </vsm:VisualState>
+                                            </VisualState>
                                             <!-- Unfocused -->
-                                            <vsm:VisualState
+                                            <VisualState
                         x:Name="Unfocused" />
-                                        </vsm:VisualStateGroup>
+                                        </VisualStateGroup>
                                         <!-- ExpansionStates -->
-                                        <vsm:VisualStateGroup
+                                        <VisualStateGroup
                       x:Name="ExpansionStates">
-                                            <vsm:VisualStateGroup.Transitions>
-                                                <vsm:VisualTransition
+                                            <VisualStateGroup.Transitions>
+                                                <VisualTransition
                           GeneratedDuration="0" />
-                                            </vsm:VisualStateGroup.Transitions>
-                                            <vsm:VisualState
+                                            </VisualStateGroup.Transitions>
+                                            <VisualState
                         x:Name="Collapsed">
                                                 <Storyboard>
                                                     <DoubleAnimationUsingKeyFrames
@@ -350,8 +349,8 @@
                               Value="0" />
                                                     </DoubleAnimationUsingKeyFrames>
                                                 </Storyboard>
-                                            </vsm:VisualState>
-                                            <vsm:VisualState
+                                            </VisualState>
+                                            <VisualState
                         x:Name="Expanded">
                                                 <Storyboard>
                                                     <DoubleAnimationUsingKeyFrames
@@ -364,16 +363,16 @@
                               Value="1" />
                                                     </DoubleAnimationUsingKeyFrames>
                                                 </Storyboard>
-                                            </vsm:VisualState>
-                                        </vsm:VisualStateGroup>
+                                            </VisualState>
+                                        </VisualStateGroup>
                                         <!-- ExpansionStates -->
-                                        <vsm:VisualStateGroup
+                                        <VisualStateGroup
                       x:Name="LockedStates">
-                                            <vsm:VisualStateGroup.Transitions>
-                                                <vsm:VisualTransition
+                                            <VisualStateGroup.Transitions>
+                                                <VisualTransition
                           GeneratedDuration="0" />
-                                            </vsm:VisualStateGroup.Transitions>
-                                            <vsm:VisualState
+                                            </VisualStateGroup.Transitions>
+                                            <VisualState
                         x:Name="Locked">
                                                 <Storyboard>
                                                     <ObjectAnimationUsingKeyFrames
@@ -387,8 +386,8 @@
                                                         </DiscreteObjectKeyFrame>
                                                     </ObjectAnimationUsingKeyFrames>
                                                 </Storyboard>
-                                            </vsm:VisualState>
-                                            <vsm:VisualState
+                                            </VisualState>
+                                            <VisualState
                         x:Name="Unlocked">
                                                 <Storyboard>
                                                     <ObjectAnimationUsingKeyFrames
@@ -402,16 +401,16 @@
                                                         </DiscreteObjectKeyFrame>
                                                     </ObjectAnimationUsingKeyFrames>
                                                 </Storyboard>
-                                            </vsm:VisualState>
-                                        </vsm:VisualStateGroup>
+                                            </VisualState>
+                                        </VisualStateGroup>
                                         <!-- ExpandDirectionStates-->
-                                        <vsm:VisualStateGroup
+                                        <VisualStateGroup
                       x:Name="ExpandDirectionStates">
-                                            <vsm:VisualStateGroup.Transitions>
-                                                <vsm:VisualTransition
+                                            <VisualStateGroup.Transitions>
+                                                <VisualTransition
                           GeneratedDuration="0" />
-                                            </vsm:VisualStateGroup.Transitions>
-                                            <vsm:VisualState
+                                            </VisualStateGroup.Transitions>
+                                            <VisualState
                         x:Name="ExpandDown">
                                                 <Storyboard>
                                                     <ObjectAnimationUsingKeyFrames
@@ -435,8 +434,8 @@
                                                         </DiscreteObjectKeyFrame>
                                                     </ObjectAnimationUsingKeyFrames>
                                                 </Storyboard>
-                                            </vsm:VisualState>
-                                            <vsm:VisualState
+                                            </VisualState>
+                                            <VisualState
                         x:Name="ExpandUp">
                                                 <Storyboard>
                                                     <ObjectAnimationUsingKeyFrames
@@ -480,8 +479,8 @@
                                                         </DiscreteObjectKeyFrame>
                                                     </ObjectAnimationUsingKeyFrames>
                                                 </Storyboard>
-                                            </vsm:VisualState>
-                                            <vsm:VisualState
+                                            </VisualState>
+                                            <VisualState
                         x:Name="ExpandLeft">
                                                 <Storyboard>
                                                     <ObjectAnimationUsingKeyFrames
@@ -565,8 +564,8 @@
                                                         </DiscreteObjectKeyFrame>
                                                     </ObjectAnimationUsingKeyFrames>
                                                 </Storyboard>
-                                            </vsm:VisualState>
-                                            <vsm:VisualState
+                                            </VisualState>
+                                            <VisualState
                         x:Name="ExpandRight">
                                                 <Storyboard>
                                                     <ObjectAnimationUsingKeyFrames
@@ -650,9 +649,9 @@
                                                         </DiscreteObjectKeyFrame>
                                                     </ObjectAnimationUsingKeyFrames>
                                                 </Storyboard>
-                                            </vsm:VisualState>
-                                        </vsm:VisualStateGroup>
-                                    </vsm:VisualStateManager.VisualStateGroups>
+                                            </VisualState>
+                                        </VisualStateGroup>
+                                    </VisualStateManager.VisualStateGroups>
                                     <Border
                     x:Name="Background"
                     Padding="{TemplateBinding Padding}"
