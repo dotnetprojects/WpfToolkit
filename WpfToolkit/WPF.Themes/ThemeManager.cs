@@ -26,19 +26,26 @@
             string[] themes = new string[] 
             { 
                 "ExpressionDark", "ExpressionLight", 
-                //"RainierOrange", "RainierPurple", "RainierRadialBlue", 
+                "RainierOrange", "RainierPurple", "RainierRadialBlue", 
                 "ShinyBlue", "ShinyRed", 
-                //"ShinyDarkTeal", "ShinyDarkGreen", "ShinyDarkPurple",
+                "ShinyDarkTeal", "ShinyDarkGreen", "ShinyDarkPurple",
                 "DavesGlossyControls", 
                 "WhistlerBlue", 
                 "BureauBlack", "BureauBlue", 
                 "BubbleCreme", 
                 "TwilightBlue",
                 "UXMusingsRed", "UXMusingsGreen", 
-                //"UXMusingsRoughRed", "UXMusingsRoughGreen", 
+                "UXMusingsRoughRed", "UXMusingsRoughGreen", 
                 "UXMusingsBubblyBlue"
             };
             return themes;
+        }
+
+        public static string[] Themes {
+            get
+            {
+                return GetThemes();
+            }
         }
 
         public static void ApplyTheme(this Application app, string theme)
