@@ -1,0 +1,336 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:ice="http://schemas.microsoft.com/winfx/2006/xaml/presentation/options"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:System="clr-namespace:System;assembly=mscorlib">
+
+   <!-- 
+    ***************************************************************************
+    Green Accents
+    ***************************************************************************
+    -->
+
+   <LinearGradientBrush ice:Freeze="True" x:Key="InputSelectionBrush" EndPoint="0.5,1" StartPoint="0.5,0">
+      <GradientStop Color="#FF98B913" Offset="0" />
+      <GradientStop Color="#FF75A20A" Offset="1" />
+   </LinearGradientBrush>
+
+   <LinearGradientBrush ice:Freeze="True" x:Key="ColorAccentBrush" EndPoint="0.5,1" StartPoint="0.5,0">
+      <GradientStop Color="#BCD742" Offset="0" />
+      <GradientStop Color="#91B006" Offset="1" />
+   </LinearGradientBrush>
+
+   <LinearGradientBrush ice:Freeze="True" x:Key="ColorAccentOverBrush" EndPoint="0.5,1" StartPoint="0.5,0">
+      <GradientStop Color="#c3e040" Offset="1" />
+      <GradientStop Color="#9ebf0a" />
+   </LinearGradientBrush>
+
+   <LinearGradientBrush ice:Freeze="True" x:Key="ColorAccentSubduedBrush" EndPoint="0.5,1" StartPoint="0.5,0">
+      <GradientStop Color="#FF6D9000" Offset="0.31" />
+      <GradientStop Color="#FF5A8100" Offset="0.78" />
+   </LinearGradientBrush>
+
+<SolidColorBrush ice:Freeze="True" x:Key="DataGridMouseOverBrush" Color="#DAE880" />
+   <SolidColorBrush ice:Freeze="True" x:Key="DataGridSelectedBrush" Color="#DDF062" />
+   <SolidColorBrush ice:Freeze="True" x:Key="ColorAccentHighlightBrush" Color="#c2df00" />
+   <SolidColorBrush ice:Freeze="True" x:Key="ColorAccentSolidBrush" Color="#FF75A20A" />
+
+   <!-- 
+    ***************************************************************************
+    Orange Accents (Remove Comments to Enable)
+    ***************************************************************************
+    -->
+
+   <!--
+    <LinearGradientBrush ice:Freeze="True" x:Key="InputSelectionBrush" EndPoint="0.5,1" StartPoint="0.5,0">
+        <GradientStop Color="#ffb629" Offset="0" />
+        <GradientStop Color="#FE770A" Offset="1" />
+    </LinearGradientBrush>
+
+
+    <LinearGradientBrush ice:Freeze="True" x:Key="ColorAccentBrush" EndPoint="0.5,1" StartPoint="0.5,0">
+        <GradientStop Color="#ffb72c" Offset="0" />
+        <GradientStop Color="#ff8700" Offset="1" />
+    </LinearGradientBrush>
+
+    <LinearGradientBrush ice:Freeze="True" x:Key="ColorAccentOverBrush" EndPoint="0.5,1" StartPoint="0.5,0">
+        <GradientStop Color="#ffc149" Offset="0" />
+        <GradientStop Color="#ff9800" Offset="1" />
+    </LinearGradientBrush>
+
+    <LinearGradientBrush ice:Freeze="True" x:Key="ColorAccentSubduedBrush" EndPoint="0.5,1" StartPoint="0.5,0">
+        <GradientStop Color="#FFCE5300" Offset="1" />
+        <GradientStop Color="#FFDD870D" />
+    </LinearGradientBrush>
+
+    <SolidColorBrush ice:Freeze="True" x:Key="ColorAccentHighlightBrush" Color="#FFFFC600" />
+    <SolidColorBrush ice:Freeze="True" x:Key="ColorAccentSolidBrush" Color="#FE770A" />
+    -->
+
+   <!-- 
+    ***************************************************************************
+    Blue Accents (Remove Comments to Enable)
+    ***************************************************************************
+    -->
+
+   <!--
+    <LinearGradientBrush ice:Freeze="True" x:Key="InputSelectionBrush" EndPoint="0.5,1" StartPoint="0.5,0">
+        <GradientStop Color="#42baff" Offset="0" />
+        <GradientStop Color="#148cd1" Offset="1" />
+    </LinearGradientBrush>
+
+    <LinearGradientBrush ice:Freeze="True" x:Key="ColorAccentBrush" EndPoint="0.5,1" StartPoint="0.5,0">
+        <GradientStop Color="#42baff" Offset="0" />
+        <GradientStop Color="#148cd1" Offset="1" />
+    </LinearGradientBrush>
+
+    <LinearGradientBrush ice:Freeze="True" x:Key="ColorAccentOverBrush" EndPoint="0.5,1" StartPoint="0.5,0">
+        <GradientStop Color="#74cdff" Offset="1" />
+        <GradientStop Color="#1a9ee8" />
+    </LinearGradientBrush>
+
+    <LinearGradientBrush ice:Freeze="True" x:Key="ColorAccentSubduedBrush" EndPoint="0.5,1" StartPoint="0.5,0">
+        <GradientStop Color="#1aa0ec" Offset="0.31" />
+        <GradientStop Color="#0072be" Offset="0.78" />
+    </LinearGradientBrush>
+
+    <SolidColorBrush ice:Freeze="True" x:Key="ColorAccentHighlightBrush" Color="#8ddbff" />
+    <SolidColorBrush ice:Freeze="True" x:Key="ColorAccentSolidBrush" Color="#148cd1" />
+    -->
+
+   <!-- 
+    ***************************************************************************
+    General Brushes and Colors
+    ***************************************************************************
+    -->
+
+   <Color x:Key="ColorForegroundShadowColor">#FFFFFF</Color>
+
+   <SolidColorBrush ice:Freeze="True" x:Key="ControlForeground" Color="#FF202020" />
+
+   <LinearGradientBrush ice:Freeze="True" x:Key="ControlBackgroundNormal" EndPoint="0.5,1" StartPoint="0.5,0">
+      <GradientStop Color="#FFF7F7F7" Offset="0.164" />
+      <GradientStop Color="#FFC6C6C6" Offset="0.802" />
+      <GradientStop Color="#FFC6C6C6" Offset="0.953" />
+   </LinearGradientBrush>
+
+   <SolidColorBrush ice:Freeze="True" x:Key="ControlBackgroundAltBrush" Color="#FF57575C" />
+
+   <LinearGradientBrush ice:Freeze="True" x:Key="ControlBackgroundOver" EndPoint="0.5,1" StartPoint="0.5,0">
+      <GradientStop Color="White" Offset="0.211" />
+      <GradientStop Color="#FFDEDEDE" Offset="0.784" />
+   </LinearGradientBrush>
+
+   <LinearGradientBrush ice:Freeze="True" x:Key="ControlBackgroundPressed" EndPoint="0.5,1" StartPoint="0.5,0">
+      <GradientStop Color="#FFCECECE" Offset="0.204" />
+      <GradientStop Color="#FFAFAFAF" Offset="0.864" />
+   </LinearGradientBrush>
+
+   <SolidColorBrush ice:Freeze="True" x:Key="ControlOuterHighlightBrush" Color="#40FFFFFF" />
+
+   <SolidColorBrush ice:Freeze="True" x:Key="ControlHighlight" Color="#80FFFFFF" />
+
+   <SolidColorBrush ice:Freeze="True" x:Key="ControlBorderBrush" Color="#FF686868" />
+
+   <SolidColorBrush ice:Freeze="True" x:Key="ControlDarkEdge" Color="#FF2E2E30" />
+
+   <LinearGradientBrush ice:Freeze="True" x:Key="StaticControlBackground" EndPoint="0.5,1" StartPoint="0.5,0">
+      <GradientStop Color="#FFE2E2E2" Offset="0" />
+      <GradientStop Color="#FFC6C6C6" Offset="1" />
+   </LinearGradientBrush>
+
+   <LinearGradientBrush ice:Freeze="True" x:Key="StaticControlBackgroundOver" EndPoint="0.5,1" StartPoint="0.5,0">
+      <GradientStop Color="#FFF8F8F8" Offset="0" />
+      <GradientStop Color="#FFD0D0D0" Offset="1" />
+   </LinearGradientBrush>
+
+   <SolidColorBrush ice:Freeze="True" x:Key="InputBackgroundBrush" Color="White" />
+
+   <SolidColorBrush ice:Freeze="True" x:Key="InputForegroundBrush" Color="#FF404040" />
+
+   <SolidColorBrush ice:Freeze="True" x:Key="InputSelectionForegroundBrush" Color="White" />
+
+   <SolidColorBrush ice:Freeze="True" x:Key="InnerShadowDarkBrush" Color="#50505050" />
+
+   <SolidColorBrush ice:Freeze="True" x:Key="InnerShadowLightBrush" Color="#20202020" />
+
+   <LinearGradientBrush ice:Freeze="True" x:Key="OverlayBrush" EndPoint="0.5,1" StartPoint="0.5,0">
+      <GradientStop Color="#4CFFFFFF" Offset="0" />
+      <GradientStop Color="#4C000000" Offset="1" />
+   </LinearGradientBrush>
+
+   <LinearGradientBrush ice:Freeze="True" x:Key="DisabledBrush" EndPoint="0.5,1" StartPoint="0.5,0">
+      <GradientStop Color="#FF9C9DA0" />
+      <GradientStop Color="#FF8B8C8E" Offset="1" />
+   </LinearGradientBrush>
+
+   <SolidColorBrush ice:Freeze="True" x:Key="DisabledBorderBrush" Color="#66000000" />
+
+   <SolidColorBrush ice:Freeze="True" x:Key="ReadOnlyBrush" Color="#40000000" />
+
+   <SolidColorBrush ice:Freeze="True" x:Key="ErrorBrush" Color="#FFEF0A0A" />
+
+   <LinearGradientBrush ice:Freeze="True" x:Key="CheckBoxBackgroundBrush" StartPoint="0,0" EndPoint="0,1">
+      <GradientStop Color="#FF57575C" Offset="0.3" />
+      <GradientStop Color="#FF55555A" Offset="0.5" />
+      <GradientStop Color="#FF4F4F54" Offset="1.0" />
+   </LinearGradientBrush>
+
+   <SolidColorBrush ice:Freeze="True" x:Key="CheckBoxBorderBrush" Color="#FF343537" />
+
+   <SolidColorBrush ice:Freeze="True" x:Key="CheckBoxInnerShadowBrush" Color="#50303030" />
+
+   <LinearGradientBrush ice:Freeze="True" x:Key="RadioButtonBackgroundBrush" StartPoint="0,0" EndPoint="1,1">
+      <GradientStop Color="#FF505050" Offset="0.3" />
+      <GradientStop Color="#FF484848" Offset="1.0" />
+   </LinearGradientBrush>
+
+   <SolidColorBrush ice:Freeze="True" x:Key="RadioButtonBorderBrush" Color="#FF343537" />
+
+   <RadialGradientBrush ice:Freeze="True" x:Key="RadioButtonInnerShadowBrush">
+      <GradientStop Color="#00000000" Offset="0.5" />
+      <GradientStop Color="#28000000" Offset="1.0" />
+   </RadialGradientBrush>
+
+   <SolidColorBrush ice:Freeze="True" x:Key="NormalFontBrush" Color="#FFFFFF" />
+
+   <SolidColorBrush ice:Freeze="True" x:Key="Heading1FontBrush" Color="#FFFFFF" />
+
+   <SolidColorBrush ice:Freeze="True" x:Key="Heading2FontBrush" Color="#80FFFFFF" />
+
+   <SolidColorBrush ice:Freeze="True" x:Key="Heading3FontBrush" Color="#FFFFFF" />
+
+   <SolidColorBrush ice:Freeze="True" x:Key="HyperlinkBrush" Color="#FFD0FF00" />
+
+   <SolidColorBrush ice:Freeze="True" x:Key="HyperlinkPressedBrush" Color="#FFB1D900" />
+
+   <LinearGradientBrush ice:Freeze="True" x:Key="MouseOverSelectionBrush" EndPoint="0.5,1" StartPoint="0.5,0">
+      <GradientStop Color="#FFEDEDEE" Offset="0" />
+      <GradientStop Color="#FFDEDEDF" Offset="1" />
+   </LinearGradientBrush>
+
+   <SolidColorBrush ice:Freeze="True" x:Key="ScrollBackgroundBrush" Color="#FFDCDCDD" />
+   <SolidColorBrush ice:Freeze="True" x:Key="ScrollBarDisabledBackground" Color="#77DCDCDD" />
+
+   <SolidColorBrush ice:Freeze="True" x:Key="HeaderForegroundBrush" Color="#FF303030" />
+
+   <SolidColorBrush ice:Freeze="True" x:Key="DarkBackground" Color="#FF707176" />
+
+   <SolidColorBrush ice:Freeze="True" x:Key="DarkBorder" Color="#FF58585D" />
+
+   <LinearGradientBrush ice:Freeze="True" x:Key="DataGridHeaderBrush" EndPoint="0.5,1" StartPoint="0.5,0">
+      <GradientStop Color="#606066" Offset="0" />
+      <GradientStop Color="#4D4D51" Offset="1" />
+   </LinearGradientBrush>
+
+   <!-- 
+    ***************************************************************************
+    Dark Input Controls
+    ***************************************************************************
+    -->
+
+   <LinearGradientBrush ice:Freeze="True" x:Key="DarkControlBackgroundBrush" StartPoint="0,0" EndPoint="0,1">
+      <GradientStop Color="#FF57575F" Offset="0.3" />
+      <GradientStop Color="#FF505054" Offset="1.0" />
+   </LinearGradientBrush>
+   <SolidColorBrush ice:Freeze="True" x:Key="DarkControlBorderBrush" Color="#D0505050" />
+   <SolidColorBrush ice:Freeze="True" x:Key="DarkControlForegroundBrush" Color="White" />
+   <SolidColorBrush ice:Freeze="True" x:Key="DarkInnerShadowDarkBrush" Color="#50303030" />
+   <SolidColorBrush ice:Freeze="True" x:Key="DarkInnerShadowLightBrush" Color="#20303030" />
+   <SolidColorBrush ice:Freeze="True" x:Key="DarkControlHighlight" Color="#4CFFFFFF" />
+   <SolidColorBrush ice:Freeze="True" x:Key="DarkReadOnlyBrush" Color="#40FFFFFF" />
+   <SolidColorBrush ice:Freeze="True" x:Key="DarkDisabledBrush" Color="#50FFFFFF" />
+
+   <!-- 
+    ***************************************************************************
+    Green Button
+    ***************************************************************************
+    -->
+
+   <Color x:Key="ControlForegroundGreenColor">#FFFFFFFF</Color>
+   <SolidColorBrush ice:Freeze="True" x:Key="ControlForegroundGreen"
+         Color="{StaticResource ControlForegroundGreenColor}" />
+   <SolidColorBrush ice:Freeze="True" x:Key="HighlightBrushGreen" Color="#BED126" />
+   <LinearGradientBrush ice:Freeze="True" x:Key="ControlBackgroundNormalGreen" EndPoint="0.5,1" StartPoint="0.5,0">
+      <GradientStop Color="#FFA0BB0E" Offset="0.176" />
+      <GradientStop Color="#FF6D9700" Offset="0.894" />
+   </LinearGradientBrush>
+   <LinearGradientBrush ice:Freeze="True" x:Key="ControlBackgroundOverGreen" EndPoint="0.5,1" StartPoint="0.5,0">
+      <GradientStop Color="#FFAECC07" Offset="0.228" />
+      <GradientStop Color="#FF83B100" Offset="0.849" />
+   </LinearGradientBrush>
+   <LinearGradientBrush ice:Freeze="True" x:Key="ControlBackgroundPressedGreen" EndPoint="0.5,1" StartPoint="0.5,0">
+      <GradientStop Color="#FF6D9000" Offset="0.31" />
+      <GradientStop Color="#FF5A8100" Offset="0.78" />
+   </LinearGradientBrush>
+   <Color x:Key="ColorForegroundShadowColorGreen">#2B3D00</Color>
+
+   <!-- 
+    ***************************************************************************
+    Orange Button
+    ***************************************************************************
+    -->
+
+   <SolidColorBrush ice:Freeze="True" x:Key="ControlForegroundOrange" Color="#FFFFFF" />
+   <SolidColorBrush ice:Freeze="True" x:Key="HighlightBrushOrange" Color="#FFCC00" />
+   <LinearGradientBrush ice:Freeze="True" x:Key="ControlBackgroundNormalOrange" EndPoint="0.5,1" StartPoint="0.5,0">
+      <GradientStop Color="#FFFFA700" Offset="0.482" />
+      <GradientStop Color="#FFFF7600" Offset="0.864" />
+      <GradientStop Color="#FFFFB400" Offset="0.169" />
+   </LinearGradientBrush>
+   <LinearGradientBrush ice:Freeze="True" x:Key="ControlBackgroundOverOrange" EndPoint="0.5,1" StartPoint="0.5,0">
+      <GradientStop Color="#FFFFC740" Offset="0.254" />
+      <GradientStop Color="#FFFFB400" Offset="0.496" />
+      <GradientStop Color="#FFFF9900" Offset="1" />
+   </LinearGradientBrush>
+   <LinearGradientBrush ice:Freeze="True" x:Key="ControlBackgroundPressedOrange" EndPoint="0.5,1" StartPoint="0.5,0">
+      <GradientStop Color="#FFDD870D" Offset="0.207" />
+      <GradientStop Color="#FFCE5300" Offset="0.858" />
+   </LinearGradientBrush>
+   <Color x:Key="ColorForegroundShadowColorOrange">#B62F00</Color>
+
+   <!-- 
+    ***************************************************************************
+    Blue Button
+    ***************************************************************************
+    -->
+
+   <SolidColorBrush ice:Freeze="True" x:Key="ControlForegroundBlue" Color="#FFFFFF" />
+   <SolidColorBrush ice:Freeze="True" x:Key="HighlightBrushBlue" Color="#B9DAEC" />
+   <LinearGradientBrush ice:Freeze="True" x:Key="ControlBackgroundNormalBlue" EndPoint="0.5,1" StartPoint="0.5,0">
+      <GradientStop Color="#FF99C7E2" Offset="0.14" />
+      <GradientStop Color="#FF87BDDD" Offset="0.375" />
+      <GradientStop Color="#FF4599CA" Offset="0.871" />
+   </LinearGradientBrush>
+   <LinearGradientBrush ice:Freeze="True" x:Key="ControlBackgroundOverBlue" EndPoint="0.5,1" StartPoint="0.5,0">
+      <GradientStop Color="#FF81CDF8" Offset="0.237" />
+      <GradientStop Color="#FF2DACF3" Offset="0.866" />
+   </LinearGradientBrush>
+   <LinearGradientBrush ice:Freeze="True" x:Key="ControlBackgroundPressedBlue" EndPoint="0.5,1" StartPoint="0.5,0">
+      <GradientStop Color="#FF769BB1" Offset="0.22" />
+      <GradientStop Color="#FF437694" Offset="0.797" />
+   </LinearGradientBrush>
+   <Color x:Key="ColorForegroundShadowColorBlue">#FF00538E</Color>
+
+   <!-- 
+    ***************************************************************************
+    Navigation
+    ***************************************************************************
+    -->
+
+   <Color x:Key="NavigationActiveForegroundColor">White</Color>
+   <SolidColorBrush ice:Freeze="True" x:Key="NavigationForegroundColorBrush"
+         Color="{StaticResource NavigationActiveForegroundColor}" />
+   <SolidColorBrush ice:Freeze="True" x:Key="NavigationInactiveForegroundColorBrush" Color="#FF58585D" />
+
+   <!-- 
+    ***************************************************************************
+    FocusVisuals
+    Note: to enable focus visuals, change the Color property of the 
+    FocusVisualBrush resource below to a visible color (like #6000)
+    ***************************************************************************
+    -->
+
+   <System:Double x:Key="FocusVisualStrokeThickness">1</System:Double>
+   <Thickness x:Key="FocusVisualThickness">1,1,1,1</Thickness>
+   <SolidColorBrush ice:Freeze="True" x:Key="FocusVisualBrush" Color="#00000000" />
+
+</ResourceDictionary>
