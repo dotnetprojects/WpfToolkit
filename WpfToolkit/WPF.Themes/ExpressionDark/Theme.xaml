@@ -2386,7 +2386,7 @@
                         <ToggleButton x:Name="Expander" Style="{DynamicResource NuclearTreeViewItemToggleButton}" IsChecked="{Binding Path=IsExpanded, RelativeSource={RelativeSource TemplatedParent}}" ClickMode="Press" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="{x:Null}" />
                         <Border Grid.Column="1" x:Name="Selection_Border" BorderThickness="1,1,1,1" CornerRadius="3,3,3,3">
                             <Grid Width="Auto" Height="Auto">
-                                <Border x:Name="MainBorder" Opacity="0.25" Background="{DynamicResource NormalBrush}" CornerRadius="2,2,2,2"/>
+                                <Border x:Name="MainBorder" Opacity="0.25" Background="{DynamicResource ControlBackgroundBrush}" CornerRadius="2,2,2,2"/>
                                 <Border x:Name="SelectionBorder" Opacity="0" Background="{DynamicResource SelectedBackgroundBrush}" CornerRadius="2,2,2,2"/>
                                 <Border x:Name="HoverBorder" Opacity="0" Background="{DynamicResource NormalBrush}" CornerRadius="2,2,2,2"/>
                                 <ContentPresenter x:Name="PART_Header" ContentSource="Header" d:LayoutOverrides="Width" Height="Auto" Margin="2,0,2,0" />
