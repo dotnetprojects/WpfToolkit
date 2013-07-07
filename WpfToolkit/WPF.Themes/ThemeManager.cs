@@ -31,6 +31,7 @@ namespace WPF.Themes
                 "RainierOrange", "RainierPurple", "RainierRadialBlue", 
                 "ShinyBlue", "ShinyRed", 
                 "ShinyDarkTeal", "ShinyDarkGreen", "ShinyDarkPurple",
+                "SunnyOrange",
                 "DavesGlossyControls", 
                 "WhistlerBlue", 
                 "BureauBlack", "BureauBlue", 
