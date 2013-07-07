@@ -1,4 +1,6 @@
-﻿namespace WPF.Themes
+﻿using System.Windows.Input;
+
+namespace WPF.Themes
 {
     using System;
     using System.Collections.Generic;
