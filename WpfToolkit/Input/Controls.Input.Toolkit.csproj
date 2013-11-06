@@ -117,6 +117,7 @@
     <Compile Include="AutoCompleteBox\System\Windows\Controls\AutoCompleteFilterMode.cs" />
     <Compile Include="AutoCompleteBox\System\Windows\Controls\AutoCompleteFilterPredicate.cs" />
     <Compile Include="AutoCompleteBox\System\Windows\Controls\ISelectionAdapter.cs" />
+    <Compile Include="AutoCompleteBox\System\Windows\Controls\ItemsControlExtensions.cs" />
     <Compile Include="AutoCompleteBox\System\Windows\Controls\PopulatedEventArgs.cs" />
     <Compile Include="AutoCompleteBox\System\Windows\Controls\PopulatedEventHandler.cs" />
     <Compile Include="AutoCompleteBox\System\Windows\Controls\PopulatingEventArgs.cs" />
