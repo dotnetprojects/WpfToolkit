@@ -10,6 +10,7 @@ using System.Windows.Automation.Peers;
 using System.Windows.Controls;
 using System.Windows.Controls.Primitives;
 using System.Windows.Input;
+using Extensions;
 
 namespace System.Windows.Controls
 {
@@ -197,6 +198,8 @@ namespace System.Windows.Controls
             if (handler != null)
             {
                 handler(sender, e);
+                SelectorControl.ScrollToCenterOfView(SelectorControl.SelectedItem);
+
             }
         }
 
