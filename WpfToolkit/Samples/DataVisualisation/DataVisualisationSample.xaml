@@ -31,7 +31,11 @@
             <chartingToolkit:AreaSeries DependentValuePath="Value" IndependentValuePath="Key" ItemsSource="{Binding Data}" />
         </chartingToolkit:Chart>
         <chartingToolkit:Chart Grid.Column="1" Grid.Row="1" HorizontalAlignment="Stretch" Title="Demo" VerticalAlignment="Stretch">
-            <chartingToolkit:LineSeries DependentValuePath="Value" IndependentValuePath="Key" ItemsSource="{Binding Data}" />
+            <chartingToolkit:Chart.Axes>
+                <chartingToolkit:CategoryAxis Orientation="X" ShowGridLines="True" />
+                <chartingToolkit:LogarithmicAxis MajorValues="1;10;20;40;80" Orientation="Y" ShowGridLines="True" Title="Frequency (Hz)" Minimum="1" Maximum="100" />
+            </chartingToolkit:Chart.Axes>
+            <chartingToolkit:LineSeries IsSelectionEnabled="True" DependentValuePath="Value" IndependentValuePath="Key" ItemsSource="{Binding Data}" />
         </chartingToolkit:Chart>
         <chartingToolkit:Chart Grid.Column="0" Grid.Row="2" HorizontalAlignment="Stretch" Title="Demo" VerticalAlignment="Stretch">
             <chartingToolkit:ScatterSeries DependentValuePath="Value" IndependentValuePath="Key" ItemsSource="{Binding Data}" />

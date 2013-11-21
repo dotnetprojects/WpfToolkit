@@ -2273,6 +2273,75 @@
             Gets the actual range of double values.
             </summary>
         </member>
+        <member name="T:System.Windows.Controls.DataVisualization.Charting.LogarithmicAxis">
+            <summary>
+            An axis that displays numeric values along a logarithmic range.
+            </summary>
+        </member>
+        <member name="M:System.Windows.Controls.DataVisualization.Charting.LogarithmicAxis.#ctor">
+            <summary>
+            Instantiates a new instance of the LogarithmicAxis
+            </summary>
+        </member>
+        <member name="M:System.Windows.Controls.DataVisualization.Charting.LogarithmicAxis.OnActualRangeChanged(System.Windows.Controls.DataVisualization.Range{System.IComparable})">
+            <summary>
+            Updates ActualDoubleRange when ActualRange changes.
+            </summary>
+            <param name="range">New ActualRange value.</param>
+        </member>
+        <member name="M:System.Windows.Controls.DataVisualization.Charting.LogarithmicAxis.GetPlotAreaCoordinate(System.Object,System.Windows.Controls.DataVisualization.Range{System.IComparable},System.Double)">
+            <summary>
+            Returns the plot area coordinate of a value.
+            </summary>
+            <param name="value">The value to plot.</param>
+            <param name="currentRange">The range of values.</param>
+            <param name="length">The length of axis.</param>
+            <returns>The plot area coordinate of a value.</returns>
+        </member>
+        <member name="M:System.Windows.Controls.DataVisualization.Charting.LogarithmicAxis.GetPlotAreaCoordinate(System.Object,System.Windows.Controls.DataVisualization.Range{System.Double},System.Double)">
+            <summary>
+            Returns the plot area coordinate of a value.
+            </summary>
+            <param name="value">The value to plot.</param>
+            <param name="range">The range of values.</param>
+            <param name="length">The length of the axis.</param>
+            <returns>The plot area coordinate of the value.</returns>
+        </member>
+        <member name="M:System.Windows.Controls.DataVisualization.Charting.LogarithmicAxis.GetValueAtPosition(System.Windows.Controls.DataVisualization.UnitValue)">
+            <summary>
+            Returns the value range given a plot area coordinate.
+            </summary>
+            <param name="value">The plot area position.</param>
+            <returns>The value at that plot area coordinate.</returns>
+        </member>
+        <member name="M:System.Windows.Controls.DataVisualization.Charting.LogarithmicAxis.GetMajorTickMarkValues(System.Windows.Size)">
+            <summary>
+            Returns a sequence of values to create major tick marks for.
+            </summary>
+            <param name="availableSize">The available size.</param>
+            <returns>A sequence of values to create major tick marks for.
+            </returns>
+        </member>
+        <member name="M:System.Windows.Controls.DataVisualization.Charting.LogarithmicAxis.GetLabelValues(System.Windows.Size)">
+            <summary>
+            Returns a sequence of values to plot on the axis.
+            </summary>
+            <param name="availableSize">The available size.</param>
+            <returns>A sequence of values to plot on the axis.</returns>
+        </member>
+        <member name="M:System.Windows.Controls.DataVisualization.Charting.LogarithmicAxis.GetMajorValues(System.Windows.Size)">
+            <summary>
+            Returns a sequence of major axis values.
+            </summary>
+            <param name="availableSize">The available size.</param>
+            <returns>A sequence of major axis values.
+            </returns>
+        </member>
+        <member name="P:System.Windows.Controls.DataVisualization.Charting.LogarithmicAxis.ActualDoubleRange">
+            <summary>
+            Gets the actual range of double values.
+            </summary>
+        </member>
         <member name="T:System.Windows.Controls.DataVisualization.Charting.NullableConverter`1">
             <summary>
             Converts a string or base value to a <see cref="T:System.Nullable"/> value.

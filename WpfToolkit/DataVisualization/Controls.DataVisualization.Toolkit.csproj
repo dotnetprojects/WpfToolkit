@@ -104,6 +104,7 @@
     <Compile Include="Charting\Axis\IValueMarginConsumer.cs" />
     <Compile Include="Charting\Axis\IValueMarginProvider.cs" />
     <Compile Include="Charting\Axis\LinearAxis.cs" />
+    <Compile Include="Charting\Axis\LogarithmicAxis.cs" />
     <Compile Include="Charting\Axis\NullableConverter.cs" />
     <Compile Include="Charting\Axis\NumericAxis.cs" />
     <Compile Include="Charting\Axis\NumericAxisLabel.cs" />
