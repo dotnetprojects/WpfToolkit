@@ -10,12 +10,14 @@
     <UserControl.DataContext>
         <dataVisualisation:SampleDataVM />
     </UserControl.DataContext>
-    <Grid>
+    <ScrollViewer VerticalScrollBarVisibility="Visible" CanContentScroll="False">
+        <Grid Height="2000">
         <Grid.ColumnDefinitions>
             <ColumnDefinition />
             <ColumnDefinition />
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
+            <RowDefinition />
             <RowDefinition />
             <RowDefinition />
             <RowDefinition />
@@ -52,5 +54,17 @@
                 <chartingToolkit:SeriesDefinition Title="Test" DependentValuePath="Value" IndependentValuePath="Key" ItemsSource="{Binding Data}" />
             </chartingToolkit:Stacked100BarSeries>            
         </chartingToolkit:Chart>
-    </Grid>
+        <chartingToolkit:Chart Grid.Column="0" Grid.Row="4" HorizontalAlignment="Stretch" Title="Demo" VerticalAlignment="Stretch">
+                <chartingToolkit:CandlestickSeries
+         Title="MSFT"
+         ItemsSource="{Binding Microsoft}"
+         IndependentValueBinding="{Binding Date}"
+         DependentValueBinding="{Binding High}"
+         OpenValueBinding="{Binding Open}"
+         CloseValueBinding="{Binding Close}"
+         LowValueBinding="{Binding Low}"
+         HighValueBinding="{Binding High}"/>
+            </chartingToolkit:Chart>
+        </Grid>
+    </ScrollViewer>
 </UserControl>

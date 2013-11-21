@@ -116,6 +116,7 @@
     <Compile Include="Charting\DataPoint\AreaDataPoint.cs" />
     <Compile Include="Charting\DataPoint\BarDataPoint.cs" />
     <Compile Include="Charting\DataPoint\BubbleDataPoint.cs" />
+    <Compile Include="Charting\DataPoint\CandlestickDataPoint.cs" />
     <Compile Include="Charting\DataPoint\ColumnDataPoint.cs" />
     <Compile Include="Charting\DataPoint\DataPoint.cs" />
     <Compile Include="Charting\DataPoint\DataPointState.cs" />
@@ -135,6 +136,7 @@
     <Compile Include="Charting\Series\AreaSeries.cs" />
     <Compile Include="Charting\Series\BarSeries.cs" />
     <Compile Include="Charting\Series\BubbleSeries.cs" />
+    <Compile Include="Charting\Series\CandlestickSeries.cs" />
     <Compile Include="Charting\Series\ColumnBarBaseSeries.cs" />
     <Compile Include="Charting\Series\ColumnSeries.cs" />
     <Compile Include="Charting\Series\Compatible\AreaSeries.cs" />

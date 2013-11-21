@@ -586,9 +586,61 @@
 
                                 <datavis:Legend x:Name="Legend" Header="{TemplateBinding LegendTitle}" Style="{TemplateBinding LegendStyle}" Grid.Column="1" />
                                 <chartingprimitives:EdgePanel x:Name="ChartArea" Style="{TemplateBinding ChartAreaStyle}">
-                                    <Grid Canvas.ZIndex="-1" Style="{TemplateBinding PlotAreaStyle}" />
+                                    <Grid x:Name="PlotArea" Canvas.ZIndex="-1" Style="{TemplateBinding PlotAreaStyle}" />
                                     <Border Canvas.ZIndex="10" BorderBrush="#FF919191" BorderThickness="1" />
+                                    <Canvas Background="Transparent" x:Name="SelectionArea" />
                                 </chartingprimitives:EdgePanel>
+                            </Grid>
+                        </Grid>
+                    </Border>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <!--  charting:CandlestickDataPoint  -->
+    <Style TargetType="charting:CandlestickDataPoint">
+        <Setter Property="Background" Value="Orange" />
+        <Setter Property="BorderBrush" Value="Black" />
+        <Setter Property="BorderThickness" Value="1" />
+        <Setter Property="IsTabStop" Value="False" />
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="charting:CandlestickDataPoint">
+                    <Border x:Name="Root" Opacity="0" BorderBrush="{x:Null}" BorderThickness="0" RenderTransformOrigin="0.5,0.5">
+                        <!-- Removed the VSM stuff for brevity -->
+                        <Grid>
+                            <Grid x:Name="PART_Shadow">
+                                <Rectangle Fill="Black" Width="1" />
+                            </Grid>
+                            <Grid x:Name="PART_Body" Background="{TemplateBinding Background}" Margin="0,5,0,5">
+                                <Rectangle Fill="{TemplateBinding Background}" />
+                                <Rectangle>
+                                    <Rectangle.Fill>
+                                        <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                                            <GradientStop Color="#64686868" />
+                                            <GradientStop Color="#FF4D4C4C" Offset="0.996" />
+                                        </LinearGradientBrush>
+                                    </Rectangle.Fill>
+                                </Rectangle>
+                                <Rectangle RenderTransformOrigin="0.5,0.5" Margin="19,19,17,17" Opacity="0.245">
+                                    <Rectangle.Fill>
+                                        <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                                            <GradientStop Color="#FF919191" />
+                                            <GradientStop Color="#FFFFFFFF" Offset="1" />
+                                        </LinearGradientBrush>
+                                    </Rectangle.Fill>
+                                    <Rectangle.RenderTransform>
+                                        <TransformGroup>
+                                            <ScaleTransform />
+                                            <SkewTransform />
+                                            <RotateTransform />
+                                            <TranslateTransform X="0.5" Y="0.5" />
+                                        </TransformGroup>
+                                    </Rectangle.RenderTransform>
+                                </Rectangle>
+                                <Rectangle x:Name="MouseOverHighlight" Opacity="0" Fill="#FF9B1C1C" Stroke="#FF000000" />
+                                <Rectangle x:Name="SelectionHighlight" Opacity="0" Fill="#3EF0F0F0" />
                             </Grid>
                         </Grid>
                     </Border>

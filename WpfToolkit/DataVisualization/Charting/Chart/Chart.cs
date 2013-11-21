@@ -10,7 +10,10 @@ using System.Collections.Specialized;
 using System.Diagnostics.CodeAnalysis;
 using System.Linq;
 using System.Windows.Controls.DataVisualization.Charting.Primitives;
+using System.Windows.Input;
 using System.Windows.Markup;
+using System.Windows.Media;
+using System.Windows.Shapes;
 
 namespace System.Windows.Controls.DataVisualization.Charting
 {
@@ -20,6 +23,8 @@ namespace System.Windows.Controls.DataVisualization.Charting
     /// <QualityBand>Preview</QualityBand>
     [TemplatePart(Name = Chart.ChartAreaName, Type = typeof(EdgePanel))]
     [TemplatePart(Name = Chart.LegendName, Type = typeof(Legend))]
+    [TemplatePart(Name = Chart.SelectionAreaName, Type = typeof(Canvas))]
+    [TemplatePart(Name = Chart.PlotAreaName, Type = typeof(Grid))]
     [StyleTypedProperty(Property = "TitleStyle", StyleTargetType = typeof(Title))]
     [StyleTypedProperty(Property = "LegendStyle", StyleTargetType = typeof(Legend))]
     [StyleTypedProperty(Property = "ChartAreaStyle", StyleTargetType = typeof(EdgePanel))]
@@ -31,6 +36,13 @@ namespace System.Windows.Controls.DataVisualization.Charting
         /// Specifies the name of the ChartArea TemplatePart.
         /// </summary>
         private const string ChartAreaName = "ChartArea";
+
+        /// <summary>
+        /// Specifies the name of the ChartArea TemplatePart.
+        /// </summary>
+        private const string SelectionAreaName = "SelectionArea";
+
+        private const string PlotAreaName = "PlotArea";
 
         /// <summary>
         /// Specifies the name of the legend TemplatePart.
@@ -124,6 +136,10 @@ namespace System.Windows.Controls.DataVisualization.Charting
         /// Gets or sets the reference to the Chart's Legend.
         /// </summary>
         private Legend Legend { get; set; }
+
+        private Canvas SelectionArea { get; set; }
+
+        private Grid PlotArea { get; set; }
 
         /// <summary>
         /// Gets or sets the collection of Series displayed by the Chart.
@@ -546,6 +562,10 @@ namespace System.Windows.Controls.DataVisualization.Charting
 
             Legend = GetTemplateChild(LegendName) as Legend;
 
+            SelectionArea = GetTemplateChild(SelectionAreaName) as Canvas;
+
+            PlotArea = GetTemplateChild(PlotAreaName) as Grid;
+
             if (ChartArea != null)
             {
                 _chartAreaChildrenListAdapter.TargetList = ChartArea.Children;
@@ -556,7 +576,60 @@ namespace System.Windows.Controls.DataVisualization.Charting
             {
                 Legend.ItemsSource = this.LegendItems;
             }
+
+            if (SelectionArea != null)
+            {
+                SelectionArea.MouseLeftButtonDown += SelectionArea_MouseLeftButtonDown;
+            }
         }
+
+        private Rectangle SelectionRect;
+        private Point SelectionStartPoint, endPoint;
+        private void SelectionArea_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
+        {
+            if (Keyboard.Modifiers == ModifierKeys.Control)
+            {
+                //if (currentOrderList != null && currentOrderList.Count <= 7)
+                //    return;
+
+                SelectionStartPoint = e.GetPosition((sender as Canvas));
+                
+                if (SelectionRect == null)
+                {
+                    SelectionRect = new Rectangle();
+                    SelectionArea.Children.Add(SelectionRect);
+                    Canvas.SetLeft(SelectionRect, SelectionStartPoint.X);
+                    Canvas.SetTop(SelectionRect, 0);
+                    SelectionRect.Height = PlotArea.ActualHeight;
+                    SelectionRect.Opacity = .5;
+                    SelectionRect.Fill = new SolidColorBrush(Colors.LightGray);
+                    SelectionRect.Stroke = new SolidColorBrush(Colors.Gray);
+                    SelectionRect.StrokeThickness = 2.0;
+                }
+
+            }
+            else
+            {
+                //LineSeries ls = this.chart1.Series[0] as LineSeries;
+
+                //if (OrdersStack.Count <= 1)
+                //{
+                //    ls.ItemsSource = orders;
+                //    currentOrderList = null;
+                //    while (OrdersStack.Count > 0)
+                //        OrdersStack.Pop();
+                //    return;
+                //}
+                //else
+                //{
+                //    OrdersStack.Pop();
+                //    currentOrderList = OrdersStack.Pop();
+                //    ls.ItemsSource = currentOrderList;
+                //}
+            }
+
+        }
+
 
         /// <summary>
         /// Ensures that ISeriesHost is in a consistent state when axes collection is
