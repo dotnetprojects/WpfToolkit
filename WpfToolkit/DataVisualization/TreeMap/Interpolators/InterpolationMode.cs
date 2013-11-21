@@ -8,7 +8,7 @@ namespace System.Windows.Controls.DataVisualization
     /// <summary>
     /// Specifies the supported interpolation modes.
     /// </summary>
-    /// <QualityBand>Experimental</QualityBand>
+    /// <QualityBand>Preview</QualityBand>
     public enum InterpolationMode
     {
         /// <summary>

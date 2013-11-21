@@ -28,7 +28,7 @@ namespace System.Windows.Controls.DataVisualization
     /// when calculating relative item sizes) and ItemsSource (identifying the collection of 
     /// children for each item).
     /// </remarks>
-    /// <QualityBand>Experimental</QualityBand>
+    /// <QualityBand>Preview</QualityBand>
     [TemplatePart(Name = ContainerName, Type = typeof(Canvas))]
     [ContentProperty("ItemsSource")]
     public class TreeMap : Control

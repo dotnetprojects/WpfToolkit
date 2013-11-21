@@ -12,7 +12,7 @@ namespace System.Windows.Controls.DataVisualization
     /// <summary>
     /// Represents a class that defines various aspects of TreeMap items.
     /// </summary>
-    /// <QualityBand>Experimental</QualityBand>
+    /// <QualityBand>Preview</QualityBand>
     [ContentProperty("ItemTemplate")]
     public class TreeMapItemDefinition : INotifyPropertyChanged
     {

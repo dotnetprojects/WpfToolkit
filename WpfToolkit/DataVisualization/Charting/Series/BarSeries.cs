@@ -7,6 +7,8 @@ using System.Collections.Generic;
 using System.Diagnostics.CodeAnalysis;
 using System.Linq;
 
+#if !DEFINITION_SERIES_COMPATIBILITY_MODE
+
 namespace System.Windows.Controls.DataVisualization.Charting
 {
     /// <summary>
@@ -130,3 +132,5 @@ namespace System.Windows.Controls.DataVisualization.Charting
         }
     }
 }
+
+#endif

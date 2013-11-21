@@ -9,6 +9,8 @@ using System.Linq;
 using System.Windows.Media;
 using System.Windows.Shapes;
 
+#if !DEFINITION_SERIES_COMPATIBILITY_MODE
+
 namespace System.Windows.Controls.DataVisualization.Charting
 {
     /// <summary>
@@ -144,3 +146,5 @@ namespace System.Windows.Controls.DataVisualization.Charting
         }
     }
 }
+
+#endif

@@ -147,7 +147,7 @@ namespace System.Windows.Controls.DataVisualization
         /// collection.</returns>
         private int GetStartingIndexOfCollectionAtIndex(int index)
         {
-            return ChildCollections.OfType<IEnumerable>().Select(collection => collection.Cast<T>()).Take(index).SelectMany(collection => collection).Count();
+            return ChildCollections.OfType<IEnumerable>().Select(collection => collection.CastWrapper<T>()).Take(index).SelectMany(collection => collection).Count();
         }
 
         /// <summary>
@@ -159,7 +159,7 @@ namespace System.Windows.Controls.DataVisualization
             this.Mutate(that => that.Clear());
             this.Mutate(that =>
                 {
-                    IList<T> items = ChildCollections.OfType<IEnumerable>().Select(collection => collection.Cast<T>()).SelectMany(collection => collection).ToList();
+                    IList<T> items = ChildCollections.OfType<IEnumerable>().Select(collection => collection.CastWrapper<T>()).SelectMany(collection => collection).ToList();
                     foreach (T item in items)
                     {
                         that.Add(item);

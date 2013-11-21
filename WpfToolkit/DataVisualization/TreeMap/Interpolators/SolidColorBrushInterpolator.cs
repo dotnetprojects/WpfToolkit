@@ -10,7 +10,7 @@ namespace System.Windows.Controls.DataVisualization
     /// Interpolator which converts a numeric value from its [RangeMinimum, RangeMaximum]
     /// range to a color in the range [From, To].
     /// </summary>
-    /// <QualityBand>Experimental</QualityBand>
+    /// <QualityBand>Preview</QualityBand>
     public class SolidColorBrushInterpolator : RangeInterpolator<Color>
     {
         /// <summary>

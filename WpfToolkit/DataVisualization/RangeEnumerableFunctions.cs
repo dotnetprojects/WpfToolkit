@@ -56,14 +56,13 @@ namespace System.Windows.Controls.DataVisualization
         public static Range<T> Sum<T>(this IEnumerable<Range<T>> that)
             where T : IComparable
         {
-            if (that.IsEmpty())
+            Range<T> sum = new Range<T>();
+            IEnumerator<Range<T>> enumerator = that.GetEnumerator();
+            while (enumerator.MoveNext())
             {
-                return new Range<T>();
+                sum = sum.Add(enumerator.Current);
             }
-            else
-            {
-                return that.Aggregate((x, y) => x.Add(y));
-            }
+            return sum;
         }
     }
 }

@@ -480,7 +480,7 @@ namespace System.Windows.Controls.DataVisualization
                 }
 
                 IEnumerable<IGrouping<int, UIElement>> priorityGroups =
-                    from child in Children.Cast<UIElement>()
+                    from child in Children.CastWrapper<UIElement>()
                     group child by GetPriority(child) into priorityGroup
                     select priorityGroup;
 
@@ -510,7 +510,7 @@ namespace System.Windows.Controls.DataVisualization
 
                 IEnumerable<int> priorities =
                     Children
-                        .Cast<UIElement>()
+                        .CastWrapper<UIElement>()
                         .Select(child => GetPriority(child)).Distinct().OrderBy(priority => priority).ToList();
 
                 PriorityOffsets = new Dictionary<int, double>();
@@ -524,12 +524,12 @@ namespace System.Windows.Controls.DataVisualization
 
                 foreach (Tuple<int, int> priorityPair in priorityPairs)
                 {
-                    IEnumerable<UIElement> currentPriorityChildren = Children.Cast<UIElement>().Where(child => GetPriority(child) == priorityPair.Item1).ToList();
+                    IEnumerable<UIElement> currentPriorityChildren = Children.CastWrapper<UIElement>().Where(child => GetPriority(child) == priorityPair.Item1).ToList();
 
                     IEnumerable<Range<double>> currentPriorityRanges =
                         GetRanges(currentPriorityChildren, lengthSelector);
-                    
-                    IEnumerable<UIElement> nextPriorityChildren = Children.Cast<UIElement>().Where(child => GetPriority(child) == priorityPair.Item2).ToList();
+
+                    IEnumerable<UIElement> nextPriorityChildren = Children.CastWrapper<UIElement>().Where(child => GetPriority(child) == priorityPair.Item2).ToList();
 
                     IEnumerable<Range<double>> nextPriorityRanges =
                         GetRanges(nextPriorityChildren, lengthSelector);
@@ -554,7 +554,7 @@ namespace System.Windows.Controls.DataVisualization
 
                 offset =
                     (Children
-                        .Cast<UIElement>()
+                        .CastWrapper<UIElement>()
                         .GroupBy(child => GetPriority(child))
                         .Select(
                             group =>

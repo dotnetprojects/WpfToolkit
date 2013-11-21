@@ -150,8 +150,7 @@ namespace System.Windows.Controls.DataVisualization.Charting
             DefaultStyleKeyProperty.OverrideMetadata(typeof(RangeAxis), new FrameworkPropertyMetadata(typeof(RangeAxis)));
         }
 
-#endif    
-
+#endif
         /// <summary>
         /// Instantiates a new instance of the RangeAxis class.
         /// </summary>
@@ -167,6 +166,13 @@ namespace System.Windows.Controls.DataVisualization.Charting
             // Update actual range when size changes for the first time.  This
             // is necessary because the value margins may have changed after
             // the first layout pass.
+            SizeChangedEventHandler handler = null;
+            handler = delegate
+            {
+                SizeChanged -= handler;
+                UpdateActualRange();
+            };
+            SizeChanged += handler;
         }
 
         /// <summary>
@@ -190,21 +196,31 @@ namespace System.Windows.Controls.DataVisualization.Charting
         /// <summary>
         /// Returns the plot area coordinate of a given value.
         /// </summary>
-        /// <param name="value">The value to return the plot area coordinate
-        /// for.</param>
+        /// <param name="value">The value to return the plot area coordinate for.</param>
         /// <returns>The plot area coordinate of the given value.</returns>
         public override UnitValue GetPlotAreaCoordinate(object value)
         {
-            return GetPlotAreaCoordinate(value, ActualRange, ActualLength);
+            if (value == null)
+            {
+                throw new ArgumentNullException("value");
+            }
+
+            return GetPlotAreaCoordinate(value, ActualLength);
         }
 
         /// <summary>
         /// Returns the plot area coordinate of a given value.
         /// </summary>
-        /// <param name="value">The value to return the plot area coordinate
-        /// for.</param>
-        /// <param name="currentRange">The value range to use when calculating 
-        /// the plot area coordinate.</param>
+        /// <param name="value">The value to return the plot area coordinate for.</param>
+        /// <param name="length">The length of the axis.</param>
+        /// <returns>The plot area coordinate of the given value.</returns>
+        protected abstract UnitValue GetPlotAreaCoordinate(object value, double length);
+
+        /// <summary>
+        /// Returns the plot area coordinate of a given value.
+        /// </summary>
+        /// <param name="value">The value to return the plot area coordinate for.</param>
+        /// <param name="currentRange">The value range to use when calculating the plot area coordinate.</param>
         /// <param name="length">The length of the axis.</param>
         /// <returns>The plot area coordinate of the given value.</returns>
         protected abstract UnitValue GetPlotAreaCoordinate(object value, Range<IComparable> currentRange, double length);
@@ -326,7 +342,7 @@ namespace System.Windows.Controls.DataVisualization.Charting
                 {
                     foreach (IComparable axisValue in GetMajorTickMarkValues(availableSize))
                     {
-                        UnitValue coordinate = GetPlotAreaCoordinate(axisValue, ActualRange, length);
+                        UnitValue coordinate = GetPlotAreaCoordinate(axisValue, length);
                         if (ValueHelper.CanGraph(coordinate.Value))
                         {
                             Line line = _majorTickMarkPool.Next();
@@ -338,7 +354,7 @@ namespace System.Windows.Controls.DataVisualization.Charting
 
                     foreach (IComparable axisValue in GetMinorTickMarkValues(availableSize))
                     {
-                        UnitValue coordinate = GetPlotAreaCoordinate(axisValue, ActualRange, length);
+                        UnitValue coordinate = GetPlotAreaCoordinate(axisValue, length);
                         if (ValueHelper.CanGraph(coordinate.Value))
                         {
                             Line line = _minorTickMarkPool.Next();
@@ -351,7 +367,7 @@ namespace System.Windows.Controls.DataVisualization.Charting
                     int count = 0;
                     foreach (IComparable axisValue in GetLabelValues(availableSize))
                     {
-                        UnitValue coordinate = GetPlotAreaCoordinate(axisValue, ActualRange, length);
+                        UnitValue coordinate = GetPlotAreaCoordinate(axisValue, length);
                         if (ValueHelper.CanGraph(coordinate.Value))
                         {
                             Control axisLabel = _labelPool.Next();
@@ -570,8 +586,8 @@ namespace System.Windows.Controls.DataVisualization.Charting
         /// </param>
         internal static void GetMaxLeftAndRightOverlap(IList<ValueMarginCoordinateAndOverlap> valueMargins, out ValueMarginCoordinateAndOverlap maxLeftOverlapValueMargin, out ValueMarginCoordinateAndOverlap maxRightOverlapValueMargin)
         {
-            maxLeftOverlapValueMargin = null;
-            maxRightOverlapValueMargin = null;
+            maxLeftOverlapValueMargin = new ValueMarginCoordinateAndOverlap();
+            maxRightOverlapValueMargin = new ValueMarginCoordinateAndOverlap();
             double maxLeftOverlap = double.MinValue;
             double maxRightOverlap = double.MinValue;
             int valueMarginsCount = valueMargins.Count;

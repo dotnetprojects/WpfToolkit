@@ -11,7 +11,7 @@ namespace System.Windows.Controls.DataVisualization
     /// Interpolator which converts a numeric value from its [RangeMinimum, RangeMaximum]
     /// range to another value in the range [From, To].
     /// </summary>
-    /// <QualityBand>Experimental</QualityBand>
+    /// <QualityBand>Preview</QualityBand>
     public class DoubleInterpolator : RangeInterpolator<double>
     {
         /// <summary>

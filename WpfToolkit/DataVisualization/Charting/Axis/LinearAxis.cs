@@ -96,6 +96,32 @@ namespace System.Windows.Controls.DataVisualization.Charting
         }
 
         /// <summary>
+        /// Gets the actual range of double values.
+        /// </summary>
+        protected Range<double> ActualDoubleRange { get; private set; }
+
+        /// <summary>
+        /// Updates ActualDoubleRange when ActualRange changes.
+        /// </summary>
+        /// <param name="range">New ActualRange value.</param>
+        protected override void OnActualRangeChanged(Range<IComparable> range)
+        {
+            ActualDoubleRange = range.ToDoubleRange();
+            base.OnActualRangeChanged(range);
+        }
+
+        /// <summary>
+        /// Returns the plot area coordinate of a value.
+        /// </summary>
+        /// <param name="value">The value to plot.</param>
+        /// <param name="length">The length of axis.</param>
+        /// <returns>The plot area coordinate of a value.</returns>
+        protected override UnitValue GetPlotAreaCoordinate(object value, double length)
+        {
+            return GetPlotAreaCoordinate(value, ActualDoubleRange, length);
+        }
+
+        /// <summary>
         /// Returns the plot area coordinate of a value.
         /// </summary>
         /// <param name="value">The value to plot.</param>
@@ -104,20 +130,26 @@ namespace System.Windows.Controls.DataVisualization.Charting
         /// <returns>The plot area coordinate of a value.</returns>
         protected override UnitValue GetPlotAreaCoordinate(object value, Range<IComparable> currentRange, double length)
         {
-            if (value == null)
-            {
-                throw new ArgumentNullException("value");
-            }
+            return GetPlotAreaCoordinate(value, currentRange.ToDoubleRange(), length);
+        }
 
+        /// <summary>
+        /// Returns the plot area coordinate of a value.
+        /// </summary>
+        /// <param name="value">The value to plot.</param>
+        /// <param name="currentRange">The range of values.</param>
+        /// <param name="length">The length of axis.</param>
+        /// <returns>The plot area coordinate of a value.</returns>
+        private static UnitValue GetPlotAreaCoordinate(object value, Range<double> currentRange, double length)
+        {
             if (currentRange.HasData)
             {
                 double doubleValue = ValueHelper.ToDouble(value);
-                Range<double> actualDoubleRange = currentRange.ToDoubleRange();
 
                 double pixelLength = Math.Max(length - 1, 0);
-                double rangelength = actualDoubleRange.Maximum - actualDoubleRange.Minimum;
+                double rangelength = currentRange.Maximum - currentRange.Minimum;
 
-                return new UnitValue((doubleValue - actualDoubleRange.Minimum) * (pixelLength / rangelength), Unit.Pixels);
+                return new UnitValue((doubleValue - currentRange.Minimum) * (pixelLength / rangelength), Unit.Pixels);
             }
 
             return UnitValue.NaN();
@@ -138,44 +170,31 @@ namespace System.Windows.Controls.DataVisualization.Charting
                 return Interval.Value;
             }
 
-            Range<double> doubleActualRange = ActualRange.ToDoubleRange();
-
-            // helper functions
-            Func<double, double> Exponent = x => Math.Ceiling(Math.Log(x, 10));
-            Func<double, double> Mantissa = x => x / Math.Pow(10, Exponent(x) - 1);
-
-            // reduce intervals for horizontal axis.
-            double maxIntervals = Orientation == AxisOrientation.X ? MaximumAxisIntervalsPer200Pixels * 0.8 : MaximumAxisIntervalsPer200Pixels;
-            // real maximum interval count
-            double maxIntervalCount = GetLength(availableSize) / 200 * maxIntervals;
-
-            double range = Math.Abs(doubleActualRange.Minimum - doubleActualRange.Maximum);
-            double interval = Math.Pow(10, Exponent(range));
-            double tempInterval = interval;
-
-            // decrease interval until interval count becomes less than maxIntervalCount
-            while (true)
+            // Adjust maximum interval count adjusted for current axis
+            double adjustedMaximumIntervalsPer200Pixels = (Orientation == AxisOrientation.X ? 0.8 : 1.0) * MaximumAxisIntervalsPer200Pixels;
+            // Calculate maximum interval count for current space
+            double maximumIntervalCount = Math.Max(GetLength(availableSize) * adjustedMaximumIntervalsPer200Pixels / 200.0, 1.0);
+            // Calculate range
+            double range = ActualDoubleRange.Maximum - ActualDoubleRange.Minimum;
+            // Calculate largest acceptable interval
+            double bestInterval = range / maximumIntervalCount;
+            // Calculate mimimum ideal interval (ideal => something that gives nice axis values)
+            double minimumIdealInterval = Math.Pow(10, Math.Floor(Math.Log10(bestInterval)));
+            // Walk the list of ideal multipliers
+            foreach (int idealMultiplier in new int[] { 10, 5, 2, 1 })
             {
-                int mantissa = (int)Mantissa(tempInterval);
-                if (mantissa == 5)
+                // Check the current ideal multiplier against the maximum count
+                double currentIdealInterval = minimumIdealInterval * idealMultiplier;
+                if (maximumIntervalCount < (range / currentIdealInterval))
                 {
-                    // reduce 5 to 2
-                    tempInterval = ValueHelper.RemoveNoiseFromDoubleMath(tempInterval / 2.5);
-                }
-                else if (mantissa == 2 || mantissa == 1 || mantissa == 10)
-                {
-                    // reduce 2 to 1,10 to 5,1 to 0.5
-                    tempInterval = ValueHelper.RemoveNoiseFromDoubleMath(tempInterval / 2.0);
-                }
-
-                if (range / tempInterval > maxIntervalCount)
-                {
+                    // Went too far, break out
                     break;
                 }
-
-                interval = tempInterval;
+                // Update the best interval
+                bestInterval = currentIdealInterval;
             }
-            return interval;
+            // Return best interval
+            return bestInterval;
         }
 
         /// <summary>
@@ -186,7 +205,7 @@ namespace System.Windows.Controls.DataVisualization.Charting
         /// </returns>
         protected override IEnumerable<IComparable> GetMajorTickMarkValues(Size availableSize)
         {
-            return GetMajorValues(availableSize).Cast<IComparable>();
+            return GetMajorValues(availableSize).CastWrapper<IComparable>();
         }
 
         /// <summary>
@@ -201,15 +220,14 @@ namespace System.Windows.Controls.DataVisualization.Charting
             {
                 yield break;
             }
-            Range<double> typedActualRange = ActualRange.ToDoubleRange();
             this.ActualInterval = CalculateActualInterval(availableSize);
-            double startValue = AlignToInterval(typedActualRange.Minimum, this.ActualInterval);
-            if (startValue < typedActualRange.Minimum)
+            double startValue = AlignToInterval(ActualDoubleRange.Minimum, this.ActualInterval);
+            if (startValue < ActualDoubleRange.Minimum)
             {
-                startValue = AlignToInterval(typedActualRange.Minimum + this.ActualInterval, this.ActualInterval);
+                startValue = AlignToInterval(ActualDoubleRange.Minimum + this.ActualInterval, this.ActualInterval);
             }
             double nextValue = startValue;
-            for (int counter = 1; nextValue <= typedActualRange.Maximum; counter++)
+            for (int counter = 1; nextValue <= ActualDoubleRange.Maximum; counter++)
             {
                 yield return nextValue;
                 nextValue = startValue + (counter * this.ActualInterval);
@@ -223,7 +241,7 @@ namespace System.Windows.Controls.DataVisualization.Charting
         /// <returns>A sequence of values to plot on the axis.</returns>
         protected override IEnumerable<IComparable> GetLabelValues(Size availableSize)
         {
-            return GetMajorValues(availableSize).Cast<IComparable>();
+            return GetMajorValues(availableSize).CastWrapper<IComparable>();
         }
 
         /// <summary>
@@ -252,10 +270,9 @@ namespace System.Windows.Controls.DataVisualization.Charting
                 if (value.Unit == Unit.Pixels)
                 {
                     double coordinate = value.Value;
-                    Range<double> actualDoubleRange = ActualRange.ToDoubleRange();
 
-                    double rangelength = actualDoubleRange.Maximum - actualDoubleRange.Minimum;
-                    double output = ((coordinate * (rangelength / ActualLength)) + actualDoubleRange.Minimum);
+                    double rangelength = ActualDoubleRange.Maximum - ActualDoubleRange.Minimum;
+                    double output = ((coordinate * (rangelength / ActualLength)) + ActualDoubleRange.Minimum);
 
                     return output;
                 }

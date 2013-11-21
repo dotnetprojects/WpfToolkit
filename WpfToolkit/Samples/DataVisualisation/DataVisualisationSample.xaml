@@ -41,6 +41,12 @@
         </chartingToolkit:Chart>
         <chartingToolkit:Chart Grid.Column="0" Grid.Row="3" HorizontalAlignment="Stretch" Title="Demo" VerticalAlignment="Stretch">
             <chartingToolkit:BarSeries DependentValuePath="Value" IndependentValuePath="Key" ItemsSource="{Binding Data}" />
-        </chartingToolkit:Chart>        
+        </chartingToolkit:Chart>
+        <chartingToolkit:Chart Grid.Column="1" Grid.Row="3" HorizontalAlignment="Stretch" Title="Demo" VerticalAlignment="Stretch">
+            <chartingToolkit:Stacked100BarSeries >
+                <chartingToolkit:SeriesDefinition Title="Actual" DependentValuePath="Value" IndependentValuePath="Key" ItemsSource="{Binding Data}" />
+                <chartingToolkit:SeriesDefinition Title="Test" DependentValuePath="Value" IndependentValuePath="Key" ItemsSource="{Binding Data}" />
+            </chartingToolkit:Stacked100BarSeries>            
+        </chartingToolkit:Chart>
     </Grid>
 </UserControl>

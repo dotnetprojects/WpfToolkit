@@ -31,19 +31,7 @@ namespace System.Windows.Controls.DataVisualization
             {
                 return list.Count;
             }
-            return that.Cast<object>().Count();
-        }
-
-        /// <summary>
-        /// Returns whether a sequence is empty.
-        /// </summary>
-        /// <typeparam name="T">The type of the sequence.</typeparam>
-        /// <param name="that">The sequence.</param>
-        /// <returns>Whether the sequence is empty or not.</returns>
-        public static bool IsEmpty<T>(this IEnumerable<T> that)
-        {
-            IEnumerator<T> enumerator = that.GetEnumerator();
-            return !enumerator.MoveNext();
+            return that.CastWrapper<object>().Count();
         }
 
         /// <summary>
@@ -79,24 +67,6 @@ namespace System.Windows.Controls.DataVisualization
 
             return minimum;
         }
-
-        /////// <summary>
-        /////// Returns the maximum value in the sequence or the default value.
-        /////// </summary>
-        /////// <typeparam name="T">The stream type.</typeparam>
-        /////// <param name="that">The stream.</param>
-        /////// <returns>The maximum value or the default value.</returns>
-        ////public static T MaxOrDefault<T>(this IEnumerable<T> that)
-        ////{
-        ////    if (!that.Any())
-        ////    {
-        ////        return default(T);
-        ////    }
-        ////    else
-        ////    {
-        ////        return that.Max();
-        ////    }
-        ////}
 
         /// <summary>
         /// Returns the sum of all values in the sequence or the default value.
@@ -149,25 +119,6 @@ namespace System.Windows.Controls.DataVisualization
             return maximum;
         }
 
-        /////// <summary>
-        /////// Performs a projection with the index of the item in the sequence.
-        /////// </summary>
-        /////// <typeparam name="T">The type of the sequence.</typeparam>
-        /////// <typeparam name="R">The type of the returned sequence.</typeparam>
-        /////// <param name="that">The sequence to apply the projection to.</param>
-        /////// <param name="func">The function to apply to each item.</param>
-        /////// <returns>A sequence of the returned values.</returns>
-        ////public static IEnumerable<R> SelectWithIndex<T, R>(this IEnumerable<T> that, Func<T, int, R> func)
-        ////{
-        ////    int counter = 0;
-
-        ////    foreach (T item in that)
-        ////    {
-        ////        yield return func(item, counter);
-        ////        counter++;
-        ////    }
-        ////}
-
         /// <summary>
         /// Accepts two sequences and applies a function to the corresponding 
         /// values in the two sequences.
@@ -190,99 +141,6 @@ namespace System.Windows.Controls.DataVisualization
             }
         }
 
-        /////// <summary>
-        /////// Zips a each item in the sequence together with the previous item in
-        /////// the stream.
-        /////// </summary>
-        /////// <typeparam name="T">The type of the sequence.</typeparam>
-        /////// <param name="that">The sequence.</param>
-        /////// <returns>A sequence of tuples containing the current item and the
-        /////// previous item.</returns>
-        ////public static IEnumerable<Tuple<T, T>> ZipWithPrevious<T>(this IEnumerable<T> that)
-        ////{
-        ////    T previous = default(T);
-        ////    IEnumerator<T> enumerator = that.GetEnumerator();
-        ////    if (enumerator.MoveNext())
-        ////    {
-        ////        previous = enumerator.Current;
-        ////    }
-        ////    else
-        ////    {
-        ////        yield break;
-        ////    }
-
-        ////    while (enumerator.MoveNext())
-        ////    {
-        ////        yield return new Tuple<T, T>(enumerator.Current, previous);
-        ////        previous = enumerator.Current;
-        ////    }
-        ////    yield break;
-        ////}
-
-        /////// <summary>
-        /////// Accepts two sequences and applies a function to the corresponding 
-        /////// values in the two sequences.
-        /////// </summary>
-        /////// <typeparam name="T0">The type of the first sequence.</typeparam>
-        /////// <typeparam name="T1">The type of the second sequence.</typeparam>
-        /////// <param name="enumerable0">The first sequence.</param>
-        /////// <param name="enumerable1">The second sequence.</param>
-        /////// <returns>A sequence of transformed values from both sequences.</returns>
-        ////public static IEnumerable<Tuple<T0, T1>> ZipTuple<T0, T1>(IEnumerable<T0> enumerable0, IEnumerable<T1> enumerable1)
-        ////{
-        ////    IEnumerator<T0> enumerator0 = enumerable0.GetEnumerator();
-        ////    IEnumerator<T1> enumerator1 = enumerable1.GetEnumerator();
-        ////    while (enumerator0.MoveNext() && enumerator1.MoveNext())
-        ////    {
-        ////        yield return new Tuple<T0, T1>(enumerator0.Current, enumerator1.Current);
-        ////    }
-        ////}
-
-        /////// <summary>
-        /////// Creates a tuple.
-        /////// </summary>
-        /////// <typeparam name="T0">The type of the first item.</typeparam>
-        /////// <typeparam name="T1">The type of the second item.</typeparam>
-        /////// <param name="t0">The first item.</param>
-        /////// <param name="t1">The second item.</param>
-        /////// <returns>The created tuple.</returns>
-        ////public static Tuple<T0, T1> Tuple<T0, T1>(T0 t0, T1 t1)
-        ////{
-        ////    return new Tuple<T0, T1>(t0, t1);
-        ////}
-
-        /////// <summary>
-        /////// Creates a triple.
-        /////// </summary>
-        /////// <typeparam name="T0">The type of the first item.</typeparam>
-        /////// <typeparam name="T1">The type of the second item.</typeparam>
-        /////// <typeparam name="T2">The type of the third item.</typeparam>
-        /////// <param name="t0">The first item.</param>
-        /////// <param name="t1">The second item.</param>
-        /////// <param name="t2">The third item.</param>
-        /////// <returns>The created triple.</returns>
-        ////public static Triple<T0, T1, T2> Triple<T0, T1, T2>(T0 t0, T1 t1, T2 t2)
-        ////{
-        ////    return new Triple<T0, T1, T2>(t0, t1, t2);
-        ////}
-
-        /////// <summary>
-        /////// Creates a quadruple.
-        /////// </summary>
-        /////// <typeparam name="T0">The type of the first item.</typeparam>
-        /////// <typeparam name="T1">The type of the second item.</typeparam>
-        /////// <typeparam name="T2">The type of the third item.</typeparam>
-        /////// <typeparam name="T3">The type of the fourth item.</typeparam>
-        /////// <param name="t0">The first item.</param>
-        /////// <param name="t1">The second item.</param>
-        ////    /// <param name="t2">The third item.</param>
-        /////// <param name="t3">The fourth item.</param>
-        /////// <returns>The created triple.</returns>
-        ////public static Quadruple<T0, T1, T2, T3> Quadruple<T0, T1, T2, T3>(T0 t0, T1 t1, T2 t2, T3 t3)
-        ////{
-        ////    return new Quadruple<T0, T1, T2, T3>(t0, t1, t2, t3);
-        ////}
-         
         /// <summary>
         /// Creates a sequence of values by accepting an initial value, an 
         /// iteration function, and apply the iteration function recursively.
@@ -340,38 +198,6 @@ namespace System.Windows.Controls.DataVisualization
             }
         }
 
-        /////// <summary>
-        /////// Returns the maximum value or null if sequence is empty.
-        /////// </summary>
-        /////// <param name="that">The sequence to retrieve the maximum value from.
-        /////// </param>
-        /////// <returns>The maximum value or null.</returns>
-        ////public static T MaxOrNull<T>(this IEnumerable<T> that)
-        ////    where T : class, IComparable
-        ////{
-        ////    if (!that.Any())
-        ////    {
-        ////        return null;
-        ////    }
-        ////    return that.Max();
-        ////}
-
-        /////// <summary>
-        /////// Returns the minimum value or null if sequence is empty.
-        /////// </summary>
-        /////// <param name="that">The sequence to retrieve the minimum value from.
-        /////// </param>
-        /////// <returns>The minimum value or null.</returns>
-        ////public static T MinOrNull<T>(this IEnumerable<T> that)
-        ////    where T : class, IComparable
-        ////{
-        ////    if (!that.Any())
-        ////    {
-        ////        return null;
-        ////    }
-        ////    return that.Min();
-        ////}
-
         /// <summary>
         /// Returns the maximum value or null if sequence is empty.
         /// </summary>
@@ -406,30 +232,6 @@ namespace System.Windows.Controls.DataVisualization
             return that.Min();
         }
 
-        /////// <summary>
-        /////// Returns distinct elements from a sorted sequence by using the default equality comparer to compare values.
-        /////// </summary>
-        /////// <typeparam name="TSource">The type of the elements of source.</typeparam>
-        /////// <param name="source">The sequence to remove duplicate elements from.</param>
-        /////// <returns>An IEnumerable&lt;T&gt; that contains distinct elements from the source sequence.</returns>
-        ////public static IEnumerable<TSource> DistinctOfSorted<TSource>(this IEnumerable<TSource> source)
-        ////{
-        ////    IEnumerator<TSource> enumerator = source.GetEnumerator();
-        ////    if (enumerator.MoveNext())
-        ////    {
-        ////        TSource last = enumerator.Current;
-        ////        yield return last;
-        ////        while (enumerator.MoveNext())
-        ////        {
-        ////            if (!enumerator.Current.Equals(last))
-        ////            {
-        ////                last = enumerator.Current;
-        ////                yield return last;
-        ////            }
-        ////        }
-        ////    }
-        ////}
-
         /// <summary>
         /// Attempts to retrieve an element at an index by testing whether a 
         /// sequence is randomly accessible.  If not, performance degrades to a 
@@ -455,152 +257,51 @@ namespace System.Windows.Controls.DataVisualization
                     return (T) list[index];
                 }
             }
-            return that.Cast<T>().ElementAt(index);
+            return that.CastWrapper<T>().ElementAt(index);
         }
 
-        /////// <summary>
-        /////// Returns a cached sequence that stores each enumerated value to avoid
-        /////// recalculating it twice.
-        /////// </summary>
-        /////// <typeparam name="T">The type of the sequence.</typeparam>
-        /////// <param name="that">The sequence to cache.</param>
-        /////// <returns>The cached sequence.</returns>
-        ////public static IEnumerable<T> Cache<T>(this IEnumerable<T> that)
-        ////{
-        ////    return new CachedEnumerable<T>(that);
-        ////}
+        /// <summary>
+        /// Applies an accumulator function over a sequence and returns each intermediate result.
+        /// </summary>
+        /// <typeparam name="T">Type of elements in source sequence.</typeparam>
+        /// <typeparam name="S">Type of elements in result sequence.</typeparam>
+        /// <param name="that">Sequence to scan.</param>
+        /// <param name="seed">Initial accumulator value.</param>
+        /// <param name="accumulator">Function used to generate the result sequence.</param>
+        /// <returns>Sequence of intermediate results.</returns>
+        public static IEnumerable<S> Scan<T, S>(this IEnumerable<T> that, S seed, Func<S, T, S> accumulator)
+        {
+            S value = seed;
+            yield return seed;
+            foreach (T t in that)
+            {
+                value = accumulator(value, t);
+                yield return value;
+            }
+            yield break;
+        }
 
-        /////// <summary>
-        /////// This class is a cached sequence of values.
-        /////// </summary>
-        /////// <typeparam name="T">The type of the sequence.</typeparam>
-        ////private class CachedEnumerable<T> : IEnumerable<T>
-        ////{
-        ////    /// <summary>
-        ////    /// Initializes a new instance of the CachedEnumerable class.
-        ////    /// </summary>
-        ////    /// <param name="enumerable">The inner sequence.</param>
-        ////    public CachedEnumerable(IEnumerable<T> enumerable)
-        ////    {
-        ////        this.CachedValues = new List<T>();
-        ////        this.Enumerable = enumerable;
-        ////    }
-
-        ////    /// <summary>
-        ////    /// Gets or sets the inner sequence.
-        ////    /// </summary>
-        ////    private IEnumerable<T> Enumerable { get; set; }
-
-        ////    /// <summary>
-        ////    /// Gets or sets the list of cached values.
-        ////    /// </summary>
-        ////    private IList<T> CachedValues { get; set; }
-
-        ////    /// <summary>
-        ////    /// Returns an enumerator for enumerating the values of the 
-        ////    /// sequence.
-        ////    /// </summary>
-        ////    /// <returns>An enumerator for enumerating the values of the 
-        ////    /// sequence.</returns>
-        ////    public IEnumerator<T> GetEnumerator()
-        ////    {
-        ////        IEnumerator<T> enumerator = Enumerable.GetEnumerator();
-        ////        int index = 0;
-        ////        int enumeratorIndex = 0;
-        ////        while (true)
-        ////        {
-        ////            if (index < CachedValues.Count)
-        ////            {
-        ////                yield return CachedValues[index];
-        ////            }
-        ////            else
-        ////            {
-        ////                bool returnValue = false;
-        ////                for (enumeratorIndex = 0; enumeratorIndex <= index; enumeratorIndex++)
-        ////                {
-        ////                    returnValue = enumerator.MoveNext();
-        ////                }
-
-        ////                if (returnValue)
-        ////                {
-        ////                    CachedValues.Add(enumerator.Current);
-        ////                    yield return enumerator.Current;
-        ////                }
-        ////                else
-        ////                {
-        ////                    yield break;
-        ////                }
-        ////            }
-        ////            index++;
-        ////        }
-        ////    }
-
-        ////    /// <summary>
-        ////    /// Returns an enumerator for enumerating the values of the 
-        ////    /// sequence.
-        ////    /// </summary>
-        ////    /// <returns>
-        ////    /// An enumerator for enumerating the values of the sequence.
-        ////    /// </returns>
-        ////    IEnumerator IEnumerable.GetEnumerator()
-        ////    {
-        ////        return ((IEnumerable<T>)this).GetEnumerator();
-        ////    }
-        ////}
-
-        /////// <summary>
-        /////// Pushes a value onto the front of the sequence.
-        /////// </summary>
-        /////// <typeparam name="T">The type of the sequence.</typeparam>
-        /////// <param name="that">The sequence.</param>
-        /////// <param name="value">The value to push onto the front of the
-        /////// sequence.</param>
-        /////// <returns>The new sequence.</returns>
-        ////public static IEnumerable<T> Push<T>(this IEnumerable<T> that, T value)
-        ////{
-        ////    yield return value;
-        ////    foreach (T item in that)
-        ////    {
-        ////        yield return item;
-        ////    }
-        ////}
-        
-        /////// <summary>
-        /////// Accepts two sequences and returns a sequence of pairs containing one 
-        /////// item from each sequence at a corresponding index.
-        /////// </summary>
-        /////// <typeparam name="T">The type of the sequences.</typeparam>
-        /////// <param name="sequence0">The first sequence.</param>
-        /////// <param name="sequence1">The second sequence.</param>
-        /////// <returns>A sequence of pairs.</returns>
-        ////public static IEnumerable<Pair<T>> ZipPair<T>(IEnumerable<T> sequence0, IEnumerable<T> sequence1)
-        ////{
-        ////    IEnumerator<T> enumerable0 = sequence0.GetEnumerator();
-        ////    IEnumerator<T> enumerable1 = sequence1.GetEnumerator();
-        ////    while (enumerable0.MoveNext() && enumerable1.MoveNext())
-        ////    {
-        ////        yield return new Pair<T>(enumerable0.Current, enumerable1.Current);
-        ////    }
-        ////}
-
-        ///// <summary>
-        ///// 
-        ///// </summary>
-        ///// <typeparam name="T"></typeparam>
-        ///// <typeparam name="K"></typeparam>
-        ///// <typeparam name="R"></typeparam>
-        ///// <param name="that"></param>
-        ///// <param name="keySelector"></param>
-        ///// <param name="itemSelector"></param>
-        ///// <returns></returns>
-        ////public static Dictionary<KeyType, ItemType> ToTransformedDictionary<InputType, KeyType, ItemType>(this IEnumerable<InputType> that, Func<InputType, KeyType> keySelector, Func<InputType, ItemType> itemSelector)
-        ////{
-        ////    Dictionary<KeyType, ItemType> dictionary = new Dictionary<KeyType, ItemType>();
-        ////    foreach (InputType item in that)
-        ////    {
-        ////        dictionary[keySelector(item)] = itemSelector(item);
-        ////    }
-        ////    return dictionary;
-        ////}
+        /// <summary>
+        /// Converts the elements of an System.Collections.IEnumerable to the specified type.
+        /// </summary>
+        /// <remarks>
+        /// A wrapper for the Enumerable.Cast(T) method that works around a limitation on some platforms.
+        /// </remarks>
+        /// <typeparam name="TResult">The type to convert the elements of source to.</typeparam>
+        /// <param name="source">The System.Collections.IEnumerable that contains the elements to be converted.</param>
+        /// <returns>
+        /// An System.Collections.Generic.IEnumerable(T) that contains each element of the source sequence converted to the specified type.
+        /// </returns>
+        public static IEnumerable<TResult> CastWrapper<TResult>(this IEnumerable source)
+        {
+#if SILVERLIGHT
+            // Certain flavors of this platform have a bug which causes Cast<T> to raise an exception incorrectly.
+            // Work around that by using the more general OfType<T> method instead for no loss of functionality.
+            return source.OfType<TResult>();
+#else
+            // No issues on this platform - call directly through to Cast<T>
+            return source.Cast<TResult>();
+#endif
+        }
     }
 }

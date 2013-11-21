@@ -23,7 +23,7 @@ namespace System.Windows.Controls.DataVisualization
     /// logic is defined by sub-classes of this abstract class.
     /// </para>
     /// </remarks>
-    /// <QualityBand>Experimental</QualityBand>
+    /// <QualityBand>Preview</QualityBand>
     public abstract class Interpolator : FrameworkElement
     {
         /// <summary>

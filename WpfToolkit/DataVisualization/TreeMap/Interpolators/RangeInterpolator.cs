@@ -10,7 +10,7 @@ namespace System.Windows.Controls.DataVisualization
     /// a continuous range defined by the From and To properties.
     /// </summary>
     /// <typeparam name="T">The data type of the values in the target range.</typeparam>
-    /// <QualityBand>Experimental</QualityBand>
+    /// <QualityBand>Preview</QualityBand>
     public abstract class RangeInterpolator<T> : Interpolator
     {
         /// <summary>

@@ -135,7 +135,6 @@ namespace System.Windows.Controls.DataVisualization
         /// <returns>The hash code.</returns>
         public override int GetHashCode()
         {
-            // TODO: Copy this from the anonymous structure implementation.
             unchecked
             {
                 return this.Value.GetHashCode() + (int)this.Unit;

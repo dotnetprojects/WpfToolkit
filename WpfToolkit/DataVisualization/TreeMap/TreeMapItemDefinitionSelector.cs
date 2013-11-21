@@ -12,7 +12,7 @@ namespace System.Windows.Controls.DataVisualization
     /// Provides a way to choose a TreeMapItemDefinition based on the data item and 
     /// the level of the item in the tree.
     /// </summary>
-    /// <QualityBand>Experimental</QualityBand>
+    /// <QualityBand>Preview</QualityBand>
     public abstract class TreeMapItemDefinitionSelector
     {
         /// <summary>

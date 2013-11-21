@@ -605,7 +605,7 @@ namespace System.Windows.Controls.DataVisualization.Charting
             {
                 if (IndependentValueBinding == null)
                 {
-                    return Enumerable.Range(1, ActiveDataPointCount).Cast<object>();
+                    return Enumerable.Range(1, ActiveDataPointCount).CastWrapper<object>();
                 }
                 selector = (dataPoint) => dataPoint.ActualIndependentValue ?? dataPoint.ActualDependentValue;
             }

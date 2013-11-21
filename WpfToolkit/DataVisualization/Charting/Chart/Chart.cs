@@ -632,6 +632,7 @@ namespace System.Windows.Controls.DataVisualization.Charting
                         {
                             tracksGlobalIndex.GlobalSeriesIndexChanged(null);
                         }
+                        host.Series.CollectionChanged -= new NotifyCollectionChangedEventHandler(ChildSeriesCollectionChanged);
                     }
                     IRequireGlobalSeriesIndex require = series as IRequireGlobalSeriesIndex;
                     if (require != null)
@@ -648,6 +649,11 @@ namespace System.Windows.Controls.DataVisualization.Charting
             {
                 foreach (ISeries series in e.NewItems)
                 {
+                    ISeriesHost host = series as ISeriesHost;
+                    if (null != host)
+                    {
+                        host.Series.CollectionChanged += new NotifyCollectionChangedEventHandler(ChildSeriesCollectionChanged);
+                    }
                     AddSeriesToPlotArea(series);
                 }
             }
@@ -656,6 +662,16 @@ namespace System.Windows.Controls.DataVisualization.Charting
             {
                 OnGlobalSeriesIndexesInvalidated(this, new RoutedEventArgs());
             }
+        }
+
+        /// <summary>
+        /// Handles changes to the collections of child ISeries implementing ISeriesHost.
+        /// </summary>
+        /// <param name="sender">Event source.</param>
+        /// <param name="e">Event arguments.</param>
+        private void ChildSeriesCollectionChanged(object sender, NotifyCollectionChangedEventArgs e)
+        {
+            OnGlobalSeriesIndexesInvalidated(this, new RoutedEventArgs());
         }
 
         /// <summary>

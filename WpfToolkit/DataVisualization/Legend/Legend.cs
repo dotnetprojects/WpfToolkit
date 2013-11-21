@@ -3,14 +3,8 @@
 // Please see http://go.microsoft.com/fwlink/?LinkID=131993 for details.
 // All other rights reserved.
 
-using System;
-using System.Collections;
-using System.Collections.ObjectModel;
 using System.Collections.Specialized;
 using System.Diagnostics.CodeAnalysis;
-using System.Linq;
-using System.Windows;
-using System.Windows.Controls;
 using System.Windows.Data;
 
 namespace System.Windows.Controls.DataVisualization
@@ -41,11 +35,11 @@ namespace System.Windows.Controls.DataVisualization
         {
 #if SILVERLIGHT
             DefaultStyleKey = typeof(Legend);
-            this.SetBinding(HeaderProperty, new Binding("Title") { Source = this, Mode = BindingMode.TwoWay });
 #endif
+            // By default, the Visibility property should follow ContentVisibility - but users can override it
+            SetBinding(VisibilityProperty, new Binding("ContentVisibility") { Source = this });
         }
 
-        #region public Style TitleStyle
         /// <summary>
         /// Gets or sets the Style of the ISeriesHost's Title.
         /// </summary>
@@ -64,60 +58,53 @@ namespace System.Windows.Controls.DataVisualization
                 typeof(Style),
                 typeof(Legend),
                 null);
-        #endregion public Style TitleStyle
 
-        #region public object Title
         /// <summary>
-        /// Gets or sets the object of the Title.
+        /// Gets the Visibility of the Legend's content (title and items).
         /// </summary>
-        public object Title
+        public Visibility ContentVisibility
         {
-            get { return GetValue(TitleProperty) as object; }
-            set { SetValue(TitleProperty, value); }
+            get { return (Visibility)GetValue(ContentVisibilityProperty); }
+            protected set { SetValue(ContentVisibilityProperty, value); }
         }
 
         /// <summary>
-        /// Identifies the Title dependency property.
+        /// Identifies the ContentVisibility dependency property.
         /// </summary>
-        public static readonly DependencyProperty TitleProperty =
+        public static readonly DependencyProperty ContentVisibilityProperty =
             DependencyProperty.Register(
-                "Title",
-                typeof(object),
+                "ContentVisibility",
+                typeof(Visibility),
                 typeof(Legend),
-                new PropertyMetadata(new PropertyChangedCallback(OnTitleChanged)));
+                null);
 
         /// <summary>
-        /// Updates the legend visibility when the title changes.
+        /// Handles the OnHeaderChanged event for HeaderedItemsControl.
         /// </summary>
-        /// <param name="sender">The legend with a Title that changed.</param>
-        /// <param name="args">Information about the event.</param>
-        public static void OnTitleChanged(object sender, DependencyPropertyChangedEventArgs args)
+        /// <param name="oldHeader">Old header.</param>
+        /// <param name="newHeader">New header.</param>
+        protected override void OnHeaderChanged(object oldHeader, object newHeader)
         {
-            Legend legend = (Legend) sender;
-#if !SILVERLIGHT
-            // Push value through because Binding doesn't work like it does on Silverlight
-            legend.Header = legend.Title;
-#endif
-            legend.UpdateLegendVisibility();
+            base.OnHeaderChanged(oldHeader, newHeader);
+            UpdateContentVisibility();
         }
-        #endregion public object Title
 
         /// <summary>
-        /// Handles the CollectionChanged event for ItemsSource.
+        /// Handles the CollectionChanged event for HeaderedItemsControl's ItemsSource.
         /// </summary>
         /// <param name="e">Event arguments.</param>
         protected override void OnItemsChanged(NotifyCollectionChangedEventArgs e)
         {
-            UpdateLegendVisibility();
             base.OnItemsChanged(e);
+            UpdateContentVisibility();
         }
 
         /// <summary>
-        /// Updates the Legend's Visibility property according to whether it has anything to display.
+        /// Updates the ContentVisibility property to reflect the presence of content.
         /// </summary>
-        private void UpdateLegendVisibility()
+        private void UpdateContentVisibility()
         {
-            Visibility = (this.Header != null || this.Items.Count > 0) ? Visibility.Visible : Visibility.Collapsed;
+            ContentVisibility = (Header != null || Items.Count > 0) ? Visibility.Visible : Visibility.Collapsed;
         }
     }
 }

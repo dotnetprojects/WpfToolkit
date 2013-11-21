@@ -172,12 +172,6 @@ namespace System.Windows.Controls.DataVisualization.Charting
         #region internal bool IsSelected
 
         /// <summary>
-        /// Gets or sets a value indicating whether the IsSelected property is 
-        /// being coerced.
-        /// </summary>
-        private bool IsCoercingIsSelected { get; set; }
-
-        /// <summary>
         /// Gets or sets a value indicating whether the data point is selected.
         /// </summary>
         internal bool IsSelected
@@ -862,7 +856,7 @@ namespace System.Windows.Controls.DataVisualization.Charting
         public override void OnApplyTemplate()
         {
             // Unhook CurrentStateChanged handler
-            VisualStateGroup groupReveal = VisualStateManager.GetVisualStateGroups(ImplementationRoot).Cast<VisualStateGroup>().Where(group => GroupRevealStates == group.Name).FirstOrDefault();
+            VisualStateGroup groupReveal = VisualStateManager.GetVisualStateGroups(ImplementationRoot).CastWrapper<VisualStateGroup>().Where(group => GroupRevealStates == group.Name).FirstOrDefault();
             if (null != groupReveal)
             {
                 groupReveal.CurrentStateChanged -= new EventHandler<VisualStateChangedEventArgs>(OnCurrentStateChanged);
@@ -873,12 +867,12 @@ namespace System.Windows.Controls.DataVisualization.Charting
             // Hook CurrentStateChanged handler
             _haveStateRevealShown = false;
             _haveStateRevealHidden = false;
-            groupReveal = VisualStateManager.GetVisualStateGroups(ImplementationRoot).Cast<VisualStateGroup>().Where(group => GroupRevealStates == group.Name).FirstOrDefault();
+            groupReveal = VisualStateManager.GetVisualStateGroups(ImplementationRoot).CastWrapper<VisualStateGroup>().Where(group => GroupRevealStates == group.Name).FirstOrDefault();
             if (null != groupReveal)
             {
                 groupReveal.CurrentStateChanged += new EventHandler<VisualStateChangedEventArgs>(OnCurrentStateChanged);
-                _haveStateRevealShown = groupReveal.States.Cast<VisualState>().Where(state => StateRevealShown == state.Name).Any();
-                _haveStateRevealHidden = groupReveal.States.Cast<VisualState>().Where(state => StateRevealHidden == state.Name).Any();
+                _haveStateRevealShown = groupReveal.States.CastWrapper<VisualState>().Where(state => StateRevealShown == state.Name).Any();
+                _haveStateRevealHidden = groupReveal.States.CastWrapper<VisualState>().Where(state => StateRevealHidden == state.Name).Any();
             }
 
             _templateApplied = true;
@@ -960,13 +954,33 @@ namespace System.Windows.Controls.DataVisualization.Charting
         /// <param name="e">Event arguments.</param>
         protected override void OnMouseLeftButtonDown(MouseButtonEventArgs e)
         {
-            base.OnMouseLeftButtonDown(e);
-            if (IsSelectionEnabled)
+            if (DefinitionSeriesIsSelectionEnabledHandling)
             {
-                IsSelected = (ModifierKeys.None == (ModifierKeys.Control & Keyboard.Modifiers));
-                e.Handled = true;
+                // DefinitionSeries-compatible handling
+                if (!IsSelectionEnabled)
+                {
+                    // Prevents clicks from bubbling to background, but necessary
+                    // to avoid letting ListBoxItem select the item
+                    e.Handled = true;
+                }
+                base.OnMouseLeftButtonDown(e);
+            }
+            else
+            {
+                // Traditional handling
+                base.OnMouseLeftButtonDown(e);
+                if (IsSelectionEnabled)
+                {
+                    IsSelected = (ModifierKeys.None == (ModifierKeys.Control & Keyboard.Modifiers));
+                    e.Handled = true;
+                }
             }
         }
+
+        /// <summary>
+        /// Gets or sets a value indicating whether to handle IsSelectionEnabled in the DefinitionSeries manner.
+        /// </summary>
+        internal bool DefinitionSeriesIsSelectionEnabledHandling { get; set; }
 
         /// <summary>
         /// Sets a dependency property with the specified format.

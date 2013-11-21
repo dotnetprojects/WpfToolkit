@@ -49,6 +49,7 @@ namespace System.Windows.Controls.DataVisualization
             // the Source of a Binding once it has been set.
             Binding binding = new Binding()
             {
+                BindsDirectlyToSource = valueBinding.BindsDirectlyToSource,
                 Converter = valueBinding.Converter,
                 ConverterCulture = valueBinding.ConverterCulture,
                 ConverterParameter = valueBinding.ConverterParameter,
@@ -56,7 +57,17 @@ namespace System.Windows.Controls.DataVisualization
                 NotifyOnValidationError = valueBinding.NotifyOnValidationError,
                 Path = valueBinding.Path,
                 Source = instance,
-                ValidatesOnExceptions = valueBinding.ValidatesOnExceptions
+                UpdateSourceTrigger = valueBinding.UpdateSourceTrigger,
+                ValidatesOnExceptions = valueBinding.ValidatesOnExceptions,
+#if !NO_COMPLETE_BINDING_PROPERTY_LIST
+                FallbackValue = valueBinding.FallbackValue,
+                StringFormat = valueBinding.StringFormat,
+                TargetNullValue = valueBinding.TargetNullValue,
+                ValidatesOnDataErrors = valueBinding.ValidatesOnDataErrors,
+#endif
+#if !NO_VALIDATESONNOTIFYDATAERRORS
+                ValidatesOnNotifyDataErrors = valueBinding.ValidatesOnNotifyDataErrors,
+#endif
             };
 
             SetBinding(BindingExtractor.ValueProperty, binding);
