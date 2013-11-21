@@ -173,6 +173,7 @@
     <Compile Include="Collections\LeftLeaningRedBlackTree.cs" />
     <Compile Include="Collections\MultipleDictionary.cs" />
     <Compile Include="Collections\OrderedMultipleDictionary.cs" />
+    <Compile Include="ColorExtensions.cs" />
     <Compile Include="DesignerProperties.cs" />
     <Compile Include="EnumerableExtensions.cs" />
     <Compile Include="GenericEqualityComparer.cs" />
@@ -189,6 +190,7 @@
     <Compile Include="StringFormatConverter.cs" />
     <Compile Include="ResourceDictionaryExtensions.cs" />
     <Compile Include="Title\Title.cs" />
+    <Compile Include="Treemap\Interpolators\HSLSolidColorBrushInterpolator.cs" />
     <Compile Include="Tuple.cs" />
     <Compile Include="UniqueObservableCollection.cs" />
     <Compile Include="Unit.cs" />

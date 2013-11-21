@@ -2567,6 +2567,11 @@
             Specifies the name of the ChartArea TemplatePart.
             </summary>
         </member>
+        <member name="F:System.Windows.Controls.DataVisualization.Charting.Chart.SelectionAreaName">
+            <summary>
+            Specifies the name of the ChartArea TemplatePart.
+            </summary>
+        </member>
         <member name="F:System.Windows.Controls.DataVisualization.Charting.Chart.LegendName">
             <summary>
             Specifies the name of the legend TemplatePart.
@@ -3548,6 +3553,138 @@
         <member name="E:System.Windows.Controls.DataVisualization.Charting.BubbleDataPoint.ActualSizePropertyChanged">
             <summary>
             This event is raised when the actual size property is changed.
+            </summary>
+        </member>
+        <member name="T:System.Windows.Controls.DataVisualization.Charting.CandlestickDataPoint">
+            <summary>
+            Represents a data point used for scatter series.
+            </summary>
+            <QualityBand>Preview</QualityBand>
+        </member>
+        <member name="F:System.Windows.Controls.DataVisualization.Charting.CandlestickDataPoint.OpenProperty">
+            <summary>
+            Identifies the Size dependency property.
+            </summary>
+        </member>
+        <member name="M:System.Windows.Controls.DataVisualization.Charting.CandlestickDataPoint.OnOpenPropertyChanged(System.Windows.DependencyObject,System.Windows.DependencyPropertyChangedEventArgs)">
+            <summary>
+            SizeProperty property changed handler.
+            </summary>
+            <param name="d">BubbleDataPoint that changed its Size.</param>
+            <param name="e">Event arguments.</param>
+        </member>
+        <member name="M:System.Windows.Controls.DataVisualization.Charting.CandlestickDataPoint.OnOpenPropertyChanged(System.Double,System.Double)">
+            <summary>
+            SizeProperty property changed handler.
+            </summary>
+            <param name="oldValue">Old value.</param>
+            <param name="newValue">New value.</param>        
+        </member>
+        <member name="F:System.Windows.Controls.DataVisualization.Charting.CandlestickDataPoint.CloseProperty">
+            <summary>
+            Identifies the Size dependency property.
+            </summary>
+        </member>
+        <member name="M:System.Windows.Controls.DataVisualization.Charting.CandlestickDataPoint.OnClosePropertyChanged(System.Windows.DependencyObject,System.Windows.DependencyPropertyChangedEventArgs)">
+            <summary>
+            SizeProperty property changed handler.
+            </summary>
+            <param name="d">BubbleDataPoint that changed its Size.</param>
+            <param name="e">Event arguments.</param>
+        </member>
+        <member name="M:System.Windows.Controls.DataVisualization.Charting.CandlestickDataPoint.OnClosePropertyChanged(System.Double,System.Double)">
+            <summary>
+            SizeProperty property changed handler.
+            </summary>
+            <param name="oldValue">Old value.</param>
+            <param name="newValue">New value.</param>        
+        </member>
+        <member name="F:System.Windows.Controls.DataVisualization.Charting.CandlestickDataPoint.HighProperty">
+            <summary>
+            Identifies the Size dependency property.
+            </summary>
+        </member>
+        <member name="M:System.Windows.Controls.DataVisualization.Charting.CandlestickDataPoint.OnHighPropertyChanged(System.Windows.DependencyObject,System.Windows.DependencyPropertyChangedEventArgs)">
+            <summary>
+            SizeProperty property changed handler.
+            </summary>
+            <param name="d">BubbleDataPoint that changed its Size.</param>
+            <param name="e">Event arguments.</param>
+        </member>
+        <member name="M:System.Windows.Controls.DataVisualization.Charting.CandlestickDataPoint.OnHighPropertyChanged(System.Double,System.Double)">
+            <summary>
+            SizeProperty property changed handler.
+            </summary>
+            <param name="oldValue">Old value.</param>
+            <param name="newValue">New value.</param>        
+        </member>
+        <member name="F:System.Windows.Controls.DataVisualization.Charting.CandlestickDataPoint.LowProperty">
+            <summary>
+            Identifies the Size dependency property.
+            </summary>
+        </member>
+        <member name="M:System.Windows.Controls.DataVisualization.Charting.CandlestickDataPoint.OnLowPropertyChanged(System.Windows.DependencyObject,System.Windows.DependencyPropertyChangedEventArgs)">
+            <summary>
+            SizeProperty property changed handler.
+            </summary>
+            <param name="d">BubbleDataPoint that changed its Size.</param>
+            <param name="e">Event arguments.</param>
+        </member>
+        <member name="M:System.Windows.Controls.DataVisualization.Charting.CandlestickDataPoint.OnLowPropertyChanged(System.Double,System.Double)">
+            <summary>
+            SizeProperty property changed handler.
+            </summary>
+            <param name="oldValue">Old value.</param>
+            <param name="newValue">New value.</param>        
+        </member>
+        <member name="M:System.Windows.Controls.DataVisualization.Charting.CandlestickDataPoint.#cctor">
+            <summary>
+            Initializes the static members of the BarDataPoint class.
+            </summary>
+        </member>
+        <member name="M:System.Windows.Controls.DataVisualization.Charting.CandlestickDataPoint.#ctor">
+            <summary>
+            Initializes a new instance of the ScatterDataPoint class.
+            </summary>
+        </member>
+        <member name="P:System.Windows.Controls.DataVisualization.Charting.CandlestickDataPoint.Open">
+            <summary>
+            Gets or sets the size value of the bubble data point.
+            </summary>
+        </member>
+        <member name="E:System.Windows.Controls.DataVisualization.Charting.CandlestickDataPoint.OpenPropertyChanged">
+            <summary>
+            This event is raised when the size property is changed.
+            </summary>
+        </member>
+        <member name="P:System.Windows.Controls.DataVisualization.Charting.CandlestickDataPoint.Close">
+            <summary>
+            Gets or sets the size value of the bubble data point.
+            </summary>
+        </member>
+        <member name="E:System.Windows.Controls.DataVisualization.Charting.CandlestickDataPoint.ClosePropertyChanged">
+            <summary>
+            This event is raised when the size property is changed.
+            </summary>
+        </member>
+        <member name="P:System.Windows.Controls.DataVisualization.Charting.CandlestickDataPoint.High">
+            <summary>
+            Gets or sets the size value of the bubble data point.
+            </summary>
+        </member>
+        <member name="E:System.Windows.Controls.DataVisualization.Charting.CandlestickDataPoint.HighPropertyChanged">
+            <summary>
+            This event is raised when the size property is changed.
+            </summary>
+        </member>
+        <member name="P:System.Windows.Controls.DataVisualization.Charting.CandlestickDataPoint.Low">
+            <summary>
+            Gets or sets the size value of the bubble data point.
+            </summary>
+        </member>
+        <member name="E:System.Windows.Controls.DataVisualization.Charting.CandlestickDataPoint.LowPropertyChanged">
+            <summary>
+            This event is raised when the size property is changed.
             </summary>
         </member>
         <member name="T:System.Windows.Controls.DataVisualization.Charting.ColumnDataPoint">
@@ -6095,6 +6232,88 @@
         <member name="P:System.Windows.Controls.DataVisualization.Charting.BubbleSeries.IndependentAxis">
             <summary>
             Gets or sets independent range axis.
+            </summary>
+        </member>
+        <member name="F:System.Windows.Controls.DataVisualization.Charting.CandlestickSeries.DependentRangeAxisProperty">
+            <summary>
+            Identifies the DependentRangeAxis dependency property.
+            </summary>
+        </member>
+        <member name="M:System.Windows.Controls.DataVisualization.Charting.CandlestickSeries.OnDependentRangeAxisPropertyChanged(System.Windows.DependencyObject,System.Windows.DependencyPropertyChangedEventArgs)">
+            <summary>
+            DependentRangeAxisProperty property changed handler.
+            </summary>
+            <param name="d">CandlestickSeries that changed its DependentRangeAxis.</param>
+            <param name="e">Event arguments.</param>
+        </member>
+        <member name="M:System.Windows.Controls.DataVisualization.Charting.CandlestickSeries.OnDependentRangeAxisPropertyChanged(System.Windows.Controls.DataVisualization.Charting.IRangeAxis)">
+            <summary>
+            DependentRangeAxisProperty property changed handler.
+            </summary>
+            <param name="newValue">New value.</param>        
+        </member>
+        <member name="F:System.Windows.Controls.DataVisualization.Charting.CandlestickSeries.IndependentRangeAxisProperty">
+            <summary>
+            Identifies the IndependentRangeAxis dependency property.
+            </summary>
+        </member>
+        <member name="M:System.Windows.Controls.DataVisualization.Charting.CandlestickSeries.OnIndependentRangeAxisPropertyChanged(System.Windows.DependencyObject,System.Windows.DependencyPropertyChangedEventArgs)">
+            <summary>
+            IndependentRangeAxisProperty property changed handler.
+            </summary>
+            <param name="d">CandlestickSeries that changed its IndependentRangeAxis.</param>
+            <param name="e">Event arguments.</param>
+        </member>
+        <member name="M:System.Windows.Controls.DataVisualization.Charting.CandlestickSeries.OnIndependentRangeAxisPropertyChanged(System.Windows.Controls.DataVisualization.Charting.IRangeAxis)">
+            <summary>
+            IndependentRangeAxisProperty property changed handler.
+            </summary>
+            <param name="newValue">New value.</param>        
+        </member>
+        <member name="M:System.Windows.Controls.DataVisualization.Charting.CandlestickSeries.GetAxes(System.Windows.Controls.DataVisualization.Charting.DataPoint)">
+            <summary>
+            Acquire a horizontal linear axis and a vertical linear axis.
+            </summary>
+            <param name="firstDataPoint">The first data point.</param>
+        </member>
+        <member name="M:System.Windows.Controls.DataVisualization.Charting.CandlestickSeries.GetResourceDictionaryEnumeratorFromHost">
+            <summary>
+            Returns the custom ResourceDictionary to use for necessary resources.
+            </summary>
+            <returns>
+            ResourceDictionary to use for necessary resources.
+            </returns>
+        </member>
+        <member name="M:System.Windows.Controls.DataVisualization.Charting.CandlestickSeries.CreateDataPoint">
+            <summary>
+            Creates a new Candlestick data point.
+            </summary>
+            <returns>A Candlestick data point.</returns>
+        </member>
+        <member name="M:System.Windows.Controls.DataVisualization.Charting.CandlestickSeries.UpdateDataPoint(System.Windows.Controls.DataVisualization.Charting.DataPoint)">
+            <summary>
+            This method updates a single data point.
+            </summary>
+            <param name="dataPoint">The data point to update.</param>
+        </member>
+        <member name="P:System.Windows.Controls.DataVisualization.Charting.CandlestickSeries.ActualDependentRangeAxis">
+            <summary>
+            Gets the dependent axis as a range axis.
+            </summary>
+        </member>
+        <member name="P:System.Windows.Controls.DataVisualization.Charting.CandlestickSeries.DependentRangeAxis">
+            <summary>
+            Gets or sets the dependent range axis.
+            </summary>
+        </member>
+        <member name="P:System.Windows.Controls.DataVisualization.Charting.CandlestickSeries.ActualIndependentRangeAxis">
+            <summary>
+            Gets the independent axis as a range axis.
+            </summary>
+        </member>
+        <member name="P:System.Windows.Controls.DataVisualization.Charting.CandlestickSeries.IndependentRangeAxis">
+            <summary>
+            Gets or sets the independent range axis.
             </summary>
         </member>
         <member name="T:System.Windows.Controls.DataVisualization.Charting.ColumnSeries">
@@ -9097,6 +9316,75 @@
             </summary>
             <returns>Enumerator for the values.</returns>
         </member>
+        <member name="T:System.Windows.Controls.ColorExtensions">
+            <summary>
+            Contains extensions to Color structure for HSL  color mode.
+            </summary>
+        </member>
+        <member name="M:System.Windows.Controls.ColorExtensions.MaxColor(System.Byte,System.Byte,System.Byte)">
+            <summary>
+            Gets the color component (R,G or B) with maximal value.
+            </summary>
+            <param name="red">The red component value for the Color. Valid values are 0 through 255.</param>
+            <param name="green">The green component value for the Color. Valid values are 0 through 255.</param>
+            <param name="blue">The blue component value for the Color. Valid values are 0 through 255.</param>
+            <returns>Component with maximal value.</returns>
+        </member>
+        <member name="M:System.Windows.Controls.ColorExtensions.MinColor(System.Byte,System.Byte,System.Byte)">
+            <summary>
+            Gets the color component (R,G or B) with minimal value.
+            </summary>
+            <param name="red">The red component value for the Color. Valid values are 0 through 255.</param>
+            <param name="green">The green component value for the Color. Valid values are 0 through 255.</param>
+            <param name="blue">The blue component value for the Color. Valid values are 0 through 255.</param>
+            <returns>Component with minimal value.</returns>
+        </member>
+        <member name="M:System.Windows.Controls.ColorExtensions.GetHue(System.Windows.Media.Color)">
+            <summary>
+            The hue, in degrees, of the Color. 
+            The hue is measured in degrees, ranging from 0.0 through 360.0, 
+            in HSL  color space.
+            </summary>
+            <param name="color">The Color structure that this method uses.</param>
+            <returns>
+            The hue, in degrees, of the Color structure. The hue is 
+            measured in degrees, ranging from 0.0 through 360.0, in HSL color 
+            space.
+            </returns>
+        </member>
+        <member name="M:System.Windows.Controls.ColorExtensions.GetSaturation(System.Windows.Media.Color)">
+            <summary>
+            Gets the hue-saturation-brightness (HSL ) saturation value for the 
+            Color structure.
+            </summary>
+            <param name="color">The Color structure that this method uses.</param>
+            <returns>
+            The saturation of the Color structure. The saturation ranges from 
+            0.0 through 1.0, where 0.0 is grayscale and 1.0 is the most saturate.
+            </returns>
+        </member>
+        <member name="M:System.Windows.Controls.ColorExtensions.GetLightness(System.Windows.Media.Color)">
+            <summary>
+            Gets the hue-saturation-lightness (HSL) lightness value for the 
+            Color structure.
+            </summary>
+            <param name="color">The Color structure that this method uses.</param>
+            <returns>
+            The brightness of the Color. The brightness ranges from 0.0 through 
+            1.0, where 0.0 represents black and 1.0 represents white.
+            </returns>
+        </member>
+        <member name="M:System.Windows.Controls.ColorExtensions.FromAhsl(System.Windows.Media.Color,System.Byte,System.Double,System.Double,System.Double)">
+            <summary>
+            Creates a new color from HSL  parameters.
+            </summary>
+            <param name="color">The Color structure that this method uses.</param>
+            <param name="a">The alpha component. Valid values are 0 through 255.</param>
+            <param name="h">The hue component. Valid values are [0, 360).</param>
+            <param name="s">The saturation component. Valid values are [0, 1].</param>
+            <param name="l">The brightness component. Valid values are [0, 1].</param>
+            <returns>A newly created color structure.</returns>
+        </member>
         <member name="T:System.Windows.Controls.DesignerProperties">
             <summary>
             Provides a custom implementation of DesignerProperties.GetIsInDesignMode
@@ -9992,6 +10280,162 @@
             <summary>
             Initializes a new instance of the Title class.
             </summary>
+        </member>
+        <member name="T:System.Windows.Controls.DataVisualization.HSLSolidColorBrushInterpolator">
+            <summary>
+            Interpolator which converts a numeric value from its [ActualDataMinimum, ActualDataMaximum]
+            range to a color in the range [From, To].
+            </summary>
+            <QualityBand>Experimental</QualityBand>
+        </member>
+        <member name="T:System.Windows.Controls.DataVisualization.RangeInterpolator`1">
+            <summary>
+            Abstract class representing an interpolator which projects values to
+            a continuous range defined by the From and To properties.
+            </summary>
+            <typeparam name="T">The data type of the values in the target range.</typeparam>
+            <QualityBand>Preview</QualityBand>
+        </member>
+        <member name="T:System.Windows.Controls.DataVisualization.Interpolator">
+            <summary>
+            Abstract base class for Interpolator converters.
+            </summary>
+            <remarks>
+            <para>
+            An Interpolator is used to project a value from a source range 
+            [ActualDataMinimum, ActualDataMaximum] to a target range [From, To]. 
+            The source range can be specified directly by setting the DataMinimum 
+            and/or DataMaximum properties, or indirectly by setting DataRangeBinding.
+            When the DataRangeBinding property is set,the TreeMap will evaluate the 
+            binding for the entire tree, calculating the minimum and maximum values 
+            automatically. The custom target range and the actual interpolation 
+            logic is defined by sub-classes of this abstract class.
+            </para>
+            </remarks>
+            <QualityBand>Preview</QualityBand>
+        </member>
+        <member name="F:System.Windows.Controls.DataVisualization.Interpolator._helper">
+            <summary>
+            Holds a helper object used to extract values using a property path.
+            </summary>
+        </member>
+        <member name="F:System.Windows.Controls.DataVisualization.Interpolator.DataMinimumProperty">
+            <summary>
+            Identifies the DataMinimum dependency property.
+            </summary>
+        </member>
+        <member name="F:System.Windows.Controls.DataVisualization.Interpolator.DataMaximumProperty">
+            <summary>
+            Identifies the DataMaximum dependency property.
+            </summary>
+        </member>
+        <member name="F:System.Windows.Controls.DataVisualization.Interpolator._actualDataMaximum">
+            <summary>
+            This fields contains the automatically calculated maximal value in 
+            the dataset.
+            </summary>
+        </member>
+        <member name="F:System.Windows.Controls.DataVisualization.Interpolator._actualDataMinimum">
+            <summary>
+            This fields contains the automatically calculated minimal value in 
+            the dataset.
+            </summary>
+        </member>
+        <member name="M:System.Windows.Controls.DataVisualization.Interpolator.#ctor">
+            <summary>
+            Initializes a new instance of the Interpolator class.
+            </summary>
+        </member>
+        <member name="M:System.Windows.Controls.DataVisualization.Interpolator.IncludeInRange(System.Object)">
+            <summary>
+            If the DataRangeBinding property is set then this method updates the minimum/maximum range
+            of this object by including the value passed in.
+            </summary>
+            <param name="data">Object to extract the value from (the Source of the DataRangeBinding).</param>
+        </member>
+        <member name="M:System.Windows.Controls.DataVisualization.Interpolator.Interpolate(System.Double)">
+            <summary>
+            Called to interpolate the value of the given object between the DataMinimum and DataMaximum
+            extremes, and to project it in a specific [From, To] range defined. The target range (and
+            therefore the implementation of this method) is defined in a specific sub-class.
+            </summary>
+            <param name="value">Value to interpolate.</param>
+            <returns>An interpolated value.</returns>
+        </member>
+        <member name="P:System.Windows.Controls.DataVisualization.Interpolator.InterpolationMode">
+            <summary>
+            Gets or sets a value telling to which tree nodes the interpolation 
+            should be applied to. LeafNodesOnly by default.
+            </summary>
+        </member>
+        <member name="P:System.Windows.Controls.DataVisualization.Interpolator.TargetName">
+            <summary>
+            Gets or sets a value representing the x:Name of the element to which
+            the interpolated value will be applied.
+            </summary>
+        </member>
+        <member name="P:System.Windows.Controls.DataVisualization.Interpolator.TargetProperty">
+            <summary>
+            Gets or sets a value representing the path to a property which will 
+            receive the interpolated value.
+            </summary>
+        </member>
+        <member name="P:System.Windows.Controls.DataVisualization.Interpolator.DataMinimum">
+            <summary>
+            Gets or sets a value representing the fixed minimum value across the 
+            entire set. If the value is not set directly or is NaN, the 
+            ActualDataMaximum will be calculated automatically from the data set 
+            by using the DataRangeBinding property.
+            </summary>
+        </member>
+        <member name="P:System.Windows.Controls.DataVisualization.Interpolator.DataMaximum">
+            <summary>
+            Gets or sets a value representing the fixed maximum value across the 
+            entire set. If the value is not set directly or is NaN, the 
+            ActualDataMinimum will be calculated automatically from the data set 
+            by using the DataRangeBinding property.
+            </summary>
+        </member>
+        <member name="P:System.Windows.Controls.DataVisualization.Interpolator.ActualDataMaximum">
+            <summary>
+            Gets the value representing the maximal value in the data set. It is
+            automatically from the data set by using the DataRangeBinding 
+            property if DataMaximum is not set. If it is set, DataMaximum is 
+            returned.
+            </summary>
+        </member>
+        <member name="P:System.Windows.Controls.DataVisualization.Interpolator.ActualDataMinimum">
+            <summary>
+            Gets the value representing the minimal value in the data set. It is
+            automatically from the data set by using the DataRangeBinding 
+            property if DataMinimum is not set. If it is set, DataMinimum is 
+            returned.
+            </summary>
+        </member>
+        <member name="P:System.Windows.Controls.DataVisualization.Interpolator.DataRangeBinding">
+            <summary>
+            Gets or sets a binding to a property which will be examined to retrieve the minimum and maximum range 
+            values across the entire data set. If this value is null then the DataMinimum and DataMaximum values
+            need be set manually.
+            </summary>
+        </member>
+        <member name="P:System.Windows.Controls.DataVisualization.RangeInterpolator`1.From">
+            <summary>
+            Gets or sets a value representing the start value of the target range.
+            </summary>
+        </member>
+        <member name="P:System.Windows.Controls.DataVisualization.RangeInterpolator`1.To">
+            <summary>
+            Gets or sets a value representing the end value of the target range.
+            </summary>
+        </member>
+        <member name="M:System.Windows.Controls.DataVisualization.HSLSolidColorBrushInterpolator.Interpolate(System.Double)">
+            <summary>
+            Interpolates the given value between its [ActualDataMinimum, ActualDataMaximum] range
+            and returns a color in the range [From, To].
+            </summary>
+            <param name="value">Value to interpolate.</param>
+            <returns>An interpolated color in the range [From, To].</returns>
         </member>
         <member name="T:System.Windows.Controls.DataVisualization.Tuple`2">
             <summary>
@@ -11006,147 +11450,6 @@
             range to another value in the range [From, To].
             </summary>
             <QualityBand>Preview</QualityBand>
-        </member>
-        <member name="T:System.Windows.Controls.DataVisualization.RangeInterpolator`1">
-            <summary>
-            Abstract class representing an interpolator which projects values to
-            a continuous range defined by the From and To properties.
-            </summary>
-            <typeparam name="T">The data type of the values in the target range.</typeparam>
-            <QualityBand>Preview</QualityBand>
-        </member>
-        <member name="T:System.Windows.Controls.DataVisualization.Interpolator">
-            <summary>
-            Abstract base class for Interpolator converters.
-            </summary>
-            <remarks>
-            <para>
-            An Interpolator is used to project a value from a source range 
-            [ActualDataMinimum, ActualDataMaximum] to a target range [From, To]. 
-            The source range can be specified directly by setting the DataMinimum 
-            and/or DataMaximum properties, or indirectly by setting DataRangeBinding.
-            When the DataRangeBinding property is set,the TreeMap will evaluate the 
-            binding for the entire tree, calculating the minimum and maximum values 
-            automatically. The custom target range and the actual interpolation 
-            logic is defined by sub-classes of this abstract class.
-            </para>
-            </remarks>
-            <QualityBand>Preview</QualityBand>
-        </member>
-        <member name="F:System.Windows.Controls.DataVisualization.Interpolator._helper">
-            <summary>
-            Holds a helper object used to extract values using a property path.
-            </summary>
-        </member>
-        <member name="F:System.Windows.Controls.DataVisualization.Interpolator.DataMinimumProperty">
-            <summary>
-            Identifies the DataMinimum dependency property.
-            </summary>
-        </member>
-        <member name="F:System.Windows.Controls.DataVisualization.Interpolator.DataMaximumProperty">
-            <summary>
-            Identifies the DataMaximum dependency property.
-            </summary>
-        </member>
-        <member name="F:System.Windows.Controls.DataVisualization.Interpolator._actualDataMaximum">
-            <summary>
-            This fields contains the automatically calculated maximal value in 
-            the dataset.
-            </summary>
-        </member>
-        <member name="F:System.Windows.Controls.DataVisualization.Interpolator._actualDataMinimum">
-            <summary>
-            This fields contains the automatically calculated minimal value in 
-            the dataset.
-            </summary>
-        </member>
-        <member name="M:System.Windows.Controls.DataVisualization.Interpolator.#ctor">
-            <summary>
-            Initializes a new instance of the Interpolator class.
-            </summary>
-        </member>
-        <member name="M:System.Windows.Controls.DataVisualization.Interpolator.IncludeInRange(System.Object)">
-            <summary>
-            If the DataRangeBinding property is set then this method updates the minimum/maximum range
-            of this object by including the value passed in.
-            </summary>
-            <param name="data">Object to extract the value from (the Source of the DataRangeBinding).</param>
-        </member>
-        <member name="M:System.Windows.Controls.DataVisualization.Interpolator.Interpolate(System.Double)">
-            <summary>
-            Called to interpolate the value of the given object between the DataMinimum and DataMaximum
-            extremes, and to project it in a specific [From, To] range defined. The target range (and
-            therefore the implementation of this method) is defined in a specific sub-class.
-            </summary>
-            <param name="value">Value to interpolate.</param>
-            <returns>An interpolated value.</returns>
-        </member>
-        <member name="P:System.Windows.Controls.DataVisualization.Interpolator.InterpolationMode">
-            <summary>
-            Gets or sets a value telling to which tree nodes the interpolation 
-            should be applied to. LeafNodesOnly by default.
-            </summary>
-        </member>
-        <member name="P:System.Windows.Controls.DataVisualization.Interpolator.TargetName">
-            <summary>
-            Gets or sets a value representing the x:Name of the element to which
-            the interpolated value will be applied.
-            </summary>
-        </member>
-        <member name="P:System.Windows.Controls.DataVisualization.Interpolator.TargetProperty">
-            <summary>
-            Gets or sets a value representing the path to a property which will 
-            receive the interpolated value.
-            </summary>
-        </member>
-        <member name="P:System.Windows.Controls.DataVisualization.Interpolator.DataMinimum">
-            <summary>
-            Gets or sets a value representing the fixed minimum value across the 
-            entire set. If the value is not set directly or is NaN, the 
-            ActualDataMaximum will be calculated automatically from the data set 
-            by using the DataRangeBinding property.
-            </summary>
-        </member>
-        <member name="P:System.Windows.Controls.DataVisualization.Interpolator.DataMaximum">
-            <summary>
-            Gets or sets a value representing the fixed maximum value across the 
-            entire set. If the value is not set directly or is NaN, the 
-            ActualDataMinimum will be calculated automatically from the data set 
-            by using the DataRangeBinding property.
-            </summary>
-        </member>
-        <member name="P:System.Windows.Controls.DataVisualization.Interpolator.ActualDataMaximum">
-            <summary>
-            Gets the value representing the maximal value in the data set. It is
-            automatically from the data set by using the DataRangeBinding 
-            property if DataMaximum is not set. If it is set, DataMaximum is 
-            returned.
-            </summary>
-        </member>
-        <member name="P:System.Windows.Controls.DataVisualization.Interpolator.ActualDataMinimum">
-            <summary>
-            Gets the value representing the minimal value in the data set. It is
-            automatically from the data set by using the DataRangeBinding 
-            property if DataMinimum is not set. If it is set, DataMinimum is 
-            returned.
-            </summary>
-        </member>
-        <member name="P:System.Windows.Controls.DataVisualization.Interpolator.DataRangeBinding">
-            <summary>
-            Gets or sets a binding to a property which will be examined to retrieve the minimum and maximum range 
-            values across the entire data set. If this value is null then the DataMinimum and DataMaximum values
-            need be set manually.
-            </summary>
-        </member>
-        <member name="P:System.Windows.Controls.DataVisualization.RangeInterpolator`1.From">
-            <summary>
-            Gets or sets a value representing the start value of the target range.
-            </summary>
-        </member>
-        <member name="P:System.Windows.Controls.DataVisualization.RangeInterpolator`1.To">
-            <summary>
-            Gets or sets a value representing the end value of the target range.
-            </summary>
         </member>
         <member name="M:System.Windows.Controls.DataVisualization.DoubleInterpolator.Interpolate(System.Double)">
             <summary>

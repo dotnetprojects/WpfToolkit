@@ -11,6 +11,7 @@
         <Grid.RowDefinitions>
             <RowDefinition/>
             <RowDefinition/>
+            <RowDefinition/>
         </Grid.RowDefinitions>
         <Grid.Resources>
             <Style x:Key="ContainerStyle" TargetType="Panel">
@@ -230,6 +231,62 @@
                                     </Border>
                                 </Grid>
                             </Border>
+                        </DataTemplate>
+                    </datavis:TreeMapItemDefinition>
+                </datavis:TreeMap.ItemDefinition>
+            </datavis:TreeMap>
+        </treeMap:DockPanel>
+
+        <treeMap:DockPanel
+            Grid.Column="0"
+            Grid.Row="2"
+            Style="{StaticResource ContainerStyle}">
+            <TextBlock
+                treeMap:DockPanel.Dock="Top"
+                Text="10 Latest Posts by Popularity/Length"
+                Style="{StaticResource TitleStyle}"/>
+            <datavis:TreeMap
+                x:Name="RecentPosts2"
+                ItemsSource="{Binding}">
+                <datavis:TreeMap.Interpolators>
+                    <datavis:HSLSolidColorBrushInterpolator
+                        TargetName="Border"
+                        TargetProperty="Background"
+                        DataRangeBinding="{Binding Length}"
+                        From="Green"
+                        To="Red"/>                    
+                </datavis:TreeMap.Interpolators>
+                <datavis:TreeMap.ItemDefinition>
+                    <datavis:TreeMapItemDefinition
+                        ValueBinding="{Binding Popularity}">
+                        <DataTemplate>
+                            <Grid>
+                                <Border
+                                    x:Name="Border"
+                                    BorderBrush="Black"
+                                    BorderThickness="1"
+                                    Margin="0 0 1 1">
+                                    <Grid Background="{StaticResource GradientOverlay}">
+                                        <TextBlock
+                                            Text="{Binding ShortTitle}"
+                                            TextWrapping="Wrap"
+                                            FontSize="10"
+                                            VerticalAlignment="Center"
+                                            Margin="2"/>
+                                    </Grid>
+                                    <ToolTipService.ToolTip>
+                                        <StackPanel>
+                                            <TextBlock Text="{Binding Title}"/>
+                                            <TextBlock Text="{Binding FormattedTags}" FontStyle="Italic"/>
+                                            <StackPanel Orientation="Horizontal">
+                                                <TextBlock Text="{Binding Length}"/>
+                                                <TextBlock Text=" characters"/>
+                                            </StackPanel>
+                                            <TextBlock Text="{Binding FormattedDate}"/>
+                                        </StackPanel>
+                                    </ToolTipService.ToolTip>
+                                </Border>
+                            </Grid>
                         </DataTemplate>
                     </datavis:TreeMapItemDefinition>
                 </datavis:TreeMap.ItemDefinition>

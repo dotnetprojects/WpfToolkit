@@ -44,6 +44,7 @@ namespace System.Windows.Controls.Samples.TreeMap
             RecentPosts.DataContext = blogPosts.Reverse().Take(10).Reverse();
             ByTag.DataContext = blogPostsByTag;
             ByTagDetailed.DataContext = blogPostsByTag;
+            RecentPosts2.DataContext = blogPosts.Reverse().Take(10).Reverse();
         }
     }
 
