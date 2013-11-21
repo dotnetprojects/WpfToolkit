@@ -4,9 +4,13 @@
     xmlns:samples="clr-namespace:System.Windows.Controls.Samples"
     xmlns:dataVisualisation="clr-namespace:System.Windows.Controls.Samples.DataVisualisation"
     xmlns:themes="clr-namespace:System.Windows.Controls.Samples.Themes"
+    xmlns:treeMap="clr-namespace:System.Windows.Controls.Samples.TreeMap"
     Title="Main Window" Height="800" Width="900">
     <Grid>
         <TabControl>
+            <TabItem Header="TreeMap">
+                <treeMap:TreeMapIntroduction />
+            </TabItem>
             <TabItem Header="DataVisualisation">
                 <dataVisualisation:DataVisualisationSample />
             </TabItem>

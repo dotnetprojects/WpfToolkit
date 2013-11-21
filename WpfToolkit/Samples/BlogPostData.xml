@@ -1,0 +1,1331 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Posts>
+  <Post>
+    <Title>Why me? Why now?? [Introduction and technical background]</Title>
+    <Date>2006-02-24T20:29:00</Date>
+    <Tags>
+      <Tag>Miscellaneous</Tag>
+    </Tags>
+    <Length>1453</Length>
+    <Popularity>0.0035809018567639259</Popularity>
+  </Post>
+  <Post>
+    <Title>ASP.Newbie [Learning ASP.NET for fun and profit]</Title>
+    <Date>2006-02-25T06:23:00</Date>
+    <Tags>
+      <Tag>Technical</Tag>
+    </Tags>
+    <Length>1810</Length>
+    <Popularity>0.00610079575596817</Popularity>
+  </Post>
+  <Post>
+    <Title>An image is worth a thousand HTML tags [How to: Display a custom image with an ASP.NET web page]</Title>
+    <Date>2006-02-27T11:00:00</Date>
+    <Tags>
+      <Tag>Technical</Tag>
+    </Tags>
+    <Length>5038</Length>
+    <Popularity>0.013527851458885942</Popularity>
+  </Post>
+  <Post>
+    <Title>Start using using today! [A bit about the IDisposable interface and the using statement]</Title>
+    <Date>2006-03-01T11:44:00</Date>
+    <Tags>
+      <Tag>Technical</Tag>
+    </Tags>
+    <Length>4937</Length>
+    <Popularity>0.0050397877984084882</Popularity>
+  </Post>
+  <Post>
+    <Title>An image is now worth two thousand HTML tags [How to: Use ASP.NET's IHttpHandler interface to display a custom image]</Title>
+    <Date>2006-03-07T23:58:00</Date>
+    <Tags>
+      <Tag>Technical</Tag>
+    </Tags>
+    <Length>3972</Length>
+    <Popularity>0.0042440318302387264</Popularity>
+  </Post>
+  <Post>
+    <Title>Working hard / hardly working [A bit about my new team]</Title>
+    <Date>2006-03-15T09:50:00</Date>
+    <Tags>
+      <Tag>Miscellaneous</Tag>
+    </Tags>
+    <Length>1014</Length>
+    <Popularity>0.0027851458885941646</Popularity>
+  </Post>
+  <Post>
+    <Title>When the GAC makes you gack (Part 1) [How something can be both IN and NOT IN the GAC at the same time]</Title>
+    <Date>2006-03-23T11:09:00</Date>
+    <Tags>
+      <Tag>Technical</Tag>
+    </Tags>
+    <Length>3933</Length>
+    <Popularity>0.1026525198938992</Popularity>
+  </Post>
+  <Post>
+    <Title>When the GAC makes you gack (Part 2) [How something can be both IN and NOT IN the GAC at the same time]</Title>
+    <Date>2006-03-27T16:00:00</Date>
+    <Tags>
+      <Tag>Technical</Tag>
+    </Tags>
+    <Length>4313</Length>
+    <Popularity>0.029045092838196288</Popularity>
+  </Post>
+  <Post>
+    <Title>ASP.NET and "Atlas" make AJAX easy [The Agility Team's "Atlas" Control Toolkit is available for download!]</Title>
+    <Date>2006-04-12T16:14:00</Date>
+    <Tags>
+      <Tag>AJAX Control Toolkit</Tag>
+    </Tags>
+    <Length>3298</Length>
+    <Popularity>0.0029177718832891246</Popularity>
+  </Post>
+  <Post>
+    <Title>Good news is good news! [Coverage of the "Atlas" Control Toolkit release is favorable!]</Title>
+    <Date>2006-04-14T11:06:00</Date>
+    <Tags>
+      <Tag>AJAX Control Toolkit</Tag>
+    </Tags>
+    <Length>4321</Length>
+    <Popularity>0.0005305039787798408</Popularity>
+  </Post>
+  <Post>
+    <Title>Three weeks since we shipped? Must be time to ship again! ["Atlas" Control Toolkit updated!]</Title>
+    <Date>2006-05-05T10:34:00</Date>
+    <Tags>
+      <Tag>AJAX Control Toolkit</Tag>
+    </Tags>
+    <Length>3792</Length>
+    <Popularity>0.000663129973474801</Popularity>
+  </Post>
+  <Post>
+    <Title>A brief bit 'bout backups [My current backup strategy]</Title>
+    <Date>2006-05-31T07:24:00</Date>
+    <Tags>
+      <Tag>Technical</Tag>
+    </Tags>
+    <Length>7244</Length>
+    <Popularity>0.0055702917771883291</Popularity>
+  </Post>
+  <Post>
+    <Title>A late announcement and an even later announcement ["Atlas" Control Toolkit updated (twice)!]</Title>
+    <Date>2006-08-14T10:42:00</Date>
+    <Tags>
+      <Tag>AJAX Control Toolkit</Tag>
+    </Tags>
+    <Length>4045</Length>
+    <Popularity>0.00079575596816976125</Popularity>
+  </Post>
+  <Post>
+    <Title>An example of watermark-friendly popping [How to: Integrate the PopupControl and TextBoxWatermark]</Title>
+    <Date>2006-08-15T17:47:00</Date>
+    <Tags>
+      <Tag>AJAX Control Toolkit</Tag>
+    </Tags>
+    <Length>18981</Length>
+    <Popularity>0.0486737400530504</Popularity>
+  </Post>
+  <Post>
+    <Title>Nearly breaking news ["Atlas" Control Toolkit updated again!]</Title>
+    <Date>2006-09-19T11:29:00</Date>
+    <Tags>
+      <Tag>AJAX Control Toolkit</Tag>
+    </Tags>
+    <Length>4302</Length>
+    <Popularity>0.0013262599469496021</Popularity>
+  </Post>
+  <Post>
+    <Title>Dynamic content made easy [How to: Use the new dynamic population support for Toolkit controls]</Title>
+    <Date>2006-09-19T14:16:00</Date>
+    <Tags>
+      <Tag>AJAX Control Toolkit</Tag>
+    </Tags>
+    <Length>21718</Length>
+    <Popularity>0.28315649867374004</Popularity>
+  </Post>
+  <Post>
+    <Title>Talkin' Toolkit [Speaking at the ASP.NET Connections conference in November]</Title>
+    <Date>2006-10-06T12:21:00</Date>
+    <Tags>
+      <Tag>AJAX Control Toolkit</Tag>
+    </Tags>
+    <Length>1231</Length>
+    <Popularity>0.000663129973474801</Popularity>
+  </Post>
+  <Post>
+    <Title>ASP.NET AJAX née "Atlas" - and all that entails... [AJAX Control Toolkit update!]</Title>
+    <Date>2006-10-20T16:13:00</Date>
+    <Tags>
+      <Tag>AJAX Control Toolkit</Tag>
+    </Tags>
+    <Length>4483</Length>
+    <Popularity>0.0025198938992042441</Popularity>
+  </Post>
+  <Post>
+    <Title>Talked Toolkit [Spoke at the ASP.NET Connections conference]</Title>
+    <Date>2006-11-07T17:07:00</Date>
+    <Tags>
+      <Tag>AJAX Control Toolkit</Tag>
+    </Tags>
+    <Length>1383</Length>
+    <Popularity>0.011273209549071617</Popularity>
+  </Post>
+  <Post>
+    <Title>Just what it takes for Beta 2 [AJAX Control Toolkit update!]</Title>
+    <Date>2006-11-08T16:55:00</Date>
+    <Tags>
+      <Tag>AJAX Control Toolkit</Tag>
+    </Tags>
+    <Length>1760</Length>
+    <Popularity>0</Popularity>
+  </Post>
+  <Post>
+    <Title>Dynamic content made easy *redux* [How to: Use the new dynamic population support for Toolkit controls]</Title>
+    <Date>2006-11-17T19:55:00</Date>
+    <Tags>
+      <Tag>AJAX Control Toolkit</Tag>
+    </Tags>
+    <Length>21522</Length>
+    <Popularity>0.32201591511936339</Popularity>
+  </Post>
+  <Post>
+    <Title>Another quick, small-scale release [AJAX Control Toolkit update!]</Title>
+    <Date>2006-11-21T17:24:00</Date>
+    <Tags>
+      <Tag>AJAX Control Toolkit</Tag>
+    </Tags>
+    <Length>4127</Length>
+    <Popularity>0.0047745358090185673</Popularity>
+  </Post>
+  <Post>
+    <Title>Dynamic content made easy *remix* [How to: Use the new dynamic population support for Toolkit controls]</Title>
+    <Date>2006-11-30T15:08:00</Date>
+    <Tags>
+      <Tag>AJAX Control Toolkit</Tag>
+    </Tags>
+    <Length>6905</Length>
+    <Popularity>0.0383289124668435</Popularity>
+  </Post>
+  <Post>
+    <Title>Runnin' on the RC [AJAX Control Toolkit update!]</Title>
+    <Date>2006-12-14T15:25:00</Date>
+    <Tags>
+      <Tag>AJAX Control Toolkit</Tag>
+    </Tags>
+    <Length>1732</Length>
+    <Popularity>0.00092838196286472148</Popularity>
+  </Post>
+  <Post>
+    <Title>ASP.NET AJAX 1.0 is on the loose! [AJAX Control Toolkit update!]</Title>
+    <Date>2007-01-23T17:01:00</Date>
+    <Tags>
+      <Tag>AJAX Control Toolkit</Tag>
+    </Tags>
+    <Length>3315</Length>
+    <Popularity>0.010477453580901857</Popularity>
+  </Post>
+  <Post>
+    <Title>A quick update to address some top customer issues [AJAX Control Toolkit update!]</Title>
+    <Date>2007-02-01T16:07:00</Date>
+    <Tags>
+      <Tag>AJAX Control Toolkit</Tag>
+    </Tags>
+    <Length>2378</Length>
+    <Popularity>0.0021220159151193632</Popularity>
+  </Post>
+  <Post>
+    <Title>Safely avoiding the "access denied" dialog [How to: Work around the access denied cross-domain IFRAME issue in the AJAX Control Toolkit]</Title>
+    <Date>2007-02-05T16:46:00</Date>
+    <Tags>
+      <Tag>AJAX Control Toolkit</Tag>
+    </Tags>
+    <Length>9874</Length>
+    <Popularity>0.53620689655172415</Popularity>
+  </Post>
+  <Post>
+    <Title>Toolkit talk, take two [Spoke at the TechReady4 conference]</Title>
+    <Date>2007-02-08T19:43:00</Date>
+    <Tags>
+      <Tag>AJAX Control Toolkit</Tag>
+    </Tags>
+    <Length>2821</Length>
+    <Popularity>0.0005305039787798408</Popularity>
+  </Post>
+  <Post>
+    <Title>Lost (Sk)in Translation [AJAX Control Toolkit update!]</Title>
+    <Date>2007-03-02T04:28:00</Date>
+    <Tags>
+      <Tag>AJAX Control Toolkit</Tag>
+    </Tags>
+    <Length>5249</Length>
+    <Popularity>0.019893899204244031</Popularity>
+  </Post>
+  <Post>
+    <Title>"You're gonna need a bigger boat." [A brief look at data storage requirements in today's world]</Title>
+    <Date>2007-03-13T12:03:00</Date>
+    <Tags>
+      <Tag>Technical</Tag>
+    </Tags>
+    <Length>4096</Length>
+    <Popularity>0.0035809018567639259</Popularity>
+  </Post>
+  <Post>
+    <Title>Computing the size of your boat [Sample code to help analyze storage space requirements]</Title>
+    <Date>2007-03-14T11:40:00</Date>
+    <Tags>
+      <Tag>Technical</Tag>
+    </Tags>
+    <Length>9886</Length>
+    <Popularity>0.0046419098143236073</Popularity>
+  </Post>
+  <Post>
+    <Title>Toolkit talk two-fer! [Spoke at the ASP.NET Connections conference]</Title>
+    <Date>2007-03-26T15:16:00</Date>
+    <Tags>
+      <Tag>AJAX Control Toolkit</Tag>
+    </Tags>
+    <Length>2541</Length>
+    <Popularity>0.0014588859416445623</Popularity>
+  </Post>
+  <Post>
+    <Title>AutoComplete++ [How to: Create a multi-word auto-complete text box]</Title>
+    <Date>2007-03-30T16:39:00</Date>
+    <Tags>
+      <Tag>AJAX Control Toolkit</Tag>
+    </Tags>
+    <Length>12011</Length>
+    <Popularity>0.053846153846153849</Popularity>
+  </Post>
+  <Post>
+    <Title>Toolkit patching made easy [Announcing the AJAX Control Toolkit Patch Utility]</Title>
+    <Date>2007-04-13T11:35:00</Date>
+    <Tags>
+      <Tag>AJAX Control Toolkit</Tag>
+    </Tags>
+    <Length>4661</Length>
+    <Popularity>0.010477453580901857</Popularity>
+  </Post>
+  <Post>
+    <Title>The web just got even better... [Silverlight announced at MIX07!]</Title>
+    <Date>2007-05-01T16:56:00</Date>
+    <Tags>
+      <Tag>Silverlight</Tag>
+    </Tags>
+    <Length>6619</Length>
+    <Popularity>0.46777188328912467</Popularity>
+  </Post>
+  <Post>
+    <Title>Lighting up the XML Paper Specification [Proof-of-concept XPS reader for Silverlight!]</Title>
+    <Date>2007-05-22T12:27:00</Date>
+    <Tags>
+      <Tag>Silverlight</Tag>
+    </Tags>
+    <Length>9028</Length>
+    <Popularity>0.68156498673740051</Popularity>
+  </Post>
+  <Post>
+    <Title>Silverlight "Surface" Demonstration [Silverlight implementation of Surface's "photo table" UI]</Title>
+    <Date>2007-06-01T01:12:00</Date>
+    <Tags>
+      <Tag>Silverlight</Tag>
+    </Tags>
+    <Length>3656</Length>
+    <Popularity>1</Popularity>
+  </Post>
+  <Post>
+    <Title>Fixes and features by popular demand [AJAX Control Toolkit update!]</Title>
+    <Date>2007-06-06T17:28:00</Date>
+    <Tags>
+      <Tag>AJAX Control Toolkit</Tag>
+    </Tags>
+    <Length>5482</Length>
+    <Popularity>0.018832891246684351</Popularity>
+  </Post>
+  <Post>
+    <Title>Script combining made easy [Overview of the AJAX Control Toolkit's ToolkitScriptManager]</Title>
+    <Date>2007-06-11T15:39:00</Date>
+    <Tags>
+      <Tag>AJAX Control Toolkit</Tag>
+    </Tags>
+    <Length>15551</Length>
+    <Popularity>0.51034482758620692</Popularity>
+  </Post>
+  <Post>
+    <Title>Tweaks and improvements by popular demand [AJAX Control Toolkit update!]</Title>
+    <Date>2007-06-18T17:59:00</Date>
+    <Tags>
+      <Tag>AJAX Control Toolkit</Tag>
+    </Tags>
+    <Length>3383</Length>
+    <Popularity>0.00623342175066313</Popularity>
+  </Post>
+  <Post>
+    <Title>Script combining made better [Overview of improvements to the AJAX Control Toolkit's ToolkitScriptManager]</Title>
+    <Date>2007-06-20T15:14:00</Date>
+    <Tags>
+      <Tag>AJAX Control Toolkit</Tag>
+    </Tags>
+    <Length>11315</Length>
+    <Popularity>0.20344827586206896</Popularity>
+  </Post>
+  <Post>
+    <Title>Powerful log file analysis for everyone [Releasing TextAnalysisTool.NET!]</Title>
+    <Date>2007-06-21T17:47:00</Date>
+    <Tags>
+      <Tag>Technical</Tag>
+      <Tag>TextAnalysisTool</Tag>
+    </Tags>
+    <Length>7132</Length>
+    <Popularity>0.13169761273209549</Popularity>
+  </Post>
+  <Post>
+    <Title>An easy way to keep your windows where you want them [Releasing WindowPlacementTool with source code!]</Title>
+    <Date>2007-07-03T15:13:00</Date>
+    <Tags>
+      <Tag>Technical</Tag>
+    </Tags>
+    <Length>5481</Length>
+    <Popularity>0.0033156498673740055</Popularity>
+  </Post>
+  <Post>
+    <Title>A new Framework deserves a new Toolkit [AJAX Control Toolkit updated for .NET 3.5 Beta 2!]</Title>
+    <Date>2007-07-26T20:32:00</Date>
+    <Tags>
+      <Tag>AJAX Control Toolkit</Tag>
+    </Tags>
+    <Length>2083</Length>
+    <Popularity>0.003183023872679045</Popularity>
+  </Post>
+  <Post>
+    <Title>A new Silverlight version has been released! [Samples updated for the 1.1 Refresh]</Title>
+    <Date>2007-07-27T16:13:00</Date>
+    <Tags>
+      <Tag>Silverlight</Tag>
+    </Tags>
+    <Length>5045</Length>
+    <Popularity>0.033952254641909811</Popularity>
+  </Post>
+  <Post>
+    <Title>Time for a little fun and games (Silverlight helps play Sudoku!)</Title>
+    <Date>2007-08-21T11:21:00</Date>
+    <Tags>
+      <Tag>Silverlight</Tag>
+    </Tags>
+    <Length>5255</Length>
+    <Popularity>0.10172413793103448</Popularity>
+  </Post>
+  <Post>
+    <Title>Bringing a bit of HTML to Silverlight [HtmlTextBlock makes rich text display easy!]</Title>
+    <Date>2007-09-10T12:53:00</Date>
+    <Tags>
+      <Tag>Silverlight</Tag>
+    </Tags>
+    <Length>7865</Length>
+    <Popularity>0.95039787798408493</Popularity>
+  </Post>
+  <Post>
+    <Title>You voted lots, we fixed lots [AJAX Control Toolkit release!]</Title>
+    <Date>2007-09-21T12:17:00</Date>
+    <Tags>
+      <Tag>AJAX Control Toolkit</Tag>
+    </Tags>
+    <Length>5671</Length>
+    <Popularity>0.091909814323607425</Popularity>
+  </Post>
+  <Post>
+    <Title>Bringing more HTML to Silverlight [HtmlTextBlock improvements]</Title>
+    <Date>2007-09-24T11:15:00</Date>
+    <Tags>
+      <Tag>Silverlight</Tag>
+    </Tags>
+    <Length>7232</Length>
+    <Popularity>0.090716180371352789</Popularity>
+  </Post>
+  <Post>
+    <Title>Something fun for the little ones [SilverlightKidsDoodler develops mouse skills!]</Title>
+    <Date>2007-10-15T21:38:00</Date>
+    <Tags>
+      <Tag>Silverlight</Tag>
+    </Tags>
+    <Length>3995</Length>
+    <Popularity>0.066445623342175061</Popularity>
+  </Post>
+  <Post>
+    <Title>Bigger isn't always better [How to: Resize images without reloading them with WPF]</Title>
+    <Date>2007-11-11T23:30:00</Date>
+    <Tags>
+      <Tag>WPF</Tag>
+    </Tags>
+    <Length>9093</Length>
+    <Popularity>0.20503978779840848</Popularity>
+  </Post>
+  <Post>
+    <Title>A big day for development tools [AJAX Control Toolkit release!]</Title>
+    <Date>2007-11-19T17:53:00</Date>
+    <Tags>
+      <Tag>AJAX Control Toolkit</Tag>
+    </Tags>
+    <Length>2811</Length>
+    <Popularity>0.0047745358090185673</Popularity>
+  </Post>
+  <Post>
+    <Title>Getting the Toolkit working with the VS 2008 web site designer [AJAX Control Toolkit 11119 release update!]</Title>
+    <Date>2007-11-29T14:26:00</Date>
+    <Tags>
+      <Tag>AJAX Control Toolkit</Tag>
+    </Tags>
+    <Length>1479</Length>
+    <Popularity>0.069628647214854109</Popularity>
+  </Post>
+  <Post>
+    <Title>A better web is coming [Silverlight 2 is on the way!]</Title>
+    <Date>2008-02-24T23:51:00</Date>
+    <Tags>
+      <Tag>Silverlight</Tag>
+    </Tags>
+    <Length>4347</Length>
+    <Popularity>0.0025198938992042441</Popularity>
+  </Post>
+  <Post>
+    <Title>Brought to you by community contributions [AJAX Control Toolkit release!]</Title>
+    <Date>2008-02-29T12:58:00</Date>
+    <Tags>
+      <Tag>AJAX Control Toolkit</Tag>
+    </Tags>
+    <Length>1999</Length>
+    <Popularity>0.035145888594164454</Popularity>
+  </Post>
+  <Post>
+    <Title>LB-SV-FAQ [Examples, Notes, Tips, and More for Silverlight 2 Beta 1's ListBox and ScrollViewer controls!]</Title>
+    <Date>2008-03-05T16:12:00</Date>
+    <Tags>
+      <Tag>Silverlight</Tag>
+    </Tags>
+    <Length>66125</Length>
+    <Popularity>0.69403183023872683</Popularity>
+  </Post>
+  <Post>
+    <Title>LB-SV-WPF [Silverlight 2's ListBox and ScrollViewer controls running on WPF!]</Title>
+    <Date>2008-03-10T16:24:00</Date>
+    <Tags>
+      <Tag>Silverlight</Tag>
+    </Tags>
+    <Length>8385</Length>
+    <Popularity>0.11273209549071618</Popularity>
+  </Post>
+  <Post>
+    <Title>LB-SV-WHY [Three wacky uses for Silverlight 2's ListBox and ScrollViewer!]</Title>
+    <Date>2008-03-12T13:58:00</Date>
+    <Tags>
+      <Tag>Silverlight</Tag>
+    </Tags>
+    <Length>22863</Length>
+    <Popularity>0.5115384615384615</Popularity>
+  </Post>
+  <Post>
+    <Title>Blogging code samples should be easy [Free ConvertClipboardRtfToHtmlText tool and source code!]</Title>
+    <Date>2008-03-13T21:48:00</Date>
+    <Tags>
+      <Tag>Technical</Tag>
+    </Tags>
+    <Length>21622</Length>
+    <Popularity>0.04880636604774536</Popularity>
+  </Post>
+  <Post>
+    <Title>Continuing support for simple HTML display in Silverlight [HtmlTextBlock sample updated for Silverlight 2 Beta 1!]</Title>
+    <Date>2008-03-17T12:46:00</Date>
+    <Tags>
+      <Tag>Silverlight</Tag>
+    </Tags>
+    <Length>4336</Length>
+    <Popularity>0.18713527851458886</Popularity>
+  </Post>
+  <Post>
+    <Title>Code to support new features doesn't write itself [HtmlTextBlock sample gets data binding support!]</Title>
+    <Date>2008-03-18T13:31:00</Date>
+    <Tags>
+      <Tag>Silverlight</Tag>
+    </Tags>
+    <Length>2327</Length>
+    <Popularity>0.0071618037135278518</Popularity>
+  </Post>
+  <Post>
+    <Title>Improving everyone's access to Silverlight 2's generic.xaml resources [SilverlightDefaultStyleBrowser tool and source code]</Title>
+    <Date>2008-03-22T00:01:00</Date>
+    <Tags>
+      <Tag>Silverlight</Tag>
+      <Tag>WPF</Tag>
+    </Tags>
+    <Length>5490</Length>
+    <Popularity>0.21830238726790452</Popularity>
+  </Post>
+  <Post>
+    <Title>Improved access to Silverlight 2's generic.xaml resources [SilverlightDefaultStyleBrowser available via ClickOnce]</Title>
+    <Date>2008-03-22T15:53:00</Date>
+    <Tags>
+      <Tag>Silverlight</Tag>
+      <Tag>WPF</Tag>
+    </Tags>
+    <Length>3009</Length>
+    <Popularity>0.12122015915119363</Popularity>
+  </Post>
+  <Post>
+    <Title>Blogging code samples a tad more easily [Updated free ConvertClipboardRtfToHtmlText tool and source code!]</Title>
+    <Date>2008-04-02T23:53:00</Date>
+    <Tags>
+      <Tag>Technical</Tag>
+    </Tags>
+    <Length>1621</Length>
+    <Popularity>0.0099469496021220155</Popularity>
+  </Post>
+  <Post>
+    <Title>Proof-of-concept Silverlight XPS reader gets some Beta 1 love [SimpleSilverlightXpsViewer updated for Silverlight 2 Beta 1!]</Title>
+    <Date>2008-04-08T15:04:00</Date>
+    <Tags>
+      <Tag>Silverlight</Tag>
+    </Tags>
+    <Length>4382</Length>
+    <Popularity>0.049469496021220159</Popularity>
+  </Post>
+  <Post>
+    <Title>Buttons in a ListBox, and More [Demonstration of some useful Silverlight techniques]</Title>
+    <Date>2008-04-21T12:15:00</Date>
+    <Tags>
+      <Tag>Silverlight</Tag>
+    </Tags>
+    <Length>12729</Length>
+    <Popularity>0.072546419098143231</Popularity>
+  </Post>
+  <Post>
+    <Title>IValueConverter: The Swiss Army Knife of Bindings [PropertyViewer sample is a WPF/Silverlight visualization and debugging aid!]</Title>
+    <Date>2008-05-04T16:21:00</Date>
+    <Tags>
+      <Tag>Silverlight</Tag>
+      <Tag>WPF</Tag>
+    </Tags>
+    <Length>10394</Length>
+    <Popularity>0.32055702917771883</Popularity>
+  </Post>
+  <Post>
+    <Title>Lying to the layout system for a good cause [Bringing LayoutTransform to Silverlight 2!]</Title>
+    <Date>2008-05-27T10:52:00</Date>
+    <Tags>
+      <Tag>Silverlight</Tag>
+      <Tag>WPF</Tag>
+    </Tags>
+    <Length>12730</Length>
+    <Popularity>0.083156498673740059</Popularity>
+  </Post>
+  <Post>
+    <Title>Continuing access to Silverlight 2's generic.xaml resources [SilverlightDefaultStyleBrowser updated for Silverlight 2 Beta 2!]</Title>
+    <Date>2008-06-06T22:58:00</Date>
+    <Tags>
+      <Tag>Silverlight</Tag>
+      <Tag>WPF</Tag>
+    </Tags>
+    <Length>6318</Length>
+    <Popularity>0.078514588859416451</Popularity>
+  </Post>
+  <Post>
+    <Title>Again with the support for simple HTML display in Silverlight [HtmlTextBlock sample updated for Silverlight 2 Beta 2!]</Title>
+    <Date>2008-06-11T10:14:00</Date>
+    <Tags>
+      <Tag>Silverlight</Tag>
+    </Tags>
+    <Length>4007</Length>
+    <Popularity>0.09496021220159151</Popularity>
+  </Post>
+  <Post>
+    <Title>Proof-of-concept Silverlight XPS reader comes to Beta 2 [SimpleSilverlightXpsViewer sample updated for Silverlight 2 Beta 2!]</Title>
+    <Date>2008-06-13T00:35:00</Date>
+    <Tags>
+      <Tag>Silverlight</Tag>
+    </Tags>
+    <Length>3471</Length>
+    <Popularity>0.31803713527851457</Popularity>
+  </Post>
+  <Post>
+    <Title>Text; from a slightly different perspective [VerticalTextBlock Control sample for Silverlight 2]</Title>
+    <Date>2008-06-19T22:39:00</Date>
+    <Tags>
+      <Tag>Silverlight</Tag>
+      <Tag>WPF</Tag>
+    </Tags>
+    <Length>11581</Length>
+    <Popularity>0.051856763925729445</Popularity>
+  </Post>
+  <Post>
+    <Title>The layout system lies have become a bit more elaborate [LayoutTransform functionality updated and enhanced for Silverlight 2 Beta 2!]</Title>
+    <Date>2008-07-03T02:00:00</Date>
+    <Tags>
+      <Tag>Silverlight</Tag>
+      <Tag>WPF</Tag>
+    </Tags>
+    <Length>15802</Length>
+    <Popularity>0.068567639257294435</Popularity>
+  </Post>
+  <Post>
+    <Title>Smaller is better! [A simple step to shrink the download size of Silverlight 2 applications]</Title>
+    <Date>2008-07-16T22:47:00</Date>
+    <Tags>
+      <Tag>Silverlight</Tag>
+    </Tags>
+    <Length>8862</Length>
+    <Popularity>0.20358090185676392</Popularity>
+  </Post>
+  <Post>
+    <Title>Maintaining access to Silverlight 2's generic.xaml resources [SilverlightDefaultStyleBrowser updated for build 2.0.30523.8 and beyond!]</Title>
+    <Date>2008-07-20T18:59:00</Date>
+    <Tags>
+      <Tag>Silverlight</Tag>
+      <Tag>WPF</Tag>
+    </Tags>
+    <Length>6047</Length>
+    <Popularity>0.042970822281167109</Popularity>
+  </Post>
+  <Post>
+    <Title>Read a Silverlight book - with Silverlight! [SimpleSilverlightXpsViewer adaptation by Laurence Moroney]</Title>
+    <Date>2008-07-29T23:10:00</Date>
+    <Tags>
+      <Tag>Silverlight</Tag>
+    </Tags>
+    <Length>2069</Length>
+    <Popularity>0.022944297082228116</Popularity>
+  </Post>
+  <Post>
+    <Title>Successfully passing the baton [AJAX Control Toolkit release!]</Title>
+    <Date>2008-08-21T22:23:00</Date>
+    <Tags>
+      <Tag>AJAX Control Toolkit</Tag>
+    </Tags>
+    <Length>1985</Length>
+    <Popularity>0.016312997347480106</Popularity>
+  </Post>
+  <Post>
+    <Title>Video frame grabbing made easy [How to: Quickly capture multiple video frames with WPF]</Title>
+    <Date>2008-09-03T01:51:00</Date>
+    <Tags>
+      <Tag>WPF</Tag>
+    </Tags>
+    <Length>7567</Length>
+    <Popularity>0.12294429708222812</Popularity>
+  </Post>
+  <Post>
+    <Title>Make life a little easier for designers [WPF Triggers with a little less XAML and a little less code]</Title>
+    <Date>2008-09-12T00:21:00</Date>
+    <Tags>
+      <Tag>WPF</Tag>
+    </Tags>
+    <Length>20310</Length>
+    <Popularity>0.10928381962864721</Popularity>
+  </Post>
+  <Post>
+    <Title>"MouseButtonClicker clicks the mouse so you don't have to!" [Releasing binaries and source for a nifty mouse utility]</Title>
+    <Date>2008-09-24T22:55:00</Date>
+    <Tags>
+      <Tag>Technical</Tag>
+    </Tags>
+    <Length>28810</Length>
+    <Popularity>0.060477453580901855</Popularity>
+  </Post>
+  <Post>
+    <Title>Preserving access to Silverlight 2's generic.xaml resources [SilverlightDefaultStyleBrowser updated for the Silverlight 2 RC!]</Title>
+    <Date>2008-09-26T10:28:00</Date>
+    <Tags>
+      <Tag>Silverlight</Tag>
+      <Tag>WPF</Tag>
+    </Tags>
+    <Length>4238</Length>
+    <Popularity>0.10424403183023873</Popularity>
+  </Post>
+  <Post>
+    <Title>Maintaining pretenses with the layout system [LayoutTransform functionality updated for Silverlight 2!]</Title>
+    <Date>2008-09-29T01:04:00</Date>
+    <Tags>
+      <Tag>Silverlight</Tag>
+      <Tag>WPF</Tag>
+    </Tags>
+    <Length>7090</Length>
+    <Popularity>0.061273209549071617</Popularity>
+  </Post>
+  <Post>
+    <Title>Just a little too eager with the clicking... [Updated binaries and source for MouseButtonClicker]</Title>
+    <Date>2008-10-09T23:18:00</Date>
+    <Tags>
+      <Tag>Technical</Tag>
+    </Tags>
+    <Length>2970</Length>
+    <Popularity>0.0025198938992042441</Popularity>
+  </Post>
+  <Post>
+    <Title>Silverlight 2 has released! [Congratulations to everyone involved!]</Title>
+    <Date>2008-10-14T15:40:00</Date>
+    <Tags>
+      <Tag>Silverlight</Tag>
+    </Tags>
+    <Length>1017</Length>
+    <Popularity>0.0026525198938992041</Popularity>
+  </Post>
+  <Post>
+    <Title>Roadblock in the way of migrating the proof-of-concept Silverlight XPS reader [SimpleSilverlightXpsViewer sample does not work on Silverlight 2 RTW]</Title>
+    <Date>2008-10-18T00:06:00</Date>
+    <Tags>
+      <Tag>Silverlight</Tag>
+    </Tags>
+    <Length>6078</Length>
+    <Popularity>0.12188328912466843</Popularity>
+  </Post>
+  <Post>
+    <Title>Announcing a free, open source Charting solution for Silverlight [Silverlight Toolkit released today at PDC!]</Title>
+    <Date>2008-10-28T10:55:00</Date>
+    <Tags>
+      <Tag>Silverlight</Tag>
+      <Tag>Silverlight Toolkit</Tag>
+    </Tags>
+    <Length>29632</Length>
+    <Popularity>0.75596816976127323</Popularity>
+  </Post>
+  <Post>
+    <Title>Click your way to great Silverlight charts [Live ChartBuilder sample and source code!]</Title>
+    <Date>2008-10-29T17:25:00</Date>
+    <Tags>
+      <Tag>Silverlight</Tag>
+      <Tag>Silverlight Toolkit</Tag>
+    </Tags>
+    <Length>18002</Length>
+    <Popularity>0.42413793103448277</Popularity>
+  </Post>
+  <Post>
+    <Title>Smaller is still better! [A simple step continues to shrink the download size of Silverlight 2 applications]</Title>
+    <Date>2008-11-04T16:20:00</Date>
+    <Tags>
+      <Tag>Silverlight</Tag>
+    </Tags>
+    <Length>3280</Length>
+    <Popularity>0.080901856763925736</Popularity>
+  </Post>
+  <Post>
+    <Title>Easily create an ISO from a CD/DVD [Releasing ExtractISO tool and source]</Title>
+    <Date>2008-11-05T23:34:00</Date>
+    <Tags>
+      <Tag>Technical</Tag>
+    </Tags>
+    <Length>7409</Length>
+    <Popularity>0.13607427055702917</Popularity>
+  </Post>
+  <Post>
+    <Title>Improving ChartBuilder's cultural sensitivity [ChartBuilder app/source updated!]</Title>
+    <Date>2008-11-06T11:17:00</Date>
+    <Tags>
+      <Tag>Silverlight</Tag>
+      <Tag>Silverlight Toolkit</Tag>
+    </Tags>
+    <Length>3739</Length>
+    <Popularity>0.08461538461538462</Popularity>
+  </Post>
+  <Post>
+    <Title>My new home page [A collection of great Silverlight Charting resources!]</Title>
+    <Date>2008-11-10T17:34:00</Date>
+    <Tags>
+      <Tag>Silverlight</Tag>
+      <Tag>Silverlight Toolkit</Tag>
+    </Tags>
+    <Length>6785</Length>
+    <Popularity>0.2746684350132626</Popularity>
+  </Post>
+  <Post>
+    <Title>My take on simple HTML display in Silverlight [HtmlTextBlock sample updated for Silverlight 2 RTW!]</Title>
+    <Date>2008-11-11T22:08:00</Date>
+    <Tags>
+      <Tag>Silverlight</Tag>
+    </Tags>
+    <Length>3960</Length>
+    <Popularity>0.10649867374005305</Popularity>
+  </Post>
+  <Post>
+    <Title>A fix for simple HTML display in Silverlight [HtmlTextBlock bug fix for Silverlight 2 RTW!]</Title>
+    <Date>2008-11-12T12:15:00</Date>
+    <Tags>
+      <Tag>Silverlight</Tag>
+    </Tags>
+    <Length>5700</Length>
+    <Popularity>0.1310344827586207</Popularity>
+  </Post>
+  <Post>
+    <Title>Shamelessly benefitting from the work of others [Links to Silverlight Airlines and Surface samples for RTW!]</Title>
+    <Date>2008-11-13T09:09:00</Date>
+    <Tags>
+      <Tag>Silverlight</Tag>
+    </Tags>
+    <Length>2892</Length>
+    <Popularity>0.14787798408488065</Popularity>
+  </Post>
+  <Post>
+    <Title>An unexceptional layout improvement [Two LayoutTransformControl fixes for Silverlight 2!]</Title>
+    <Date>2008-11-18T10:33:00</Date>
+    <Tags>
+      <Tag>Silverlight</Tag>
+      <Tag>WPF</Tag>
+    </Tags>
+    <Length>5449</Length>
+    <Popularity>0.13461538461538461</Popularity>
+  </Post>
+  <Post>
+    <Title>Having problems with layout? Switch to Plan B! [LayoutTransformControl scenarios for WPF]</Title>
+    <Date>2008-11-20T10:50:00</Date>
+    <Tags>
+      <Tag>Silverlight</Tag>
+      <Tag>WPF</Tag>
+    </Tags>
+    <Length>11613</Length>
+    <Popularity>0.09973474801061008</Popularity>
+  </Post>
+  <Post>
+    <Title>Silverlight Charting gets a host of improvements [Silverlight Toolkit December 08 release now available!]</Title>
+    <Date>2008-12-09T17:07:00</Date>
+    <Tags>
+      <Tag>Silverlight</Tag>
+      <Tag>Silverlight Toolkit</Tag>
+    </Tags>
+    <Length>45069</Length>
+    <Popularity>0.59694960212201587</Popularity>
+  </Post>
+  <Post>
+    <Title>Great Silverlight charts are still just a click away [ChartBuilder sample and source code updated for Charting's December 08 release]</Title>
+    <Date>2008-12-10T23:37:00</Date>
+    <Tags>
+      <Tag>Silverlight</Tag>
+      <Tag>Silverlight Toolkit</Tag>
+    </Tags>
+    <Length>4031</Length>
+    <Popularity>0.21326259946949602</Popularity>
+  </Post>
+  <Post>
+    <Title>Expanded access to Silverlight 2's generic.xaml resources [SilverlightDefaultStyleBrowser updated for better compatibility!]</Title>
+    <Date>2008-12-14T22:34:00</Date>
+    <Tags>
+      <Tag>Silverlight</Tag>
+      <Tag>WPF</Tag>
+      <Tag>Silverlight Toolkit</Tag>
+    </Tags>
+    <Length>7919</Length>
+    <Popularity>0.24124668435013263</Popularity>
+  </Post>
+  <Post>
+    <Title>Yummier pies! [A technique for more flexible gradient styling of Silverlight Toolkit pie charts]</Title>
+    <Date>2008-12-30T01:07:00</Date>
+    <Tags>
+      <Tag>Silverlight</Tag>
+      <Tag>Silverlight Toolkit</Tag>
+    </Tags>
+    <Length>19636</Length>
+    <Popularity>0.11326259946949602</Popularity>
+  </Post>
+  <Post>
+    <Title>The source code IS the executable [Releasing CSI, a C# interpreter (with source and tests) for .NET]</Title>
+    <Date>2009-01-07T00:26:00</Date>
+    <Tags>
+      <Tag>Technical</Tag>
+    </Tags>
+    <Length>10311</Length>
+    <Popularity>0.085411140583554382</Popularity>
+  </Post>
+  <Post>
+    <Title>Trust, but verify [Free tool (and source code) for computing commonly used hash codes!]</Title>
+    <Date>2009-01-13T00:52:00</Date>
+    <Tags>
+      <Tag>Technical</Tag>
+    </Tags>
+    <Length>12499</Length>
+    <Popularity>0.067108753315649861</Popularity>
+  </Post>
+  <Post>
+    <Title>Free hash [A reusable CRC-32 HashAlgorithm implementation for .NET]</Title>
+    <Date>2009-01-14T00:44:00</Date>
+    <Tags>
+      <Tag>Technical</Tag>
+    </Tags>
+    <Length>15377</Length>
+    <Popularity>0.10159151193633953</Popularity>
+  </Post>
+  <Post>
+    <Title>The doctor will see you now... [WaitingRoom is a reusable synchronization object for .NET]</Title>
+    <Date>2009-01-15T00:10:00</Date>
+    <Tags>
+      <Tag>Technical</Tag>
+    </Tags>
+    <Length>15193</Length>
+    <Popularity>0.037400530503978777</Popularity>
+  </Post>
+  <Post>
+    <Title>Gratuitous platform support [ComputeFileHashes works on the command-line, on WPF, on Silverlight, and via ClickOnce!]</Title>
+    <Date>2009-01-21T02:13:00</Date>
+    <Tags>
+      <Tag>Technical</Tag>
+      <Tag>Silverlight</Tag>
+      <Tag>WPF</Tag>
+    </Tags>
+    <Length>13427</Length>
+    <Popularity>0.060875331564986736</Popularity>
+  </Post>
+  <Post>
+    <Title>Math is hard, let's go shopping. [Minor bug fix for free CRC-32 HashAlgorithm implementation for .NET]</Title>
+    <Date>2009-01-23T00:21:00</Date>
+    <Tags>
+      <Tag>Technical</Tag>
+    </Tags>
+    <Length>2750</Length>
+    <Popularity>0.014986737400530505</Popularity>
+  </Post>
+  <Post>
+    <Title>Cross-platform feature parity: achieved [Silverlight version of ComputeFileHashes now includes MD5!]</Title>
+    <Date>2009-01-26T23:09:00</Date>
+    <Tags>
+      <Tag>Technical</Tag>
+      <Tag>Silverlight</Tag>
+      <Tag>WPF</Tag>
+    </Tags>
+    <Length>6889</Length>
+    <Popularity>0.048143236074270554</Popularity>
+  </Post>
+  <Post>
+    <Title>Thank goodness for reference implementations [Low-overhead .NET MD5 implementation (source code and tests) works great on Silverlight!]</Title>
+    <Date>2009-01-28T00:25:00</Date>
+    <Tags>
+      <Tag>Technical</Tag>
+      <Tag>Silverlight</Tag>
+    </Tags>
+    <Length>65188</Length>
+    <Popularity>0.099867374005305043</Popularity>
+  </Post>
+  <Post>
+    <Title>The proverbial "one line fix" [ComputeFileHashes works around a troublesome Silverlight-on-Mac issue]</Title>
+    <Date>2009-02-01T00:42:00</Date>
+    <Tags>
+      <Tag>Technical</Tag>
+      <Tag>Silverlight</Tag>
+      <Tag>WPF</Tag>
+    </Tags>
+    <Length>7093</Length>
+    <Popularity>0.05424403183023873</Popularity>
+  </Post>
+  <Post>
+    <Title>Columns of a different color [Customizing the appearance of Silverlight charts with re-templating and MVVM]</Title>
+    <Date>2009-02-04T00:27:00</Date>
+    <Tags>
+      <Tag>Silverlight</Tag>
+      <Tag>Silverlight Toolkit</Tag>
+    </Tags>
+    <Length>44622</Length>
+    <Popularity>0.25490716180371353</Popularity>
+  </Post>
+  <Post>
+    <Title>My new home page, expanded [Updated collection of great Silverlight Charting resources!]</Title>
+    <Date>2009-02-05T23:27:00</Date>
+    <Tags>
+      <Tag>Silverlight</Tag>
+      <Tag>Silverlight Toolkit</Tag>
+    </Tags>
+    <Length>13101</Length>
+    <Popularity>0.330106100795756</Popularity>
+  </Post>
+  <Post>
+    <Title>Sometimes all it takes is a little encouragement [How to: Automatically update the widths of ListView columns]</Title>
+    <Date>2009-02-16T00:06:00</Date>
+    <Tags>
+      <Tag>WPF</Tag>
+    </Tags>
+    <Length>23768</Length>
+    <Popularity>0.059946949602122018</Popularity>
+  </Post>
+  <Post>
+    <Title>Ambiguous contract is ambiguous [Minor bug fix for CRC32 and MD5Managed HashAlgorithm implementations]</Title>
+    <Date>2009-02-17T00:12:00</Date>
+    <Tags>
+      <Tag>Technical</Tag>
+      <Tag>Silverlight</Tag>
+      <Tag>WPF</Tag>
+    </Tags>
+    <Length>6215</Length>
+    <Popularity>0.034482758620689655</Popularity>
+  </Post>
+  <Post>
+    <Title>DesignerProperties.GetIsInDesignMode_ForRealz [How to: Reliably detect Silverlight design mode in Blend and Visual Studio]</Title>
+    <Date>2009-02-26T19:23:00</Date>
+    <Tags>
+      <Tag>Silverlight</Tag>
+      <Tag>Silverlight Toolkit</Tag>
+    </Tags>
+    <Length>6842</Length>
+    <Popularity>0.14058355437665782</Popularity>
+  </Post>
+  <Post>
+    <Title>A rose by any other name... [LayoutTransformControl on track to ship in the Silverlight Toolkit under the name LayoutTransformer!]</Title>
+    <Date>2009-03-02T12:39:00</Date>
+    <Tags>
+      <Tag>Silverlight</Tag>
+      <Tag>WPF</Tag>
+      <Tag>Silverlight Toolkit</Tag>
+    </Tags>
+    <Length>10496</Length>
+    <Popularity>0.11458885941644563</Popularity>
+  </Post>
+  <Post>
+    <Title>Controls are like diapers: you don't want a leaky one [Implementing the WeakEvent pattern on Silverlight with the WeakEventListener class]</Title>
+    <Date>2009-03-09T17:59:00</Date>
+    <Tags>
+      <Tag>Silverlight</Tag>
+      <Tag>WPF</Tag>
+      <Tag>Silverlight Toolkit</Tag>
+    </Tags>
+    <Length>26319</Length>
+    <Popularity>0.21830238726790452</Popularity>
+  </Post>
+  <Post>
+    <Title>Where's your leak at? [Using WinDbg, SOS, and GCRoot to diagnose a .NET memory leak]</Title>
+    <Date>2009-03-11T22:45:00</Date>
+    <Tags>
+      <Tag>Silverlight</Tag>
+      <Tag>WPF</Tag>
+    </Tags>
+    <Length>10894</Length>
+    <Popularity>0.44615384615384618</Popularity>
+  </Post>
+  <Post>
+    <Title>Silverlight Charting is faster and better than ever [Silverlight Toolkit March 09 release now available!]</Title>
+    <Date>2009-03-19T00:31:00</Date>
+    <Tags>
+      <Tag>Silverlight</Tag>
+      <Tag>Silverlight Toolkit</Tag>
+    </Tags>
+    <Length>42243</Length>
+    <Popularity>0.47705570291777188</Popularity>
+  </Post>
+  <Post>
+    <Title>Silverlight Charting remains just a click away - and runs on WPF, too!! [ChartBuilder sample and source code updated for Charting's March 09 release]</Title>
+    <Date>2009-03-20T01:13:00</Date>
+    <Tags>
+      <Tag>Silverlight</Tag>
+      <Tag>WPF</Tag>
+      <Tag>Silverlight Toolkit</Tag>
+    </Tags>
+    <Length>7092</Length>
+    <Popularity>0.78514588859416445</Popularity>
+  </Post>
+  <Post>
+    <Title>Supporting the unsupported [Two fixes for the unofficial WPF Charting assembly!]</Title>
+    <Date>2009-03-25T11:25:00</Date>
+    <Tags>
+      <Tag>Silverlight</Tag>
+      <Tag>WPF</Tag>
+      <Tag>Silverlight Toolkit</Tag>
+    </Tags>
+    <Length>5994</Length>
+    <Popularity>0.0726790450928382</Popularity>
+  </Post>
+  <Post>
+    <Title>If they can build it, they will come... [Enabling anyone to compile WPF Charting from the Silverlight Charting sources!]</Title>
+    <Date>2009-03-26T13:01:00</Date>
+    <Tags>
+      <Tag>WPF</Tag>
+      <Tag>Silverlight Toolkit</Tag>
+    </Tags>
+    <Length>10152</Length>
+    <Popularity>0.0720159151193634</Popularity>
+  </Post>
+  <Post>
+    <Title>Don't let the gotchas getcha [Adding the ScrollIntoViewCentered method to WPF's ListBox]</Title>
+    <Date>2009-03-30T18:25:00</Date>
+    <Tags>
+      <Tag>WPF</Tag>
+    </Tags>
+    <Length>12034</Length>
+    <Popularity>0.033687002652519893</Popularity>
+  </Post>
+  <Post>
+    <Title>If you could have this... would you even *want* it? [Playing around with writing a flexible source control repository browser in WPF]</Title>
+    <Date>2009-04-03T01:34:00</Date>
+    <Tags>
+      <Tag>WPF</Tag>
+    </Tags>
+    <Length>5208</Length>
+    <Popularity>0.038859416445623345</Popularity>
+  </Post>
+  <Post>
+    <Title>Nobody likes seeing the hourglass... [Keep your application responsive with BackgroundTaskManager on WPF and Silverlight]</Title>
+    <Date>2009-04-08T00:38:00</Date>
+    <Tags>
+      <Tag>Silverlight</Tag>
+      <Tag>WPF</Tag>
+    </Tags>
+    <Length>19873</Length>
+    <Popularity>0.12387267904509283</Popularity>
+  </Post>
+  <Post>
+    <Title>A bit more than meets the eye [Easily animate LayoutTransformer with AnimationMediator!]</Title>
+    <Date>2009-04-09T13:03:00</Date>
+    <Tags>
+      <Tag>Silverlight</Tag>
+      <Tag>Silverlight Toolkit</Tag>
+    </Tags>
+    <Length>21875</Length>
+    <Popularity>0.0883289124668435</Popularity>
+  </Post>
+  <Post>
+    <Title>A bit more(er) than meets the eye [Easily animate and update LayoutTransformer with AnimationMediator!]</Title>
+    <Date>2009-04-10T23:28:00</Date>
+    <Tags>
+      <Tag>Silverlight</Tag>
+      <Tag>Silverlight Toolkit</Tag>
+    </Tags>
+    <Length>20927</Length>
+    <Popularity>0.067108753315649861</Popularity>
+  </Post>
+  <Post>
+    <Title>If one proxy is good, two must be better [Socks5to4a gives your SOCKS 4a proxy a free upgrade!]</Title>
+    <Date>2009-04-15T12:21:00</Date>
+    <Tags>
+      <Tag>Technical</Tag>
+    </Tags>
+    <Length>4406</Length>
+    <Popularity>0.014058355437665782</Popularity>
+  </Post>
+  <Post>
+    <Title>Comma quibbling a la Eric and Jafar [A slightly wacky approach to the problem in C#]</Title>
+    <Date>2009-04-16T16:29:00</Date>
+    <Tags>
+      <Tag>Technical</Tag>
+    </Tags>
+    <Length>5866</Length>
+    <Popularity>0.011671087533156498</Popularity>
+  </Post>
+  <Post>
+    <Title>Fewer gotchas to getcha [Enhancing the ScrollIntoViewCentered method for WPF's ListBox]</Title>
+    <Date>2009-04-19T23:23:00</Date>
+    <Tags>
+      <Tag>WPF</Tag>
+    </Tags>
+    <Length>15962</Length>
+    <Popularity>0.046949602122015918</Popularity>
+  </Post>
+  <Post>
+    <Title>Another round of (un)support [Quick fix for the unofficial WPF Charting assembly!]</Title>
+    <Date>2009-04-22T00:11:00</Date>
+    <Tags>
+      <Tag>WPF</Tag>
+      <Tag>Silverlight Toolkit</Tag>
+    </Tags>
+    <Length>5214</Length>
+    <Popularity>0.041379310344827586</Popularity>
+  </Post>
+  <Post>
+    <Title>My new home page, extended [Updated collection of great Silverlight and WPF Charting resources!]</Title>
+    <Date>2009-04-24T00:23:00</Date>
+    <Tags>
+      <Tag>Silverlight</Tag>
+      <Tag>WPF</Tag>
+      <Tag>Silverlight Toolkit</Tag>
+    </Tags>
+    <Length>20972</Length>
+    <Popularity>0.44257294429708222</Popularity>
+  </Post>
+  <Post>
+    <Title>Trying to get the story straight [A brief summary of Storyboard differences between WPF and Silverlight]</Title>
+    <Date>2009-04-28T23:05:00</Date>
+    <Tags>
+      <Tag>Silverlight</Tag>
+      <Tag>WPF</Tag>
+      <Tag>Silverlight Toolkit</Tag>
+    </Tags>
+    <Length>9916</Length>
+    <Popularity>0.12891246684350133</Popularity>
+  </Post>
+  <Post>
+    <Title>Going "extreme" with Silverlight 3 [Sharing the source code for a real-world sample application]</Title>
+    <Date>2009-05-04T11:41:00</Date>
+    <Tags>
+      <Tag>Silverlight</Tag>
+      <Tag>Silverlight Toolkit</Tag>
+    </Tags>
+    <Length>5191</Length>
+    <Popularity>0.39575596816976127</Popularity>
+  </Post>
+  <Post>
+    <Title>One more platform difference more-or-less tamed [SetterValueBindingHelper makes Silverlight Setters better!]</Title>
+    <Date>2009-05-07T01:40:00</Date>
+    <Tags>
+      <Tag>Silverlight</Tag>
+      <Tag>Silverlight Toolkit</Tag>
+    </Tags>
+    <Length>37747</Length>
+    <Popularity>0.12984084880636604</Popularity>
+  </Post>
+  <Post>
+    <Title>Pineapple upside-down chart [How to: Invert the axis of a chart for "smaller is better" scenarios]</Title>
+    <Date>2009-05-12T11:31:00</Date>
+    <Tags>
+      <Tag>Silverlight</Tag>
+      <Tag>WPF</Tag>
+      <Tag>Silverlight Toolkit</Tag>
+    </Tags>
+    <Length>25014</Length>
+    <Popularity>0.10411140583554376</Popularity>
+  </Post>
+  <Post>
+    <Title>Chart tweaking made easy [How to: Make four simple color/ToolTip changes with Silverlight/WPF Charting]</Title>
+    <Date>2009-05-19T23:34:00</Date>
+    <Tags>
+      <Tag>Silverlight</Tag>
+      <Tag>WPF</Tag>
+      <Tag>Silverlight Toolkit</Tag>
+    </Tags>
+    <Length>26829</Length>
+    <Popularity>0.14018567639257296</Popularity>
+  </Post>
+  <Post>
+    <Title>You've got to know where you've been to know where you're going [Some background on Charting's ordered multiple dictionary implementation]</Title>
+    <Date>2009-05-26T23:39:00</Date>
+    <Tags>
+      <Tag>Silverlight</Tag>
+      <Tag>WPF</Tag>
+      <Tag>Silverlight Toolkit</Tag>
+    </Tags>
+    <Length>9364</Length>
+    <Popularity>0.080503978779840848</Popularity>
+  </Post>
+  <Post>
+    <Title>Maintaining balance [A versatile red-black tree implementation for .NET (via Silverlight/WPF Charting)]</Title>
+    <Date>2009-06-02T10:34:00</Date>
+    <Tags>
+      <Tag>Silverlight</Tag>
+      <Tag>WPF</Tag>
+      <Tag>Silverlight Toolkit</Tag>
+    </Tags>
+    <Length>32048</Length>
+    <Popularity>0.18740053050397878</Popularity>
+  </Post>
+  <Post>
+    <Title>Peanut butter jelly time [How to: Create a pleasing visual effect with Silverlight/WPF Charting]</Title>
+    <Date>2009-06-15T12:13:00</Date>
+    <Tags>
+      <Tag>Silverlight</Tag>
+      <Tag>WPF</Tag>
+      <Tag>Silverlight Toolkit</Tag>
+    </Tags>
+    <Length>21801</Length>
+    <Popularity>0.1696286472148541</Popularity>
+  </Post>
+  <Post>
+    <Title>WPF Charting: It's official! [June 2009 release of the WPF Toolkit is now available!]</Title>
+    <Date>2009-06-25T11:52:00</Date>
+    <Tags>
+      <Tag>Silverlight</Tag>
+      <Tag>WPF</Tag>
+      <Tag>Silverlight Toolkit</Tag>
+      <Tag>WPF Toolkit</Tag>
+    </Tags>
+    <Length>12301</Length>
+    <Popularity>0.32175066312997347</Popularity>
+  </Post>
+</Posts>
