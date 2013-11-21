@@ -228,10 +228,10 @@ namespace System.Windows.Controls.DataVisualization.Charting
 
             if (newValue != null)
             {
-                newValue.ResourceDictionariesChanged += new EventHandler(SeriesHostResourceDictionariesChanged);
-
-                DispensedResourcesChanging();
+                newValue.ResourceDictionariesChanged += new EventHandler(SeriesHostResourceDictionariesChanged);                
             }
+
+            DispensedResourcesChanging();
         }
 
         /// <summary>
@@ -330,17 +330,20 @@ namespace System.Windows.Controls.DataVisualization.Charting
                 Resources.MergedDictionaries.Remove(PaletteResources);
                 PaletteResources = null;
             }
-            using (IEnumerator<ResourceDictionary> enumerator = GetResourceDictionaryEnumeratorFromHost())
+            if (SeriesHost != null)
             {
-                if (enumerator.MoveNext())
+                using (IEnumerator<ResourceDictionary> enumerator = GetResourceDictionaryEnumeratorFromHost())
                 {
-                    PaletteResources =
+                    if (enumerator.MoveNext())
+                    {
+                        PaletteResources =
 #if SILVERLIGHT
-                        enumerator.Current.ShallowCopy();
+                            enumerator.Current.ShallowCopy();
 #else
-                        enumerator.Current;
+                            enumerator.Current;
 #endif
-                    Resources.MergedDictionaries.Add(PaletteResources);
+                        Resources.MergedDictionaries.Add(PaletteResources);
+                    }
                 }
             }
             CreateLegendItemDataPoint();

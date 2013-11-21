@@ -18,6 +18,8 @@
         <Grid.RowDefinitions>
             <RowDefinition />
             <RowDefinition />
+            <RowDefinition />
+            <RowDefinition />
         </Grid.RowDefinitions>
         <chartingToolkit:Chart HorizontalAlignment="Stretch" Title="Demo" VerticalAlignment="Stretch">
             <chartingToolkit:ColumnSeries Grid.Column="0" Grid.Row="0" DependentValuePath="Value" IndependentValuePath="Key" ItemsSource="{Binding Data}" />
@@ -31,5 +33,14 @@
         <chartingToolkit:Chart Grid.Column="1" Grid.Row="1" HorizontalAlignment="Stretch" Title="Demo" VerticalAlignment="Stretch">
             <chartingToolkit:LineSeries DependentValuePath="Value" IndependentValuePath="Key" ItemsSource="{Binding Data}" />
         </chartingToolkit:Chart>
+        <chartingToolkit:Chart Grid.Column="0" Grid.Row="2" HorizontalAlignment="Stretch" Title="Demo" VerticalAlignment="Stretch">
+            <chartingToolkit:ScatterSeries DependentValuePath="Value" IndependentValuePath="Key" ItemsSource="{Binding Data}" />
+        </chartingToolkit:Chart>
+        <chartingToolkit:Chart Grid.Column="1" Grid.Row="2" HorizontalAlignment="Stretch" Title="Demo" VerticalAlignment="Stretch">
+            <chartingToolkit:BubbleSeries DependentValuePath="Value" IndependentValuePath="Key" ItemsSource="{Binding Data}" />
+        </chartingToolkit:Chart>
+        <chartingToolkit:Chart Grid.Column="0" Grid.Row="3" HorizontalAlignment="Stretch" Title="Demo" VerticalAlignment="Stretch">
+            <chartingToolkit:BarSeries DependentValuePath="Value" IndependentValuePath="Key" ItemsSource="{Binding Data}" />
+        </chartingToolkit:Chart>        
     </Grid>
 </UserControl>
