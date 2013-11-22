@@ -65,6 +65,14 @@
          LowValueBinding="{Binding Low}"
          HighValueBinding="{Binding High}"/>
             </chartingToolkit:Chart>
+
+            <chartingToolkit:Chart Grid.Column="1" Grid.Row="4" HorizontalAlignment="Stretch" Title="Demo" VerticalAlignment="Stretch">
+                <chartingToolkit:Chart.Axes>
+                    <chartingToolkit:CategoryAxis Orientation="X" ShowGridLines="True" />
+                    <chartingToolkit:LinearAxis Orientation="Y" ShowGridLines="True" Title="Frequency (Hz)" Minimum="1" Maximum="100" />
+                </chartingToolkit:Chart.Axes>
+                <chartingToolkit:SplineSeries IsSelectionEnabled="True" DependentValuePath="Value" IndependentValuePath="Key" ItemsSource="{Binding Data}" />
+            </chartingToolkit:Chart>
         </Grid>
     </ScrollViewer>
 </UserControl>

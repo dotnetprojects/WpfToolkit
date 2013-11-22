@@ -159,6 +159,7 @@
     <Compile Include="Charting\Series\Series.cs" />
     <Compile Include="Charting\Series\SeriesDefinition.cs" />
     <Compile Include="Charting\Series\SeriesSelectionMode.cs" />
+    <Compile Include="Charting\Series\SplineSeries.cs" />
     <Compile Include="Charting\Series\Stacked100AreaSeries.cs" />
     <Compile Include="Charting\Series\Stacked100BarSeries.cs" />
     <Compile Include="Charting\Series\Stacked100ColumnSeries.cs" />

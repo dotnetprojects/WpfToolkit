@@ -937,6 +937,29 @@
         </Setter>
     </Style>
 
+    <!--  charting:SplineSeries  -->
+    <Style TargetType="charting:SplineSeries">
+        <Setter Property="IsTabStop" Value="False" />
+        <Setter Property="PathStyle">
+            <Setter.Value>
+                <Style TargetType="Path">
+                    <Setter Property="StrokeThickness" Value="2" />
+                    <Setter Property="StrokeMiterLimit" Value="1" />
+                </Style>
+            </Setter.Value>
+        </Setter>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="charting:SplineSeries">
+                    <Canvas x:Name="PlotArea">
+                        <Path Data="{TemplateBinding SplinePoints}" Stroke="{TemplateBinding Background}" Style="{TemplateBinding PathStyle}"/>
+                        <Polyline Points="{TemplateBinding Points}" />
+                    </Canvas>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+    
     <!--  charting:NumericAxisLabel  -->
     <Style TargetType="charting:NumericAxisLabel">
         <Setter Property="IsTabStop" Value="False" />

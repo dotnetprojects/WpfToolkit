@@ -8873,6 +8873,80 @@
             The user can select multiple items without holding down a modifier key.
             </summary>
         </member>
+        <member name="T:System.Windows.Controls.DataVisualization.Charting.SplineSeries">
+            <summary>
+            Represents a control that contains a data series to be rendered in X/Y 
+            line format.
+            </summary>
+            <QualityBand>Preview</QualityBand>
+        </member>
+        <member name="F:System.Windows.Controls.DataVisualization.Charting.SplineSeries.PointsProperty">
+            <summary>
+            Identifies the Points dependency property.
+            </summary>
+        </member>
+        <member name="F:System.Windows.Controls.DataVisualization.Charting.SplineSeries.SplinePointsProperty">
+            <summary>
+            Identifies the SplinePoints dependency property.
+            </summary>
+        </member>
+        <member name="F:System.Windows.Controls.DataVisualization.Charting.SplineSeries.SplineTensionProperty">
+            <summary>
+            Identifies the SplineTension dependency property.
+            </summary>
+        </member>
+        <member name="F:System.Windows.Controls.DataVisualization.Charting.SplineSeries.PathStyleProperty">
+            <summary>
+            Identifies the PathStyle dependency property.
+            </summary>
+        </member>
+        <member name="M:System.Windows.Controls.DataVisualization.Charting.SplineSeries.#cctor">
+            <summary>
+            Initializes the static members of the LineSeries class.
+            </summary>
+        </member>
+        <member name="M:System.Windows.Controls.DataVisualization.Charting.SplineSeries.#ctor">
+            <summary>
+            Initializes a new instance of the LineSeries class.
+            </summary>
+        </member>
+        <member name="M:System.Windows.Controls.DataVisualization.Charting.SplineSeries.GetAxes(System.Windows.Controls.DataVisualization.Charting.DataPoint)">
+            <summary>
+            Acquire a horizontal linear axis and a vertical linear axis.
+            </summary>
+            <param name="firstDataPoint">The first data point.</param>
+        </member>
+        <member name="M:System.Windows.Controls.DataVisualization.Charting.SplineSeries.UpdateShapeFromPoints(System.Collections.Generic.IEnumerable{System.Windows.Point})">
+            <summary>
+            Updates the Series shape object from a collection of Points.
+            </summary>
+            <param name="points">Collection of Points.</param>
+        </member>
+        <member name="P:System.Windows.Controls.DataVisualization.Charting.SplineSeries.Points">
+            <summary>
+            Gets the collection of points that make up the spline.
+            </summary>
+        </member>
+        <member name="P:System.Windows.Controls.DataVisualization.Charting.SplineSeries.SplinePoints">
+            <summary>
+            Gets the collection of points that make up the line.
+            </summary>
+        </member>
+        <member name="P:System.Windows.Controls.DataVisualization.Charting.SplineSeries.SplineTension">
+            <summary>
+            Gets or sets the tension in the beziers that make up the spline.
+            </summary>
+            <remarks>
+            The greater the tension, the more straight/linear the spline will look.
+            Less tension creates a more curvy spline.
+            </remarks>
+        </member>
+        <member name="P:System.Windows.Controls.DataVisualization.Charting.SplineSeries.PathStyle">
+            <summary>
+            Gets or sets the style of the Path object that follows the data 
+            points.
+            </summary>
+        </member>
         <member name="T:System.Windows.Controls.DataVisualization.Charting.Stacked100AreaSeries">
             <summary>
             Control that displays values as a 100% stacked area chart visualization.
