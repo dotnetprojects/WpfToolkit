@@ -2602,5 +2602,1895 @@
             Occurs when the current transition has completed.
             </summary>
         </member>
+        <member name="T:System.Collections.Generic.LinkedListExtensions">
+            <summary>
+            Provides extension methods for LinkedList.
+            </summary>
+        </member>
+        <member name="M:System.Collections.Generic.LinkedListExtensions.FindNext``1(System.Collections.Generic.LinkedList{``0},System.Collections.Generic.LinkedListNode{``0},``0)">
+            <summary>
+            Finds the next node after the given node that contains the specified value.
+            </summary>
+            <typeparam name="T">The type of value in the linked list.</typeparam>
+            <param name="list">The linked list.</param>
+            <param name="node">The node after which to search for the value in the linked list, or <c>null</c> to search from the beginning.</param>
+            <param name="value">The value to locate in the linked list.</param>
+            <returns>The first node after the given node that contains the specified value, if found; otherwise, <c>null</c>.</returns>
+        </member>
+        <member name="M:System.Collections.Generic.LinkedListExtensions.FindPrevious``1(System.Collections.Generic.LinkedList{``0},System.Collections.Generic.LinkedListNode{``0},``0)">
+            <summary>
+            Finds the previous node before the given node that contains the specified value.
+            </summary>
+            <typeparam name="T">The type of value in the linked list.</typeparam>
+            <param name="list">The linked list.</param>
+            <param name="node">The node before which to search for the value in the linked list, or <c>null</c> to search from the end.</param>
+            <param name="value">The value to locate in the linked list.</param>
+            <returns>The first node before the given node that contains the specified value, if found; otherwise, <c>null</c>.</returns>
+        </member>
+        <member name="T:System.MathExtensions">
+            <summary>Provides extension methods for trigonometric, logarithmic, and other common mathematical functions.</summary>
+        </member>
+        <member name="M:System.MathExtensions.Ceiling(System.Decimal)">
+            <summary>Returns the smallest integer greater than or equal to the specified decimal number.</summary>
+            <returns>The smallest integer greater than or equal to value.</returns>
+            <param name="value">A decimal number.</param>
+        </member>
+        <member name="M:System.MathExtensions.Ceiling(System.Double)">
+            <summary>Returns the smallest integer greater than or equal to the specified double-precision floating-point number.</summary>
+            <returns>The smallest integer greater than or equal to value. If value is equal to <see cref="F:System.Double.NaN"/>, <see cref="F:System.Double.NegativeInfinity"/>, or <see cref="F:System.Double.PositiveInfinity"/>, that value is returned.</returns>
+            <param name="value">A double-precision floating-point number.</param>
+        </member>
+        <member name="M:System.MathExtensions.Floor(System.Decimal)">
+            <summary>Returns the largest integer less than or equal to the specified decimal number.</summary>
+            <returns>The largest integer less than or equal to value.</returns>
+            <param name="value">A decimal number.</param>
+        </member>
+        <member name="M:System.MathExtensions.Floor(System.Double)">
+            <summary>Returns the largest integer less than or equal to the specified double-precision floating-point number.</summary>
+            <returns>The largest integer less than or equal to value. If value is equal to <see cref="F:System.Double.NaN"/>, <see cref="F:System.Double.NegativeInfinity"/>, or <see cref="F:System.Double.PositiveInfinity"/>, that value is returned.</returns>
+            <param name="value">A double-precision floating-point number.</param>
+        </member>
+        <member name="M:System.MathExtensions.AtLeast(System.Byte,System.Byte)">
+            <summary>Returns the larger of two 8-bit unsigned integers.</summary>
+            <returns>Parameter a or b, whichever is larger.</returns>
+            <param name="a">The first of two 8-bit unsigned integers to compare.</param>
+            <param name="b">The second of two 8-bit unsigned integers to compare.</param>
+        </member>
+        <member name="M:System.MathExtensions.AtLeast(System.Decimal,System.Decimal)">
+            <summary>Returns the larger of two decimal numbers.</summary>
+            <returns>Parameter a or b, whichever is larger.</returns>
+            <param name="a">The first of two <see cref="T:System.Decimal"/> numbers to compare.</param>
+            <param name="b">The second of two <see cref="T:System.Decimal"/> numbers to compare.</param>
+        </member>
+        <member name="M:System.MathExtensions.AtLeast(System.Double,System.Double)">
+            <summary>Returns the larger of two double-precision floating-point numbers.</summary>
+            <returns>Parameter a or b, whichever is larger. If a, b, or both a and b are equal to <see cref="F:System.Double.NaN"/>, <see cref="F:System.Double.NaN"/> is returned.</returns>
+            <param name="a">The first of two double-precision floating-point numbers to compare.</param>
+            <param name="b">The second of two double-precision floating-point numbers to compare.</param>
+        </member>
+        <member name="M:System.MathExtensions.AtLeast(System.Single,System.Single)">
+            <summary>Returns the larger of two single-precision floating-point numbers.</summary>
+            <returns>Parameter a or b, whichever is larger. If a, or b, or both a and b are equal to <see cref="F:System.Single.NaN"/>, <see cref="F:System.Single.NaN"/> is returned.</returns>
+            <param name="a">The first of two single-precision floating-point numbers to compare.</param>
+            <param name="b">The second of two single-precision floating-point numbers to compare.</param>
+        </member>
+        <member name="M:System.MathExtensions.AtLeast(System.Int16,System.Int16)">
+            <summary>Returns the larger of two 16-bit signed integers.</summary>
+            <returns>Parameter a or b, whichever is larger.</returns>
+            <param name="a">The first of two 16-bit signed integers to compare.</param>
+            <param name="b">The second of two 16-bit signed integers to compare.</param>
+        </member>
+        <member name="M:System.MathExtensions.AtLeast(System.Int32,System.Int32)">
+            <summary>Returns the larger of two 32-bit signed integers.</summary>
+            <returns>Parameter a or b, whichever is larger.</returns>
+            <param name="a">The first of two 32-bit signed integers to compare.</param>
+            <param name="b">The second of two 32-bit signed integers to compare.</param>
+        </member>
+        <member name="M:System.MathExtensions.AtLeast(System.Int64,System.Int64)">
+            <summary>Returns the larger of two 64-bit signed integers.</summary>
+            <returns>Parameter a or b, whichever is larger.</returns>
+            <param name="a">The first of two 64-bit signed integers to compare.</param>
+            <param name="b">The second of two 64-bit signed integers to compare.</param>
+        </member>
+        <member name="M:System.MathExtensions.AtLeast(System.SByte,System.SByte)">
+            <summary>Returns the larger of two 8-bit signed integers.</summary>
+            <returns>Parameter a or b, whichever is larger.</returns>
+            <param name="a">The first of two 8-bit unsigned integers to compare.</param>
+            <param name="b">The second of two 8-bit unsigned integers to compare.</param>
+        </member>
+        <member name="M:System.MathExtensions.AtLeast(System.UInt16,System.UInt16)">
+            <summary>Returns the larger of two 16-bit unsigned integers.</summary>
+            <returns>Parameter a or b, whichever is larger.</returns>
+            <param name="a">The first of two 16-bit unsigned integers to compare.</param>
+            <param name="b">The second of two 16-bit unsigned integers to compare.</param>
+        </member>
+        <member name="M:System.MathExtensions.AtLeast(System.UInt32,System.UInt32)">
+            <summary>Returns the larger of two 32-bit unsigned integers.</summary>
+            <returns>Parameter a or b, whichever is larger.</returns>
+            <param name="a">The first of two 32-bit unsigned integers to compare.</param>
+            <param name="b">The second of two 32-bit unsigned integers to compare.</param>
+        </member>
+        <member name="M:System.MathExtensions.AtLeast(System.UInt64,System.UInt64)">
+            <summary>Returns the larger of two 64-bit unsigned integers.</summary>
+            <returns>Parameter a or b, whichever is larger.</returns>
+            <param name="a">The first of two 64-bit unsigned integers to compare.</param>
+            <param name="b">The second of two 64-bit unsigned integers to compare.</param>
+        </member>
+        <member name="M:System.MathExtensions.AtMost(System.Byte,System.Byte)">
+            <summary>Returns the smaller of two 8-bit unsigned integers.</summary>
+            <returns>Parameter a or b, whichever is smaller.</returns>
+            <param name="a">The first of two 8-bit unsigned integers to compare.</param>
+            <param name="b">The second of two 8-bit unsigned integers to compare.</param>
+        </member>
+        <member name="M:System.MathExtensions.AtMost(System.Decimal,System.Decimal)">
+            <summary>Returns the smaller of two decimal numbers.</summary>
+            <returns>Parameter a or b, whichever is smaller.</returns>
+            <param name="a">The first of two <see cref="T:System.Decimal"/> numbers to compare.</param>
+            <param name="b">The second of two <see cref="T:System.Decimal"/> numbers to compare.</param>
+        </member>
+        <member name="M:System.MathExtensions.AtMost(System.Double,System.Double)">
+            <summary>Returns the smaller of two double-precision floating-point numbers.</summary>
+            <returns>Parameter a or b, whichever is smaller. If a, b, or both a and b are equal to <see cref="F:System.Double.NaN"/>, <see cref="F:System.Double.NaN"/> is returned.</returns>
+            <param name="a">The first of two double-precision floating-point numbers to compare.</param>
+            <param name="b">The second of two double-precision floating-point numbers to compare.</param>
+        </member>
+        <member name="M:System.MathExtensions.AtMost(System.Single,System.Single)">
+            <summary>Returns the smaller of two single-precision floating-point numbers.</summary>
+            <returns>Parameter a or b, whichever is smaller. If a, b, or both a and b are equal to <see cref="F:System.Single.NaN"/>, <see cref="F:System.Single.NaN"/> is returned.</returns>
+            <param name="a">The first of two single-precision floating-point numbers to compare.</param>
+            <param name="b">The second of two single-precision floating-point numbers to compare.</param>
+        </member>
+        <member name="M:System.MathExtensions.AtMost(System.Int16,System.Int16)">
+            <summary>Returns the smaller of two 16-bit signed integers.</summary>
+            <returns>Parameter a or b, whichever is smaller.</returns>
+            <param name="a">The first of two 16-bit signed integers to compare.</param>
+            <param name="b">The second of two 16-bit signed integers to compare.</param>
+        </member>
+        <member name="M:System.MathExtensions.AtMost(System.Int32,System.Int32)">
+            <summary>Returns the smaller of two 32-bit signed integers.</summary>
+            <returns>Parameter a or b, whichever is smaller.</returns>
+            <param name="a">The first of two 32-bit signed integers to compare.</param>
+            <param name="b">The second of two 32-bit signed integers to compare.</param>
+        </member>
+        <member name="M:System.MathExtensions.AtMost(System.Int64,System.Int64)">
+            <summary>Returns the smaller of two 64-bit signed integers.</summary>
+            <returns>Parameter a or b, whichever is smaller.</returns>
+            <param name="a">The first of two 64-bit signed integers to compare.</param>
+            <param name="b">The second of two 64-bit signed integers to compare.</param>
+        </member>
+        <member name="M:System.MathExtensions.AtMost(System.SByte,System.SByte)">
+            <summary>Returns the smaller of two 8-bit signed integers.</summary>
+            <returns>Parameter a or b, whichever is smaller.</returns>
+            <param name="a">The first of two 8-bit signed integers to compare.</param>
+            <param name="b">The second of two 8-bit signed integers to compare.</param>
+        </member>
+        <member name="M:System.MathExtensions.AtMost(System.UInt16,System.UInt16)">
+            <summary>Returns the smaller of two 16-bit unsigned integers.</summary>
+            <returns>Parameter a or b, whichever is smaller.</returns>
+            <param name="a">The first of two 16-bit unsigned integers to compare.</param>
+            <param name="b">The second of two 16-bit unsigned integers to compare.</param>
+        </member>
+        <member name="M:System.MathExtensions.AtMost(System.UInt32,System.UInt32)">
+            <summary>Returns the smaller of two 32-bit unsigned integers.</summary>
+            <returns>Parameter a or b, whichever is smaller.</returns>
+            <param name="a">The first of two 32-bit unsigned integers to compare.</param>
+            <param name="b">The second of two 32-bit unsigned integers to compare.</param>
+        </member>
+        <member name="M:System.MathExtensions.AtMost(System.UInt64,System.UInt64)">
+            <summary>Returns the smaller of two 64-bit unsigned integers.</summary>
+            <returns>Parameter a or b, whichever is smaller.</returns>
+            <param name="a">The first of two 64-bit unsigned integers to compare.</param>
+            <param name="b">The second of two 64-bit unsigned integers to compare.</param>
+        </member>
+        <member name="M:System.MathExtensions.Clamp(System.Byte,System.Byte,System.Byte)">
+            <summary>Returns the value constrained inclusively between two 8-bit unsigned integers.</summary>
+            <returns>A value between a and b inclusively.</returns>
+            <param name="value">The value to restrict between a and b.</param>
+            <param name="a">The first of two 8-bit unsigned integers to compare.</param>
+            <param name="b">The second of two 8-bit unsigned integers to compare.</param>
+        </member>
+        <member name="M:System.MathExtensions.Clamp(System.Decimal,System.Decimal,System.Decimal)">
+            <summary>Returns the value constrained inclusively between two decimal numbers.</summary>
+            <returns>A value between a and b inclusively.</returns>
+            <param name="value">The value to restrict between a and b.</param>
+            <param name="a">The first of two <see cref="T:System.Decimal"/> numbers to compare.</param>
+            <param name="b">The second of two <see cref="T:System.Decimal"/> numbers to compare.</param>
+        </member>
+        <member name="M:System.MathExtensions.Clamp(System.Double,System.Double,System.Double)">
+            <summary>Returns the value constrained inclusively between two double-precision floating-point numbers.</summary>
+            <returns>A value between a and b inclusively. If a, b, or both a and b are equal to <see cref="F:System.Double.NaN"/>, <see cref="F:System.Double.NaN"/> is returned.</returns>
+            <param name="value">The value to restrict between a and b.</param>
+            <param name="a">The first of two double-precision floating-point numbers to compare.</param>
+            <param name="b">The second of two double-precision floating-point numbers to compare.</param>
+        </member>
+        <member name="M:System.MathExtensions.Clamp(System.Single,System.Single,System.Single)">
+            <summary>Returns the value constrained inclusively between two single-precision floating-point numbers.</summary>
+            <returns>A value between a and b inclusively. If a, b, or both a and b are equal to <see cref="F:System.Single.NaN"/>, <see cref="F:System.Single.NaN"/> is returned.</returns>
+            <param name="value">The value to restrict between a and b.</param>
+            <param name="a">The first of two single-precision floating-point numbers to compare.</param>
+            <param name="b">The second of two single-precision floating-point numbers to compare.</param>
+        </member>
+        <member name="M:System.MathExtensions.Clamp(System.Int16,System.Int16,System.Int16)">
+            <summary>Returns the value constrained inclusively between two 16-bit signed integers.</summary>
+            <returns>A value between a and b inclusively.</returns>
+            <param name="value">The value to restrict between a and b.</param>
+            <param name="a">The first of two 16-bit signed integers to compare.</param>
+            <param name="b">The second of two 16-bit signed integers to compare.</param>
+        </member>
+        <member name="M:System.MathExtensions.Clamp(System.Int32,System.Int32,System.Int32)">
+            <summary>Returns the value constrained inclusively between two 32-bit signed integers.</summary>
+            <returns>A value between a and b inclusively.</returns>
+            <param name="value">The value to restrict between a and b.</param>
+            <param name="a">The first of two 32-bit signed integers to compare.</param>
+            <param name="b">The second of two 32-bit signed integers to compare.</param>
+        </member>
+        <member name="M:System.MathExtensions.Clamp(System.Int64,System.Int64,System.Int64)">
+            <summary>Returns the value constrained inclusively between two 64-bit signed integers.</summary>
+            <returns>A value between a and b inclusively.</returns>
+            <param name="value">The value to restrict between a and b.</param>
+            <param name="a">The first of two 64-bit signed integers to compare.</param>
+            <param name="b">The second of two 64-bit signed integers to compare.</param>
+        </member>
+        <member name="M:System.MathExtensions.Clamp(System.SByte,System.SByte,System.SByte)">
+            <summary>Returns the value constrained inclusively between two 8-bit signed integers.</summary>
+            <returns>A value between a and b inclusively.</returns>
+            <param name="value">The value to restrict between a and b.</param>
+            <param name="a">The first of two 8-bit signed integers to compare.</param>
+            <param name="b">The second of two 8-bit signed integers to compare.</param>
+        </member>
+        <member name="M:System.MathExtensions.Clamp(System.UInt16,System.UInt16,System.UInt16)">
+            <summary>Returns the value constrained inclusively between two 16-bit unsigned integers.</summary>
+            <returns>A value between a and b inclusively.</returns>
+            <param name="value">The value to restrict between a and b.</param>
+            <param name="a">The first of two 16-bit unsigned integers to compare.</param>
+            <param name="b">The second of two 16-bit unsigned integers to compare.</param>
+        </member>
+        <member name="M:System.MathExtensions.Clamp(System.UInt32,System.UInt32,System.UInt32)">
+            <summary>Returns the value constrained inclusively between two 32-bit unsigned integers.</summary>
+            <returns>A value between a and b inclusively.</returns>
+            <param name="value">The value to restrict between a and b.</param>
+            <param name="a">The first of two 32-bit unsigned integers to compare.</param>
+            <param name="b">The second of two 32-bit unsigned integers to compare.</param>
+        </member>
+        <member name="M:System.MathExtensions.Clamp(System.UInt64,System.UInt64,System.UInt64)">
+            <summary>Returns the value constrained inclusively between two 64-bit unsigned integers.</summary>
+            <returns>A value between a and b inclusively.</returns>
+            <param name="value">The value to restrict between a and b.</param>
+            <param name="a">The first of two 64-bit unsigned integers to compare.</param>
+            <param name="b">The second of two 64-bit unsigned integers to compare.</param>
+        </member>
+        <member name="M:System.MathExtensions.Round(System.Decimal)">
+            <summary>Rounds a decimal value to the nearest integer.</summary>
+            <returns>The integer nearest parameter value. If value is halfway between two integers, one of which is even and the other odd, then the even number is returned.</returns>
+            <param name="value">A decimal number to be rounded.</param>
+            <exception cref="T:System.OverflowException">The result is outside the range of a <see cref="T:System.Decimal"/>.</exception>
+        </member>
+        <member name="M:System.MathExtensions.Round(System.Double)">
+            <summary>Rounds a double-precision floating-point value to the nearest integer.</summary>
+            <returns>The integer nearest value. If value is halfway between two integers, one of which is even and the other odd, then the even number is returned.</returns>
+            <param name="value">A double-precision floating-point number to be rounded.</param>
+        </member>
+        <member name="M:System.MathExtensions.Round(System.Decimal,System.Int32)">
+            <summary>Rounds a decimal value to a specified precision.</summary>
+            <returns>The number nearest value with a precision equal to decimals. If value is halfway between two numbers, one of which is even and the other odd, then the even number is returned. If the precision of value is less than decimals, then value is returned unchanged.</returns>
+            <param name="value">A decimal number to be rounded.</param>
+            <param name="decimals">The number of significant decimal places  (precision) in the return value.</param>
+            <exception cref="T:System.OverflowException">The result is outside the range of a <see cref="T:System.Decimal"/>.</exception>
+            <exception cref="T:System.ArgumentOutOfRangeException">decimals is less than 0 or greater than 28.</exception>
+        </member>
+        <member name="M:System.MathExtensions.Round(System.Decimal,System.MidpointRounding)">
+            <summary>Rounds a decimal value to the nearest integer. A parameter specifies how to round the value if it is midway between two other numbers.</summary>
+            <returns>The integer nearest value. If value is halfway between two numbers, one of which is even and the other odd, then mode determines which of the two is returned.</returns>
+            <param name="value">A decimal number to be rounded.</param>
+            <param name="mode">Specification for how to round value if it is midway between two other numbers.</param>
+            <exception cref="T:System.OverflowException">The result is outside the range of a <see cref="T:System.Decimal"/>.</exception>
+            <exception cref="T:System.ArgumentException">mode is not a valid value of <see cref="T:System.MidpointRounding"/>.</exception>
+        </member>
+        <member name="M:System.MathExtensions.Round(System.Double,System.Int32)">
+            <summary>Rounds a double-precision floating-point value to the specified precision.</summary>
+            <returns>The number nearest value with a precision equal to digits. If value is halfway between two numbers, one of which is even and the other odd, then the even number is returned. If the precision of value is less than digits, then value is returned unchanged.</returns>
+            <param name="digits">The number of significant digits (precision) in the return value.</param>
+            <param name="value">A double-precision floating-point number to be rounded.</param>
+            <exception cref="T:System.ArgumentOutOfRangeException">digits is less than 0 or greater than 15.</exception>
+        </member>
+        <member name="M:System.MathExtensions.Round(System.Double,System.MidpointRounding)">
+            <summary>Rounds a double-precision floating-point value to the nearest integer. A parameter specifies how to round the value if it is midway between two other numbers.</summary>
+            <returns>The integer nearest value. If value is halfway between two integers, one of which is even and the other odd, then mode determines which of the two is returned.</returns>
+            <param name="mode">Specification for how to round value if it is midway between two other numbers.</param>
+            <param name="value">A double-precision floating-point number to be rounded.</param>
+            <exception cref="T:System.ArgumentException">mode is not a valid value of <see cref="T:System.MidpointRounding"/>.</exception>
+        </member>
+        <member name="M:System.MathExtensions.Round(System.Decimal,System.Int32,System.MidpointRounding)">
+            <summary>Rounds a decimal value to a specified precision. A parameter specifies how to round the value if it is midway between two other numbers.</summary>
+            <returns>The number nearest value with a precision equal to decimals. If value is halfway between two numbers, one of which is even and the other odd, then mode determines which of the two numbers is returned. If the precision of value is less than decimals, then value is returned unchanged.</returns>
+            <param name="value">A decimal number to be rounded.</param>
+            <param name="mode">Specification for how to round value if it is midway between two other numbers.</param>
+            <param name="decimals">The number of significant decimal places  (precision) in the return value.</param>
+            <exception cref="T:System.OverflowException">The result is outside the range of a <see cref="T:System.Decimal"/>.</exception>
+            <exception cref="T:System.ArgumentOutOfRangeException">decimals is less than 0 or greater than 28.</exception>
+            <exception cref="T:System.ArgumentException">mode is not a valid value of <see cref="T:System.MidpointRounding"/>.</exception>
+        </member>
+        <member name="M:System.MathExtensions.Round(System.Double,System.Int32,System.MidpointRounding)">
+            <summary>Rounds a double-precision floating-point value to the specified precision. A parameter specifies how to round the value if it is midway between two other numbers.</summary>
+            <returns>The number nearest value with a precision equal to digits. If value is halfway between two numbers, one of which is even and the other odd, then the mode parameter determines which number is returned. If the precision of value is less than digits, then value is returned unchanged.</returns>
+            <param name="mode">Specification for how to round value if it is midway between two other numbers.</param>
+            <param name="digits">The number of significant digits (precision) in the return value.</param>
+            <param name="value">A double-precision floating-point number to be rounded.</param>
+            <exception cref="T:System.ArgumentOutOfRangeException">digits is less than 0 or greater than 15.</exception>
+            <exception cref="T:System.ArgumentException">mode is not a valid value of <see cref="T:System.MidpointRounding"/>.</exception>
+        </member>
+        <member name="M:System.MathExtensions.RoundUp(System.Decimal,System.Decimal)">
+            <summary>Rounds a decimal value to the next multiple of the specified factor.</summary>
+            <returns>The nearest multiple of factor that is greater than or equal to value.</returns>
+            <param name="value">A decimal number to be rounded.</param>
+            <param name="factor">The factor to round the value to.</param>
+        </member>
+        <member name="M:System.MathExtensions.RoundUp(System.Double,System.Double)">
+            <summary>Rounds a double-precision floating-point value to the next multiple of the specified factor.</summary>
+            <returns>The nearest multiple of factor that is greater than or equal to value.</returns>
+            <param name="value">A double-precision floating-point number to be rounded.</param>
+            <param name="factor">The factor to round the value to.</param>
+        </member>
+        <member name="M:System.MathExtensions.RoundUp(System.Single,System.Single)">
+            <summary>Rounds a single-precision floating-point value to the next multiple of the specified factor.</summary>
+            <returns>The nearest multiple of factor that is greater than or equal to value.</returns>
+            <param name="value">A single-precision floating-point number to be rounded.</param>
+            <param name="factor">The factor to round the value to.</param>
+        </member>
+        <member name="M:System.MathExtensions.RoundUp(System.Int64,System.Int64)">
+            <summary>Rounds a 64-bit signed integer to the next multiple of the specified factor.</summary>
+            <returns>The nearest multiple of factor that is greater than or equal to value.</returns>
+            <param name="value">A 64-bit signed integer to be rounded.</param>
+            <param name="factor">The factor to round the value to.</param>
+        </member>
+        <member name="M:System.MathExtensions.RoundUp(System.Int32,System.Int32)">
+            <summary>Rounds a 32-bit signed integer to the next multiple of the specified factor.</summary>
+            <returns>The nearest multiple of factor that is greater than or equal to value.</returns>
+            <param name="value">A 32-bit signed integer to be rounded.</param>
+            <param name="factor">The factor to round the value to.</param>
+        </member>
+        <member name="M:System.MathExtensions.RoundUp(System.Int16,System.Int16)">
+            <summary>Rounds a 16-bit signed integer to the next multiple of the specified factor.</summary>
+            <returns>The nearest multiple of factor that is greater than or equal to value.</returns>
+            <param name="value">A 16-bit signed integer to be rounded.</param>
+            <param name="factor">The factor to round the value to.</param>
+        </member>
+        <member name="M:System.MathExtensions.RoundUp(System.Byte,System.Byte)">
+            <summary>Rounds a 8-bit signed integer to the next multiple of the specified factor.</summary>
+            <returns>The nearest multiple of factor that is greater than or equal to value.</returns>
+            <param name="value">A 8-bit signed integer to be rounded.</param>
+            <param name="factor">The factor to round the value to.</param>
+        </member>
+        <member name="M:System.MathExtensions.RoundUp(System.Decimal)">
+            <summary>Rounds a decimal value to the next integer.</summary>
+            <returns>The nearest integer that is greater than or equal to value.</returns>
+            <param name="value">A decimal number to be rounded.</param>
+        </member>
+        <member name="M:System.MathExtensions.RoundUp(System.Double)">
+            <summary>Rounds a double-precision floating-point value to the next integer.</summary>
+            <returns>The nearest integer that is greater than or equal to value.</returns>
+            <param name="value">A double-precision floating-point number to be rounded.</param>
+        </member>
+        <member name="M:System.MathExtensions.RoundUp(System.Single)">
+            <summary>Rounds a single-precision floating-point value to the next integer.</summary>
+            <returns>The nearest integer that is greater than or equal to value.</returns>
+            <param name="value">A single-precision floating-point number to be rounded.</param>
+        </member>
+        <member name="M:System.MathExtensions.RoundUp(System.Int64)">
+            <summary>Rounds a 64-bit signed integer to the next integer.</summary>
+            <returns>The nearest integer that is greater than or equal to value.</returns>
+            <param name="value">A 64-bit signed integer to be rounded.</param>
+        </member>
+        <member name="M:System.MathExtensions.RoundUp(System.Int32)">
+            <summary>Rounds a 32-bit signed integer to the next integer.</summary>
+            <returns>The nearest integer that is greater than or equal to value.</returns>
+            <param name="value">A 32-bit signed integer to be rounded.</param>
+        </member>
+        <member name="M:System.MathExtensions.RoundUp(System.Int16)">
+            <summary>Rounds a 16-bit signed integer to the next integer.</summary>
+            <returns>The nearest integer that is greater than or equal to value.</returns>
+            <param name="value">A 16-bit signed integer to be rounded.</param>
+        </member>
+        <member name="M:System.MathExtensions.RoundUp(System.Byte)">
+            <summary>Rounds a 8-bit signed integer to the next integer.</summary>
+            <returns>The nearest integer that is greater than or equal to value.</returns>
+            <param name="value">A 8-bit signed integer to be rounded.</param>
+        </member>
+        <member name="M:System.MathExtensions.RoundDown(System.Decimal,System.Decimal)">
+            <summary>Rounds a decimal value to the previous multiple of the specified factor.</summary>
+            <returns>The nearest multiple of factor that is less than or equal to value.</returns>
+            <param name="value">A decimal number to be rounded.</param>
+            <param name="factor">The factor to round the value to.</param>
+        </member>
+        <member name="M:System.MathExtensions.RoundDown(System.Double,System.Double)">
+            <summary>Rounds a double-precision floating-point value to the previous multiple of the specified factor.</summary>
+            <returns>The nearest multiple of factor that is less than or equal to value.</returns>
+            <param name="value">A double-precision floating-point number to be rounded.</param>
+            <param name="factor">The factor to round the value to.</param>
+        </member>
+        <member name="M:System.MathExtensions.RoundDown(System.Single,System.Single)">
+            <summary>Rounds a single-precision floating-point value to the previous multiple of the specified factor.</summary>
+            <returns>The nearest multiple of factor that is less than or equal to value.</returns>
+            <param name="value">A single-precision floating-point number to be rounded.</param>
+            <param name="factor">The factor to round the value to.</param>
+        </member>
+        <member name="M:System.MathExtensions.RoundDown(System.Int64,System.Int64)">
+            <summary>Rounds a 64-bit signed integer to the previous multiple of the specified factor.</summary>
+            <returns>The nearest multiple of factor that is less than or equal to value.</returns>
+            <param name="value">A 64-bit signed integer to be rounded.</param>
+            <param name="factor">The factor to round the value to.</param>
+        </member>
+        <member name="M:System.MathExtensions.RoundDown(System.Int32,System.Int32)">
+            <summary>Rounds a 32-bit signed integer to the previous multiple of the specified factor.</summary>
+            <returns>The nearest multiple of factor that is less than or equal to value.</returns>
+            <param name="value">A 32-bit signed integer to be rounded.</param>
+            <param name="factor">The factor to round the value to.</param>
+        </member>
+        <member name="M:System.MathExtensions.RoundDown(System.Int16,System.Int16)">
+            <summary>Rounds a 16-bit signed integer to the previous multiple of the specified factor.</summary>
+            <returns>The nearest multiple of factor that is less than or equal to value.</returns>
+            <param name="value">A 16-bit signed integer to be rounded.</param>
+            <param name="factor">The factor to round the value to.</param>
+        </member>
+        <member name="M:System.MathExtensions.RoundDown(System.Byte,System.Byte)">
+            <summary>Rounds an 8-bit unsigned integer to the previous multiple of the specified factor.</summary>
+            <returns>The nearest multiple of factor that is less than or equal to value.</returns>
+            <param name="value">An 8-bit unsigned integer to be rounded.</param>
+            <param name="factor">The factor to round the value to.</param>
+        </member>
+        <member name="M:System.MathExtensions.RoundDown(System.Decimal)">
+            <summary>Rounds a decimal value to the previous integer.</summary>
+            <returns>The nearest integer that is less than or equal to value.</returns>
+            <param name="value">A decimal number to be rounded.</param>
+        </member>
+        <member name="M:System.MathExtensions.RoundDown(System.Double)">
+            <summary>Rounds a double-precision floating-point value to the previous integer.</summary>
+            <returns>The nearest integer that is less than or equal to value.</returns>
+            <param name="value">A double-precision floating-point number to be rounded.</param>
+        </member>
+        <member name="M:System.MathExtensions.RoundDown(System.Single)">
+            <summary>Rounds a single-precision floating-point value to the previous integer.</summary>
+            <returns>The nearest integer that is less than or equal to value.</returns>
+            <param name="value">A single-precision floating-point number to be rounded.</param>
+        </member>
+        <member name="M:System.MathExtensions.RoundDown(System.Int64)">
+            <summary>Rounds a 64-bit signed integer to the previous integer.</summary>
+            <returns>The nearest integer that is less than or equal to value.</returns>
+            <param name="value">A 64-bit signed integer to be rounded.</param>
+        </member>
+        <member name="M:System.MathExtensions.RoundDown(System.Int32)">
+            <summary>Rounds a 32-bit signed integer to the previous integer.</summary>
+            <returns>The nearest integer that is less than or equal to value.</returns>
+            <param name="value">A 32-bit signed integer to be rounded.</param>
+        </member>
+        <member name="M:System.MathExtensions.RoundDown(System.Int16)">
+            <summary>Rounds a 16-bit signed integer to the previous integer.</summary>
+            <returns>The nearest integer that is less than or equal to value.</returns>
+            <param name="value">A 16-bit signed integer to be rounded.</param>
+        </member>
+        <member name="M:System.MathExtensions.RoundDown(System.Byte)">
+            <summary>Rounds an 8-bit unsigned integer to the previous integer.</summary>
+            <returns>The nearest integer that is less than or equal to value.</returns>
+            <param name="value">An 8-bit unsigned integer to be rounded.</param>
+        </member>
+        <member name="M:System.MathExtensions.Truncate(System.Decimal)">
+            <summary>Calculates the integral part of a specified decimal number.</summary>
+            <returns>The integral part of value; that is, the number that remains after any fractional digits have been discarded.</returns>
+            <param name="value">A number to truncate.</param>
+        </member>
+        <member name="M:System.MathExtensions.Truncate(System.Double)">
+            <summary>Calculates the integral part of a specified double-precision floating-point number.</summary>
+            <returns>The integral part of value; that is, the number that remains after any fractional digits have been discarded.</returns>
+            <param name="value">A number to truncate.</param>
+        </member>
+        <member name="M:System.MathExtensions.Abs(System.Decimal)">
+            <summary>Returns the absolute value of a <see cref="T:System.Decimal"/> number.</summary>
+            <returns>A <see cref="T:System.Decimal"/>, x, such that 0 ≤ x ≤ <see cref="F:System.Decimal.MaxValue"/>.</returns>
+            <param name="value">A number in the range <see cref="F:System.Decimal.MinValue"/> ≤ value ≤ <see cref="F:System.Decimal.MaxValue"/>.</param>
+        </member>
+        <member name="M:System.MathExtensions.Abs(System.Double)">
+            <summary>Returns the absolute value of a double-precision floating-point number.</summary>
+            <returns>A double-precision floating-point number, x, such that 0 ≤ x ≤ <see cref="F:System.Double.MaxValue"/>.</returns>
+            <param name="value">A number in the range <see cref="F:System.Double.MinValue"/> ≤ value ≤ <see cref="F:System.Double.MaxValue"/>.</param>
+        </member>
+        <member name="M:System.MathExtensions.Abs(System.Single)">
+            <summary>Returns the absolute value of a single-precision floating-point number.</summary>
+            <returns>A single-precision floating-point number, x, such that 0 ≤ x ≤ <see cref="F:System.Single.MaxValue"/>.</returns>
+            <param name="value">A number in the range <see cref="F:System.Single.MinValue"/> ≤ value ≤ <see cref="F:System.Single.MaxValue"/>.</param>
+        </member>
+        <member name="M:System.MathExtensions.Abs(System.Int16)">
+            <summary>Returns the absolute value of a 16-bit signed integer.</summary>
+            <returns>A 16-bit signed integer, x, such that 0 ≤ x ≤ <see cref="F:System.Int16.MaxValue"/>.</returns>
+            <param name="value">A number in the range <see cref="F:System.Int16.MinValue"/> &lt; value ≤ <see cref="F:System.Int16.MaxValue"/>.</param>
+            <exception cref="T:System.OverflowException">value equals <see cref="F:System.Int16.MinValue"/>.</exception>
+        </member>
+        <member name="M:System.MathExtensions.Abs(System.Int32)">
+            <summary>Returns the absolute value of a 32-bit signed integer.</summary>
+            <returns>A 32-bit signed integer, x, such that 0 ≤ x ≤ <see cref="F:System.Int32.MaxValue"/>.</returns>
+            <param name="value">A number in the range <see cref="F:System.Int32.MinValue"/> &lt; value ≤ <see cref="F:System.Int32.MaxValue"/>.</param>
+            <exception cref="T:System.OverflowException">value equals <see cref="F:System.Int32.MinValue"/>.</exception>
+        </member>
+        <member name="M:System.MathExtensions.Abs(System.Int64)">
+            <summary>Returns the absolute value of a 64-bit signed integer.</summary>
+            <returns>A 64-bit signed integer, x, such that 0 ≤ x ≤ <see cref="F:System.Int64.MaxValue"/>.</returns>
+            <param name="value">A number in the range <see cref="F:System.Int64.MinValue"/> &lt; value ≤ <see cref="F:System.Int64.MaxValue"/>.</param>
+            <exception cref="T:System.OverflowException">value equals <see cref="F:System.Int64.MinValue"/>.</exception>
+        </member>
+        <member name="M:System.MathExtensions.Abs(System.SByte)">
+            <summary>Returns the absolute value of an 8-bit signed integer.</summary>
+            <returns>An 8-bit signed integer, x, such that 0 ≤ x ≤ <see cref="F:System.SByte.MaxValue"/>.</returns>
+            <param name="value">A number in the range <see cref="F:System.SByte.MinValue"/> &lt; value ≤ <see cref="F:System.SByte.MaxValue"/>.</param>
+            <exception cref="T:System.OverflowException">value equals <see cref="F:System.SByte.MinValue"/>.</exception>
+        </member>
+        <member name="M:System.MathExtensions.BigMul(System.Int32,System.Int32)">
+            <summary>Produces the full product of two 32-bit numbers.</summary>
+            <returns>The <see cref="T:System.Int64"/> containing the product of the specified numbers.</returns>
+            <param name="a">The first <see cref="T:System.Int32"/> to multiply.</param>
+            <param name="b">The second <see cref="T:System.Int32"/> to multiply.</param>
+        </member>
+        <member name="M:System.MathExtensions.DivRem(System.Int32,System.Int32,System.Int32@)">
+            <summary>Calculates the quotient of two 32-bit signed integers and also returns the remainder in an output parameter.</summary>
+            <returns>The <see cref="T:System.Int32"/> containing the quotient of the specified numbers.</returns>
+            <param name="a">The <see cref="T:System.Int32"/> that contains the dividend.</param>
+            <param name="result">The <see cref="T:System.Int32"/> that receives the remainder.</param>
+            <param name="b">The <see cref="T:System.Int32"/> that contains the divisor.</param>
+            <exception cref="T:System.DivideByZeroException">b is zero.</exception>
+        </member>
+        <member name="M:System.MathExtensions.DivRem(System.Int64,System.Int64,System.Int64@)">
+            <summary>Calculates the quotient of two 64-bit signed integers and also returns the remainder in an output parameter.</summary>
+            <returns>The <see cref="T:System.Int64"/> containing the quotient of the specified numbers.</returns>
+            <param name="a">The <see cref="T:System.Int64"/> that contains the dividend.</param>
+            <param name="result">The <see cref="T:System.Int64"/> that receives the remainder.</param>
+            <param name="b">The <see cref="T:System.Int64"/> that contains the divisor.</param>
+            <exception cref="T:System.DivideByZeroException">b is zero.</exception>
+        </member>
+        <member name="M:System.MathExtensions.Exp(System.Double)">
+            <summary>Returns e raised to the specified power.</summary>
+            <returns>The number e raised to the power value. If value equals <see cref="F:System.Double.NaN"/> or <see cref="F:System.Double.PositiveInfinity"/>, that value is returned. If value equals <see cref="F:System.Double.NegativeInfinity"/>, 0 is returned.</returns>
+            <param name="value">A number specifying a power.</param>
+        </member>
+        <member name="M:System.MathExtensions.IEEERemainder(System.Double,System.Double)">
+            <summary>Returns the remainder resulting from the division of a specified number by another specified number.</summary>
+            <returns>A number equal to x - (y Q), where Q is the quotient of x / y rounded to the nearest integer (if x / y falls halfway between two integers, the even integer is returned).If x - (y Q) is zero, the value +0 is returned if x is positive, or -0 if x is negative. If y = 0, <see cref="F:System.Double.NaN"/> (Not-A-Number) is returned.</returns>
+            <param name="y">A divisor.</param>
+            <param name="x">A dividend.</param>
+        </member>
+        <member name="M:System.MathExtensions.Log(System.Double)">
+            <summary>Returns the natural (base e) logarithm of a specified number.</summary>
+            <returns>See <see cref="M:System.Math.Log(System.Double)"/> for details.</returns>
+            <param name="value">A number whose logarithm is to be found.</param>
+        </member>
+        <member name="M:System.MathExtensions.Log(System.Double,System.Double)">
+            <summary>Returns the logarithm of a specified number in a specified base.</summary>
+            <returns>See <see cref="M:System.Math.Log(System.Double)"/> for details.</returns>
+            <param name="value">A number whose logarithm is to be found.</param>
+            <param name="newBase">The base of the logarithm.</param>
+        </member>
+        <member name="M:System.MathExtensions.Log10(System.Double)">
+            <summary>Returns the base 10 logarithm of a specified number.</summary>
+            <returns>See <see cref="M:System.Math.Log10(System.Double)"/> for details.</returns>
+            <param name="value">A number whose logarithm is to be found.</param>
+        </member>
+        <member name="M:System.MathExtensions.Pow(System.Double,System.Double)">
+            <summary>Returns a specified number raised to the specified power.</summary>
+            <returns>The number x raised to the power y. See <see cref="M:System.Math.Pow(System.Double,System.Double)"/> for details.</returns>
+            <param name="y">A double-precision floating-point number that specifies a power.</param>
+            <param name="x">A double-precision floating-point number to be raised to a power.</param>
+        </member>
+        <member name="M:System.MathExtensions.Sign(System.Decimal)">
+            <summary>Returns a value indicating the sign of a decimal number.</summary>
+            <returns>A number indicating the sign of value.Number Description -1 value is less than zero. 0 value is equal to zero. 1 value is greater than zero.</returns>
+            <param name="value">A signed <see cref="T:System.Decimal"/> number.</param>
+        </member>
+        <member name="M:System.MathExtensions.Sign(System.Double)">
+            <summary>Returns a value indicating the sign of a double-precision floating-point number.</summary>
+            <returns>A number indicating the sign of value.Number Description -1 value is less than zero. 0 value is equal to zero. 1 value is greater than zero.</returns>
+            <param name="value">A signed number.</param>
+            <exception cref="T:System.ArithmeticException">value is equal to <see cref="F:System.Double.NaN"/>.</exception>
+        </member>
+        <member name="M:System.MathExtensions.Sign(System.Single)">
+            <summary>Returns a value indicating the sign of a single-precision floating-point number.</summary>
+            <returns>A number indicating the sign of value.Number Description -1 value is less than zero. 0 value is equal to zero. 1 value is greater than zero.</returns>
+            <param name="value">A signed number.</param>
+            <exception cref="T:System.ArithmeticException">value is equal to <see cref="F:System.Single.NaN"/>.</exception>
+        </member>
+        <member name="M:System.MathExtensions.Sign(System.Int16)">
+            <summary>Returns a value indicating the sign of a 16-bit signed integer.</summary>
+            <returns>A number indicating the sign of value.Number Description -1 value is less than zero. 0 value is equal to zero. 1 value is greater than zero.</returns>
+            <param name="value">A signed number.</param>
+        </member>
+        <member name="M:System.MathExtensions.Sign(System.Int32)">
+            <summary>Returns a value indicating the sign of a 32-bit signed integer.</summary>
+            <returns>A number indicating the sign of value.Number Description -1 value is less than zero. 0 value is equal to zero. 1 value is greater than zero.</returns>
+            <param name="value">A signed number.</param>
+        </member>
+        <member name="M:System.MathExtensions.Sign(System.Int64)">
+            <summary>Returns a value indicating the sign of a 64-bit signed integer.</summary>
+            <returns>A number indicating the sign of value.Number Description -1 value is less than zero. 0 value is equal to zero. 1 value is greater than zero.</returns>
+            <param name="value">A signed number.</param>
+        </member>
+        <member name="M:System.MathExtensions.Sign(System.SByte)">
+            <summary>Returns a value indicating the sign of an 8-bit signed integer.</summary>
+            <returns>A number indicating the sign of value.Number Description -1 value is less than zero. 0 value is equal to zero. 1 value is greater than zero.</returns>
+            <param name="value">A signed number.</param>
+        </member>
+        <member name="M:System.MathExtensions.Sqrt(System.Double)">
+            <summary>Returns the square root of a specified number.</summary>
+            <returns><see cref="M:System.Math.Sqrt(System.Double)"/> for details.</returns>
+            <param name="value">A number.</param>
+        </member>
+        <member name="M:System.MathExtensions.IsBetween(System.Decimal,System.Decimal,System.Decimal)">
+            <summary>Determines whether a decimal value is inclusively between two values.</summary>
+            <returns>A boolean representing whether value is inclusively between a and b.</returns>
+            <param name="value">A decimal value to compare.</param>
+            <param name="a">The first bound to compare value against.</param>
+            <param name="b">The second bound to compare value against.</param>
+        </member>
+        <member name="M:System.MathExtensions.IsBetween(System.Double,System.Double,System.Double)">
+            <summary>Determines whether a double-precision floating-point value is inclusively between two values.</summary>
+            <returns>A boolean representing whether value is inclusively between a and b.</returns>
+            <param name="value">A double-precision floating-point value to compare.</param>
+            <param name="a">The first bound to compare value against.</param>
+            <param name="b">The second bound to compare value against.</param>
+        </member>
+        <member name="M:System.MathExtensions.IsBetween(System.Single,System.Single,System.Single)">
+            <summary>Determines whether a single-precision floating-point value is inclusively between two values.</summary>
+            <returns>A boolean representing whether value is inclusively between a and b.</returns>
+            <param name="value">A double-precision floating-point value to compare.</param>
+            <param name="a">The first bound to compare value against.</param>
+            <param name="b">The second bound to compare value against.</param>
+        </member>
+        <member name="M:System.MathExtensions.IsBetween(System.Int64,System.Int64,System.Int64)">
+            <summary>Determines whether a 64-bit signed integer is inclusively between two values.</summary>
+            <returns>A boolean representing whether value is inclusively between a and b.</returns>
+            <param name="value">A 64-bit signed integer to compare.</param>
+            <param name="a">The first bound to compare value against.</param>
+            <param name="b">The second bound to compare value against.</param>
+        </member>
+        <member name="M:System.MathExtensions.IsBetween(System.Int32,System.Int32,System.Int32)">
+            <summary>Determines whether a 32-bit signed integer is inclusively between two values.</summary>
+            <returns>A boolean representing whether value is inclusively between a and b.</returns>
+            <param name="value">A 32-bit signed integer to compare.</param>
+            <param name="a">The first bound to compare value against.</param>
+            <param name="b">The second bound to compare value against.</param>
+        </member>
+        <member name="M:System.MathExtensions.IsBetween(System.Int16,System.Int16,System.Int16)">
+            <summary>Determines whether a 16-bit signed integer is inclusively between two values.</summary>
+            <returns>A boolean representing whether value is inclusively between a and b.</returns>
+            <param name="value">A 16-bit signed integer to compare.</param>
+            <param name="a">The first bound to compare value against.</param>
+            <param name="b">The second bound to compare value against.</param>
+        </member>
+        <member name="M:System.MathExtensions.IsBetween(System.Byte,System.Byte,System.Byte)">
+            <summary>Determines whether an 8-bit unsigned integer is inclusively between two values.</summary>
+            <returns>A boolean representing whether value is inclusively between a and b.</returns>
+            <param name="value">An 8-bit unsigned integer to compare.</param>
+            <param name="a">The first bound to compare value against.</param>
+            <param name="b">The second bound to compare value against.</param>
+        </member>
+        <member name="M:System.MathExtensions.IsNaN(System.Double)">
+            <summary>Returns a value indicating whether the specified number evaluates to a value that is not a number (<see cref="F:System.Double.NaN"/>).</summary>
+            <returns>true if value evaluates to <see cref="F:System.Double.NaN"/>; otherwise, false.</returns>
+            <param name="value">A double-precision floating-point number. </param>
+            <filterpriority>1</filterpriority>
+        </member>
+        <member name="M:System.MathExtensions.IsNaN(System.Single)">
+            <summary>Returns a value indicating whether the specified number evaluates to not a number (<see cref="F:System.Single.NaN"/>).</summary>
+            <returns>true if value evaluates to not a number (<see cref="F:System.Single.NaN"/>); otherwise, false.</returns>
+            <param name="f">A single-precision floating-point number. </param>
+            <filterpriority>1</filterpriority>
+        </member>
+        <member name="M:System.MathExtensions.GetValueOrDefault(System.Double)">
+            <summary>Retrieves the value of the specified number, or zero if it's not a number (<see cref="F:System.Double.NaN"/>).</summary>
+            <returns>The value of the <paramref name="value"/> parameter if it doesn't evaluate to <see cref="F:System.Double.NaN"/>; otherwise, 0.0.</returns>
+            <param name="value">A double-precision floating-point number. </param>
+        </member>
+        <member name="M:System.MathExtensions.GetValueOrDefault(System.Double,System.Double)">
+            <summary>Retrieves the value of the specified number, or the specified default value if it's not a number (<see cref="F:System.Double.NaN"/>).</summary>
+            <returns>The value of the <paramref name="value"/> parameter if it doesn't evaluate to <see cref="F:System.Double.NaN"/>; otherwise, the <paramref name="defaultValue"/> parameter.</returns>
+            <param name="value">A double-precision floating-point number. </param>
+            <param name="defaultValue">The value to return if <see cref="M:System.MathExtensions.IsNaN(System.Double)"/> returns true.</param>
+        </member>
+        <member name="M:System.MathExtensions.GetValueOrDefault(System.Single)">
+            <summary>Retrieves the value of the specified number, or zero if it's not a number (<see cref="F:System.Single.NaN"/>).</summary>
+            <returns>The value of the <paramref name="value"/> parameter if it doesn't evaluate to <see cref="F:System.Single.NaN"/>; otherwise, 0.0.</returns>
+            <param name="value">A single-precision floating-point number. </param>
+        </member>
+        <member name="M:System.MathExtensions.GetValueOrDefault(System.Single,System.Single)">
+            <summary>Retrieves the value of the specified number, or the specified default value if it's not a number (<see cref="F:System.Single.NaN"/>).</summary>
+            <returns>The value of the <paramref name="value"/> parameter if it doesn't evaluate to <see cref="F:System.Single.NaN"/>; otherwise, the <paramref name="defaultValue"/> parameter.</returns>
+            <param name="value">A single-precision floating-point number. </param>
+            <param name="defaultValue">The value to return if <see cref="M:System.MathExtensions.IsNaN(System.Double)"/> returns true.</param>
+        </member>
+        <member name="M:System.MathExtensions.Acos(System.Double)">
+            <summary>Returns the angle whose cosine is the specified number.</summary>
+            <returns>An angle, θ, measured in radians, such that 0 ≤ θ ≤ π -or- <see cref="F:System.Double.NaN"/> if value &lt; -1 or value &gt; 1.</returns>
+            <param name="value">A number representing a cosine, where -1 ≤ value ≤ 1.</param>
+        </member>
+        <member name="M:System.MathExtensions.Asin(System.Double)">
+            <summary>Returns the angle whose sine is the specified number.</summary>
+            <returns>An angle, θ, measured in radians, such that -π/2 ≤ θ ≤ π/2 -or- <see cref="F:System.Double.NaN"/> if value &lt; -1 or value &gt; 1.</returns>
+            <param name="value">A number representing a sine, where -1 ≤ value ≤ 1.</param>
+        </member>
+        <member name="M:System.MathExtensions.Atan(System.Double)">
+            <summary>Returns the angle whose tangent is the specified number.</summary>
+            <returns>An angle, θ, measured in radians, such that -π/2 ≤ θ ≤ π/2 -or- <see cref="F:System.Double.NaN"/> if value equals <see cref="F:System.Double.NaN"/>, -π/2 rounded to double precision (-1.5707963267949) if value equals <see cref="F:System.Double.NegativeInfinity"/>, or π/2 rounded to double precision (1.5707963267949) if value equals <see cref="F:System.Double.PositiveInfinity"/>.</returns>
+            <param name="value">A number representing a tangent.</param>
+        </member>
+        <member name="M:System.MathExtensions.Atan2(System.Double,System.Double)">
+            <summary>Returns the angle whose tangent is the quotient of two specified numbers.</summary>
+            <returns>An angle, θ, measured in radians, such that -π ≤ θ ≤ π, and tan(θ) = y / x, where (x, y) is a point in the Cartesian plane. See <see cref="M:System.Math.Atan2(System.Double,System.Double)"/> for details.</returns>
+            <param name="y">The y coordinate of a point.</param>
+            <param name="x">The x coordinate of a point.</param>
+        </member>
+        <member name="M:System.MathExtensions.Cos(System.Double)">
+            <summary>Returns the cosine of the specified angle.</summary>
+            <returns>The cosine of angle.</returns>
+            <param name="angle">An angle, measured in radians.</param>
+        </member>
+        <member name="M:System.MathExtensions.Cosh(System.Double)">
+            <summary>Returns the hyperbolic cosine of the specified angle.</summary>
+            <returns>The hyperbolic cosine of angle. If angle is equal to <see cref="F:System.Double.NegativeInfinity"/> or <see cref="F:System.Double.PositiveInfinity"/>, <see cref="F:System.Double.PositiveInfinity"/> is returned. If angle is equal to <see cref="F:System.Double.NaN"/>, <see cref="F:System.Double.NaN"/> is returned.</returns>
+            <param name="angle">An angle, measured in radians.</param>
+        </member>
+        <member name="M:System.MathExtensions.Sin(System.Double)">
+            <summary>Returns the sine of the specified angle.</summary>
+            <returns>The sine of angle. If angle is equal to <see cref="F:System.Double.NaN"/>, <see cref="F:System.Double.NegativeInfinity"/>, or <see cref="F:System.Double.PositiveInfinity"/>, this method returns <see cref="F:System.Double.NaN"/>.</returns>
+            <param name="angle">An angle, measured in radians.</param>
+        </member>
+        <member name="M:System.MathExtensions.Sinh(System.Double)">
+            <summary>Returns the hyperbolic sine of the specified angle.</summary>
+            <returns>The hyperbolic sine of angle. If angle is equal to <see cref="F:System.Double.NegativeInfinity"/>, <see cref="F:System.Double.PositiveInfinity"/>, or <see cref="F:System.Double.NaN"/>, this method returns a <see cref="T:System.Double"/> equal to angle.</returns>
+            <param name="angle">An angle, measured in radians.</param>
+        </member>
+        <member name="M:System.MathExtensions.Tan(System.Double)">
+            <summary>Returns the tangent of the specified angle.</summary>
+            <returns>The tangent of angle. If angle is equal to <see cref="F:System.Double.NaN"/>, <see cref="F:System.Double.NegativeInfinity"/>, or <see cref="F:System.Double.PositiveInfinity"/>, this method returns <see cref="F:System.Double.NaN"/>.</returns>
+            <param name="angle">An angle, measured in radians.</param>
+        </member>
+        <member name="M:System.MathExtensions.Tanh(System.Double)">
+            <summary>Returns the hyperbolic tangent of the specified angle.</summary>
+            <returns>The hyperbolic tangent of angle. If angle is equal to <see cref="F:System.Double.NegativeInfinity"/>, this method returns -1. If angle is equal to <see cref="F:System.Double.PositiveInfinity"/>, this method returns 1. If angle is equal to <see cref="F:System.Double.NaN"/>, this method returns <see cref="F:System.Double.NaN"/>.</returns>
+            <param name="angle">An angle, measured in radians.</param>
+        </member>
+        <member name="M:System.MathExtensions.To(System.Decimal,System.Decimal)">
+            <summary>Generates a sequence of decimal numbers within a specified range.</summary>
+            <returns>A sequence of numbers from start to (but not including) bound where each number is 1 greater than the previous number.</returns>
+            <param name="start">The number to start from.</param>
+            <param name="bound">The number to stop before.</param>
+        </member>
+        <member name="M:System.MathExtensions.To(System.Decimal,System.Decimal,System.Decimal)">
+            <summary>Generates a sequence of decimal numbers within a specified range.</summary>
+            <returns>A sequence of numbers from start to (but not including) bound where each number is a given step greater than the previous number.</returns>
+            <param name="start">The number to start from.</param>
+            <param name="bound">The number to stop before.</param>
+        </member>
+        <member name="M:System.MathExtensions.To(System.Double,System.Double)">
+            <summary>Generates a sequence of double-precision floating-point values within a specified range.</summary>
+            <returns>A sequence of numbers from start to (but not including) bound where each number is 1 greater than the previous number.</returns>
+            <param name="start">The number to start from.</param>
+            <param name="bound">The number to stop before.</param>
+        </member>
+        <member name="M:System.MathExtensions.To(System.Double,System.Double,System.Double)">
+            <summary>Generates a sequence of double-precision floating-point values within a specified range.</summary>
+            <returns>A sequence of numbers from start to (but not including) bound where each number is a given step greater than the previous number.</returns>
+            <param name="start">The number to start from.</param>
+            <param name="bound">The number to stop before.</param>
+        </member>
+        <member name="M:System.MathExtensions.To(System.Single,System.Single)">
+            <summary>Generates a sequence of single-precision floating-point values within a specified range.</summary>
+            <returns>A sequence of numbers from start to (but not including) bound where each number is 1 greater than the previous number.</returns>
+            <param name="start">The number to start from.</param>
+            <param name="bound">The number to stop before.</param>
+        </member>
+        <member name="M:System.MathExtensions.To(System.Single,System.Single,System.Single)">
+            <summary>Generates a sequence of single-precision floating-point values within a specified range.</summary>
+            <returns>A sequence of numbers from start to (but not including) bound where each number is a given step greater than the previous number.</returns>
+            <param name="start">The number to start from.</param>
+            <param name="bound">The number to stop before.</param>
+        </member>
+        <member name="M:System.MathExtensions.To(System.Int64,System.Int64)">
+            <summary>Generates a sequence of 64-bit signed integers within a specified range.</summary>
+            <returns>A sequence of numbers from start to (but not including) bound where each number is 1 greater than the previous number.</returns>
+            <param name="start">The number to start from.</param>
+            <param name="bound">The number to stop before.</param>
+        </member>
+        <member name="M:System.MathExtensions.To(System.Int64,System.Int64,System.Int64)">
+            <summary>Generates a sequence of 64-bit signed integers within a specified range.</summary>
+            <returns>A sequence of numbers from start to (but not including) bound where each number is a given step greater than the previous number.</returns>
+            <param name="start">The number to start from.</param>
+            <param name="bound">The number to stop before.</param>
+        </member>
+        <member name="M:System.MathExtensions.To(System.Int32,System.Int32)">
+            <summary>Generates a sequence of 32-bit signed integers within a specified range.</summary>
+            <returns>A sequence of numbers from start to (but not including) bound where each number is 1 greater than the previous number.</returns>
+            <param name="start">The number to start from.</param>
+            <param name="bound">The number to stop before.</param>
+        </member>
+        <member name="M:System.MathExtensions.To(System.Int32,System.Int32,System.Int32)">
+            <summary>Generates a sequence of 32-bit signed integers within a specified range.</summary>
+            <returns>A sequence of numbers from start to (but not including) bound where each number is a given step greater than the previous number.</returns>
+            <param name="start">The number to start from.</param>
+            <param name="bound">The number to stop before.</param>
+        </member>
+        <member name="M:System.MathExtensions.To(System.Int16,System.Int16)">
+            <summary>Generates a sequence of 16-bit signed integers within a specified range.</summary>
+            <returns>A sequence of numbers from start to (but not including) bound where each number is 1 greater than the previous number.</returns>
+            <param name="start">The number to start from.</param>
+            <param name="bound">The number to stop before.</param>
+        </member>
+        <member name="M:System.MathExtensions.To(System.Int16,System.Int16,System.Int16)">
+            <summary>Generates a sequence of 16-bit signed integers within a specified range.</summary>
+            <returns>A sequence of numbers from start to (but not including) bound where each number is a given step greater than the previous number.</returns>
+            <param name="start">The number to start from.</param>
+            <param name="bound">The number to stop before.</param>
+        </member>
+        <member name="T:System.Collections.Generic.PriorityQuadTree`1">
+            <summary>
+            This class efficiently stores and lazily retrieves arbitrarily sized and positioned objects in a prioritized order in a quad-tree data structure.
+            This can be used to do efficient hit detection or visibility checks on objects in a two dimensional space.
+            The object does not need to implement any special interface because the Rect Bounds of those objects is handled as a separate argument to Insert.
+            </summary>
+            <remarks>
+            Original class written by Chris Lovett.
+            Prioritization and lazy enumeration added by Kael Rowan.
+            </remarks>
+        </member>
+        <member name="F:System.Collections.Generic.PriorityQuadTree`1.MaxTreeDepth">
+            <summary>
+            The MaxTreeDepth limit is required since recursive calls can go that deep if item bounds (height or width) are very small compared to Extent (height or width).
+            The max depth will prevent stack overflow exception in some of the recursive calls we make.
+            With a value of 50 the item bounds can be 2^-50 times the extent before the tree stops growing in height.
+            </summary>
+        </member>
+        <member name="F:System.Collections.Generic.PriorityQuadTree`1._extent">
+            <summary>
+            The extent defines the subdivisible bounds of the quad tree index.
+            </summary>
+        </member>
+        <member name="F:System.Collections.Generic.PriorityQuadTree`1._root">
+            <summary>
+            The outer PriorityQuadTree class is essentially just a wrapper around a tree of Quadrants.
+            </summary>
+        </member>
+        <member name="M:System.Collections.Generic.PriorityQuadTree`1.Insert(`0,System.Windows.Rect,System.Double)">
+            <summary>
+            Insert an item with given bounds and priority into this QuadTree.
+            </summary>
+            <param name="item">The item to insert.</param>
+            <param name="bounds">The bounds of this item.</param>
+            <param name="priority">The priority to return this item before others in query results.</param>
+        </member>
+        <member name="M:System.Collections.Generic.PriorityQuadTree`1.HasItemsInside(System.Windows.Rect)">
+            <summary>
+            Gets whether any items are fully inside the given bounds.
+            </summary>
+            <param name="bounds">The bounds to test.</param>
+            <returns><c>true</c> if any items are inside the given bounds; otherwise, <c>false</c>.</returns>
+        </member>
+        <member name="M:System.Collections.Generic.PriorityQuadTree`1.GetItemsInside(System.Windows.Rect)">
+            <summary>
+            Get a list of the items that are fully inside the given bounds.
+            </summary>
+            <param name="bounds">The bounds to test.</param>
+            <returns>The items that are inside the given bounds, returned in the order given by the priority assigned during Insert.</returns>
+        </member>
+        <member name="M:System.Collections.Generic.PriorityQuadTree`1.HasItemsIntersecting(System.Windows.Rect)">
+            <summary>
+            Gets whether any items intersect the given bounds.
+            </summary>
+            <param name="bounds">The bounds to test.</param>
+            <returns><c>true</c> if any items intersect the given bounds; otherwise, <c>false</c>.</returns>
+        </member>
+        <member name="M:System.Collections.Generic.PriorityQuadTree`1.GetItemsIntersecting(System.Windows.Rect)">
+            <summary>
+            Get list of nodes that intersect the given bounds.
+            </summary>
+            <param name="bounds">The bounds to test.</param>
+            <returns>The items that intersect the given bounds, returned in the order given by the priority assigned during Insert.</returns>
+        </member>
+        <member name="M:System.Collections.Generic.PriorityQuadTree`1.Remove(`0)">
+            <summary>
+            Removes the first instance of the given item from the tree (if it exists) by searching through the entire tree for the item.
+            </summary>
+            <param name="item">The item to remove.</param>
+            <returns><c>true</c> if the item was found and removed; otherwise, <c>false</c>.</returns>
+            <remarks>
+            This overload does a full search through the entire tree for the item.
+            Clients should instead call the overload that takes a <see cref="T:System.Windows.Rect"/> if the bounds of the item are known.
+            </remarks>
+        </member>
+        <member name="M:System.Collections.Generic.PriorityQuadTree`1.Remove(`0,System.Windows.Rect)">
+            <summary>
+            Removes the first instance of the given item that intersects the given bounds from the tree (if it exists).
+            </summary>
+            <param name="item">The item to remove.</param>
+            <param name="bounds">The bounds within to search for the item.</param>
+            <returns><c>true</c> if the item was found and removed; otherwise, <c>false</c>.</returns>
+            <remarks>
+            This overload does a partial search through the tree, so if the <paramref name="bounds"/> do not intersect the node then the node will be missed.
+            Clients should instead call the overload that does not take a <see cref="T:System.Windows.Rect"/> if the bounds of the item are not known.
+            </remarks>
+        </member>
+        <member name="M:System.Collections.Generic.PriorityQuadTree`1.Clear">
+            <summary>
+            Removes all nodes from the tree.
+            </summary>
+        </member>
+        <member name="M:System.Collections.Generic.PriorityQuadTree`1.ReIndex">
+            <summary>
+            Rebuilds all the Quadrants according to the current QuadTree Bounds.
+            </summary>
+        </member>
+        <member name="M:System.Collections.Generic.PriorityQuadTree`1.GetEnumerator">
+            <summary>
+            Returns all items in the tree in unspecified order.
+            </summary>
+            <returns>An enumerator over all items in the tree in random order.</returns>
+            <remarks>To get all items in the tree in prioritized-order then simply call <see cref="M:System.Collections.Generic.PriorityQuadTree`1.GetItemsInside(System.Windows.Rect)"/> with an infinitely large rectangle.</remarks>
+        </member>
+        <member name="M:System.Collections.Generic.PriorityQuadTree`1.System#Collections#IEnumerable#GetEnumerator">
+            <summary>
+            Returns all items in the tree in unspecified order.
+            </summary>
+            <returns>An enumerator over all items in the tree in random order.</returns>
+            <remarks>To get all items in the tree in prioritized-order then simply call <see cref="M:System.Collections.Generic.PriorityQuadTree`1.GetItemsInside(System.Windows.Rect)"/> with an infinitely large rectangle.</remarks>
+        </member>
+        <member name="P:System.Collections.Generic.PriorityQuadTree`1.Extent">
+            <summary>
+            The extent determines the overall quad-tree indexing strategy.
+            Changing this bounds is expensive since it has to re-divide the entire thing - like a re-hash operation.
+            </summary>
+        </member>
+        <!-- Badly formed XML comment ignored for member "T:System.Collections.Generic.PriorityQuadTree`1.QuadNode" -->
+        <member name="M:System.Collections.Generic.PriorityQuadTree`1.QuadNode.#ctor(`0,System.Windows.Rect,System.Double)">
+            <summary>
+            Construct new QuadNode to wrap the given node with given bounds.
+            </summary>
+            <param name="node">The node with generic type T.</param>
+            <param name="bounds">The bounds of that node.</param>
+            <param name="priority">The priority of that node.</param>
+        </member>
+        <member name="M:System.Collections.Generic.PriorityQuadTree`1.QuadNode.InsertInto(System.Collections.Generic.PriorityQuadTree{`0}.QuadNode)">
+            <summary>
+            Inserts this QuadNode into an existing list and returns the new tail of the list.
+            </summary>
+            <param name="tail">The tail of an existing circular linked list of QuadNodes, or <c>null</c> if this is the first.</param>
+            <returns>The (possibly new) tail of the circular linked list after inserting this QuadNode into it.</returns>
+        </member>
+        <member name="M:System.Collections.Generic.PriorityQuadTree`1.QuadNode.GetNodesIntersecting(System.Windows.Rect)">
+            <summary>
+            Walk the linked list of QuadNodes and check them against the given bounds.
+            </summary>
+            <param name="bounds">The bounds to test against each node.</param>
+            <returns>A lazy list of nodes along with the priority of the next node.</returns>
+        </member>
+        <member name="M:System.Collections.Generic.PriorityQuadTree`1.QuadNode.GetNodesInside(System.Windows.Rect)">
+            <summary>
+            Walk the linked list of QuadNodes and check them against the given bounds.
+            </summary>
+            <param name="bounds">The bounds to test against each node.</param>
+            <returns>A lazy list of nodes along with the priority of the next node.</returns>
+        </member>
+        <member name="M:System.Collections.Generic.PriorityQuadTree`1.QuadNode.HasNodesIntersecting(System.Windows.Rect)">
+            <summary>
+            Walk the linked list and test each node against the given bounds.
+            </summary>
+            <param name="bounds">Bounds to test.</param>
+            <returns>Return true if a node in the list intersects the bounds.</returns>
+        </member>
+        <member name="M:System.Collections.Generic.PriorityQuadTree`1.QuadNode.HasNodesInside(System.Windows.Rect)">
+            <summary>
+            Walk the linked list and test each node against the given bounds.
+            </summary>
+            <param name="bounds">Bounds to test.</param>
+            <returns>Return true if a node in the list is inside the bounds.</returns>
+        </member>
+        <member name="P:System.Collections.Generic.PriorityQuadTree`1.QuadNode.Node">
+            <summary>
+            The wrapped node.
+            </summary>
+        </member>
+        <member name="P:System.Collections.Generic.PriorityQuadTree`1.QuadNode.Bounds">
+            <summary>
+            The Rect bounds of the node.
+            </summary>
+        </member>
+        <member name="P:System.Collections.Generic.PriorityQuadTree`1.QuadNode.Priority">
+            <summary>
+            The priority of the node.
+            </summary>
+        </member>
+        <member name="P:System.Collections.Generic.PriorityQuadTree`1.QuadNode.Next">
+            <summary>
+            QuadNodes form a linked list in the Quadrant.
+            </summary>
+        </member>
+        <member name="T:System.Collections.Generic.PriorityQuadTree`1.Quadrant">
+            <summary>
+            The quad tree is split up into four Quadrants and objects are stored in the quadrant that contains them
+            and each quadrant is split up into four child Quadrants recurrsively.  Objects that overlap more than
+            one quadrant are stored in the nodes list for this Quadrant.
+            </summary>
+        </member>
+        <member name="M:System.Collections.Generic.PriorityQuadTree`1.Quadrant.#ctor(System.Windows.Rect)">
+            <summary>
+            Construct new Quadrant with a given bounds all nodes stored inside this quadrant
+            will fit inside this bounds.  
+            </summary>
+            <param name="bounds">The bounds of this quadrant</param>
+        </member>
+        <member name="M:System.Collections.Generic.PriorityQuadTree`1.Quadrant.Insert(`0,System.Windows.Rect,System.Double,System.Int32)">
+            <summary>
+            Insert the given node.
+            </summary>
+            <param name="node">The wrapped node.</param>
+            <param name="bounds">The bounds of that node.</param>
+            <param name="priority">The priority of that node.</param>
+            <param name="depth">The recursive depth of this call, to avoid stack overflows.</param>
+            <returns>The quadrant that ultimately holds the node.</returns>            
+        </member>
+        <member name="M:System.Collections.Generic.PriorityQuadTree`1.Quadrant.Remove(`0,System.Windows.Rect)">
+            <summary>
+            Removes the first occurance of the given node from this quadrant or any child quadrants within the search bounds.
+            </summary>
+            <param name="node">The node to remove.</param>
+            <param name="bounds">The bounds to search within.</param>
+            <returns><c>true</c> if the node was found and removed; otherwise, <c>false</c>.</returns>
+        </member>
+        <member name="M:System.Collections.Generic.PriorityQuadTree`1.Quadrant.GetNodesIntersecting(System.Windows.Rect)">
+            <summary>
+            Returns all nodes in this quadrant that intersect the given bounds.
+            The nodes are returned in order of descending priority.
+            </summary>
+            <param name="bounds">The bounds that intersects the nodes you want returned.</param>
+            <returns>A lazy list of nodes along with the new potential of this quadrant.</returns>
+        </member>
+        <member name="M:System.Collections.Generic.PriorityQuadTree`1.Quadrant.GetNodesInside(System.Windows.Rect)">
+            <summary>
+            Returns all nodes in this quadrant that are fully contained within the given bounds.
+            The nodes are returned in order of descending priority.
+            </summary>
+            <param name="bounds">The bounds that contains the nodes you want returned.</param>
+            <returns>A lazy list of nodes along with the new potential of this quadrant.</returns>
+        </member>
+        <member name="M:System.Collections.Generic.PriorityQuadTree`1.Quadrant.HasNodesInside(System.Windows.Rect)">
+            <summary>
+            Return true if there are any nodes in this Quadrant are inside the given bounds.
+            </summary>
+            <param name="bounds">The bounds to test</param>
+            <returns><c>true</c> if this quadrant or its subquadrants has nodes inside the bounds; otherwise, <c>false</c>.</returns>
+        </member>
+        <member name="M:System.Collections.Generic.PriorityQuadTree`1.Quadrant.HasNodesIntersecting(System.Windows.Rect)">
+            <summary>
+            Return true if there are any nodes in this Quadrant that intersect the given bounds.
+            </summary>
+            <param name="bounds">The bounds to test</param>
+            <returns><c>true</c> if this quadrant or its subquadrants has nodes intersecting the bounds; otherwise, <c>false</c>.</returns>
+        </member>
+        <member name="M:System.Collections.Generic.PriorityQuadTree`1.Quadrant.RemoveNode(`0)">
+            <summary>
+            Remove the given node from this Quadrant.(non-recursive)
+            </summary>
+            <param name="node">The node to remove.</param>            
+            <returns>Returns true if the node was found and removed.</returns>
+        </member>
+        <member name="M:System.Collections.Generic.PriorityQuadTree`1.Quadrant.CalculatePotential">
+            <summary>
+            The maximum priority for this quadrant's and all of its subquadrants' nodes.
+            </summary>
+            <returns>The maximum priority for this quadrant's and all of its subquadrants' nodes.</returns>
+            <remarks>This call assumes that the potential is correctly set on the subquadrants.</remarks>
+        </member>
+        <member name="M:System.Collections.Generic.PriorityQuadTree`1.Quadrant.GetEnumerator">
+            <summary>
+            Enumerates over all nodes within this quadrant in random order.
+            </summary>
+            <returns>
+            Enumerator that enumerates over all its nodes.
+            </returns>
+        </member>
+        <member name="T:System.Collections.Generic.PriorityQueue`2">
+            <summary>
+            Represents a queue of items that are sorted based on individual priorities.
+            </summary>
+            <typeparam name="T">Specifies the type of elements in the queue.</typeparam>
+            <typeparam name="TPriority">Specifies the type of object representing the priority.</typeparam>
+        </member>
+        <member name="T:System.Windows.RectExtensions">
+            <summary>
+            Provides extension methods for rects.
+            </summary>
+        </member>
+        <member name="M:System.Windows.RectExtensions.GetCenter(System.Windows.Rect)">
+            <summary>
+            Returns the center point of the <see cref="T:System.Windows.Rect"/>.
+            </summary>
+            <param name="rect">The rect to return the center point of.</param>
+            <returns>The center <see cref="T:System.Windows.Point"/> of the <paramref name="rect"/>.</returns>
+        </member>
+        <member name="M:System.Windows.RectExtensions.IsDefined(System.Windows.Rect)">
+            <summary>
+            Returns whether the <see cref="T:System.Windows.Rect"/> defines a real area in space.
+            </summary>
+            <param name="rect">The rect to test.</param>
+            <returns><c>true</c> if rect defines an area or point in finite space, which is not the case for <see cref="P:System.Windows.Rect.Empty"/> or if any of the fields are <see cref="F:System.Double.NaN"/>.</returns>
+        </member>
+        <member name="M:System.Windows.RectExtensions.Intersects(System.Windows.Rect,System.Windows.Rect)">
+            <summary>
+            Indicates whether the specified rectangle intersects with the current rectangle, properly considering the empty rect and infinities.
+            </summary>
+            <param name="self">The current rectangle.</param>
+            <param name="rect">The rectangle to check.</param>
+            <returns><c>true</c> if the specified rectangle intersects with the current rectangle; otherwise, <c>false</c>.</returns>
+        </member>
+        <member name="T:System.Windows.Controls.VirtualPanel">
+            <summary>
+            Provides a framework for <see cref="T:System.Windows.Controls.Panel"/> elements that virtualize their child data collection. This is an abstract class.
+            </summary>
+        </member>
+        <member name="F:System.Windows.Controls.VirtualPanel.IsVirtualizingProperty">
+            <summary>
+            Identifies the <see cref="P:System.Windows.Controls.VirtualPanel.IsVirtualizing"/> property.
+            </summary>
+        </member>
+        <member name="M:System.Windows.Controls.VirtualPanel.OnIsVirtualizingChanged(System.Windows.DependencyObject,System.Windows.DependencyPropertyChangedEventArgs)">
+            <summary>
+            Handles the event that occurs when the value of the <see cref="P:System.Windows.Controls.VirtualPanel.IsVirtualizing"/> dependency property has changed.
+            </summary>
+            <param name="d">The dependency object on which the dependency property has changed.</param>
+            <param name="e">The event args containing the old and new values of the dependency property.</param>
+        </member>
+        <member name="F:System.Windows.Controls.VirtualPanel.RealizationPriorityProperty">
+            <summary>
+            Identifies the <see cref="P:System.Windows.Controls.VirtualPanel.RealizationPriority"/> property.
+            </summary>
+        </member>
+        <member name="F:System.Windows.Controls.VirtualPanel.IndexForItemContainerProperty">
+            <summary>
+            This is an attached property that the panel sets on each container (generated or direct) to point back to the index of the item.
+            </summary>
+        </member>
+        <member name="M:System.Windows.Controls.VirtualPanel.IndexFromContainer(System.Windows.UIElement)">
+            <summary>
+            Returns the index to an item that corresponds to the specified, generated <see cref="T:System.Windows.UIElement"/>. 
+            </summary>
+            <param name="container">The <see cref="T:System.Windows.UIElement"/> that corresponds to the item index to be returned.</param>
+            <returns>An <see cref="T:System.Int32"/> index to an item that corresponds to the specified <see cref="T:System.Windows.UIElement"/> if it was generated and hosted by this panel; otherwise, <c>-1</c>.</returns>
+        </member>
+        <member name="M:System.Windows.Controls.VirtualPanel.ItemFromContainer(System.Windows.UIElement)">
+            <summary>
+            Returns the item that corresponds to the specified, generated <see cref="T:System.Windows.UIElement"/>. 
+            </summary>
+            <param name="container">The <see cref="T:System.Windows.UIElement"/> that corresponds to the item to be returned.</param>
+            <returns>An <see cref="T:System.Object"/> that is the item which corresponds to the specified <see cref="T:System.Windows.UIElement"/> if it was generated and hosted by this panel; otherwise, <c>null</c>.</returns>
+        </member>
+        <member name="M:System.Windows.Controls.VirtualPanel.ContainerFromIndex(System.Int32)">
+            <summary>
+            Returns the <see cref="T:System.Windows.UIElement"/> corresponding to the item at the given index within the item collection if it has been realized.
+            </summary>
+            <param name="itemIndex">The index of the desired item. </param>
+            <returns>The element corresponding to the item at the given index within the item collection or returns <c>null</c> if the item is not realized.</returns>
+        </member>
+        <member name="M:System.Windows.Controls.VirtualPanel.ContainerFromItem(System.Object)">
+            <summary>
+            Returns the <see cref="T:System.Windows.UIElement"/> corresponding to the given item if it has been realized.
+            </summary>
+            <param name="item">The <see cref="T:System.Object"/> item to find the <see cref="T:System.Windows.UIElement"/> for.</param>
+            <returns>A <see cref="T:System.Windows.UIElement"/> that corresponds to the given item. Returns <c>null</c> if the item does not belong to the item collection, or if a <see cref="T:System.Windows.UIElement"/> has not been generated for it.</returns>
+            <remarks>Use caution when calling this method as it does a linear search for the item.  Consider calling <see cref="M:System.Windows.Controls.VirtualPanel.ContainerFromIndex(System.Int32)"/> instead.</remarks>
+        </member>
+        <member name="M:System.Windows.Controls.VirtualPanel.InvalidateReality">
+            <summary>
+            Invalidates the realization state of all items being hosted by this panel. After the invalidation, the panel will have its reality updated, which will occur asynchronously unless subsequently forced by <see cref="M:System.Windows.Controls.VirtualPanel.UpdateReality"/>. 
+            </summary>
+        </member>
+        <member name="M:System.Windows.Controls.VirtualPanel.UpdateReality">
+            <summary>
+            Ensures that all items being hosted by this panel are properly realized or virtualized.
+            </summary>
+        </member>
+        <member name="M:System.Windows.Controls.VirtualPanel.RealizeCore(System.Object)">
+            <summary>
+            Manages calls to <see cref="M:System.Windows.Controls.VirtualPanel.RealizeOverride(System.Collections.IEnumerable,System.Object)"/>.
+            </summary>
+            <param name="state">A custom state object left over from a previous call to <see cref="M:System.Windows.Controls.VirtualPanel.RealizeCore(System.Object)"/> if additional processing was needed.</param>
+            <returns>A custom state object if additional processing is needed; otherwise, <c>null</c>.</returns>
+        </member>
+        <member name="M:System.Windows.Controls.VirtualPanel.RealizeOverride(System.Collections.IEnumerable,System.Object)">
+            <summary>
+            When overridden in a derived class, realizes and/or virtualizes items, optionally deferring additional realization.
+            </summary>
+            <param name="items">The current items being hosted by this panel.</param>
+            <param name="state">A custom state object left over from a previous call to <see cref="M:System.Windows.Controls.VirtualPanel.RealizeOverride(System.Collections.IEnumerable,System.Object)"/> if additional processing was needed.</param>
+            <returns>Implementations may optionally defer additional processing by return a non-<c>null</c> object, which will then be passed to a future call to <see cref="M:System.Windows.Controls.VirtualPanel.RealizeOverride(System.Collections.IEnumerable,System.Object)"/>.</returns>
+        </member>
+        <member name="M:System.Windows.Controls.VirtualPanel.OnIsItemsHostChanged(System.Boolean,System.Boolean)">
+            <summary>
+            Indicates that the <see cref="P:System.Windows.Controls.Panel.IsItemsHost"/> property value has changed.
+            </summary>
+            <param name="oldIsItemsHost">The old property value.</param>
+            <param name="newIsItemsHost">The new property value.</param>
+        </member>
+        <member name="M:System.Windows.Controls.VirtualPanel.OnIsVirtualizingChanged(System.Boolean,System.Boolean)">
+            <summary>
+            Indicates that the <see cref="P:System.Windows.Controls.VirtualPanel.IsVirtualizing"/> property value has changed.
+            </summary>
+            <param name="oldIsVirtualizing">The old property value.</param>
+            <param name="newIsVirtualizing">The new property value.</param>
+        </member>
+        <member name="M:System.Windows.Controls.VirtualPanel.OnItemsChanged(System.Object,System.Windows.Controls.Primitives.ItemsChangedEventArgs)">
+            <summary>
+            Maintains event handlers when the items source has changed.
+            </summary>
+            <param name="sender">The <see cref="T:System.Object"/> that raised the event.</param>
+            <param name="args">Provides data for the <see cref="E:System.Windows.Controls.ItemContainerGenerator.ItemsChanged"/> event.</param>
+        </member>
+        <member name="M:System.Windows.Controls.VirtualPanel.OnItemsChanged(System.Object,System.Collections.Specialized.NotifyCollectionChangedEventArgs)">
+            <summary>
+            Called when the <see cref="P:System.Windows.Controls.ItemsControl.Items"/> collection that is associated with the <see cref="T:System.Windows.Controls.ItemsControl"/> for this <see cref="T:System.Windows.Controls.Panel"/> changes.
+            </summary>
+            <param name="sender">The <see cref="T:System.Object"/> that raised the event.</param>
+            <param name="args">Provides data for the <see cref="!:ItemsChanged"/> event.</param>
+        </member>
+        <member name="M:System.Windows.Controls.VirtualPanel.RealizeItem(System.Int32)">
+            <summary>
+            Realizes an item container for the item with the given index.
+            </summary>
+            <param name="itemIndex">The index of the item.</param>
+            <returns>The child that was created and added to the internal children.</returns>
+        </member>
+        <member name="M:System.Windows.Controls.VirtualPanel.VirtualizeItem(System.Int32)">
+            <summary>
+            Removes an item container for the item with the given index.
+            </summary>
+            <param name="itemIndex">The index of the item.</param>
+            <returns><c>true</c> if the child had been previously realized and was now removed; otherwise, <c>false</c>.</returns>
+        </member>
+        <member name="P:System.Windows.Controls.VirtualPanel.IsVirtualizing">
+            <summary>
+            Gets or sets a value that indicates that this <see cref="T:System.Windows.Controls.VirtualPanel"/> is virtualizing its child collection.
+            </summary>
+        </member>
+        <member name="P:System.Windows.Controls.VirtualPanel.RealizationPriority">
+            <summary>
+            Gets or sets the <see cref="T:System.Windows.Threading.DispatcherPriority"/> of the realization pass for this <see cref="T:System.Windows.Controls.VirtualPanel"/>.
+            </summary>
+        </member>
+        <member name="P:System.Windows.Controls.VirtualPanel.RealizeOperation">
+            <summary>
+            Holds the latest queued realization operation.
+            </summary>
+        </member>
+        <member name="P:System.Windows.Controls.VirtualPanel.ItemsOwner">
+            <summary>
+            Returns the <see cref="T:System.Windows.Controls.ItemsControl"/> that this panel hosts items for.
+            </summary>
+            <value></value>
+        </member>
+        <member name="T:System.Windows.Controls.VirtualPanel.VirtualItemsList">
+            <summary>
+            Returns a list which represents a subset of the elements in the source list. 
+            </summary>
+            <remarks>
+            This list is used in NotifyCollectionChangedEventArgs because we might be dealing with
+            virtualized lists that raise events for items changing when the items haven't been
+            loaded into memory yet.  If the client needs to inspect the item, then they can index
+            into this list and it will retrieve it from the original source, but if they don't need
+            to inspect the item then we spare the cost of the lookup and retrieval.
+            </remarks>
+        </member>
+        <member name="T:System.Windows.Controls.ZoomableCanvas">
+            <summary>
+            Defines an area within which you can explicitly position an infinite number of child elements by using coordinates that are relative to the <see cref="T:System.Windows.Controls.ZoomableCanvas"/> area.
+            </summary>
+        </member>
+        <member name="F:System.Windows.Controls.ZoomableCanvas.ApplyTransformProperty">
+            <summary>
+            Identifies the <see cref="P:System.Windows.Controls.ZoomableCanvas.ApplyTransform"/> dependency property.
+            </summary>
+        </member>
+        <member name="M:System.Windows.Controls.ZoomableCanvas.CoerceRenderTransform(System.Windows.DependencyObject,System.Object)">
+            <summary>
+            Returns a transform applying the <see cref="P:System.Windows.Controls.ZoomableCanvas.Scale"/> and <see cref="P:System.Windows.Controls.ZoomableCanvas.Offset"/> when <see cref="P:System.Windows.Controls.ZoomableCanvas.ApplyTransform"/> is set to <c>true</c>.
+            </summary>
+            <param name="d">Dependency object whos value is being coerced.</param>
+            <param name="value">The original uncoerced value.</param>
+            <returns>A new transform if <see cref="P:System.Windows.Controls.ZoomableCanvas.ApplyTransform"/> is set to <c>true</c>; otherwise, <paramref name="value"/>.</returns>
+        </member>
+        <member name="M:System.Windows.Controls.ZoomableCanvas.OnApplyTransformChanged(System.Windows.DependencyObject,System.Windows.DependencyPropertyChangedEventArgs)">
+            <summary>
+            Handles the event that occurs when the value of the <see cref="P:System.Windows.Controls.ZoomableCanvas.ApplyTransform"/> dependency property has changed.
+            </summary>
+            <param name="d">The dependency object on which the dependency property has changed.</param>
+            <param name="e">The event args containing the old and new values of the dependency property.</param>
+        </member>
+        <member name="F:System.Windows.Controls.ZoomableCanvas.ActualViewboxProperty">
+            <summary>
+            Identifies the <see cref="P:System.Windows.Controls.ZoomableCanvas.ActualViewbox"/> dependency property.
+            </summary>
+        </member>
+        <member name="M:System.Windows.Controls.ZoomableCanvas.CoerceActualViewbox(System.Windows.DependencyObject,System.Object)">
+            <summary>
+            Returns a <see cref="T:System.Windows.Rect"/> representing the area of the canvas that is currently being displayed.
+            </summary>
+            <param name="d">Dependency object whos value is being coerced.</param>
+            <param name="value">The original uncoerced value.</param>
+            <returns>A <see cref="T:System.Windows.Rect"/> representing the area of the canvas (in canvas coordinates) that is being displayed by this panel.</returns>
+        </member>
+        <member name="M:System.Windows.Controls.ZoomableCanvas.OnActualViewboxChanged(System.Windows.DependencyObject,System.Windows.DependencyPropertyChangedEventArgs)">
+            <summary>
+            Handles the event that occurs when the value of the <see cref="P:System.Windows.Controls.ZoomableCanvas.ActualViewbox"/> dependency property has changed.
+            </summary>
+            <param name="d">The dependency object on which the dependency property has changed.</param>
+            <param name="e">The event args containing the old and new values of the dependency property.</param>
+        </member>
+        <member name="F:System.Windows.Controls.ZoomableCanvas.ViewboxProperty">
+            <summary>
+            Identifies the <see cref="P:System.Windows.Controls.ZoomableCanvas.Viewbox"/> dependency property.
+            </summary>
+        </member>
+        <member name="M:System.Windows.Controls.ZoomableCanvas.IsViewboxValid(System.Object)">
+            <summary>
+            Determines whether the value given is a valid value for the <see cref="P:System.Windows.Controls.ZoomableCanvas.Viewbox"/> dependency property.
+            </summary>
+            <param name="value">The potential value for the dependency property.</param>
+            <returns><c>true</c> if the value is a valid value for the property; otherwise, <c>false</c>.</returns>
+        </member>
+        <member name="M:System.Windows.Controls.ZoomableCanvas.OnViewboxChanged(System.Windows.DependencyObject,System.Windows.DependencyPropertyChangedEventArgs)">
+            <summary>
+            Handles the event that occurs when the value of the <see cref="P:System.Windows.Controls.ZoomableCanvas.Viewbox"/> dependency property has changed.
+            </summary>
+            <param name="d">The dependency object on which the dependency property has changed.</param>
+            <param name="e">The event args containing the old and new values of the dependency property.</param>
+        </member>
+        <member name="F:System.Windows.Controls.ZoomableCanvas.StretchProperty">
+            <summary>
+            Identifies the <see cref="P:System.Windows.Controls.ZoomableCanvas.Stretch"/> dependency property.
+            </summary>
+        </member>
+        <member name="M:System.Windows.Controls.ZoomableCanvas.IsStretchValid(System.Object)">
+            <summary>
+            Determines whether the value given is a valid value for the <see cref="P:System.Windows.Controls.ZoomableCanvas.Stretch"/> dependency property.
+            </summary>
+            <param name="value">The potential value for the dependency property.</param>
+            <returns><c>true</c> if the value is a valid value for the property; otherwise, <c>false</c>.</returns>
+        </member>
+        <member name="M:System.Windows.Controls.ZoomableCanvas.OnStretchChanged(System.Windows.DependencyObject,System.Windows.DependencyPropertyChangedEventArgs)">
+            <summary>
+            Handles the event that occurs when the value of the <see cref="P:System.Windows.Controls.ZoomableCanvas.Stretch"/> dependency property has changed.
+            </summary>
+            <param name="d">The dependency object on which the dependency property has changed.</param>
+            <param name="e">The event args containing the old and new values of the dependency property.</param>
+        </member>
+        <member name="F:System.Windows.Controls.ZoomableCanvas.StretchDirectionProperty">
+            <summary>
+            Identifies the <see cref="P:System.Windows.Controls.ZoomableCanvas.StretchDirection"/> dependency property.
+            </summary>
+        </member>
+        <member name="M:System.Windows.Controls.ZoomableCanvas.IsStretchDirectionValid(System.Object)">
+            <summary>
+            Determines whether the value given is a valid value for the <see cref="P:System.Windows.Controls.ZoomableCanvas.StretchDirection"/> dependency property.
+            </summary>
+            <param name="value">The potential value for the dependency property.</param>
+            <returns><c>true</c> if the value is a valid value for the property; otherwise, <c>false</c>.</returns>
+        </member>
+        <member name="M:System.Windows.Controls.ZoomableCanvas.OnStretchDirectionChanged(System.Windows.DependencyObject,System.Windows.DependencyPropertyChangedEventArgs)">
+            <summary>
+            Handles the event that occurs when the value of the <see cref="P:System.Windows.Controls.ZoomableCanvas.StretchDirection"/> dependency property has changed.
+            </summary>
+            <param name="d">The dependency object on which the dependency property has changed.</param>
+            <param name="e">The event args containing the old and new values of the dependency property.</param>
+        </member>
+        <member name="F:System.Windows.Controls.ZoomableCanvas.OffsetProperty">
+            <summary>
+            Identifies the <see cref="P:System.Windows.Controls.ZoomableCanvas.Offset"/> dependency property.
+            </summary>
+        </member>
+        <member name="M:System.Windows.Controls.ZoomableCanvas.IsOffsetValid(System.Object)">
+            <summary>
+            Determines whether the value given is a valid value for the <see cref="P:System.Windows.Controls.ZoomableCanvas.Offset"/> dependency property.
+            </summary>
+            <param name="value">The potential value for the dependency property.</param>
+            <returns><c>true</c> if the value is a valid value for the property; otherwise, <c>false</c>.</returns>
+        </member>
+        <member name="M:System.Windows.Controls.ZoomableCanvas.CoerceOffset(System.Windows.DependencyObject,System.Object)">
+            <summary>
+            Returns a <see cref="T:System.Windows.Point"/> representing top-left point of the canvas (in canvas coordinates) that is currently being displayed after taking <see cref="P:System.Windows.Controls.ZoomableCanvas.Viewbox"/> into account.
+            </summary>
+            <param name="d">Dependency object whos value is being coerced.</param>
+            <param name="value">The original uncoerced value.</param>
+            <returns>A <see cref="T:System.Windows.Point"/> representing top-left point of the canvas (in canvas coordinates) that is currently being displayed.</returns>
+        </member>
+        <member name="M:System.Windows.Controls.ZoomableCanvas.OnOffsetChanged(System.Windows.DependencyObject,System.Windows.DependencyPropertyChangedEventArgs)">
+            <summary>
+            Handles the event that occurs when the value of the <see cref="P:System.Windows.Controls.ZoomableCanvas.Offset"/> dependency property has changed.
+            </summary>
+            <param name="d">The dependency object on which the dependency property has changed.</param>
+            <param name="e">The event args containing the old and new values of the dependency property.</param>
+        </member>
+        <member name="F:System.Windows.Controls.ZoomableCanvas.ScaleProperty">
+            <summary>
+            Identifies the <see cref="P:System.Windows.Controls.ZoomableCanvas.Scale"/> dependency property.
+            </summary>
+        </member>
+        <member name="M:System.Windows.Controls.ZoomableCanvas.IsScaleValid(System.Object)">
+            <summary>
+            Determines whether the value given is a valid value for the <see cref="P:System.Windows.Controls.ZoomableCanvas.Scale"/> dependency property.
+            </summary>
+            <param name="value">The potential value for the dependency property.</param>
+            <returns><c>true</c> if the value is a valid value for the property; otherwise, <c>false</c>.</returns>
+        </member>
+        <member name="M:System.Windows.Controls.ZoomableCanvas.CoerceScale(System.Windows.DependencyObject,System.Object)">
+            <summary>
+            Returns a <see cref="T:System.Double"/> representing the scale of the content that is currently being displayed after taking <see cref="P:System.Windows.Controls.ZoomableCanvas.Viewbox"/>, <see cref="P:System.Windows.Controls.ZoomableCanvas.Stretch"/>, and <see cref="P:System.Windows.Controls.ZoomableCanvas.StretchDirection"/> into account.
+            </summary>
+            <param name="d">Dependency object whos value is being coerced.</param>
+            <param name="value">The original uncoerced value.</param>
+            <returns>A <see cref="T:System.Double"/> representing scale of the content that is currently being displayed.</returns>
+        </member>
+        <member name="M:System.Windows.Controls.ZoomableCanvas.OnScaleChanged(System.Windows.DependencyObject,System.Windows.DependencyPropertyChangedEventArgs)">
+            <summary>
+            Handles the event that occurs when the value of the <see cref="P:System.Windows.Controls.ZoomableCanvas.Scale"/> dependency property has changed.
+            </summary>
+            <param name="d">The dependency object on which the dependency property has changed.</param>
+            <param name="e">The event args containing the old and new values of the dependency property.</param>
+        </member>
+        <member name="F:System.Windows.Controls.ZoomableCanvas.RealizationLimitProperty">
+            <summary>
+            Identifies the <see cref="P:System.Windows.Controls.ZoomableCanvas.RealizationLimit"/> dependency property.
+            </summary>
+        </member>
+        <member name="M:System.Windows.Controls.ZoomableCanvas.IsRealizationLimitValid(System.Object)">
+            <summary>
+            Determines whether the value given is a valid value for the <see cref="P:System.Windows.Controls.ZoomableCanvas.RealizationLimit"/> dependency property.
+            </summary>
+            <param name="value">The potential value for the dependency property.</param>
+            <returns><c>true</c> if the value is a valid value for the property; otherwise, <c>false</c>.</returns>
+        </member>
+        <member name="M:System.Windows.Controls.ZoomableCanvas.OnRealizationLimitChanged(System.Windows.DependencyObject,System.Windows.DependencyPropertyChangedEventArgs)">
+            <summary>
+            Handles the event that occurs when the value of the <see cref="P:System.Windows.Controls.ZoomableCanvas.RealizationLimit"/> dependency property has changed.
+            </summary>
+            <param name="d">The dependency object on which the dependency property has changed.</param>
+            <param name="e">The event args containing the old and new values of the dependency property.</param>
+        </member>
+        <member name="F:System.Windows.Controls.ZoomableCanvas.RealizationRateProperty">
+            <summary>
+            Identifies the <see cref="P:System.Windows.Controls.ZoomableCanvas.RealizationRate"/> dependency property.
+            </summary>
+        </member>
+        <member name="M:System.Windows.Controls.ZoomableCanvas.IsRealizationRateValid(System.Object)">
+            <summary>
+            Determines whether the value given is a valid value for the <see cref="P:System.Windows.Controls.ZoomableCanvas.RealizationRate"/> dependency property.
+            </summary>
+            <param name="value">The potential value for the dependency property.</param>
+            <returns><c>true</c> if the value is a valid value for the property; otherwise, <c>false</c>.</returns>
+        </member>
+        <member name="M:System.Windows.Controls.ZoomableCanvas.OnRealizationRateChanged(System.Windows.DependencyObject,System.Windows.DependencyPropertyChangedEventArgs)">
+            <summary>
+            Handles the event that occurs when the value of the <see cref="P:System.Windows.Controls.ZoomableCanvas.RealizationRate"/> dependency property has changed.
+            </summary>
+            <param name="d">The dependency object on which the dependency property has changed.</param>
+            <param name="e">The event args containing the old and new values of the dependency property.</param>
+        </member>
+        <member name="M:System.Windows.Controls.ZoomableCanvas.#cctor">
+            <summary>
+            Performs a one-time initialization of <see cref="T:System.Windows.Controls.ZoomableCanvas"/>-related metadata.
+            </summary>
+        </member>
+        <member name="M:System.Windows.Controls.ZoomableCanvas.#ctor">
+            <summary>
+            Ensures coersion routines are invoked with their default values.
+            </summary>
+        </member>
+        <member name="F:System.Windows.Controls.ZoomableCanvas.SpatialIndex">
+            <summary>
+            Two-dimentional spatial index of our data items.
+            </summary>
+        </member>
+        <member name="F:System.Windows.Controls.ZoomableCanvas.PrivateIndex">
+            <summary>
+            Private implementation of <see cref="T:System.Windows.Controls.ZoomableCanvas.ISpatialItemsSource"/> when the items source does not provide one.
+            </summary>
+        </member>
+        <member name="F:System.Windows.Controls.ZoomableCanvas.RealizedItems">
+            <summary>
+            Ordered list of realized items based on the order they are returned from the spatial index.
+            </summary>
+        </member>
+        <member name="M:System.Windows.Controls.ZoomableCanvas.OnIsVirtualizingChanged(System.Boolean,System.Boolean)">
+            <summary>
+            Handles the event that occurs when the value of the <see cref="P:System.Windows.Controls.VirtualPanel.IsVirtualizing"/> property has changed.
+            </summary>
+        </member>
+        <member name="M:System.Windows.Controls.ZoomableCanvas.OnIsItemsHostChanged(System.Boolean,System.Boolean)">
+            <summary>
+            Refreshes our data when the <see cref="P:System.Windows.Controls.Panel.IsItemsHost"/> property has changed.
+            </summary>
+        </member>
+        <member name="M:System.Windows.Controls.ZoomableCanvas.OnItemsChanged(System.Object,System.Collections.Specialized.NotifyCollectionChangedEventArgs)">
+            <summary>
+            Dispatches to specific methods to update the spatial index when the items have changed.
+            </summary>
+        </member>
+        <member name="M:System.Windows.Controls.ZoomableCanvas.OnItemsAdded(System.Int32,System.Collections.IList)">
+            <summary>
+            Updates our private spatial index when items are added to the item source.
+            </summary>
+            <param name="index">The index of the first item that was added.</param>
+            <param name="items">The items that were added.</param>
+        </member>
+        <member name="M:System.Windows.Controls.ZoomableCanvas.OnItemsRemoved(System.Int32,System.Collections.IList)">
+            <summary>
+            Updates our private spatial index when items are removed from the item source.
+            </summary>
+            <param name="index">The old index of the first item that was removed.</param>
+            <param name="items">The items that were removed.</param>
+        </member>
+        <member name="M:System.Windows.Controls.ZoomableCanvas.OnItemsReset">
+            <summary>
+            Resets and initializes our spatial indices when the items source has changed.
+            </summary>
+        </member>
+        <member name="M:System.Windows.Controls.ZoomableCanvas.OnSpatialQueryInvalidated(System.Object,System.EventArgs)">
+            <summary>
+            Invalidates reality when the last spatial query is no longer valid.
+            </summary>
+            <param name="sender">The spatial index.</param>
+            <param name="e">The event arguments.</param>
+        </member>
+        <member name="M:System.Windows.Controls.ZoomableCanvas.OnSpatialExtentChanged(System.Object,System.EventArgs)">
+            <summary>
+            Invalidates the extent when the spatial index extent has changed.
+            </summary>
+            <param name="sender">The spatial index.</param>
+            <param name="e">The event arguments.</param>
+        </member>
+        <member name="M:System.Windows.Controls.ZoomableCanvas.RealizeOverride(System.Collections.IEnumerable,System.Object)">
+            <summary>
+            Performs realization and virtualization in batches based on the <see cref="P:System.Windows.Controls.ZoomableCanvas.RealizationRate"/>. 
+            </summary>
+            <param name="items">The current items being hosted by this panel.</param>
+            <param name="state">The previous return value of this method.</param>
+            <returns>A non-<c>null</c> value if further realization is required; otherwise, <c>null</c>.</returns>
+        </member>
+        <member name="M:System.Windows.Controls.ZoomableCanvas.RealizeOverride">
+            <summary>
+            Realizes and virtualizes items based on the current viewbox.
+            </summary>
+            <returns>An enumerator which allows this method to continue realization where it left off.</returns>
+        </member>
+        <member name="M:System.Windows.Controls.ZoomableCanvas.OnRenderSizeChanged(System.Windows.SizeChangedInfo)">
+            <summary>
+            Updates the calculated <see cref="P:System.Windows.Controls.ZoomableCanvas.ActualViewbox"/> and the <see cref="P:System.Windows.Controls.ZoomableCanvas.Scale"/> and <see cref="P:System.Windows.Controls.ZoomableCanvas.Offset"/> when the size changes.
+            </summary>
+            <param name="sizeInfo">Size information about the render size.</param>
+        </member>
+        <member name="M:System.Windows.Controls.ZoomableCanvas.OnPositioningChanged(System.Windows.DependencyObject,System.Windows.DependencyPropertyChangedEventArgs)">
+            <summary>
+            Invalidates the arrangement of canvases when their children's positions change.
+            </summary>
+            <param name="d">Dependency object whos position has changed.</param>
+            <param name="e">Event arguments related to the change.</param>
+        </member>
+        <member name="M:System.Windows.Controls.ZoomableCanvas.ScaleOverride(System.Double)">
+            <summary>
+            Scales the child elements of a <see cref="T:System.Windows.Controls.ZoomableCanvas"/> by applying a transform if <see cref="P:System.Windows.Controls.ZoomableCanvas.ApplyTransform"/> is <c>true</c>, or by calling <see cref="!:FrameworkElement.InvalidateArrange"/> otherwise.
+            </summary>
+            <param name="scale">The new scale of the canvas.</param>
+        </member>
+        <member name="M:System.Windows.Controls.ZoomableCanvas.OffsetOverride(System.Windows.Point)">
+            <summary>
+            Offsets the child elements of a <see cref="T:System.Windows.Controls.ZoomableCanvas"/> by applying a transform if <see cref="P:System.Windows.Controls.ZoomableCanvas.ApplyTransform"/> is <c>true</c>, or by calling <see cref="!:FrameworkElement.InvalidateArrange"/> otherwise.
+            </summary>
+            <param name="offset">The new offset of the canvas.</param>
+        </member>
+        <member name="M:System.Windows.Controls.ZoomableCanvas.MeasureOverride(System.Windows.Size)">
+            <summary>
+            Measures the child elements of a <see cref="T:System.Windows.Controls.ZoomableCanvas"/> in anticipation of arranging them during the <see cref="M:System.Windows.Controls.ZoomableCanvas.ArrangeOverride(System.Windows.Size)"/> pass.
+            </summary>
+            <param name="availableSize">An upper limit <see cref="T:System.Windows.Size"/> that should not be exceeded.</param>
+            <returns>A <see cref="T:System.Windows.Size"/> that represents the size that is required to arrange child content.</returns>
+        </member>
+        <member name="M:System.Windows.Controls.ZoomableCanvas.ArrangeOverride(System.Windows.Size)">
+            <summary>
+            Arranges the content of a <see cref="T:System.Windows.Controls.ZoomableCanvas"/> element.
+            </summary>
+            <param name="finalSize">The size that this <see cref="T:System.Windows.Controls.ZoomableCanvas"/> element should use to arrange its child elements.</param>
+            <returns>A <see cref="T:System.Windows.Size"/> that represents the arranged size of this <see cref="T:System.Windows.Controls.ZoomableCanvas"/> element and its descendants.</returns>
+        </member>
+        <member name="M:System.Windows.Controls.ZoomableCanvas.GetLayoutClip(System.Windows.Size)">
+            <summary>
+            Returns a clipping geometry that indicates the area that will be clipped if the <see cref="P:System.Windows.UIElement.ClipToBounds"/> property is set to <c>true</c>. 
+            </summary>
+            <param name="layoutSlotSize">The available size of the element.</param>
+            <returns>A <see cref="T:System.Windows.Media.Geometry"/> that represents the area that is clipped if <see cref="P:System.Windows.UIElement.ClipToBounds"/> is <c>true</c>.</returns>
+        </member>
+        <member name="F:System.Windows.Controls.ZoomableCanvas.ChildrenExtent">
+            <summary>
+            Represents the extent of the instantiated UIElements calculated during <see cref="M:System.Windows.Controls.ZoomableCanvas.ArrangeOverride(System.Windows.Size)"/>.
+            </summary>
+        </member>
+        <member name="F:System.Windows.Controls.ZoomableCanvas.ComputedExtent">
+            <summary>
+            Caches the calculated <see cref="P:System.Windows.Controls.ZoomableCanvas.Extent"/> based on the spatial index and arranged children of the canvas until <see cref="M:System.Windows.Controls.ZoomableCanvas.InvalidateExtent"/> is called.
+            </summary>
+        </member>
+        <member name="M:System.Windows.Controls.ZoomableCanvas.InvalidateExtent">
+            <summary>
+            Re-computes the <see cref="P:System.Windows.Controls.ZoomableCanvas.Extent"/> of items in the canvas and updates the parent scroll viewer if there is one.
+            </summary>
+        </member>
+        <member name="M:System.Windows.Controls.ZoomableCanvas.GetVisualPoint(System.Windows.Point)">
+            <summary>
+            Gets the current visual coordinates for a given <see cref="T:System.Windows.Point"/> on this <see cref="T:System.Windows.Controls.ZoomableCanvas"/>.
+            </summary>
+            <param name="canvasPoint">The <see cref="T:System.Windows.Point"/> in canvas coordinates.</param>
+            <returns>The current position of the canvas point on the screen relative to the upper-left corner of this <see cref="T:System.Windows.Controls.ZoomableCanvas"/>.</returns>
+        </member>
+        <member name="M:System.Windows.Controls.ZoomableCanvas.GetCanvasPoint(System.Windows.Point)">
+            <summary>
+            Gets the point on the canvas that is currently represented by the given <see cref="T:System.Windows.Point"/> on the screen.
+            </summary>
+            <param name="screenPoint">The <see cref="T:System.Windows.Point"/> on the screen relative to the upper-left corner of this <see cref="T:System.Windows.Controls.ZoomableCanvas"/>.</param>
+            <returns>The point on the canvas that corresponds to the given point on the screen.</returns>
+        </member>
+        <member name="P:System.Windows.Controls.ZoomableCanvas.ApplyTransform">
+            <summary>
+            Gets or sets whether to automatically apply a <see cref="T:System.Windows.Media.ScaleTransform"/> to the canvas.
+            </summary>
+            <value><c>true</c> or <c>false</c>.  The default is <see cref="!:true"/>.</value>
+            <remarks>
+            The value of this dependency property is <c>true</c> by default, meaning that the <see cref="!:RenderTransform"/> property will contain a <see cref="T:System.Windows.Media.Transform"/> that scales the canvas and its children automatically.
+            This property can be set to <c>false</c> prevent the automatic transform.  This means that children are responsible for changing their appearance when the <see cref="P:System.Windows.Controls.ZoomableCanvas.Scale"/> property changes.
+            Note that this property does not affect the <b>placement</b> of the elements; the children are automatically placed with the top-left corners of their elements at the appropriate positions on the screen, regardless of the value of <see cref="P:System.Windows.Controls.ZoomableCanvas.ApplyTransform"/>.
+            <para>
+            Children will usually do this by simply changing their <see cref="!:Width"/> and <see cref="!:Height "/> to become larger or smaller when the <see cref="P:System.Windows.Controls.ZoomableCanvas.Scale"/> property increases or decreases.
+            This is useful when pen widths are important, such as an element surrounded with a <see cref="T:System.Windows.Controls.Border"/> with <see cref="P:System.Windows.Controls.Border.BorderThickness"/> set to <c>1.0</c>.
+            If <see cref="P:System.Windows.Controls.ZoomableCanvas.ApplyTransform"/> is <c>true</c>, then as <see cref="P:System.Windows.Controls.ZoomableCanvas.Scale"/> decreases the shape will be scaled down and the border stroke will become thinner than one pixel, possibly too thin to see even with sub-pixel rendering.
+            This is also true when drawing paths, edges of a graph, or any other element that uses <see cref="T:System.Windows.Media.Pen"/> to draw lines and strokes.
+            In these cases setting <see cref="P:System.Windows.Controls.ZoomableCanvas.ApplyTransform"/> to <c>false</c> and setting the <see cref="!:Shape"/>'s <see cref="!:Shape.Stretch"/> to <see cref="!:Stretch.Fill"/> while binding its <see cref="!:Width"/> and <see cref="!:Height"/> to a factor of <see cref="P:System.Windows.Controls.ZoomableCanvas.Scale"/> will often provide a better effect.
+            </para>
+            <para>
+            Another reason to set this property to <c>false</c> is when elements change their representation or visual state based on the scale (also known as "semantic zoom").
+            For example, imagine a canvas showing multiple thumbnails of spreadsheets and the relationships between their formulas and values.
+            When <see cref="P:System.Windows.Controls.ZoomableCanvas.Scale"/> is set to <c>1.0</c> (the default value), each spreadsheet element might be fully interactive, editable, and showing all rows and columns.
+            When zooming out, and <see cref="P:System.Windows.Controls.ZoomableCanvas.Scale"/> gets small enough that there is not enough room for each spreadsheet to show all of its rows and columns, it may change its representation into a bar chart or pie chart with axis values and a legend instead.
+            When zooming even further out, and <see cref="P:System.Windows.Controls.ZoomableCanvas.Scale"/> gets small enough that there is not enough room for the axis and legend, it may simply remove the axis and legend to make more room for the graphical portion of the chart.
+            Since the children of the canvas can be arbitary rich UIElements, they can dynamically change their representation and be interacted with at all levels of zoom.
+            This is in sharp contrast to multi-scale-image approaches such as Silverlight's Deep Zoom since those scenarios are simply performing linear scale transformations on pre-computed static bitmaps.
+            </para>
+            </remarks>
+        </member>
+        <member name="P:System.Windows.Controls.ZoomableCanvas.ActualViewbox">
+            <summary>
+            Gets a <see cref="T:System.Windows.Rect"/> representing the area of the canvas that is currently being displayed by this panel.
+            </summary>
+            <value>A <see cref="T:System.Windows.Rect"/> representing the area of the canvas that is currently being displayed by this panel.</value>
+            <remarks>
+            The value of this property is automatically computed based on the <see cref="P:System.Windows.Controls.ZoomableCanvas.Scale"/>, <see cref="P:System.Windows.Controls.ZoomableCanvas.Offset"/>, and <see cref="!:RenderSize"/> of this panel.
+            It is independent (and usually different) from the <see cref="P:System.Windows.Controls.ZoomableCanvas.Viewbox"/> dependency property.
+            </remarks>
+            <seealso cref="P:System.Windows.Controls.ZoomableCanvas.Viewbox"/>
+        </member>
+        <member name="P:System.Windows.Controls.ZoomableCanvas.Viewbox">
+            <summary>
+            Gets or sets the portion of the canvas (in canvas coordinates) that should be attempted to be displayed by this panel.
+            </summary>
+            <value>A <see cref="T:System.Windows.Rect"/> specifying the portion of the canvas that should be displayed by this panel, or <see cref="P:System.Windows.Rect.Empty"/> when unspecified.  The default value is <see cref="P:System.Windows.Rect.Empty"/>.</value>
+            <remarks>
+            The area of the canvas shown by this panel can be controlled by either setting <see cref="P:System.Windows.Controls.ZoomableCanvas.Scale"/> and <see cref="P:System.Windows.Controls.ZoomableCanvas.Offset"/>, or by setting the <see cref="P:System.Windows.Controls.ZoomableCanvas.Viewbox"/>, <see cref="P:System.Windows.Controls.ZoomableCanvas.Stretch"/>, and <see cref="P:System.Windows.Controls.ZoomableCanvas.StretchDirection"/> properties.
+            When <see cref="P:System.Windows.Controls.ZoomableCanvas.Viewbox"/> is set to anything other than <see cref="P:System.Windows.Rect.Empty"/>, the <see cref="P:System.Windows.Controls.ZoomableCanvas.Scale"/> and <see cref="P:System.Windows.Controls.ZoomableCanvas.Offset"/> will be automatically coerced to appropriate values according to the <see cref="P:System.Windows.Controls.ZoomableCanvas.Stretch"/> and <see cref="P:System.Windows.Controls.ZoomableCanvas.StretchDirection"/> properties.
+            Note that the <see cref="P:System.Windows.Controls.ZoomableCanvas.Stretch"/> mode of <see cref="!:Stretch.Fill"/> is not supported, so unless the aspect ratio of <see cref="P:System.Windows.Controls.ZoomableCanvas.Viewbox"/> exactly matches the aspect ratio of <see cref="!:RenderSize"/> the actual area displayed will be more or less than <see cref="P:System.Windows.Controls.ZoomableCanvas.Viewbox"/>.
+            The exact area that is displayed can be determined by the <see cref="P:System.Windows.Controls.ZoomableCanvas.ActualViewbox"/> property in this case.
+            </remarks>
+            <seealso cref="P:System.Windows.Controls.ZoomableCanvas.Stretch"/>
+            <seealso cref="P:System.Windows.Controls.ZoomableCanvas.StretchDirection"/>
+            <seealso cref="P:System.Windows.Media.TileBrush.Viewbox"/>
+        </member>
+        <member name="P:System.Windows.Controls.ZoomableCanvas.Stretch">
+            <summary>
+            Gets or sets a value that specifies how the content of the canvas is displayed when <see cref="P:System.Windows.Controls.ZoomableCanvas.Viewbox"/> is set.
+            </summary>
+            <value>One of the <see cref="P:System.Windows.Controls.ZoomableCanvas.Stretch"/> values other than <see cref="!:Stretch.Fill"/>.  The default is <see cref="!:Stretch.Uniform"/>.</value>
+            <remarks>
+            Please see the documentation of <see cref="P:System.Windows.Media.TileBrush.Stretch"/> for a detailed explanation of the effects of this property.
+            The <see cref="P:System.Windows.Controls.ZoomableCanvas.Stretch"/> mode of <see cref="!:Stretch.Fill"/> is not supported, so unless the aspect ratio of <see cref="P:System.Windows.Controls.ZoomableCanvas.Viewbox"/> exactly matches the aspect ratio of <see cref="!:RenderSize"/> the actual area displayed will be more or less than <see cref="P:System.Windows.Controls.ZoomableCanvas.Viewbox"/>.
+            The exact area that is displayed can be determined by the <see cref="P:System.Windows.Controls.ZoomableCanvas.ActualViewbox"/> property in this case.
+            </remarks>
+            <seealso cref="P:System.Windows.Media.TileBrush.Stretch"/>
+        </member>
+        <member name="P:System.Windows.Controls.ZoomableCanvas.StretchDirection">
+            <summary>
+            Gets or sets how setting the <see cref="P:System.Windows.Controls.ZoomableCanvas.Viewbox"/> property can affect the <see cref="P:System.Windows.Controls.ZoomableCanvas.Scale"/>.
+            </summary>
+            <value>One of the <see cref="P:System.Windows.Controls.ZoomableCanvas.StretchDirection"/> values.  The default is <see cref="!:StretchDirection.Both"/></value>
+            <remarks>
+            When setting the <see cref="P:System.Windows.Controls.ZoomableCanvas.Viewbox"/> property, the <see cref="P:System.Windows.Controls.ZoomableCanvas.Scale"/> and <see cref="P:System.Windows.Controls.ZoomableCanvas.Offset"/> properties are automatically coerced to the appropriate values according to the <see cref="P:System.Windows.Controls.ZoomableCanvas.Stretch"/> and <see cref="P:System.Windows.Controls.ZoomableCanvas.StretchDirection"/> properties, and any existing values of <see cref="P:System.Windows.Controls.ZoomableCanvas.Scale"/> and <see cref="P:System.Windows.Controls.ZoomableCanvas.Offset"/> will be overridden.
+            However, when the value of <see cref="P:System.Windows.Controls.ZoomableCanvas.StretchDirection"/> is set to anything other than <see cref="!:StretchDirection.Both"/>, then the setting of the <see cref="P:System.Windows.Controls.ZoomableCanvas.Scale"/> property can limit the range of the automatically computed value.
+            The exact area that is displayed can be determined by the <see cref="P:System.Windows.Controls.ZoomableCanvas.ActualViewbox"/> property in this case.
+            </remarks>
+        </member>
+        <!-- Badly formed XML comment ignored for member "P:System.Windows.Controls.ZoomableCanvas.Offset" -->
+        <!-- Badly formed XML comment ignored for member "P:System.Windows.Controls.ZoomableCanvas.Scale" -->
+        <member name="P:System.Windows.Controls.ZoomableCanvas.RealizationLimit">
+            <summary>
+            Gets or sets the maximum number of elements that will be instantiated on the canvas when <see cref="!:IsVirtualizing"/> is set to <see cref="!:true"/>.
+            </summary>
+            <value>An <see cref="T:System.Int32"/> between <c>0</c> and <see cref="F:System.Int32.MaxValue"/>.  The default is <see cref="F:System.Int32.MaxValue"/>.</value>
+            <remarks>
+            When the children of the canvas are being populated through an <see cref="T:System.Windows.Controls.ItemsControl"/>, visual elements will be instantiated for the first <see cref="P:System.Windows.Controls.ZoomableCanvas.RealizationLimit"/> items within the <see cref="P:System.Windows.Controls.ZoomableCanvas.ActualViewbox"/>.
+            </remarks>
+        </member>
+        <member name="P:System.Windows.Controls.ZoomableCanvas.RealizationRate">
+            <summary>
+            Gets or sets the maximum number of elements that will be realized or virtualized at one time before yielding control back to the dispatcher when <see cref="!:IsVirtualizing"/> is set to <see cref="!:true"/>.
+            </summary>
+            <value>An <see cref="T:System.Int32"/> between <c>0</c> and <see cref="F:System.Int32.MaxValue"/>.  The default is <see cref="F:System.Int32.MaxValue"/>.</value>
+            <remarks>
+            By default, the value of this property is <see cref="F:System.Int32.MaxValue"/> which means that all realization and virtualization happens at once, at the time determined by <see cref="!:RealizationPriority"/>.
+            The default behavior is optimized to realize all elements as quickly as possible, at the expensive of application responsiveness while the realization is happening.
+            Setting the <see cref="!:RealizationPriority"/> to <see cref="F:System.Windows.Threading.DispatcherPriority.Input"/> and decreasing the <see cref="P:System.Windows.Controls.ZoomableCanvas.RealizationRate"/> will make the application feel more responsive but will take longer to realize all items.
+            </remarks>
+        </member>
+        <member name="P:System.Windows.Controls.ZoomableCanvas.AppliedScaleTransform">
+            <summary>
+            Gets the applied scale transform if <see cref="P:System.Windows.Controls.ZoomableCanvas.ApplyTransform"/> is set to <c>true</c>.
+            </summary>
+        </member>
+        <member name="P:System.Windows.Controls.ZoomableCanvas.AppliedTranslateTransform">
+            <summary>
+            Gets the applied translate transform if <see cref="P:System.Windows.Controls.ZoomableCanvas.ApplyTransform"/> is set to <c>true</c>.
+            </summary>
+        </member>
+        <member name="P:System.Windows.Controls.ZoomableCanvas.Extent">
+            <summary>
+            Gets the extent of the populated area of the canvas (in canvas coordinates).
+            </summary>
+            <remarks>
+            This property is also used to determine the range of the scroll bars when the canvas is hosted within a <see cref="T:System.Windows.Controls.ScrollViewer"/>.
+            </remarks>
+        </member>
+        <member name="P:System.Windows.Controls.ZoomableCanvas.MousePosition">
+            <summary>
+            Returns the the point on the canvas at which the mouse cursor is currently located.
+            </summary>
+        </member>
+        <member name="T:System.Windows.Controls.ZoomableCanvas.ISpatialItemsSource">
+            <summary>
+            Provides a two-dimensional index of items that can be quickly queried for all items that intersect a given rectangle.
+            </summary>
+            <remarks>
+            When the <see cref="T:System.Windows.Controls.ZoomableCanvas"/> is hosting items for an <see cref="T:System.Windows.Controls.ItemsControl"/>, the <see cref="P:System.Windows.Controls.ItemsControl.ItemsSource"/> can implement this interface to greatly speed up virtualization in the canvas.
+            If any of those conditions are not true, then the canvas must realize every item at least once in order to determine its bounds before it can virtualize it, and then once it is virtualized it will have no means of moving spontaneously back into view.
+            </remarks>
+        </member>
+        <member name="M:System.Windows.Controls.ZoomableCanvas.ISpatialItemsSource.Query(System.Windows.Rect)">
+            <summary>
+            Gets the set of items that intersect the given rectangle.
+            </summary>
+            <param name="rectangle">The area in which any intersecting items are returned.</param>
+            <returns>A result set of all items that intersect the given rectangle.</returns>
+            <remarks>
+            The enumerator returned by this method is used lazily and sometimes only partially, meaning it should return quickly without computing the entire result set immediately for best results.
+            </remarks>
+        </member>
+        <member name="P:System.Windows.Controls.ZoomableCanvas.ISpatialItemsSource.Extent">
+            <summary>
+            Gets the entire extent of the index, which is typically the union of all bounding boxes of all items within the set.
+            </summary>
+            <remarks>
+            This value is used when determining the extent of the scroll bars when the canvas is hosted in a scroll viewer.
+            </remarks>
+        </member>
+        <member name="E:System.Windows.Controls.ZoomableCanvas.ISpatialItemsSource.ExtentChanged">
+            <summary>
+            Occurs when the value of the <see cref="P:System.Windows.Controls.ZoomableCanvas.ISpatialItemsSource.Extent"/> property has changed.
+            </summary>
+        </member>
+        <member name="E:System.Windows.Controls.ZoomableCanvas.ISpatialItemsSource.QueryInvalidated">
+            <summary>
+            Occurs when the results of the last query are no longer valid and should be re-queried.
+            </summary>
+        </member>
+        <member name="T:System.Windows.Controls.ZoomableCanvas.PrivateSpatialIndex">
+            <summary>
+            Private implementation of <see cref="T:System.Windows.Controls.ZoomableCanvas.ISpatialItemsSource"/> when the items source is not one.
+            </summary>
+            <remarks>
+            This class efficiently implements a spatial index by internally using a PriorityQuadTree data structure.
+            </remarks>
+        </member>
+        <member name="F:System.Windows.Controls.ZoomableCanvas.PrivateSpatialIndex._tree">
+            <summary>
+            We use a PriorityQuadTree to implement our spatial index.
+            </summary>
+        </member>
+        <member name="F:System.Windows.Controls.ZoomableCanvas.PrivateSpatialIndex._items">
+            <summary>
+            This is a list of all of the spatial items in the index.
+            </summary>
+        </member>
+        <member name="F:System.Windows.Controls.ZoomableCanvas.PrivateSpatialIndex._extent">
+            <summary>
+            Holds the accurate extent of all item bounds in the index.  This may be different from _tree.Extent.
+            </summary>
+        </member>
+        <member name="F:System.Windows.Controls.ZoomableCanvas.PrivateSpatialIndex._lastQuery">
+            <summary>
+            Holds the last query used in order to know when to raise the <see cref="E:System.Windows.Controls.ZoomableCanvas.PrivateSpatialIndex.QueryInvalidated"/> event.
+            </summary>
+        </member>
+        <member name="M:System.Windows.Controls.ZoomableCanvas.PrivateSpatialIndex.Query(System.Windows.Rect)">
+            <summary>
+            Get a list of the items that intersect the given bounds.
+            </summary>
+            <param name="bounds">The bounds to test.</param>
+            <returns>
+            List of zero or more items that intersect the given bounds, returned in the order given by the priority assigned during Insert.
+            </returns>
+        </member>
+        <member name="M:System.Windows.Controls.ZoomableCanvas.PrivateSpatialIndex.InsertRange(System.Int32,System.Int32)">
+            <summary>
+            Adds or inserts the given <see cref="!:count"/> of items at the given <see cref="!:index"/>.
+            </summary>
+            <param name="index">The index at which to insert the items.</param>
+            <param name="count">The number of items to insert.</param>
+            <remarks>
+            All items are inserted with bounds of <see cref="P:System.Windows.Rect.Empty"/>, meaning they will be returned from all queries.
+            </remarks>
+        </member>
+        <member name="M:System.Windows.Controls.ZoomableCanvas.PrivateSpatialIndex.RemoveRange(System.Int32,System.Int32)">
+            <summary>
+            Removes the given <see cref="!:count"/> of items at the given <see cref="!:index"/>.
+            </summary>
+            <param name="index">The index at which to remove from.</param>
+            <param name="count">The number of items to remove.</param>
+        </member>
+        <member name="M:System.Windows.Controls.ZoomableCanvas.PrivateSpatialIndex.Reset(System.Int32)">
+            <summary>
+            Clears and resets the spatial index to hold the given <see cref="!:count"/> of items.
+            </summary>
+            <param name="count">The number of items within the index.</param>
+        </member>
+        <member name="M:System.Windows.Controls.ZoomableCanvas.PrivateSpatialIndex.Optimize">
+            <summary>
+            Optimizes the spatial index based on the current extent if optimization is warranted.
+            </summary>
+        </member>
+        <member name="E:System.Windows.Controls.ZoomableCanvas.PrivateSpatialIndex.ExtentChanged">
+            <summary>
+            Occurs when the value of the <see cref="P:System.Windows.Controls.ZoomableCanvas.PrivateSpatialIndex.Extent"/> property has changed.
+            </summary>
+        </member>
+        <member name="E:System.Windows.Controls.ZoomableCanvas.PrivateSpatialIndex.QueryInvalidated">
+            <summary>
+            Occurs when the results of the last query are no longer valid and should be re-queried.
+            </summary>
+        </member>
+        <member name="P:System.Windows.Controls.ZoomableCanvas.PrivateSpatialIndex.Extent">
+            <summary>
+            Gets the computed minimum required rectangle to contain all of the items in the index.  This property is also settable for efficiency the future extent of the items is known.
+            </summary>
+        </member>
+        <member name="P:System.Windows.Controls.ZoomableCanvas.PrivateSpatialIndex.Item(System.Int32)">
+            <summary>
+            Gets or sets the bounds for the item with the given <paramref name="index"/>.
+            </summary>
+            <param name="index">The index of the item.</param>
+            <returns>The bounds of the item, or <see cref="P:System.Windows.Rect.Empty"/> if the bounds are unknown.</returns>
+            <remarks>
+            Items with bounnds of <see cref="P:System.Windows.Rect.Empty"/> are always returned first from any query.
+            </remarks>
+        </member>
+        <member name="T:System.Windows.Controls.ZoomableCanvas.PrivateSpatialIndex.SpatialItem">
+            <summary>
+            Private class that holds an index/bounds pair.
+            </summary>
+            <remarks>
+            A Tuple could have been used instead except that we want Index to be mutable.
+            </remarks>
+        </member>
     </members>
 </doc>

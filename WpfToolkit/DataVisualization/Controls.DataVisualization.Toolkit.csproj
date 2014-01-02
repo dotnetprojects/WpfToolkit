@@ -242,12 +242,47 @@
       <Install>true</Install>
     </BootstrapperPackage>
   </ItemGroup>
-  <ItemGroup />
   <ItemGroup>
     <Page Include="Themes\generic.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="System.Windows.Controls.DataVisualization\TreeMap.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="System.Windows.Controls.DataVisualization.Charting\AreaSeries.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="System.Windows.Controls.DataVisualization.Charting\BarSeries.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="System.Windows.Controls.DataVisualization.Charting\BubbleSeries.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="System.Windows.Controls.DataVisualization.Charting\CategoryAxis.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="System.Windows.Controls.DataVisualization.Charting\Chart.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="System.Windows.Controls.DataVisualization.Charting\ColumnSeries.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="System.Windows.Controls.DataVisualization.Charting\DateTimeAxis.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="System.Windows.Controls.DataVisualization.Charting\LinearAxis.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="System.Windows.Controls.DataVisualization.Charting\LineSeries.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="System.Windows.Controls.DataVisualization.Charting\PieSeries.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="System.Windows.Controls.DataVisualization.Charting\ScatterSeries.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

@@ -167,6 +167,15 @@
       <Install>true</Install>
     </BootstrapperPackage>
   </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="System.Windows.Controls\AutoCompleteBox.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="System.Windows.Controls\Rating.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="System.Windows.Controls\RatingItem.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
