@@ -23,6 +23,7 @@
                 <RowDefinition />
                 <RowDefinition />
                 <RowDefinition />
+                <RowDefinition />
             </Grid.RowDefinitions>
             <chartingToolkit:Chart Title="Demo"
                                    HorizontalAlignment="Stretch"
@@ -148,12 +149,14 @@
             </chartingToolkit:Chart>
 
             <chartingToolkit:Chart Title="Demo"
+                                   Grid.ColumnSpan="2"
                                    Grid.Row="5"
+                                   Grid.RowSpan="2"
                                    Grid.Column="0"
                                    HorizontalAlignment="Stretch"
                                    VerticalAlignment="Stretch">
                 <chartingToolkit:LabeledPieSeries DependentValuePath="Value"
-                                                  IndependentValuePath="Key"
+                                                  IndependentValuePath="Key" LabelDisplayMode="Connected"
                                                   ItemsSource="{Binding Data}" />
             </chartingToolkit:Chart>
         </Grid>
