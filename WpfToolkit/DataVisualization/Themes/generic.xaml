@@ -264,6 +264,29 @@
         </Setter>
     </Style>
 
+    <!-- PieChartLabel Style -->
+
+    <Style TargetType="charting:PieChartLabel">
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="charting:PieChartLabel">
+                    <Canvas Name="Canvas_PART">
+                        <ContentPresenter Name="Content_PART"/>
+                    </Canvas>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+        <Setter Property="ContentTemplate">
+            <Setter.Value>
+                <DataTemplate>
+                    <StackPanel Background="LightGray">
+                        <TextBlock Text="{Binding RelativeSource={RelativeSource AncestorType={x:Type charting:PieChartLabel}}, Path=FormattedRatio}" VerticalAlignment="Center" Margin="5,0,5,0" />
+                    </StackPanel>
+                </DataTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+    
     <!--  charting:Chart  -->
     <Style TargetType="charting:Chart">
         <Setter Property="BorderBrush" Value="Black" />
@@ -589,6 +612,8 @@
                                     <Grid x:Name="PlotArea" Canvas.ZIndex="-1" Style="{TemplateBinding PlotAreaStyle}" />
                                     <Border Canvas.ZIndex="10" BorderBrush="#FF919191" BorderThickness="1" />
                                     <Canvas Background="Transparent" x:Name="SelectionArea" />
+                                    <charting:PieChartLabelArea x:Name="LabelArea_PART" Canvas.ZIndex="11" Margin="10" SnapsToDevicePixels="True" />
+
                                 </chartingprimitives:EdgePanel>
                             </Grid>
                         </Grid>

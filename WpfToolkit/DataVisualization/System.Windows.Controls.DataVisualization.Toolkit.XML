@@ -2908,6 +2908,165 @@
             Gets the Series collection of the chart.
             </summary>
         </member>
+        <member name="M:System.Windows.Controls.DataVisualization.Charting.PieChartHelper.GetPieChartInfo(System.Windows.Media.Geometry,System.Windows.Point@,System.Windows.Point@,System.Boolean@)">
+            <summary>
+            Gets the center and arc midpoint from a pie chart data point's geometry.
+            It also determines if the arc of this geometry is small.
+            </summary>
+            <param name="geometry">The geometry of a pie chart data point.</param>
+            <param name="center">The center of the pie chart.</param>
+            <param name="midpoint">The midpoint of the arc in the pie wedge.</param>
+            <param name="isArcSmall">True if the arc of the geometry is small, false otherwise.</param>
+            <returns>True if the geometry is of the right form, false otherwise.</returns>
+        </member>
+        <member name="M:System.Windows.Controls.DataVisualization.Charting.PieChartHelper.CalculateArcInfo(System.Windows.Point,System.Windows.Point,System.Windows.Media.ArcSegment,System.Windows.Point@,System.Boolean@)">
+            <summary>
+            Calculates the midpoint of the arc passed as a parameter, as well as whether the arc is small.
+            </summary>
+            <param name="center">The center of the pie chart.</param>
+            <param name="startPoint">The start point of the arc segment.</param>
+            <param name="arcSegment">The arc of the pie wedge itself.</param>
+            <param name="arcMidpoint">he midpoint of the arc in the pie wedge.</param>
+            <param name="isArcSmall">True if the arc is small, false otherwise.</param>
+        </member>
+        <member name="T:System.Windows.Controls.DataVisualization.Charting.PieChartLabel">
+            <summary>
+            This is the control that holds the label. It includes an optional line connecting it to the chart, and whatever
+            content the developer specifies in the DataTemplate.
+            </summary>
+        </member>
+        <member name="F:System.Windows.Controls.DataVisualization.Charting.PieChartLabel.FormattedRatioProperty">
+            <summary>
+            FormattedRation DP - When a PieChartLabel is created, this property is data bound to the PieDataPoint's equivalent
+            property. It will typically be used within the DataTemplate for PieChartLabel.
+            </summary>
+        </member>
+        <member name="F:System.Windows.Controls.DataVisualization.Charting.PieChartLabel.GeometryProperty">
+            <summary>
+            Geometry DP - When a PieChartLabel is created, this property is data bound to the PieDataPoint's equivalent
+            property. We need this information to calculate the position of the label.
+            </summary>
+        </member>
+        <member name="M:System.Windows.Controls.DataVisualization.Charting.PieChartLabel.ArrangeOverride(System.Windows.Size)">
+            <summary>
+            On arrange, re-position the label.
+            </summary>
+        </member>
+        <member name="M:System.Windows.Controls.DataVisualization.Charting.PieChartLabel.OnApplyTemplate">
+            <summary>
+            When the template is applied, get the template parts. Also, ensure that if the 
+            content of the label changes, the label is re-positioned.
+            </summary>
+        </member>
+        <member name="M:System.Windows.Controls.DataVisualization.Charting.PieChartLabel.PositionLabel">
+            <summary>
+            Positions the label depending on the display mode specified by the developer.
+            </summary>
+        </member>
+        <member name="M:System.Windows.Controls.DataVisualization.Charting.PieChartLabel.PositionArcMidpoint">
+            <summary>
+            Positions the label with its center in the same location as the midpoint of the pie slice arc.
+            </summary>
+        </member>
+        <member name="M:System.Windows.Controls.DataVisualization.Charting.PieChartLabel.PositionConnected">
+            <summary>
+            Adds a line that connects the arc midpoint to the label and positions the label appropriately.
+            Ideally, I would add the Polyline in the template and I would only change its points here. Unfortunately,
+            because of a WPF bug, the Polyline doesn't render in certain corner-case scenarios. As a workaround,
+            I create a new Polyline everytime the label is positioned, as can be seen in this method.
+            </summary>
+        </member>
+        <member name="M:System.Windows.Controls.DataVisualization.Charting.PieChartLabel.RemovePolyline">
+            <summary>
+            Removes the Polyline from the canvas part.
+            </summary>
+        </member>
+        <member name="M:System.Windows.Controls.DataVisualization.Charting.PieChartLabel.PositionAutoMixed">
+            <summary>
+            Positions the label in the arc midpoint if it's big enough, and displays it connected by a line if it's
+            small.
+            </summary>
+        </member>
+        <member name="M:System.Windows.Controls.DataVisualization.Charting.PieChartLabel.PositionAuto">
+            <summary>
+            If at least one arc is small, all labels are displayed connected by a line. Otherwise, they're positioned
+            in the arc midpoint.
+            </summary>
+        </member>
+        <member name="M:System.Windows.Controls.DataVisualization.Charting.PieChartLabel.SnapPoint(System.Windows.Point)">
+            <summary>
+            Ensures that the line connecting the label is positioned in such a way that whole pixels are used to render
+            it. This calculation depends on whether the thickness of the line is odd or even.
+            </summary>
+            <param name="point">A point belonging to the polyline.</param>
+            <returns>The point that will cause the line to snap to pixels.</returns>
+        </member>
+        <member name="M:System.Windows.Controls.DataVisualization.Charting.PieChartLabel.OnMouseLeftButtonDown(System.Windows.Input.MouseButtonEventArgs)">
+            <summary>
+            When a label is clicked, the corresponding PieDataPoint becomes selected.
+            This enables master-detail scenario driven by clicking on labels.
+            </summary>
+            <param name="e"></param>
+        </member>
+        <member name="P:System.Windows.Controls.DataVisualization.Charting.PieChartLabel.DisplayMode">
+            <summary>
+            DisplayMode DP - The developer can set this DP to control how the labels should be displayed.
+            This property can have one of the following values:
+            ArcMidpoint - Center of the label is positioned at the arc midpoint.
+            Connected - A line connecting the arc midpoint and label is displayed.
+            Auto - If at least one pie slice is very small, all pie slices use the Connected display mode. Otherwise, they all use ArcMidpoint.
+            AutoMixed - Connected display mode is used for all small pie slices, and ArcMidpoint is used for all other slices.
+            </summary>
+        </member>
+        <member name="P:System.Windows.Controls.DataVisualization.Charting.PieChartLabel.LineStroke">
+            <summary>
+            LineStroke DP - Determines the brush of the line when in connected mode.
+            </summary>
+        </member>
+        <member name="P:System.Windows.Controls.DataVisualization.Charting.PieChartLabel.LineStrokeThickness">
+            <summary>
+            LineStrokeThickness DP - Determines the thickness of the line when in connected mode.
+            </summary>
+        </member>
+        <member name="T:System.Windows.Controls.DataVisualization.Charting.DisplayMode">
+            <summary>
+            Modes used to control how the labels are positioned.
+            </summary>
+        </member>
+        <member name="T:System.Windows.Controls.DataVisualization.Charting.PieChartLabelArea">
+            <summary>
+            Canvas where all labels (of type PieChartLabel) will be added. We need a separate
+            canvas to avoid z-order issues. This prevents having a pie slice overlap a label.
+            </summary>
+        </member>
+        <member name="M:System.Windows.Controls.DataVisualization.Charting.PieChartLabelArea.HasSmallArcPropertyChanged(System.Windows.DependencyObject,System.Windows.DependencyPropertyChangedEventArgs)">
+            <summary>
+            When the HasSmallArc DO is set, all labels should be re-arranged.
+            </summary>
+        </member>
+        <member name="M:System.Windows.Controls.DataVisualization.Charting.PieChartLabelArea.MeasureOverride(System.Windows.Size)">
+            <summary>
+            On measure, we check if there is at least one child of the canvas that is small, and we set
+            HasSmallArc to reflect that information. 
+            Setting HasSmallArc ends up causing all labels to be re-arranged taking this information
+            into consideration.
+            </summary>
+        </member>
+        <member name="P:System.Windows.Controls.DataVisualization.Charting.PieChartLabelArea.HasSmallArc">
+            <summary>
+            HasSmallArc DP - If at least one slice of the pie chart is small, this property is set
+            to true. This is used in the "Auto" mode. When in this mode, if this property is set to
+            true, all labels will be connected to the chart by a line.
+            </summary>
+        </member>
+        <member name="M:System.Windows.Controls.DataVisualization.Charting.TreeHelper.FindAncestor``1(System.Windows.DependencyObject)">
+            <summary>
+            Finds the first ancestor of the element passed as a parameter that has type T.
+            </summary>
+            <typeparam name="T">The type of the ancestor we're looking for.</typeparam>
+            <param name="visual">The element where we start our search.</param>
+            <returns>The first ancestor of element of type T.</returns>
+        </member>
         <member name="T:System.Windows.Controls.DataVisualization.Charting.SeriesHostAxesCollection">
             <summary>
             An axes collection used by a series host.
@@ -8107,77 +8266,6 @@
             <param name="culture">The culture to use in the converter.</param>
             <returns>Converted value.</returns>
         </member>
-        <member name="T:System.Windows.Controls.DataVisualization.Charting.LegendItem">
-            <summary>
-            Represents an item used by a Series in the Legend of a Chart.
-            </summary>
-            <QualityBand>Preview</QualityBand>
-        </member>
-        <member name="M:System.Windows.Controls.DataVisualization.Charting.LegendItem.#cctor">
-            <summary>
-            Initializes the static members of the LegendItem class.
-            </summary>
-        </member>
-        <member name="M:System.Windows.Controls.DataVisualization.Charting.LegendItem.#ctor">
-            <summary>
-            Initializes a new instance of the LegendItem class.
-            </summary>
-        </member>
-        <member name="P:System.Windows.Controls.DataVisualization.Charting.LegendItem.Owner">
-            <summary>
-            Gets or sets the owner of the LegendItem.
-            </summary>
-        </member>
-        <member name="T:System.Windows.Controls.DataVisualization.Charting.LineSeries">
-            <summary>
-            Represents a control that contains a data series to be rendered in X/Y 
-            line format.
-            </summary>
-            <QualityBand>Preview</QualityBand>
-        </member>
-        <member name="F:System.Windows.Controls.DataVisualization.Charting.LineSeries.PointsProperty">
-            <summary>
-            Identifies the Points dependency property.
-            </summary>
-        </member>
-        <member name="F:System.Windows.Controls.DataVisualization.Charting.LineSeries.PolylineStyleProperty">
-            <summary>
-            Identifies the PolylineStyle dependency property.
-            </summary>
-        </member>
-        <member name="M:System.Windows.Controls.DataVisualization.Charting.LineSeries.#cctor">
-            <summary>
-            Initializes the static members of the LineSeries class.
-            </summary>
-        </member>
-        <member name="M:System.Windows.Controls.DataVisualization.Charting.LineSeries.#ctor">
-            <summary>
-            Initializes a new instance of the LineSeries class.
-            </summary>
-        </member>
-        <member name="M:System.Windows.Controls.DataVisualization.Charting.LineSeries.GetAxes(System.Windows.Controls.DataVisualization.Charting.DataPoint)">
-            <summary>
-            Acquire a horizontal linear axis and a vertical linear axis.
-            </summary>
-            <param name="firstDataPoint">The first data point.</param>
-        </member>
-        <member name="M:System.Windows.Controls.DataVisualization.Charting.LineSeries.UpdateShapeFromPoints(System.Collections.Generic.IEnumerable{System.Windows.Point})">
-            <summary>
-            Updates the Series shape object from a collection of Points.
-            </summary>
-            <param name="points">Collection of Points.</param>
-        </member>
-        <member name="P:System.Windows.Controls.DataVisualization.Charting.LineSeries.Points">
-            <summary>
-            Gets the collection of points that make up the line.
-            </summary>
-        </member>
-        <member name="P:System.Windows.Controls.DataVisualization.Charting.LineSeries.PolylineStyle">
-            <summary>
-            Gets or sets the style of the Polyline object that follows the data 
-            points.
-            </summary>
-        </member>
         <member name="T:System.Windows.Controls.DataVisualization.Charting.PieSeries">
             <summary>
             Represents a control that contains a data series to be rendered in pie
@@ -8424,6 +8512,105 @@
         <member name="E:System.Windows.Controls.DataVisualization.Charting.PieSeries.ResourceDictionariesChanged">
             <summary>
             Event that is invoked when the ResourceDictionaryDispenser's collection has changed.
+            </summary>
+        </member>
+        <member name="M:System.Windows.Controls.DataVisualization.Charting.LabeledPieSeries.OnAfterUpdateDataPoints">
+            <summary>
+            Adds the labels to each of its PieDataPoints.
+            </summary>
+        </member>
+        <member name="M:System.Windows.Controls.DataVisualization.Charting.LabeledPieSeries.AddLabelPieDataPoint(System.Windows.Controls.DataVisualization.Charting.PieDataPoint,System.Windows.Controls.Canvas)">
+            <summary>
+            Creates a new PieChartLabel control and adds it to the "LabelArea_PART" canvas.
+            </summary>
+            <param name="pieDataPoint">PieDataPoint that corresponds to PieChartLabel.</param>
+            <param name="labelStyle">The style to be applied to the PieChartLabel.</param>
+            <param name="labelArea">The canvas where PieChartLabel will be added.</param>
+        </member>
+        <member name="P:System.Windows.Controls.DataVisualization.Charting.LabeledPieSeries.PieChartLabelStyle">
+            <summary>
+            PieChartLabelStyle DP - The style to be applied to each PieChartLabel.
+            </summary>
+        </member>
+        <member name="P:System.Windows.Controls.DataVisualization.Charting.LabeledPieSeries.PieChartLabelItemTemplate">
+            <summary>
+            PieChartLabelItemTemplate DP - The DataTemplate to be applied to each PieChartLabel.
+            </summary>
+        </member>
+        <member name="P:System.Windows.Controls.DataVisualization.Charting.LabeledPieSeries.LabelDisplayMode">
+            <summary>
+            LabelDisplayMode DP - Controls the mode in which the labels should appear.
+            </summary>
+        </member>
+        <member name="T:System.Windows.Controls.DataVisualization.Charting.LegendItem">
+            <summary>
+            Represents an item used by a Series in the Legend of a Chart.
+            </summary>
+            <QualityBand>Preview</QualityBand>
+        </member>
+        <member name="M:System.Windows.Controls.DataVisualization.Charting.LegendItem.#cctor">
+            <summary>
+            Initializes the static members of the LegendItem class.
+            </summary>
+        </member>
+        <member name="M:System.Windows.Controls.DataVisualization.Charting.LegendItem.#ctor">
+            <summary>
+            Initializes a new instance of the LegendItem class.
+            </summary>
+        </member>
+        <member name="P:System.Windows.Controls.DataVisualization.Charting.LegendItem.Owner">
+            <summary>
+            Gets or sets the owner of the LegendItem.
+            </summary>
+        </member>
+        <member name="T:System.Windows.Controls.DataVisualization.Charting.LineSeries">
+            <summary>
+            Represents a control that contains a data series to be rendered in X/Y 
+            line format.
+            </summary>
+            <QualityBand>Preview</QualityBand>
+        </member>
+        <member name="F:System.Windows.Controls.DataVisualization.Charting.LineSeries.PointsProperty">
+            <summary>
+            Identifies the Points dependency property.
+            </summary>
+        </member>
+        <member name="F:System.Windows.Controls.DataVisualization.Charting.LineSeries.PolylineStyleProperty">
+            <summary>
+            Identifies the PolylineStyle dependency property.
+            </summary>
+        </member>
+        <member name="M:System.Windows.Controls.DataVisualization.Charting.LineSeries.#cctor">
+            <summary>
+            Initializes the static members of the LineSeries class.
+            </summary>
+        </member>
+        <member name="M:System.Windows.Controls.DataVisualization.Charting.LineSeries.#ctor">
+            <summary>
+            Initializes a new instance of the LineSeries class.
+            </summary>
+        </member>
+        <member name="M:System.Windows.Controls.DataVisualization.Charting.LineSeries.GetAxes(System.Windows.Controls.DataVisualization.Charting.DataPoint)">
+            <summary>
+            Acquire a horizontal linear axis and a vertical linear axis.
+            </summary>
+            <param name="firstDataPoint">The first data point.</param>
+        </member>
+        <member name="M:System.Windows.Controls.DataVisualization.Charting.LineSeries.UpdateShapeFromPoints(System.Collections.Generic.IEnumerable{System.Windows.Point})">
+            <summary>
+            Updates the Series shape object from a collection of Points.
+            </summary>
+            <param name="points">Collection of Points.</param>
+        </member>
+        <member name="P:System.Windows.Controls.DataVisualization.Charting.LineSeries.Points">
+            <summary>
+            Gets the collection of points that make up the line.
+            </summary>
+        </member>
+        <member name="P:System.Windows.Controls.DataVisualization.Charting.LineSeries.PolylineStyle">
+            <summary>
+            Gets or sets the style of the Polyline object that follows the data 
+            points.
             </summary>
         </member>
         <member name="T:System.Windows.Controls.DataVisualization.Charting.ScatterSeries">
@@ -11942,6 +12129,36 @@
         <member name="P:System.Windows.Controls.DataVisualization.WeakReferenceBag`1.Items">
             <summary>
             Gets or sets the list of event listeners.
+            </summary>
+        </member>
+        <member name="T:XamlGeneratedNamespace.GeneratedInternalTypeHelper">
+            <summary>
+            GeneratedInternalTypeHelper
+            </summary>
+        </member>
+        <member name="M:XamlGeneratedNamespace.GeneratedInternalTypeHelper.CreateInstance(System.Type,System.Globalization.CultureInfo)">
+            <summary>
+            CreateInstance
+            </summary>
+        </member>
+        <member name="M:XamlGeneratedNamespace.GeneratedInternalTypeHelper.GetPropertyValue(System.Reflection.PropertyInfo,System.Object,System.Globalization.CultureInfo)">
+            <summary>
+            GetPropertyValue
+            </summary>
+        </member>
+        <member name="M:XamlGeneratedNamespace.GeneratedInternalTypeHelper.SetPropertyValue(System.Reflection.PropertyInfo,System.Object,System.Object,System.Globalization.CultureInfo)">
+            <summary>
+            SetPropertyValue
+            </summary>
+        </member>
+        <member name="M:XamlGeneratedNamespace.GeneratedInternalTypeHelper.CreateDelegate(System.Type,System.Object,System.String)">
+            <summary>
+            CreateDelegate
+            </summary>
+        </member>
+        <member name="M:XamlGeneratedNamespace.GeneratedInternalTypeHelper.AddEventHandler(System.Reflection.EventInfo,System.Object,System.Delegate)">
+            <summary>
+            AddEventHandler
             </summary>
         </member>
     </members>

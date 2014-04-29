@@ -112,6 +112,11 @@
     <Compile Include="Charting\Axis\RangeAxis.cs" />
     <Compile Include="Charting\Axis\ValueMargin.cs" />
     <Compile Include="Charting\Chart\Chart.cs" />
+    <Compile Include="Charting\Pie\Converters.cs" />
+    <Compile Include="Charting\Pie\PieChartHelper.cs" />
+    <Compile Include="Charting\Pie\PieChartLabel.cs" />
+    <Compile Include="Charting\Pie\PieChartLabelArea.cs" />
+    <Compile Include="Charting\Pie\TreeHelper.cs" />
     <Compile Include="Charting\Chart\SeriesHostAxesCollection.cs" />
     <Compile Include="Charting\DataPoint\AreaDataPoint.cs" />
     <Compile Include="Charting\DataPoint\BarDataPoint.cs" />
@@ -151,6 +156,7 @@
     <Compile Include="Charting\Series\DefinitionSeries.cs" />
     <Compile Include="Charting\Series\IRequireGlobalSeriesIndex.cs" />
     <Compile Include="Charting\Series\ISeries.cs" />
+    <Compile Include="Charting\Series\LabeledPieSeries.cs" />
     <Compile Include="Charting\Series\LegendItem.cs" />
     <Compile Include="Charting\Series\LineAreaBaseSeries.cs" />
     <Compile Include="Charting\Series\LineSeries.cs" />
