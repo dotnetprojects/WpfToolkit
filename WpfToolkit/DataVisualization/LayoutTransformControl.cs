@@ -113,7 +113,7 @@ namespace System.Windows.Controls.DataVisualization
                 @"<ControlTemplate " +
                     "xmlns='http://schemas.microsoft.com/winfx/2006/xaml/presentation' " +
                     "xmlns:x='http://schemas.microsoft.com/winfx/2006/xaml'>" +
-                    "<Grid x:Name='LayoutRoot' Background='{TemplateBinding Background}'>" +
+                    "<Grid x:Name='LayoutRoot'>" +
                         "<Grid.RenderTransform>" +
                             "<MatrixTransform x:Name='MatrixTransform'/>" +
                         "</Grid.RenderTransform>" +
