@@ -365,7 +365,7 @@
                                 </VisualState>
                                 <VisualState x:Name="Disabled">
                                     <Storyboard>
-                                        <DoubleAnimation Duration="0" Storyboard.TargetName="DisabledVisual" Storyboard.TargetProperty="Opacity" To=""/>
+                                        <DoubleAnimation Duration="0" Storyboard.TargetName="DisabledVisual" Storyboard.TargetProperty="Opacity" To="1"/>
                                         <DoubleAnimationUsingKeyFrames BeginTime="00:00:00" Duration="00:00:00.0010000" Storyboard.TargetName="Content" Storyboard.TargetProperty="(UIElement.Opacity)">
                                             <SplineDoubleKeyFrame KeyTime="00:00:00" Value="0.5"/>
                                         </DoubleAnimationUsingKeyFrames>
