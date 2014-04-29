@@ -735,7 +735,7 @@
                     <Border x:Name="Root"
                             BorderBrush="{x:Null}"
                             BorderThickness="0"
-                            Opacity="0"
+                            Opacity="1"
                             RenderTransformOrigin="0.5,0.5">
                         <!--  Removed the VSM stuff for brevity  -->
                         <Grid>
