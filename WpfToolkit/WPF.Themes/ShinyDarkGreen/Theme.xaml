@@ -125,7 +125,7 @@
 
 
     <!--SHINY DARK GREEN-->
-    <Color x:Key="TextBrush">#FF000000</Color>
+    <SolidColorBrush x:Key="TextBrush" Color="Black"></SolidColorBrush>
 
     <Color x:Key="NormalBrushGradient1">#FFCDE7C5</Color>
     <Color x:Key="NormalBrushGradient2">#FF7FB974</Color>
@@ -3263,7 +3263,7 @@
                 </ControlTemplate>
             </Setter.Value>
         </Setter>
-        <Setter Property="Foreground" Value="#FF000000"/>
+        <!--<Setter Property="Foreground" Value="#FF000000"/>-->
     </Style>
 
     <BorderGapMaskConverter x:Key="BorderGapMaskConverter" />
