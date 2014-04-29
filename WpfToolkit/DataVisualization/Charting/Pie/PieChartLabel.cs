@@ -171,39 +171,44 @@ namespace System.Windows.Controls.DataVisualization.Charting
 		/// </summary>
 		private void PositionConnected()
 		{
-			this.RemovePolyline();
+		    try
+		    {
+		        this.RemovePolyline();
 
-			if (this.contentPart != null)
-			{
-				PointCollection newPoints = new PointCollection();
+		        if (this.contentPart != null)
+		        {
+		            PointCollection newPoints = new PointCollection();
 
-				// First point
-				newPoints.Add(this.SnapPoint(this.arcMidpoint));
+		            // First point
+		            newPoints.Add(this.SnapPoint(this.arcMidpoint));
 
-				// Second point
-				Vector radialDirection = this.arcMidpoint - this.center;
-				radialDirection.Normalize();
-				Point secondPoint = this.arcMidpoint + (radialDirection * 10);
-				newPoints.Add(this.SnapPoint(secondPoint));
+		            // Second point
+		            Vector radialDirection = this.arcMidpoint - this.center;
+		            radialDirection.Normalize();
+		            Point secondPoint = this.arcMidpoint + (radialDirection*10);
+		            newPoints.Add(this.SnapPoint(secondPoint));
 
-				// Third point
-				int sign = Math.Sign(radialDirection.X); // 1 if label is on the right side, -1 if it's on the left.
-				Point thirdPoint = secondPoint + new Vector(sign * 20, 0);
-				newPoints.Add(this.SnapPoint(thirdPoint));
+		            // Third point
+		            int sign = Math.Sign(radialDirection.X); // 1 if label is on the right side, -1 if it's on the left.
+		            Point thirdPoint = secondPoint + new Vector(sign*20, 0);
+		            newPoints.Add(this.SnapPoint(thirdPoint));
 
-				double contentX = (sign == 1) ? thirdPoint.X : thirdPoint.X - this.contentPart.DesiredSize.Width;
-				double contentY = thirdPoint.Y - 0.5 * this.contentPart.DesiredSize.Height;
-				Canvas.SetTop(this.contentPart, contentY);
-				Canvas.SetLeft(this.contentPart, contentX);
+		            double contentX = (sign == 1) ? thirdPoint.X : thirdPoint.X - this.contentPart.DesiredSize.Width;
+		            double contentY = thirdPoint.Y - 0.5*this.contentPart.DesiredSize.Height;
+		            Canvas.SetTop(this.contentPart, contentY);
+		            Canvas.SetLeft(this.contentPart, contentX);
 
-				Polyline polyline = new Polyline();
-				polyline.Points = newPoints;
-				polyline.SetBinding(Polyline.StrokeThicknessProperty, new Binding("LineStrokeThickness") { Source = this });
-				polyline.SetBinding(Polyline.StrokeProperty, new Binding("LineStroke") { Source = this });
-				polyline.StrokeLineJoin = PenLineJoin.Round;
+		            Polyline polyline = new Polyline();
+		            polyline.Points = newPoints;
+		            polyline.SetBinding(Polyline.StrokeThicknessProperty, new Binding("LineStrokeThickness") {Source = this});
+		            polyline.SetBinding(Polyline.StrokeProperty, new Binding("LineStroke") {Source = this});
+		            polyline.StrokeLineJoin = PenLineJoin.Round;
 
-				this.canvasPart.Children.Add(polyline);
-			}
+		            this.canvasPart.Children.Add(polyline);
+		        }
+		    }
+            catch(Exception)
+            { }
 		}
 
 		/// <summary>

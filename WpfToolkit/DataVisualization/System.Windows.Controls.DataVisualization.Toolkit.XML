@@ -2577,6 +2577,11 @@
             Specifies the name of the legend TemplatePart.
             </summary>
         </member>
+        <member name="F:System.Windows.Controls.DataVisualization.Charting.Chart.CrosshairContainerName">
+            <summary>
+            Specifies the name of the legend TemplatePart.
+            </summary>
+        </member>
         <member name="F:System.Windows.Controls.DataVisualization.Charting.Chart._chartAreaChildrenListAdapter">
             <summary>
             An adapter that synchronizes changes to the ChartAreaChildren

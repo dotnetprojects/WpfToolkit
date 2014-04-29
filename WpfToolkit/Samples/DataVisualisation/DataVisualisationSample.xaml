@@ -25,7 +25,7 @@
                 <RowDefinition />
                 <RowDefinition />
             </Grid.RowDefinitions>
-            <chartingToolkit:Chart Title="Demo"
+            <chartingToolkit:Chart Title="Demo" CrosshairVisibility="Visible"
                                    HorizontalAlignment="Stretch"
                                    VerticalAlignment="Stretch">
                 <chartingToolkit:ColumnSeries Grid.Row="0"
@@ -55,6 +55,7 @@
             <chartingToolkit:Chart Title="Demo"
                                    Grid.Row="1"
                                    Grid.Column="1"
+                                   CrosshairVisibility="Visible"
                                    HorizontalAlignment="Stretch"
                                    VerticalAlignment="Stretch">
                 <chartingToolkit:Chart.Axes>

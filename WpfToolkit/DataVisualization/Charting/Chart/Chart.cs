@@ -9,6 +9,7 @@ using System.Collections.ObjectModel;
 using System.Collections.Specialized;
 using System.Diagnostics.CodeAnalysis;
 using System.Linq;
+using System.Runtime.InteropServices;
 using System.Windows.Controls.DataVisualization.Charting.Primitives;
 using System.Windows.Input;
 using System.Windows.Markup;
@@ -48,6 +49,12 @@ namespace System.Windows.Controls.DataVisualization.Charting
         /// Specifies the name of the legend TemplatePart.
         /// </summary>
         private const string LegendName = "Legend";
+
+        /// <summary>
+        /// Specifies the name of the legend TemplatePart.
+        /// </summary>
+        private const string CrosshairContainerName = "PART_CrosshairContainer";
+        
 
         /// <summary>
         /// Gets or sets the chart area children collection.
@@ -140,6 +147,11 @@ namespace System.Windows.Controls.DataVisualization.Charting
         private Canvas SelectionArea { get; set; }
 
         private Grid PlotArea { get; set; }
+
+        private Grid CrosshairContainer { get; set; }
+        private Grid Crosshair { get; set; }
+        private Border LocationIndicator { get; set; }
+        
 
         /// <summary>
         /// Gets or sets the collection of Series displayed by the Chart.
@@ -296,6 +308,16 @@ namespace System.Windows.Controls.DataVisualization.Charting
         }
         #endregion public Collection<ResourceDictionary> Palette
 
+        public Visibility CrosshairVisibility
+        {
+            get { return (Visibility)GetValue(CrosshairVisibilityProperty); }
+            set { SetValue(CrosshairVisibilityProperty, value); }
+        }
+
+        public static readonly DependencyProperty CrosshairVisibilityProperty =
+            DependencyProperty.Register("CrosshairVisibility", typeof(Visibility), typeof(Chart), new PropertyMetadata(Visibility.Collapsed));
+
+        
         /// <summary>
         /// Gets or sets an object that rotates through the palette.
         /// </summary>
@@ -566,6 +588,11 @@ namespace System.Windows.Controls.DataVisualization.Charting
 
             PlotArea = GetTemplateChild(PlotAreaName) as Grid;
 
+            CrosshairContainer = GetTemplateChild(CrosshairContainerName) as Grid;
+            Crosshair = GetTemplateChild("PART_Crosshair") as Grid;
+            LocationIndicator = GetTemplateChild("PART_LocationIndicator") as Border;
+
+
             if (ChartArea != null)
             {
                 _chartAreaChildrenListAdapter.TargetList = ChartArea.Children;
@@ -581,6 +608,102 @@ namespace System.Windows.Controls.DataVisualization.Charting
             {
                 SelectionArea.MouseLeftButtonDown += SelectionArea_MouseLeftButtonDown;
             }
+
+            if (CrosshairContainer != null)
+            {
+                CrosshairContainer.MouseEnter += CrosshairContainer_MouseEnter;
+                CrosshairContainer.MouseLeave += CrosshairContainer_MouseLeave;
+                CrosshairContainer.MouseMove += CrosshairContainer_MouseMove;
+            }
+        }
+
+        private KeyValuePair<object, object> GetPlotAreaCoordinates(Point position)
+        {
+            if (this.ActualAxes.Count >= 2) // && Axes[0] is IRangeAxis && Axes[1] is IRangeAxis)
+            {
+                object yAxisHit = null;
+                object xAxisHit = null;
+
+                if (this.ActualAxes[0].Orientation == AxisOrientation.Y)
+                {
+                    if (ActualAxes[0] is IRangeAxis)
+                    {
+                        yAxisHit = ((IRangeAxis)this.ActualAxes[0]).GetValueAtPosition(new UnitValue(PlotArea.ActualHeight - position.Y, Unit.Pixels));
+
+                    }
+                    else if (ActualAxes[0] is ICategoryAxis)
+                    {
+                        yAxisHit = ((ICategoryAxis)this.ActualAxes[0]).GetCategoryAtPosition(new UnitValue(/*PlotArea.ActualHeight -*/ position.Y, Unit.Pixels));
+                    }
+                }
+                if (this.ActualAxes[0].Orientation == AxisOrientation.X)
+                {
+                    if (ActualAxes[0] is IRangeAxis)
+                    {
+                        xAxisHit = ((IRangeAxis)this.ActualAxes[0]).GetValueAtPosition(new UnitValue(position.X, Unit.Pixels));
+
+                    }
+                    else if (ActualAxes[0] is ICategoryAxis)
+                    {
+                        xAxisHit = ((ICategoryAxis)this.ActualAxes[0]).GetCategoryAtPosition(new UnitValue(position.X, Unit.Pixels));
+                    }
+                }
+
+                if (this.ActualAxes[1].Orientation == AxisOrientation.Y)
+                {
+                    if (ActualAxes[1] is IRangeAxis)
+                    {
+                        yAxisHit = ((IRangeAxis)this.ActualAxes[1]).GetValueAtPosition(new UnitValue(PlotArea.ActualHeight - position.Y, Unit.Pixels));
+
+                    }
+                    else if (ActualAxes[1] is ICategoryAxis)
+                    {
+                        yAxisHit = ((ICategoryAxis)this.ActualAxes[1]).GetCategoryAtPosition(new UnitValue(/*PlotArea.ActualHeight -*/ position.Y, Unit.Pixels));
+                    }
+                }
+                if (this.ActualAxes[1].Orientation == AxisOrientation.X)
+                {
+                    if (ActualAxes[1] is IRangeAxis)
+                    {
+                        xAxisHit = ((IRangeAxis)this.ActualAxes[1]).GetValueAtPosition(new UnitValue(position.X, Unit.Pixels));
+
+                    }
+                    else if (ActualAxes[1] is ICategoryAxis)
+                    {
+                        xAxisHit = ((ICategoryAxis)this.ActualAxes[1]).GetCategoryAtPosition(new UnitValue(position.X, Unit.Pixels));
+                    }
+                }
+                
+                return new KeyValuePair<object, object>(xAxisHit, yAxisHit);
+            }
+
+            return new KeyValuePair<object, object>();
+        }
+
+        void CrosshairContainer_MouseMove(object sender, MouseEventArgs e)
+        {
+            Point mousePos = e.GetPosition(PlotArea);
+            var crosshairLocation = GetPlotAreaCoordinates(mousePos);
+
+            LocationIndicator.DataContext = crosshairLocation;
+            Crosshair.DataContext = mousePos;    
+        }
+
+        void CrosshairContainer_MouseLeave(object sender, MouseEventArgs e)
+        {
+            SetCrossHairVisibility(false);
+        }
+
+        private void CrosshairContainer_MouseEnter(object sender, MouseEventArgs e)
+        {
+            SetCrossHairVisibility(true);
+        }
+
+        private void SetCrossHairVisibility(bool visible)
+        {
+            LocationIndicator.Visibility = visible ? Visibility.Visible : Visibility.Collapsed;
+            Crosshair.Visibility = visible ? Visibility.Visible : Visibility.Collapsed;
+            this.Cursor = visible ? Cursors.None : Cursors.Arrow;
         }
 
         private Rectangle SelectionRect;
