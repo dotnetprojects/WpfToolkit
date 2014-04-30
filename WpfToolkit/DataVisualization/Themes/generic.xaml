@@ -693,8 +693,8 @@
                                     <!--  a location crosshair  -->
                                     <Grid Name="PART_CrosshairContainer" Visibility="{TemplateBinding CrosshairVisibility}" Background="Transparent" Canvas.ZIndex="1">
                                         <Grid Name="PART_Crosshair">
-                                            <Line Name="Vertical" Stroke="Black" X1="{Binding Path=X}" X2="{Binding Path=X}" Y1="0" Y2="400" />
-                                            <Line Name="Horizontal" Stroke="Black" X1="0" X2="400" Y1="{Binding Path=Y}" Y2="{Binding Path=Y}" />
+                                            <Line Name="Vertical" Stroke="Black" X1="{Binding Path=X}" X2="{Binding Path=X}" Y1="0" Y2="{Binding ActualHeight, RelativeSource={RelativeSource Self}}" />
+                                            <Line Name="Horizontal" Stroke="Black" X1="0" X2="{Binding ActualWidth, RelativeSource={RelativeSource Self}}" Y1="{Binding Path=Y}" Y2="{Binding Path=Y}" />
                                         </Grid>
                                     </Grid>
 
