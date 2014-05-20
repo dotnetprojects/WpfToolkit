@@ -2841,6 +2841,21 @@
             Gets or sets the collection of Series displayed by the Chart.
             </summary>
         </member>
+        <member name="P:System.Windows.Controls.DataVisualization.Charting.Chart.ItemsSource">
+            <summary>
+            List of CLR-objects which represent series of the chart
+            </summary>
+        </member>
+        <member name="P:System.Windows.Controls.DataVisualization.Charting.Chart.ItemTemplate">
+            <summary>
+            Template for an item, transforms a CLR-object to an ISeries object
+            </summary>
+        </member>
+        <member name="P:System.Windows.Controls.DataVisualization.Charting.Chart.ItemsHostTemplate">
+            <summary>
+            This property is necessary for stacked charts
+            </summary>
+        </member>
         <member name="P:System.Windows.Controls.DataVisualization.Charting.Chart.ChartAreaStyle">
             <summary>
             Gets or sets the Style of the ISeriesHost's ChartArea.

@@ -175,6 +175,69 @@ namespace System.Windows.Controls.DataVisualization.Charting
         /// </summary>
         private Collection<ISeries> _series;
 
+        #region ItemsSource
+
+        /// <summary>
+        /// List of CLR-objects which represent series of the chart
+        /// </summary>
+        public IEnumerable ItemsSource
+        {
+            get { return (IEnumerable)GetValue(ItemsSourceProperty); }
+            set { SetValue(ItemsSourceProperty, value); }
+        }
+
+        public static readonly DependencyProperty ItemsSourceProperty =
+            DependencyProperty.Register("ItemsSource", typeof(IEnumerable), typeof(Chart), new PropertyMetadata(null, (s, e) => ((Chart)s).InitSeries()));
+
+        /// <summary>
+        /// Template for an item, transforms a CLR-object to an ISeries object
+        /// </summary>
+        public DataTemplate ItemTemplate
+        {
+            get { return (DataTemplate)GetValue(ItemTemplateProperty); }
+            set { SetValue(ItemTemplateProperty, value); }
+        }
+
+        public static readonly DependencyProperty ItemTemplateProperty =
+            DependencyProperty.Register("ItemTemplate", typeof(DataTemplate), typeof(Chart), new PropertyMetadata(null, (s, e) => ((Chart)s).InitSeries()));
+
+        /// <summary>
+        /// This property is necessary for stacked charts
+        /// </summary>
+        public DataTemplate ItemsHostTemplate
+        {
+            get { return (DataTemplate)GetValue(ItemsHostTemplateProperty); }
+            set { SetValue(ItemsHostTemplateProperty, value); }
+        }
+
+        public static readonly DependencyProperty ItemsHostTemplateProperty =
+            DependencyProperty.Register("ItemsHostTemplate", typeof(DataTemplate), typeof(Chart), new PropertyMetadata(null, (s, e) => ((Chart)s).InitSeries()));
+
+        private void InitSeries()
+        {
+            this.Series.Clear();
+            if (this.ItemsSource == null || this.ItemTemplate == null)
+                return;
+
+            //From items to series
+            var series = from item in this.ItemsSource.OfType<object>()
+                         let seriesItem = this.ItemTemplate.LoadContent() as ISeries
+                         where seriesItem != null && seriesItem is FrameworkElement
+                         let dummy = ((FrameworkElement)seriesItem).DataContext = item
+                         select seriesItem;
+
+            //Generic series and stacked series are different, that's why I use this if-else
+            var hostSeries = this.ItemsHostTemplate != null ? this.ItemsHostTemplate.LoadContent() as DefinitionSeries : null;
+            if (hostSeries != null)
+            {
+                this.Series.Add(hostSeries);
+                series.OfType<SeriesDefinition>().ToList().ForEach(hostSeries.SeriesDefinitions.Add);
+            }
+            else series.ToList().ForEach(this.Series.Add);
+        }
+
+        #endregion
+
         #region public Style ChartAreaStyle
         /// <summary>
         /// Gets or sets the Style of the ISeriesHost's ChartArea.
