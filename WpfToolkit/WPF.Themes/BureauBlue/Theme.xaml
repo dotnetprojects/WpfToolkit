@@ -1870,7 +1870,7 @@
                     <Grid SnapsToDevicePixels="true">
                         <Rectangle x:Name="BackgroundGradientOver" RadiusX="1" RadiusY="1" Stroke="{DynamicResource MouseOverBorderBrush}" Opacity="0" Fill="{DynamicResource MouseOverBrush}"/>
                         <Rectangle x:Name="BackgroundGradientSelected" StrokeThickness="1" RadiusX="1" RadiusY="1" Opacity="0" Fill="{DynamicResource PressedBrush}" Stroke="{DynamicResource PressedBorderBrush}"/>
-                        <ContentPresenter x:Name="contentPresenter" Content="{TemplateBinding Content}" ContentTemplate="{TemplateBinding ContentTemplate}" HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" Margin="{TemplateBinding Padding}" />
+                        <ContentPresenter x:Name="contentPresenter" HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" Margin="{TemplateBinding Padding}" />
                     </Grid>
                     <ControlTemplate.Triggers>
                         <Trigger Property="Selector.IsSelected" Value="True">
