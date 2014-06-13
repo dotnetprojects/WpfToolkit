@@ -9859,11 +9859,6 @@
             The default minimum number objects to keep in the pool.
             </summary>
         </member>
-        <member name="F:System.Windows.Controls.DataVisualization.ObjectPool`1._traversing">
-            <summary>
-            A value indicating whether the pool is being traversed.
-            </summary>
-        </member>
         <member name="F:System.Windows.Controls.DataVisualization.ObjectPool`1._createObject">
             <summary>
             A function which creates objects.

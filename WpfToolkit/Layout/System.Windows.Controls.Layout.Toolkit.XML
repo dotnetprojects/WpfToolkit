@@ -3542,7 +3542,7 @@
             Changing this bounds is expensive since it has to re-divide the entire thing - like a re-hash operation.
             </summary>
         </member>
-        <!-- Badly formed XML comment ignored for member "T:System.Collections.Generic.PriorityQuadTree`1.QuadNode" -->
+        <!-- Ungültiger XML-Kommentar wurde für den Member "T:System.Collections.Generic.PriorityQuadTree`1.QuadNode" ignoriert -->
         <member name="M:System.Collections.Generic.PriorityQuadTree`1.QuadNode.#ctor(`0,System.Windows.Rect,System.Double)">
             <summary>
             Construct new QuadNode to wrap the given node with given bounds.
@@ -4312,8 +4312,8 @@
             The exact area that is displayed can be determined by the <see cref="P:System.Windows.Controls.ZoomableCanvas.ActualViewbox"/> property in this case.
             </remarks>
         </member>
-        <!-- Badly formed XML comment ignored for member "P:System.Windows.Controls.ZoomableCanvas.Offset" -->
-        <!-- Badly formed XML comment ignored for member "P:System.Windows.Controls.ZoomableCanvas.Scale" -->
+        <!-- Ungültiger XML-Kommentar wurde für den Member "P:System.Windows.Controls.ZoomableCanvas.Offset" ignoriert -->
+        <!-- Ungültiger XML-Kommentar wurde für den Member "P:System.Windows.Controls.ZoomableCanvas.Scale" ignoriert -->
         <member name="P:System.Windows.Controls.ZoomableCanvas.RealizationLimit">
             <summary>
             Gets or sets the maximum number of elements that will be instantiated on the canvas when <see cref="!:IsVirtualizing"/> is set to <see cref="!:true"/>.
