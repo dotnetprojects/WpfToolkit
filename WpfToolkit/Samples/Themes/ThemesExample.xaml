@@ -22,6 +22,16 @@
                 <CheckBox Margin="10" Width="150" Height="20" Style="{DynamicResource CheckToogleButton}" Content="Test" HorizontalAlignment="Left"/>
                 <Slider Margin="10" />
                 <controls:Rating Margin="10" Height="20" />
+                <ListBox Margin="10">
+                    <TextBlock Text="AAAA" />
+                    <TextBlock Text="BBBB" />
+                </ListBox>
+                <DataGrid Margin="10" Height="100">
+                    <DataGrid.Columns>
+                        <DataGridTextColumn Header="AAAA" />
+                        <DataGridCheckBoxColumn Header="BBBB" />
+                    </DataGrid.Columns>
+                </DataGrid>
             </StackPanel>
         </GroupBox>
 
