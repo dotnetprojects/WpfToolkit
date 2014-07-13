@@ -39,7 +39,9 @@ namespace WPF.Themes
                 "TwilightBlue",
                 "UXMusingsRed", "UXMusingsGreen", 
                 "UXMusingsRoughRed", "UXMusingsRoughGreen", 
-                "UXMusingsBubblyBlue", "MoonUICore"
+                "UXMusingsBubblyBlue", "MoonUICore",
+                "MetroDark", "MetroLight",
+                "IG", "Office2010Blue",
             };
             return themes;
         }

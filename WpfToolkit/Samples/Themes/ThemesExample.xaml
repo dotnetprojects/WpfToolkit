@@ -4,20 +4,25 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
              xmlns:themes="http://schemas.rudigrobler.net/wpfthemes"
+             xmlns:controls="clr-namespace:System.Windows.Controls;assembly=System.Windows.Controls.Input.Toolkit"
              mc:Ignorable="d" 
-             d:DesignHeight="300" d:DesignWidth="300">
+             d:DesignHeight="600" d:DesignWidth="300">
     <Grid>
         <ComboBox Margin="10,10,10,0" VerticalAlignment="Top" Height="20"
                   ItemsSource="{Binding Source={x:Static themes:ThemeManager.Themes}}"
                   SelectionChanged="ComboBox_SelectionChanged"/>
         <GroupBox Header="Examples" Margin="10,37,10,10">
-            <Grid>
-                <CheckBox Content="CheckBox" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top"/>
-                <Button Content="Button" HorizontalAlignment="Left" Margin="7,31,0,0" VerticalAlignment="Top" Width="75"/>
-                <RadioButton Content="RadioButton" HorizontalAlignment="Left" Margin="10,55,0,0" VerticalAlignment="Top"/>
-                <ProgressBar HorizontalAlignment="Left" Height="10" Margin="10,75,0,0" VerticalAlignment="Top" Width="100"/>
-                <TextBox HorizontalAlignment="Left" Height="23" Margin="10,90,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120"/>
-            </Grid>
+            <StackPanel>
+                <CheckBox Content="CheckBox" HorizontalAlignment="Left" Margin="10" VerticalAlignment="Top"/>
+                <Button Content="Button" HorizontalAlignment="Left" Margin="10" VerticalAlignment="Top" Width="75"/>
+                <RadioButton Content="RadioButton" HorizontalAlignment="Left" Margin="10" VerticalAlignment="Top"/>
+                <ProgressBar HorizontalAlignment="Left" Height="20" Margin="10" VerticalAlignment="Top" Width="160"/>
+                <TextBox HorizontalAlignment="Left" Height="23" Margin="10" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120"/>
+                <CheckBox Margin="10" Style="{DynamicResource CheckBoxSwitcher}" Content="Test"/>
+                <CheckBox Margin="10" Width="150" Height="20" Style="{DynamicResource CheckToogleButton}" Content="Test" HorizontalAlignment="Left"/>
+                <Slider Margin="10" />
+                <controls:Rating Margin="10" Height="20" />
+            </StackPanel>
         </GroupBox>
 
     </Grid>
