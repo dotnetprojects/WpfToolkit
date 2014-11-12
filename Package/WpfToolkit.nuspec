@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package>
+  <metadata>
+    <id>WPFToolkit</id>
+    <version>4.0.0.0</version>
+    <title>WPF Toolkit</title>
+    <authors>Jochen Kühner, Contributors (see GitHub repo)</authors>
+    <owners>Jochen Kühner</owners>
+    <licenseUrl>http://www.opensource.org/licenses/MS-PL</licenseUrl>
+    <projectUrl>https://github.com/jogibear9988/wpftoolkit</projectUrl>
+    <requireLicenseAcceptance>true</requireLicenseAcceptance>
+    <description>wpf toolkit fork of the MS WPF Toolkit (https://wpf.codeplex.com/releases/view/40535)</description>
+    <releaseNotes>
+    </releaseNotes>
+    <copyright>MS-PL</copyright>
+    <tags>WPFToolkit WPF Toolkit</tags>
+  </metadata>
+</package>
