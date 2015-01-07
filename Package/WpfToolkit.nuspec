@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <package>
   <metadata>
-    <id>WPFToolkit</id>
+    <id>DotNetProjectsWPFToolkit</id>
     <version>4.0.0.0</version>
     <title>WPF Toolkit</title>
     <authors>Jochen Kühner, Contributors (see GitHub repo)</authors>
