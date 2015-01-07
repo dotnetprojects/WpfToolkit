@@ -7,7 +7,7 @@
     <authors>Jochen Kühner, Contributors (see GitHub repo)</authors>
     <owners>Jochen Kühner</owners>
     <licenseUrl>http://www.opensource.org/licenses/MS-PL</licenseUrl>
-    <projectUrl>https://github.com/jogibear9988/wpftoolkit</projectUrl>
+    <projectUrl>https://github.com/dotnetprojects/wpftoolkit</projectUrl>
     <requireLicenseAcceptance>true</requireLicenseAcceptance>
     <description>wpf toolkit fork of the MS WPF Toolkit (https://wpf.codeplex.com/releases/view/40535)</description>
     <releaseNotes>
