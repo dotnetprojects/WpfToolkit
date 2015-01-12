@@ -1018,6 +1018,67 @@ namespace System.Windows.Controls
                 new PropertyMetadata(AutoCompleteSearch.GetFilter(AutoCompleteFilterMode.StartsWith)));
         #endregion public AutoCompleteStringFilterPredicate TextFilter
 
+        #region public bool ShowWatermark
+        /// <summary>
+        /// Gets or sets whether the watermark should be shown.
+        /// </summary>
+        /// <value>Whether the watermark should be shown.
+        /// </value>
+        public bool ShowWatermark
+        {
+            get { return (bool)GetValue(ShowWatermarkProperty); }
+            set { SetValue(ShowWatermarkProperty, value); }
+        }
+
+        /// <summary>
+        /// Identifies the 
+        /// <see cref="P:System.Windows.Controls.AutoCompleteBox.ShowWatermark"/>
+        /// dependency property.
+        /// </summary>
+        /// <value>The identifier for the
+        /// <see cref="P:System.Windows.Controls.AutoCompleteBox.ShowWatermark"/>
+        /// dependency property.
+        /// </value>
+        public static readonly DependencyProperty ShowWatermarkProperty =
+            DependencyProperty.Register(
+                "ShowWatermark",
+                typeof(bool),
+                typeof(AutoCompleteBox));
+        #endregion
+
+        #region public object Watermark
+        /// <summary>
+        /// Gets or sets the content of the watermark which is overlaid over
+        /// the textbox when 
+        /// <see cref="P:System.Windows.Controls.AutoCompleteBox.ShowWatermark"/>
+        /// is true.
+        /// </summary>
+        /// <value>The content of the watermark which is overlaid over the textbox 
+        /// when 
+        /// <see cref="P:System.Windows.Controls.AutoCompleteBox.ShowWatermark"/>
+        /// is true.</value>
+        public object Watermark
+        {
+            get { return GetValue(WatermarkProperty); }
+            set { SetValue(WatermarkProperty, value); }
+        }
+
+        /// <summary>
+        /// Identifies the
+        /// <see cref="P:System.Windows.Controls.AutoCompleteBox.Watermark"/>
+        /// dependency property.
+        /// </summary>
+        /// <value>The identifier for the
+        /// <see cref="P:System.Windows.Controls.AutoCompleteBox.Watermark"/>
+        /// dependency property.
+        /// </value>
+        public static readonly DependencyProperty WatermarkProperty =
+            DependencyProperty.Register(
+                "Watermark",
+                typeof(object),
+                typeof(AutoCompleteBox));
+        #endregion
+
         #region Template parts
 
         /// <summary>

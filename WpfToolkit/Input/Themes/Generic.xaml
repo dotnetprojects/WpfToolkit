@@ -50,6 +50,8 @@
         </Grid>
     </ControlTemplate>
 
+    <BooleanToVisibilityConverter x:Key="BooleanToVisibilityConverter" />
+    
     <!--  input:AutoCompleteBox  -->
     <Style TargetType="input:AutoCompleteBox">
         <Setter Property="IsTabStop" Value="False" />
@@ -72,6 +74,7 @@
             <Setter.Value>
                 <ControlTemplate TargetType="input:AutoCompleteBox">
                     <Grid Opacity="{TemplateBinding Opacity}">
+                        <ContentControl Content="{TemplateBinding Watermark}" IsHitTestVisible="False" Panel.ZIndex="10" Visibility="{TemplateBinding ShowWatermark, Converter={StaticResource BooleanToVisibilityConverter}}" />
                         <TextBox Padding="{TemplateBinding Padding}" Background="{TemplateBinding Background}" IsTabStop="True" x:Name="Text" Style="{TemplateBinding TextBoxStyle}" BorderThickness="{TemplateBinding BorderThickness}" BorderBrush="{TemplateBinding BorderBrush}" Foreground="{TemplateBinding Foreground}" Margin="0" />
                         <Border x:Name="ValidationErrorElement" Visibility="Collapsed" BorderBrush="#FFDB000C" BorderThickness="1" CornerRadius="1">
                             <ToolTipService.ToolTip>
