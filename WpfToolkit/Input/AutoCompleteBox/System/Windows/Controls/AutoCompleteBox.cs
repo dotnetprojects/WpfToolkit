@@ -2213,6 +2213,25 @@ namespace System.Windows.Controls
             UpdateTextCompletion(_userCalledPopulate);
         }
 
+        private void UpdateTextCompletion(object selectedItem)
+        {
+            if (SelectedItem != selectedItem)
+            {
+                _skipSelectedItemTextUpdate = true;
+            }
+            SelectedItem = selectedItem;
+
+            // Restore updates for TextSelection
+            if (_ignoreTextSelectionChange)
+            {
+                _ignoreTextSelectionChange = false;
+                if (TextBox != null)
+                {
+                    _textSelectionStart = TextBox.SelectionStart;
+                }
+            }
+        }
+
         /// <summary>
         /// Performs text completion, if enabled, and a lookup on the underlying
         /// item values for an exact match. Will update the SelectedItem value.
@@ -2282,22 +2301,7 @@ namespace System.Windows.Controls
             }
 
             // Update the selected item property
-
-            if (SelectedItem != newSelectedItem)
-            {
-                _skipSelectedItemTextUpdate = true;
-            }
-            SelectedItem = newSelectedItem;
-
-            // Restore updates for TextSelection
-            if (_ignoreTextSelectionChange)
-            {
-                _ignoreTextSelectionChange = false;
-                if (TextBox != null)
-                {
-                    _textSelectionStart = TextBox.SelectionStart;
-                }
-            }
+            UpdateTextCompletion(newSelectedItem);
         }
 
         /// <summary>
@@ -2537,8 +2541,16 @@ namespace System.Windows.Controls
         {
             IsDropDownOpen = false;
 
-            // Completion will update the selected value
-            UpdateTextCompletion(false);
+            ISelectionAdapter selectionAdapter = (sender as ISelectionAdapter);
+
+            if (selectionAdapter != null)
+            {
+                UpdateTextCompletion(selectionAdapter.SelectedItem);
+            }
+            else
+            {
+                UpdateTextCompletion(false);
+            }
 
             // Text should not be selected
             if (TextBox != null)
