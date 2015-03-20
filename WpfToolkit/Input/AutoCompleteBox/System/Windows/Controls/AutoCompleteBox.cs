@@ -1094,24 +1094,24 @@ namespace System.Windows.Controls
         /// Please note that the PlaceholderTemplateSelector is only used if the PlaceholderTemplate
         /// is set to null.
         /// </remarks>
-        public DataTemplateSelector WatermarkTemplateSelector
+        public DataTemplateSelector PlaceholderTemplateSelector
         {
-            get { return (DataTemplateSelector)GetValue(WatermarkTemplateSelectorProperty); }
-            set { SetValue(WatermarkTemplateSelectorProperty, value); }
+            get { return (DataTemplateSelector)GetValue(PlaceholderTemplateSelectorProperty); }
+            set { SetValue(PlaceholderTemplateSelectorProperty, value); }
         }
 
         /// <summary>
         /// Identifies the
-        /// <see cref="P:System.Windows.Controls.AutoCompleteBox.WatermarkTemplateSelectorProperty"/>
+        /// <see cref="P:System.Windows.Controls.AutoCompleteBox.PlaceholderTemplateSelectorProperty"/>
         /// dependency property.
         /// </summary>
         /// <value>The identifier for the
-        /// <see cref="P:System.Windows.Controls.AutoCompleteBox.WatermarkTemplateSelectorProperty"/>
+        /// <see cref="P:System.Windows.Controls.AutoCompleteBox.PlaceholderTemplateSelectorProperty"/>
         /// dependency property.
         /// </value>
-        public static readonly DependencyProperty WatermarkTemplateSelectorProperty =
+        public static readonly DependencyProperty PlaceholderTemplateSelectorProperty =
             DependencyProperty.Register(
-                "WatermarkTemplateSelector",
+                "PlaceholderTemplateSelector",
                 typeof(DataTemplateSelector),
                 typeof(AutoCompleteBox));
         #endregion
