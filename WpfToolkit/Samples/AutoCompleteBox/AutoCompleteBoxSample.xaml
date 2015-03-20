@@ -268,6 +268,52 @@
                     </Grid>
                 </StackPanel>
             </controls:TabItem>
+            <controls:TabItem Header="Placeholder">
+                <StackPanel>
+                    <TextBlock Style="{StaticResource Information}">
+                            The Placeholder can be used to show a placeholder value 
+                            inside the text box when it is empty.
+                    </TextBlock>
+
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="230" />
+                            <ColumnDefinition Width="250" />
+                            <ColumnDefinition />
+                        </Grid.ColumnDefinitions>
+                        <Grid.RowDefinitions>
+                            <RowDefinition />
+                            <RowDefinition />
+                        </Grid.RowDefinitions>
+                        <TextBlock Padding="5" Grid.Row="0">Name:</TextBlock>
+                        <input:AutoCompleteBox 
+                            IsTextCompletionEnabled="False" 
+                            Width="230" 
+                            Grid.Row="0" Grid.Column="1" Margin="0, 8, 0, 8" HorizontalAlignment="Left"
+                            ItemsSource="{StaticResource SampleEmployees}"
+                            ValueMemberBinding="{Binding LastName}"
+                            Placeholder="Ex.: Smith"
+                            Tag="Value10"
+                            SelectionChanged="OnSelectionChanged"
+                        />
+                        <ContentPresenter Name="Value10" Grid.Row="0" Grid.Column="2" />
+
+                        <TextBlock Padding="5" Grid.Row="1">First name:</TextBlock>
+                        <input:AutoCompleteBox 
+                            IsTextCompletionEnabled="False" 
+                            Width="230" 
+                            Grid.Row="1" Grid.Column="1" Margin="0, 8, 0, 8" HorizontalAlignment="Left"
+                            ItemsSource="{StaticResource SampleEmployees}"
+                            ValueMemberBinding="{Binding FirstName}"
+                            Placeholder="Ex.: John"
+                            Tag="Value11"
+                            SelectionChanged="OnSelectionChanged"
+                        />
+                        <ContentPresenter Name="Value11" Grid.Row="1" Grid.Column="2" />
+                    </Grid>
+                </StackPanel>
+            </controls:TabItem>
+
             <controls:TabItem Header="ValueMemberBinding">
                 <StackPanel>
                     <TextBlock Style="{StaticResource Information}">

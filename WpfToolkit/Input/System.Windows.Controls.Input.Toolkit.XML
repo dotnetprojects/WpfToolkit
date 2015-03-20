@@ -1323,6 +1323,39 @@
             <see cref="P:System.Windows.Controls.AutoCompleteBox.TextFilter" />
             dependency property.</value>
         </member>
+        <member name="F:System.Windows.Controls.AutoCompleteBox.PlaceholderProperty">
+            <summary>
+            Identifies the
+            <see cref="P:System.Windows.Controls.AutoCompleteBox.Placeholder"/>
+            dependency property.
+            </summary>
+            <value>The identifier for the
+            <see cref="P:System.Windows.Controls.AutoCompleteBox.Placeholder"/>
+            dependency property.
+            </value>
+        </member>
+        <member name="F:System.Windows.Controls.AutoCompleteBox.PlaceholderTemplateProperty">
+            <summary>
+            Identifies the
+            <see cref="P:System.Windows.Controls.AutoCompleteBox.PlaceholderTemplate"/>
+            dependency property.
+            </summary>
+            <value>The identifier for the
+            <see cref="P:System.Windows.Controls.AutoCompleteBox.PlaceholderTemplate"/>
+            dependency property.
+            </value>
+        </member>
+        <member name="F:System.Windows.Controls.AutoCompleteBox.PlaceholderTemplateSelectorProperty">
+            <summary>
+            Identifies the
+            <see cref="P:System.Windows.Controls.AutoCompleteBox.PlaceholderTemplateSelectorProperty"/>
+            dependency property.
+            </summary>
+            <value>The identifier for the
+            <see cref="P:System.Windows.Controls.AutoCompleteBox.PlaceholderTemplateSelectorProperty"/>
+            dependency property.
+            </value>
+        </member>
         <member name="F:System.Windows.Controls.AutoCompleteBox._text">
             <summary>
             The TextBox template part.
@@ -2050,6 +2083,41 @@
             <remarks>
             The search mode is automatically set to Custom if you set the 
             TextFilter property. 
+            </remarks>
+        </member>
+        <member name="P:System.Windows.Controls.AutoCompleteBox.Placeholder">
+            <summary>
+            Gets or sets the content of the placeholder which is overlaid over
+            the textbox when it is empty.
+            </summary>
+            <value>The content of the placeholder which is overlaid over the textbox
+             when it is empty.</value>
+        </member>
+        <member name="P:System.Windows.Controls.AutoCompleteBox.PlaceholderTemplate">
+            <summary>
+            Gets or sets the <see cref="T:System.Windows.DataTemplate" /> used
+            to display the placeholder of the control.
+            </summary>
+            <value>The <see cref="T:System.Windows.DataTemplate" /> used to
+            display the placeholder of the control.</value>
+            <remarks>
+            You use the PlaceholderTemplate property to specify the visualization 
+            of the data objects in the Placeholder of the AutoCompleteBox 
+            control.
+            </remarks>
+        </member>
+        <member name="P:System.Windows.Controls.AutoCompleteBox.PlaceholderTemplateSelector">
+            <summary>
+            Gets or sets the <see cref="T:System.Windows.Controls.DataTemplateSelector" /> used
+            to display the placeholder of the control.
+            </summary>
+            <value>The <see cref="T:System.Windows.Controls.DataTemplateSelector" /> used to
+            display the placeholder of the control.</value>
+            <remarks>
+            You use the PlaceholderTemplateSelector property to add custom logic to decide which
+            template to apply to the AutoCompleteBox' placeholder.
+            Please note that the PlaceholderTemplateSelector is only used if the PlaceholderTemplate
+            is set to null.
             </remarks>
         </member>
         <member name="P:System.Windows.Controls.AutoCompleteBox.DropDownPopup">

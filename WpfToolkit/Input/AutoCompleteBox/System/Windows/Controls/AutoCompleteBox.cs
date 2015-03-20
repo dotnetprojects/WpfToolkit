@@ -1018,6 +1018,104 @@ namespace System.Windows.Controls
                 new PropertyMetadata(AutoCompleteSearch.GetFilter(AutoCompleteFilterMode.StartsWith)));
         #endregion public AutoCompleteStringFilterPredicate TextFilter
 
+        #region public object Placeholder
+        /// <summary>
+        /// Gets or sets the content of the placeholder which is overlaid over
+        /// the textbox when it is empty.
+        /// </summary>
+        /// <value>The content of the placeholder which is overlaid over the textbox
+        ///  when it is empty.</value>
+        public object Placeholder
+        {
+            get { return GetValue(PlaceholderProperty); }
+            set { SetValue(PlaceholderProperty, value); }
+        }
+
+        /// <summary>
+        /// Identifies the
+        /// <see cref="P:System.Windows.Controls.AutoCompleteBox.Placeholder"/>
+        /// dependency property.
+        /// </summary>
+        /// <value>The identifier for the
+        /// <see cref="P:System.Windows.Controls.AutoCompleteBox.Placeholder"/>
+        /// dependency property.
+        /// </value>
+        public static readonly DependencyProperty PlaceholderProperty =
+            DependencyProperty.Register(
+                "Placeholder",
+                typeof(object),
+                typeof(AutoCompleteBox));
+        #endregion
+
+        #region public DataTemplate PlaceholderTemplate
+        /// <summary>
+        /// Gets or sets the <see cref="T:System.Windows.DataTemplate" /> used
+        /// to display the placeholder of the control.
+        /// </summary>
+        /// <value>The <see cref="T:System.Windows.DataTemplate" /> used to
+        /// display the placeholder of the control.</value>
+        /// <remarks>
+        /// You use the PlaceholderTemplate property to specify the visualization 
+        /// of the data objects in the Placeholder of the AutoCompleteBox 
+        /// control.
+        /// </remarks>
+        public DataTemplate PlaceholderTemplate
+        {
+            get { return (DataTemplate)GetValue(PlaceholderTemplateProperty); }
+            set { SetValue(PlaceholderTemplateProperty, value); }
+        }
+
+        /// <summary>
+        /// Identifies the
+        /// <see cref="P:System.Windows.Controls.AutoCompleteBox.PlaceholderTemplate"/>
+        /// dependency property.
+        /// </summary>
+        /// <value>The identifier for the
+        /// <see cref="P:System.Windows.Controls.AutoCompleteBox.PlaceholderTemplate"/>
+        /// dependency property.
+        /// </value>
+        public static readonly DependencyProperty PlaceholderTemplateProperty =
+            DependencyProperty.Register(
+                "PlaceholderTemplate",
+                typeof(DataTemplate),
+                typeof(AutoCompleteBox));
+        #endregion
+
+        #region public DataTemplateSelector PlaceholderTemplateSelector
+        /// <summary>
+        /// Gets or sets the <see cref="T:System.Windows.Controls.DataTemplateSelector" /> used
+        /// to display the placeholder of the control.
+        /// </summary>
+        /// <value>The <see cref="T:System.Windows.Controls.DataTemplateSelector" /> used to
+        /// display the placeholder of the control.</value>
+        /// <remarks>
+        /// You use the PlaceholderTemplateSelector property to add custom logic to decide which
+        /// template to apply to the AutoCompleteBox' placeholder.
+        /// Please note that the PlaceholderTemplateSelector is only used if the PlaceholderTemplate
+        /// is set to null.
+        /// </remarks>
+        public DataTemplateSelector PlaceholderTemplateSelector
+        {
+            get { return (DataTemplateSelector)GetValue(PlaceholderTemplateSelectorProperty); }
+            set { SetValue(PlaceholderTemplateSelectorProperty, value); }
+        }
+
+        /// <summary>
+        /// Identifies the
+        /// <see cref="P:System.Windows.Controls.AutoCompleteBox.PlaceholderTemplateSelectorProperty"/>
+        /// dependency property.
+        /// </summary>
+        /// <value>The identifier for the
+        /// <see cref="P:System.Windows.Controls.AutoCompleteBox.PlaceholderTemplateSelectorProperty"/>
+        /// dependency property.
+        /// </value>
+        public static readonly DependencyProperty PlaceholderTemplateSelectorProperty =
+            DependencyProperty.Register(
+                "PlaceholderTemplateSelector",
+                typeof(DataTemplateSelector),
+                typeof(AutoCompleteBox));
+        #endregion
+        
         #region Template parts
 
         /// <summary>
