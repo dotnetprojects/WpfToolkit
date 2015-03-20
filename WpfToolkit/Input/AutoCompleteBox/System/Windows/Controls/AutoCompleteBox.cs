@@ -1047,7 +1047,7 @@ namespace System.Windows.Controls
                 typeof(AutoCompleteBox));
         #endregion
 
-        #region public DataTemplate WatermarkTemplate
+        #region public DataTemplate PlaceholderTemplate
         /// <summary>
         /// Gets or sets the <see cref="T:System.Windows.DataTemplate" /> used
         /// to display the placeholder of the control.
@@ -1115,8 +1115,7 @@ namespace System.Windows.Controls
                 typeof(DataTemplateSelector),
                 typeof(AutoCompleteBox));
         #endregion
-
-
+        
         #region Template parts
 
         /// <summary>
