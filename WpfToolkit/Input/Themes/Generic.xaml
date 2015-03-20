@@ -5,7 +5,7 @@
 // All other rights reserved.
 -->
 
-<ResourceDictionary xmlns:input="clr-namespace:System.Windows.Controls" xmlns:inputToolkit="clr-namespace:System.Windows.Controls" xmlns:inputToolkitPrimitives="clr-namespace:System.Windows.Controls.Primitives" xmlns:sys="clr-namespace:System;assembly=mscorlib" xmlns:vsm="clr-namespace:System.Windows;assembly=WPFToolkit"  xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation">
+<ResourceDictionary xmlns:input="clr-namespace:System.Windows.Controls" xmlns:inputToolkit="clr-namespace:System.Windows.Controls" xmlns:inputToolkitPrimitives="clr-namespace:System.Windows.Controls.Primitives" xmlns:sys="clr-namespace:System;assembly=mscorlib" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation">
 
     <!--  CommonValidationToolTipTemplate  -->
     <ControlTemplate x:Key="CommonValidationToolTipTemplate" TargetType="ToolTip">
@@ -70,11 +70,18 @@
         <Setter Property="Background" Value="#FFFFFFFF" />
         <Setter Property="Foreground" Value="#FF000000" />
         <Setter Property="MinWidth" Value="45" />
+        <Setter Property="PlaceholderTemplate">
+            <Setter.Value>
+                <DataTemplate>
+                    <ContentPresenter TextBlock.FontStyle="Italic"  VerticalAlignment="Center" Content="{Binding}" Opacity="0.5" Margin="5,0"  />
+                </DataTemplate>
+            </Setter.Value>
+        </Setter>
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="input:AutoCompleteBox">
                     <Grid Opacity="{TemplateBinding Opacity}">
-                        <ContentControl Content="{TemplateBinding Watermark}" IsHitTestVisible="False" Panel.ZIndex="10" Visibility="{TemplateBinding ShowWatermark, Converter={StaticResource BooleanToVisibilityConverter}}" />
+                        <ContentControl x:Name="Watermark"  Content="{TemplateBinding Placeholder}" ContentTemplate="{TemplateBinding PlaceholderTemplate}" ContentTemplateSelector="{TemplateBinding WatermarkTemplateSelector}" IsHitTestVisible="False" Panel.ZIndex="10" Visibility="Hidden" IsTabStop="False" />
                         <TextBox Padding="{TemplateBinding Padding}" Background="{TemplateBinding Background}" IsTabStop="True" x:Name="Text" Style="{TemplateBinding TextBoxStyle}" BorderThickness="{TemplateBinding BorderThickness}" BorderBrush="{TemplateBinding BorderBrush}" Foreground="{TemplateBinding Foreground}" Margin="0" />
                         <Border x:Name="ValidationErrorElement" Visibility="Collapsed" BorderBrush="#FFDB000C" BorderThickness="1" CornerRadius="1">
                             <ToolTipService.ToolTip>
@@ -178,6 +185,12 @@
                             </VisualStateGroup>
                         </VisualStateManager.VisualStateGroups>
                     </Grid>
+                    
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="Text" Value="">
+                            <Setter TargetName="Watermark" Property="Visibility" Value="Visible" />
+                        </Trigger>
+                    </ControlTemplate.Triggers>
                 </ControlTemplate>
             </Setter.Value>
         </Setter>
