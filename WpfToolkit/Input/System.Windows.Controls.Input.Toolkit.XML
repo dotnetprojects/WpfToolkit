@@ -1345,14 +1345,14 @@
             dependency property.
             </value>
         </member>
-        <member name="F:System.Windows.Controls.AutoCompleteBox.WatermarkTemplateSelectorProperty">
+        <member name="F:System.Windows.Controls.AutoCompleteBox.PlaceholderTemplateSelectorProperty">
             <summary>
             Identifies the
-            <see cref="P:System.Windows.Controls.AutoCompleteBox.WatermarkTemplateSelectorProperty"/>
+            <see cref="P:System.Windows.Controls.AutoCompleteBox.PlaceholderTemplateSelectorProperty"/>
             dependency property.
             </summary>
             <value>The identifier for the
-            <see cref="P:System.Windows.Controls.AutoCompleteBox.WatermarkTemplateSelectorProperty"/>
+            <see cref="P:System.Windows.Controls.AutoCompleteBox.PlaceholderTemplateSelectorProperty"/>
             dependency property.
             </value>
         </member>
@@ -2106,7 +2106,7 @@
             control.
             </remarks>
         </member>
-        <member name="P:System.Windows.Controls.AutoCompleteBox.WatermarkTemplateSelector">
+        <member name="P:System.Windows.Controls.AutoCompleteBox.PlaceholderTemplateSelector">
             <summary>
             Gets or sets the <see cref="T:System.Windows.Controls.DataTemplateSelector" /> used
             to display the placeholder of the control.
@@ -4239,36 +4239,6 @@
             <param name="arg0">The type of the first argument.</param>
             <param name="arg1">The type of the second argument.</param>
             <returns>The tuple to return.</returns>
-        </member>
-        <member name="T:XamlGeneratedNamespace.GeneratedInternalTypeHelper">
-            <summary>
-            GeneratedInternalTypeHelper
-            </summary>
-        </member>
-        <member name="M:XamlGeneratedNamespace.GeneratedInternalTypeHelper.CreateInstance(System.Type,System.Globalization.CultureInfo)">
-            <summary>
-            CreateInstance
-            </summary>
-        </member>
-        <member name="M:XamlGeneratedNamespace.GeneratedInternalTypeHelper.GetPropertyValue(System.Reflection.PropertyInfo,System.Object,System.Globalization.CultureInfo)">
-            <summary>
-            GetPropertyValue
-            </summary>
-        </member>
-        <member name="M:XamlGeneratedNamespace.GeneratedInternalTypeHelper.SetPropertyValue(System.Reflection.PropertyInfo,System.Object,System.Object,System.Globalization.CultureInfo)">
-            <summary>
-            SetPropertyValue
-            </summary>
-        </member>
-        <member name="M:XamlGeneratedNamespace.GeneratedInternalTypeHelper.CreateDelegate(System.Type,System.Object,System.String)">
-            <summary>
-            CreateDelegate
-            </summary>
-        </member>
-        <member name="M:XamlGeneratedNamespace.GeneratedInternalTypeHelper.AddEventHandler(System.Reflection.EventInfo,System.Object,System.Delegate)">
-            <summary>
-            AddEventHandler
-            </summary>
         </member>
     </members>
 </doc>

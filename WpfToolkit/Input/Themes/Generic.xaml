@@ -81,7 +81,7 @@
             <Setter.Value>
                 <ControlTemplate TargetType="input:AutoCompleteBox">
                     <Grid Opacity="{TemplateBinding Opacity}">
-                        <ContentControl x:Name="Watermark"  Content="{TemplateBinding Placeholder}" ContentTemplate="{TemplateBinding PlaceholderTemplate}" ContentTemplateSelector="{TemplateBinding WatermarkTemplateSelector}" IsHitTestVisible="False" Panel.ZIndex="10" Visibility="Hidden" IsTabStop="False" />
+                        <ContentControl x:Name="Watermark"  Content="{TemplateBinding Placeholder}" ContentTemplate="{TemplateBinding PlaceholderTemplate}" ContentTemplateSelector="{TemplateBinding PlaceholderTemplateSelector}" IsHitTestVisible="False" Panel.ZIndex="10" Visibility="Hidden" IsTabStop="False" />
                         <TextBox Padding="{TemplateBinding Padding}" Background="{TemplateBinding Background}" IsTabStop="True" x:Name="Text" Style="{TemplateBinding TextBoxStyle}" BorderThickness="{TemplateBinding BorderThickness}" BorderBrush="{TemplateBinding BorderBrush}" Foreground="{TemplateBinding Foreground}" Margin="0" />
                         <Border x:Name="ValidationErrorElement" Visibility="Collapsed" BorderBrush="#FFDB000C" BorderThickness="1" CornerRadius="1">
                             <ToolTipService.ToolTip>
