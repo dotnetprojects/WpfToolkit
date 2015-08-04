@@ -14,7 +14,7 @@ assembly_info:
 configuration: Release
 
 build:
-  project: .\WpfToolkit\DotNetProjects.Wpf.Toolkit.sln
+  project: WpfToolkit\DotNetProjects.Wpf.Toolkit.sln
 
 after_build:
   - ps: .\nuget\pack.ps1
