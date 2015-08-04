@@ -8,8 +8,8 @@
 <UserControl
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" 
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"    
-    xmlns:inputToolkit="clr-namespace:System.Windows.Controls;assembly=System.Windows.Controls.Input.Toolkit"
-    xmlns:inputToolkitPrimitives="clr-namespace:System.Windows.Controls.Primitives;assembly=System.Windows.Controls.Input.Toolkit"
+    xmlns:inputToolkit="clr-namespace:System.Windows.Controls;assembly=DotNetProjects.Input.Toolkit"
+    xmlns:inputToolkitPrimitives="clr-namespace:System.Windows.Controls.Primitives;assembly=DotNetProjects.Input.Toolkit"
     x:Class="System.Windows.Controls.Samples.RatingSample">
     
     <UserControl.Resources>

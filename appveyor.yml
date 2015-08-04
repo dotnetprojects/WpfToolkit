@@ -1,0 +1,51 @@
+version: 5.0.{build}
+
+branches:
+  only:
+    - master
+
+assembly_info:
+  patch: true
+  file: AssemblyInfo.*
+  assembly_version: "{version}"
+  assembly_file_version: "{version}"
+  assembly_informational_version: "{version}"
+
+configuration: Release
+
+build:
+  project: .\WpfToolkit\DotNetProjects.Wpf.Toolkit.sln
+
+after_build:
+  - ps: .\nuget\pack.ps1
+
+test: off
+
+artifacts:
+  - path: WpfToolkit\DataVisualization\bin\Release\DotNetProjects.DataVisualization.Toolkit.dll
+    name: DotNetProjects.DataVisualization.Toolkit.dll
+  - path: WpfToolkit\DataVisualization\bin\Release\DotNetProjects.DataVisualization.Toolkit.pdb
+    name: DotNetProjects.DataVisualization.Toolkit.pdb
+  - path: WpfToolkit\Input\bin\Release\DotNetProjects.Input.Toolkit.dll
+    name: DotNetProjects.Input.Toolkit.dll
+  - path: WpfToolkit\Input\bin\Release\DotNetProjects.Input.Toolkit.pdb
+    name: DotNetProjects.Input.Toolkit.pdb
+  - path: WpfToolkit\Layout\bin\Release\DotNetProjects.Layout.Toolkit.dll
+    name: DotNetProjects.Layout.Toolkit.dll
+  - path: WpfToolkit\Layout\bin\Release\DotNetProjects.Layout.Toolkit.pdb
+    name: DotNetProjects.Layout.Toolkit.pdb
+  - path: WpfToolkit\WPF.Themes\bin\Release\DotNetProjects.WPF.Themes.dll
+    name: DotNetProjects.WPF.Themes.dll
+  - path: WpfToolkit\WPF.Themes\bin\Release\DotNetProjects.WPF.Themes.pdb
+    name: DotNetProjects.WPF.Themes.pdb
+  - path: '**\DotNetProjects.*.nupkg'
+
+#uncomment to publish to NuGet
+deploy:
+  provider: NuGet
+  api_key:
+    secure: OrhpK2cLXXcoWW+hU6xAv3eeKIbATEFbenteoFsi9EfM1yyDof6ZuNKAsA3Vy6vb
+  artifact: /.*\.nupkg/
+  
+  
+  

@@ -256,21 +256,21 @@
     <AppDesigner Include="Properties\" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\DataVisualization\Controls.DataVisualization.Toolkit.csproj">
+    <ProjectReference Include="..\DataVisualization\DotNetProjects.DataVisualization.Toolkit.csproj">
       <Project>{066FB4E3-8F9C-42D0-9982-8B1F238FAF63}</Project>
-      <Name>Controls.DataVisualization.Toolkit</Name>
+      <Name>DotNetProjects.DataVisualization.Toolkit</Name>
     </ProjectReference>
-    <ProjectReference Include="..\Input\Controls.Input.Toolkit.csproj">
+    <ProjectReference Include="..\Input\DotNetProjects.Input.Toolkit.csproj">
       <Project>{83E92AA1-85BC-4B5A-A126-CDCCF2C6E968}</Project>
-      <Name>Controls.Input.Toolkit</Name>
+      <Name>DotNetProjects.Input.Toolkit</Name>
     </ProjectReference>
-    <ProjectReference Include="..\Layout\Controls.Layout.Toolkit.csproj">
+    <ProjectReference Include="..\Layout\DotNetProjects.Layout.Toolkit.csproj">
       <Project>{82123C26-FFD4-455D-B5D9-78E72F465961}</Project>
-      <Name>Controls.Layout.Toolkit</Name>
+      <Name>DotNetProjects.Layout.Toolkit</Name>
     </ProjectReference>
-    <ProjectReference Include="..\WPF.Themes\WPF.Themes.csproj">
+    <ProjectReference Include="..\WPF.Themes\DotNetProjects.WPF.Themes.csproj">
       <Project>{cd3cd636-d63e-4bd5-9fe9-2b63da6f0616}</Project>
-      <Name>WPF.Themes</Name>
+      <Name>DotNetProjects.WPF.Themes</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
