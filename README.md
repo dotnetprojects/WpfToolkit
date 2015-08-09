@@ -1,6 +1,12 @@
-wpftoolkit
-==========
+DotNetProjects.Wpf.Toolkit
+==========================
 
+Nuget
+-----
+https://www.nuget.org/packages/DotNetProjects.Wpf.Toolkit/
+
+Info
+----
 wpf toolkit fork of the MS WPF Toolkit (https://wpf.codeplex.com/releases/view/40535)
 
 Additional Features:
