@@ -8,9 +8,9 @@
 <UserControl x:Class="System.Windows.Controls.Samples.AccordionShowcase"
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" 
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" 
-    xmlns:layoutToolkit="clr-namespace:System.Windows.Controls;assembly=System.Windows.Controls.Layout.Toolkit"
+    xmlns:layoutToolkit="clr-namespace:System.Windows.Controls;assembly=DotNetProjects.Layout.Toolkit"
     xmlns:vsm="clr-namespace:System.Windows;assembly=WPFToolkit"
-    xmlns:layoutToolkitPrimitives="clr-namespace:System.Windows.Controls.Primitives;assembly=System.Windows.Controls.Layout.Toolkit"
+    xmlns:layoutToolkitPrimitives="clr-namespace:System.Windows.Controls.Primitives;assembly=DotNetProjects.Layout.Toolkit"
     xmlns:sys="clr-namespace:System;assembly=mscorlib"
      >
     <StackPanel Background="White">

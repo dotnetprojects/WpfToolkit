@@ -8,7 +8,7 @@
 <UserControl x:Class="System.Windows.Controls.Samples.AccordionSample"
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" 
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" 
-    xmlns:layoutToolkit="clr-namespace:System.Windows.Controls;assembly=System.Windows.Controls.Layout.Toolkit"
+    xmlns:layoutToolkit="clr-namespace:System.Windows.Controls;assembly=DotNetProjects.Layout.Toolkit"
     xmlns:system="clr-namespace:System;assembly=mscorlib">
   <StackPanel>
     <ContentControl Content="Accordion" Style="{StaticResource Header}" />

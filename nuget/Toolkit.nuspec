@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<package >
+  <metadata>
+    <id>DotNetProjects.Wpf.Toolkit</id>
+    <version>$version$</version>
+    <authors>DotNetProjects</authors>
+    <owners>DotNetProjects</owners>
+    <licenseUrl>http://opensource.org/licenses/MS-PL</licenseUrl>
+    <projectUrl>hhttps://github.com/dotnetprojects/wpftoolkit</projectUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>wpf toolkit fork of the MS WPF Toolkit (https://wpf.codeplex.com/releases/view/40535)</description>
+    <copyright>Copyright 2015</copyright>
+  </metadata>
+  <files>
+    <file src="..\WpfToolkit\DataVisualization\bin\Release\DotNetProjects.DataVisualization.Toolkit.dll" target="lib\net40" />
+    <file src="..\WpfToolkit\DataVisualization\bin\Release\DotNetProjects.DataVisualization.Toolkit.pdb" target="lib\net40" />
+    <file src="..\WpfToolkit\Input\bin\Release\DotNetProjects.Input.Toolkit.dll" target="lib\net40" />
+    <file src="..\WpfToolkit\Input\bin\Release\DotNetProjects.Input.Toolkit.pdb" target="lib\net40" />
+    <file src="..\WpfToolkit\Layout\bin\Release\DotNetProjects.Layout.Toolkit.dll" target="lib\net40" />
+    <file src="..\WpfToolkit\Layout\bin\Release\DotNetProjects.Layout.Toolkit.pdb" target="lib\net40" />
+	<file src="..\WpfToolkit\WPF.Themes\bin\Release\DotNetProjects.WPF.Themes.dll" target="lib\net40" />
+    <file src="..\WpfToolkit\WPF.Themes\bin\Release\DotNetProjects.WPF.Themes.pdb" target="lib\net40" />
+  </files>
+</package>

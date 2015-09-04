@@ -12,7 +12,7 @@
     xmlns:system="clr-namespace:System;assembly=mscorlib"
     xmlns:samples="clr-namespace:System.Windows.Controls.Samples"
     xmlns:controls="clr-namespace:System.Windows.Controls;assembly=PresentationFramework"
-    xmlns:input="clr-namespace:System.Windows.Controls;assembly=System.Windows.Controls.Input.Toolkit">
+    xmlns:input="clr-namespace:System.Windows.Controls;assembly=DotNetProjects.Input.Toolkit">
 
     <UserControl.Resources>
         <samples:SampleEmployeeCollection x:Key="SampleEmployees" />

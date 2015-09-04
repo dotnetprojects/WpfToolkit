@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <doc>
     <assembly>
-        <name>System.Windows.Controls.Input.Toolkit</name>
+        <name>DotNetProjects.Input.Toolkit</name>
     </assembly>
     <members>
         <member name="T:System.Windows.Controls.BindingEvaluator`1">
@@ -16,9 +16,19 @@
             Gets or sets the string value binding used by the control.
             </summary>
         </member>
+        <member name="P:System.Windows.Controls.BindingEvaluator`1.Value">
+            <summary>
+            Gets or sets the data item string value.
+            </summary>
+        </member>
         <member name="F:System.Windows.Controls.BindingEvaluator`1.ValueProperty">
             <summary>
             Identifies the Value dependency property.
+            </summary>
+        </member>
+        <member name="P:System.Windows.Controls.BindingEvaluator`1.ValueBinding">
+            <summary>
+            Gets or sets the value binding.
             </summary>
         </member>
         <member name="M:System.Windows.Controls.BindingEvaluator`1.#ctor">
@@ -58,16 +68,6 @@
             <param name="o">The object to use as the data context.</param>
             <returns>Returns the evaluated T value of the bound dependency
             property.</returns>
-        </member>
-        <member name="P:System.Windows.Controls.BindingEvaluator`1.Value">
-            <summary>
-            Gets or sets the data item string value.
-            </summary>
-        </member>
-        <member name="P:System.Windows.Controls.BindingEvaluator`1.ValueBinding">
-            <summary>
-            Gets or sets the value binding.
-            </summary>
         </member>
         <member name="T:System.Windows.Controls.Extensions">
             <summary>
@@ -122,6 +122,52 @@
             local and considered a double click (or triple, quadruple, etc.)
             in pixels squared.  We use pixels squared so that we can compare to
             the distance delta without taking a square root.
+            </summary>
+        </member>
+        <member name="P:System.Windows.Controls.InteractionHelper.Control">
+            <summary>
+            Gets the control the InteractionHelper is targeting.
+            </summary>
+        </member>
+        <member name="P:System.Windows.Controls.InteractionHelper.IsFocused">
+            <summary>
+            Gets a value indicating whether the control has focus.
+            </summary>
+        </member>
+        <member name="P:System.Windows.Controls.InteractionHelper.IsMouseOver">
+            <summary>
+            Gets a value indicating whether the mouse is over the control.
+            </summary> 
+        </member>
+        <member name="P:System.Windows.Controls.InteractionHelper.IsReadOnly">
+            <summary>
+            Gets a value indicating whether the read-only property is set.
+            </summary>
+        </member>
+        <member name="P:System.Windows.Controls.InteractionHelper.IsPressed">
+            <summary>
+            Gets a value indicating whether the mouse button is pressed down
+            over the control.
+            </summary>
+        </member>
+        <member name="P:System.Windows.Controls.InteractionHelper.LastClickTime">
+            <summary>
+            Gets or sets the last time the control was clicked.
+            </summary>
+            <remarks>
+            The value is stored as Utc time because it is slightly more
+            performant than converting to local time.
+            </remarks>
+        </member>
+        <member name="P:System.Windows.Controls.InteractionHelper.LastClickPosition">
+            <summary>
+            Gets or sets the mouse position of the last click.
+            </summary>
+            <remarks>The value is relative to the control.</remarks>
+        </member>
+        <member name="P:System.Windows.Controls.InteractionHelper.ClickCount">
+            <summary>
+            Gets the number of times the control was clicked.
             </summary>
         </member>
         <member name="F:System.Windows.Controls.InteractionHelper._updateVisualState">
@@ -289,57 +335,17 @@
             A value indicating whether the event should be handled.
             </returns>
         </member>
-        <member name="P:System.Windows.Controls.InteractionHelper.Control">
-            <summary>
-            Gets the control the InteractionHelper is targeting.
-            </summary>
-        </member>
-        <member name="P:System.Windows.Controls.InteractionHelper.IsFocused">
-            <summary>
-            Gets a value indicating whether the control has focus.
-            </summary>
-        </member>
-        <member name="P:System.Windows.Controls.InteractionHelper.IsMouseOver">
-            <summary>
-            Gets a value indicating whether the mouse is over the control.
-            </summary> 
-        </member>
-        <member name="P:System.Windows.Controls.InteractionHelper.IsReadOnly">
-            <summary>
-            Gets a value indicating whether the read-only property is set.
-            </summary>
-        </member>
-        <member name="P:System.Windows.Controls.InteractionHelper.IsPressed">
-            <summary>
-            Gets a value indicating whether the mouse button is pressed down
-            over the control.
-            </summary>
-        </member>
-        <member name="P:System.Windows.Controls.InteractionHelper.LastClickTime">
-            <summary>
-            Gets or sets the last time the control was clicked.
-            </summary>
-            <remarks>
-            The value is stored as Utc time because it is slightly more
-            performant than converting to local time.
-            </remarks>
-        </member>
-        <member name="P:System.Windows.Controls.InteractionHelper.LastClickPosition">
-            <summary>
-            Gets or sets the mouse position of the last click.
-            </summary>
-            <remarks>The value is relative to the control.</remarks>
-        </member>
-        <member name="P:System.Windows.Controls.InteractionHelper.ClickCount">
-            <summary>
-            Gets the number of times the control was clicked.
-            </summary>
-        </member>
         <member name="T:System.Windows.Controls.ItemsControlHelper">
             <summary>
             The ItemContainerGenerator provides useful utilities for ItemsControls.
             </summary>
             <QualityBand>Preview</QualityBand>
+        </member>
+        <member name="P:System.Windows.Controls.ItemsControlHelper.ItemsControl">
+            <summary>
+            Gets or sets the ItemsControl being tracked by the
+            ItemContainerGenerator.
+            </summary>
         </member>
         <member name="F:System.Windows.Controls.ItemsControlHelper._itemsHost">
             <summary>
@@ -348,9 +354,22 @@
             tree and has generated containers for some of its items.
             </summary>
         </member>
+        <member name="P:System.Windows.Controls.ItemsControlHelper.ItemsHost">
+            <summary>
+            Gets a Panel that is used as the ItemsHost of the ItemsControl.
+            This property will only be valid when the ItemsControl is live in
+            the tree and has generated containers for some of its items.
+            </summary>
+        </member>
         <member name="F:System.Windows.Controls.ItemsControlHelper._scrollHost">
             <summary>
             A ScrollViewer that is used to scroll the items in the ItemsHost.
+            </summary>
+        </member>
+        <member name="P:System.Windows.Controls.ItemsControlHelper.ScrollHost">
+            <summary>
+            Gets a ScrollViewer that is used to scroll the items in the
+            ItemsHost.
             </summary>
         </member>
         <member name="M:System.Windows.Controls.ItemsControlHelper.#ctor(System.Windows.Controls.ItemsControl)">
@@ -394,25 +413,6 @@
             Scroll the desired element into the ScrollHost's viewport.
             </summary>
             <param name="element">Element to scroll into view.</param>
-        </member>
-        <member name="P:System.Windows.Controls.ItemsControlHelper.ItemsControl">
-            <summary>
-            Gets or sets the ItemsControl being tracked by the
-            ItemContainerGenerator.
-            </summary>
-        </member>
-        <member name="P:System.Windows.Controls.ItemsControlHelper.ItemsHost">
-            <summary>
-            Gets a Panel that is used as the ItemsHost of the ItemsControl.
-            This property will only be valid when the ItemsControl is live in
-            the tree and has generated containers for some of its items.
-            </summary>
-        </member>
-        <member name="P:System.Windows.Controls.ItemsControlHelper.ScrollHost">
-            <summary>
-            Gets a ScrollViewer that is used to scroll the items in the
-            ItemsHost.
-            </summary>
         </member>
         <member name="T:System.Windows.Controls.IUpdateVisualState">
             <summary>
@@ -797,6 +797,16 @@
             WeakReference to the instance listening for the event.
             </summary>
         </member>
+        <member name="P:System.Windows.Controls.WeakEventListener`3.OnEventAction">
+            <summary>
+            Gets or sets the method to call when the event fires.
+            </summary>
+        </member>
+        <member name="P:System.Windows.Controls.WeakEventListener`3.OnDetachAction">
+            <summary>
+            Gets or sets the method to call when detaching from the event.
+            </summary>
+        </member>
         <member name="M:System.Windows.Controls.WeakEventListener`3.#ctor(`0)">
             <summary>
             Initializes a new instances of the WeakEventListener class.
@@ -814,165 +824,6 @@
             <summary>
             Detaches from the subscribed event.
             </summary>
-        </member>
-        <member name="P:System.Windows.Controls.WeakEventListener`3.OnEventAction">
-            <summary>
-            Gets or sets the method to call when the event fires.
-            </summary>
-        </member>
-        <member name="P:System.Windows.Controls.WeakEventListener`3.OnDetachAction">
-            <summary>
-            Gets or sets the method to call when detaching from the event.
-            </summary>
-        </member>
-        <member name="T:System.Windows.Automation.Peers.AutoCompleteBoxAutomationPeer">
-            <summary>
-            Exposes AutoCompleteBox types to UI Automation.
-            </summary>
-            <QualityBand>Stable</QualityBand>
-        </member>
-        <member name="F:System.Windows.Automation.Peers.AutoCompleteBoxAutomationPeer.AutoCompleteBoxClassNameCore">
-            <summary>
-            The name reported as the core class name.
-            </summary>
-        </member>
-        <member name="M:System.Windows.Automation.Peers.AutoCompleteBoxAutomationPeer.#ctor(System.Windows.Controls.AutoCompleteBox)">
-            <summary>
-            Initializes a new instance of the AutoCompleteBoxAutomationPeer
-            class.
-            </summary>
-            <param name="owner">
-            The AutoCompleteBox that is associated with this
-            AutoCompleteBoxAutomationPeer.
-            </param>
-        </member>
-        <member name="M:System.Windows.Automation.Peers.AutoCompleteBoxAutomationPeer.GetAutomationControlTypeCore">
-            <summary>
-            Gets the control type for the AutoCompleteBox that is associated
-            with this AutoCompleteBoxAutomationPeer. This method is called by
-            GetAutomationControlType.
-            </summary>
-            <returns>ComboBox AutomationControlType.</returns>
-        </member>
-        <member name="M:System.Windows.Automation.Peers.AutoCompleteBoxAutomationPeer.GetClassNameCore">
-            <summary>
-            Gets the name of the AutoCompleteBox that is associated with this
-            AutoCompleteBoxAutomationPeer. This method is called by
-            GetClassName.
-            </summary>
-            <returns>The name AutoCompleteBox.</returns>
-        </member>
-        <member name="M:System.Windows.Automation.Peers.AutoCompleteBoxAutomationPeer.GetPattern(System.Windows.Automation.Peers.PatternInterface)">
-            <summary>
-            Gets the control pattern for the AutoCompleteBox that is associated
-            with this AutoCompleteBoxAutomationPeer.
-            </summary>
-            <param name="patternInterface">The desired PatternInterface.</param>
-            <returns>The desired AutomationPeer or null.</returns>
-        </member>
-        <member name="M:System.Windows.Automation.Peers.AutoCompleteBoxAutomationPeer.System#Windows#Automation#Provider#IExpandCollapseProvider#Expand">
-            <summary>
-            Blocking method that returns after the element has been expanded.
-            </summary>
-            <remarks>
-            This API supports the .NET Framework infrastructure and is not 
-            intended to be used directly from your code.
-            </remarks>
-        </member>
-        <member name="M:System.Windows.Automation.Peers.AutoCompleteBoxAutomationPeer.System#Windows#Automation#Provider#IExpandCollapseProvider#Collapse">
-            <summary>
-            Blocking method that returns after the element has been collapsed.
-            </summary>
-            <remarks>
-            This API supports the .NET Framework infrastructure and is not 
-            intended to be used directly from your code.
-            </remarks>
-        </member>
-        <member name="M:System.Windows.Automation.Peers.AutoCompleteBoxAutomationPeer.RaiseExpandCollapseAutomationEvent(System.Boolean,System.Boolean)">
-            <summary>
-            Raises the ExpandCollapse automation event.
-            </summary>
-            <param name="oldValue">The old value.</param>
-            <param name="newValue">The new value.</param>
-        </member>
-        <member name="M:System.Windows.Automation.Peers.AutoCompleteBoxAutomationPeer.System#Windows#Automation#Provider#IValueProvider#SetValue(System.String)">
-            <summary>
-            Sets the value of a control.
-            </summary>
-            <param name="value">The value to set. The provider is responsible
-            for converting the value to the appropriate data type.</param>
-        </member>
-        <member name="M:System.Windows.Automation.Peers.AutoCompleteBoxAutomationPeer.GetChildrenCore">
-            <summary>
-            Gets the collection of child elements of the AutoCompleteBox that
-            are associated with this AutoCompleteBoxAutomationPeer. This method
-            is called by GetChildren.
-            </summary>
-            <returns>
-            A collection of automation peer elements, or an empty collection
-            if there are no child elements.
-            </returns>
-        </member>
-        <member name="M:System.Windows.Automation.Peers.AutoCompleteBoxAutomationPeer.System#Windows#Automation#Provider#ISelectionProvider#GetSelection">
-            <summary>
-            Retrieves a UI automation provider for each child element that is
-            selected.
-            </summary>
-            <returns>An array of UI automation providers.</returns>
-            <remarks>
-            This API supports the .NET Framework infrastructure and is not 
-            intended to be used directly from your code.
-            </remarks>
-        </member>
-        <member name="P:System.Windows.Automation.Peers.AutoCompleteBoxAutomationPeer.OwnerAutoCompleteBox">
-            <summary>
-            Gets the AutoCompleteBox that owns this
-            AutoCompleteBoxAutomationPeer.
-            </summary>
-        </member>
-        <member name="P:System.Windows.Automation.Peers.AutoCompleteBoxAutomationPeer.System#Windows#Automation#Provider#ISelectionProvider#CanSelectMultiple">
-            <summary>
-            Gets a value indicating whether the UI automation provider allows
-            more than one child element to be selected concurrently.
-            </summary>
-            <remarks>
-            This API supports the .NET Framework infrastructure and is not 
-            intended to be used directly from your code.
-            </remarks>
-            <value>True if multiple selection is allowed; otherwise, false.</value>
-        </member>
-        <member name="P:System.Windows.Automation.Peers.AutoCompleteBoxAutomationPeer.System#Windows#Automation#Provider#ISelectionProvider#IsSelectionRequired">
-            <summary>
-            Gets a value indicating whether the UI automation provider
-            requires at least one child element to be selected.
-            </summary>
-            <remarks>
-            This API supports the .NET Framework infrastructure and is not 
-            intended to be used directly from your code.
-            </remarks>
-            <value>True if selection is required; otherwise, false.</value>
-        </member>
-        <member name="P:System.Windows.Automation.Peers.AutoCompleteBoxAutomationPeer.System#Windows#Automation#Provider#IExpandCollapseProvider#ExpandCollapseState">
-            <summary>
-            Gets an element's current Collapsed or Expanded state.
-            </summary>
-            <remarks>
-            This API supports the .NET Framework infrastructure and is not 
-            intended to be used directly from your code.
-            </remarks>
-        </member>
-        <member name="P:System.Windows.Automation.Peers.AutoCompleteBoxAutomationPeer.System#Windows#Automation#Provider#IValueProvider#IsReadOnly">
-            <summary>
-            Gets a value indicating whether the value of a control is
-            read-only.
-            </summary>
-            <value>True if the value is read-only; false if it can be modified.</value>
-        </member>
-        <member name="P:System.Windows.Automation.Peers.AutoCompleteBoxAutomationPeer.System#Windows#Automation#Provider#IValueProvider#Value">
-            <summary>
-            Gets the value of the control.
-            </summary>
-            <value>The value of the control.</value>
         </member>
         <member name="T:System.Windows.Controls.AutoCompleteBox">
             <summary>
@@ -1083,6 +934,12 @@
             SetValue, etc.
             </summary>
         </member>
+        <member name="P:System.Windows.Controls.AutoCompleteBox.Interaction">
+            <summary>
+            Gets or sets the helper that provides all of the standard
+            interaction functionality. Making it internal for subclass access.
+            </summary>
+        </member>
         <member name="F:System.Windows.Controls.AutoCompleteBox._valueBindingEvaluator">
             <summary>
             Gets or sets the BindingEvaluator, a framework element that can
@@ -1093,6 +950,26 @@
             <summary>
             A weak event listener for the collection changed event.
             </summary>
+        </member>
+        <member name="P:System.Windows.Controls.AutoCompleteBox.MinimumPrefixLength">
+            <summary>
+            Gets or sets the minimum number of characters required to be entered
+            in the text box before the
+            <see cref="T:System.Windows.Controls.AutoCompleteBox" /> displays
+            possible matches.
+            matches.
+            </summary>
+            <value>
+            The minimum number of characters to be entered in the text box
+            before the <see cref="T:System.Windows.Controls.AutoCompleteBox" />
+            displays possible matches. The default is 1.
+            </value>
+            <remarks>
+            If you set MinimumPrefixLength to -1, the AutoCompleteBox will
+            not provide possible matches. There is no maximum value, but
+            setting MinimumPrefixLength to value that is too large will
+            prevent the AutoCompleteBox from providing possible matches as well.
+            </remarks>
         </member>
         <member name="F:System.Windows.Controls.AutoCompleteBox.MinimumPrefixLengthProperty">
             <summary>
@@ -1110,6 +987,19 @@
             </summary>
             <param name="d">AutoCompleteBox that changed its MinimumPrefixLength.</param>
             <param name="e">Event arguments.</param>
+        </member>
+        <member name="P:System.Windows.Controls.AutoCompleteBox.MinimumPopulateDelay">
+            <summary>
+            Gets or sets the minimum delay, in milliseconds, after text is typed
+            in the text box before the
+            <see cref="T:System.Windows.Controls.AutoCompleteBox" /> control
+            populates the list of possible matches in the drop-down.
+            </summary>
+            <value>The minimum delay, in milliseconds, after text is typed in
+            the text box, but before the
+            <see cref="T:System.Windows.Controls.AutoCompleteBox" /> populates
+            the list of possible matches in the drop-down. The default is 0.</value>
+            <exception cref="T:System.ArgumentException">The set value is less than 0.</exception>
         </member>
         <member name="F:System.Windows.Controls.AutoCompleteBox.MinimumPopulateDelayProperty">
             <summary>
@@ -1131,6 +1021,18 @@
             MinimumPopulateDelay.</param>
             <param name="e">Event arguments.</param>
         </member>
+        <member name="P:System.Windows.Controls.AutoCompleteBox.IsTextCompletionEnabled">
+            <summary>
+            Gets or sets a value indicating whether the first possible match
+            found during the filtering process will be displayed automatically
+            in the text box.
+            </summary>
+            <value>
+            True if the first possible match found will be displayed
+            automatically in the text box; otherwise, false. The default is
+            false.
+            </value>
+        </member>
         <member name="F:System.Windows.Controls.AutoCompleteBox.IsTextCompletionEnabledProperty">
             <summary>
             Identifies the
@@ -1140,6 +1042,22 @@
             <value>The identifier for the
             <see cref="P:System.Windows.Controls.AutoCompleteBox.IsTextCompletionEnabled" />
             dependency property.</value>
+        </member>
+        <member name="P:System.Windows.Controls.AutoCompleteBox.ItemTemplate">
+            <summary>
+            Gets or sets the <see cref="T:System.Windows.DataTemplate" /> used
+            to display each item in the drop-down portion of the control.
+            </summary>
+            <value>The <see cref="T:System.Windows.DataTemplate" /> used to
+            display each item in the drop-down. The default is null.</value>
+            <remarks>
+            You use the ItemTemplate property to specify the visualization 
+            of the data objects in the drop-down portion of the AutoCompleteBox 
+            control. If your AutoCompleteBox is bound to a collection and you 
+            do not provide specific display instructions by using a 
+            DataTemplate, the resulting UI of each item is a string 
+            representation of each object in the underlying collection. 
+            </remarks>
         </member>
         <member name="F:System.Windows.Controls.AutoCompleteBox.ItemTemplateProperty">
             <summary>
@@ -1151,6 +1069,22 @@
             <see cref="P:System.Windows.Controls.AutoCompleteBox.ItemTemplate" />
             dependency property.</value>
         </member>
+        <member name="P:System.Windows.Controls.AutoCompleteBox.ItemContainerStyle">
+            <summary>
+            Gets or sets the <see cref="T:System.Windows.Style" /> that is
+            applied to the selection adapter contained in the drop-down portion
+            of the <see cref="T:System.Windows.Controls.AutoCompleteBox" />
+            control.
+            </summary>
+            <value>The <see cref="T:System.Windows.Style" /> applied to the
+            selection adapter contained in the drop-down portion of the
+            <see cref="T:System.Windows.Controls.AutoCompleteBox" /> control.
+            The default is null.</value>
+            <remarks>
+            The default selection adapter contained in the drop-down is a 
+            ListBox control. 
+            </remarks>
+        </member>
         <member name="F:System.Windows.Controls.AutoCompleteBox.ItemContainerStyleProperty">
             <summary>
             Identifies the
@@ -1161,6 +1095,17 @@
             <see cref="P:System.Windows.Controls.AutoCompleteBox.ItemContainerStyle" />
             dependency property.</value>
         </member>
+        <member name="P:System.Windows.Controls.AutoCompleteBox.TextBoxStyle">
+            <summary>
+            Gets or sets the <see cref="T:System.Windows.Style" /> applied to
+            the text box portion of the
+            <see cref="T:System.Windows.Controls.AutoCompleteBox" /> control.
+            </summary>
+            <value>The <see cref="T:System.Windows.Style" /> applied to the text
+            box portion of the
+            <see cref="T:System.Windows.Controls.AutoCompleteBox" /> control.
+            The default is null.</value>
+        </member>
         <member name="F:System.Windows.Controls.AutoCompleteBox.TextBoxStyleProperty">
             <summary>
             Identifies the
@@ -1170,6 +1115,16 @@
             <value>The identifier for the
             <see cref="P:System.Windows.Controls.AutoCompleteBox.TextBoxStyle" />
             dependency property.</value>
+        </member>
+        <member name="P:System.Windows.Controls.AutoCompleteBox.MaxDropDownHeight">
+            <summary>
+            Gets or sets the maximum height of the drop-down portion of the
+            <see cref="T:System.Windows.Controls.AutoCompleteBox" /> control.
+            </summary>
+            <value>The maximum height of the drop-down portion of the
+            <see cref="T:System.Windows.Controls.AutoCompleteBox" /> control.
+            The default is <see cref="F:System.Double.PositiveInfinity" />.</value>
+            <exception cref="T:System.ArgumentException">The specified value is less than 0.</exception>
         </member>
         <member name="F:System.Windows.Controls.AutoCompleteBox.MaxDropDownHeightProperty">
             <summary>
@@ -1188,6 +1143,16 @@
             <param name="d">AutoCompleteTextBox that changed its MaxDropDownHeight.</param>
             <param name="e">Event arguments.</param>
         </member>
+        <member name="P:System.Windows.Controls.AutoCompleteBox.IsDropDownOpen">
+            <summary>
+            Gets or sets a value indicating whether the drop-down portion of
+            the control is open.
+            </summary>
+            <value>
+            True if the drop-down is open; otherwise, false. The default is
+            false.
+            </value>
+        </member>
         <member name="F:System.Windows.Controls.AutoCompleteBox.IsDropDownOpenProperty">
             <summary>
             Identifies the
@@ -1205,6 +1170,16 @@
             <param name="d">AutoCompleteTextBox that changed its IsDropDownOpen.</param>
             <param name="e">Event arguments.</param>
         </member>
+        <member name="P:System.Windows.Controls.AutoCompleteBox.ItemsSource">
+            <summary>
+            Gets or sets a collection that is used to generate the items for the
+            drop-down portion of the
+            <see cref="T:System.Windows.Controls.AutoCompleteBox" /> control.
+            </summary>
+            <value>The collection that is used to generate the items of the
+            drop-down portion of the
+            <see cref="T:System.Windows.Controls.AutoCompleteBox" /> control.</value>
+        </member>
         <member name="F:System.Windows.Controls.AutoCompleteBox.ItemsSourceProperty">
             <summary>
             Identifies the
@@ -1221,6 +1196,18 @@
             </summary>
             <param name="d">AutoCompleteBox that changed its ItemsSource.</param>
             <param name="e">Event arguments.</param>
+        </member>
+        <member name="P:System.Windows.Controls.AutoCompleteBox.SelectedItem">
+            <summary>
+            Gets or sets the selected item in the drop-down.
+            </summary>
+            <value>The selected item in the drop-down.</value>
+            <remarks>
+            If the IsTextCompletionEnabled property is true and text typed by 
+            the user matches an item in the ItemsSource collection, which is 
+            then displayed in the text box, the SelectedItem property will be 
+            a null reference.
+            </remarks>
         </member>
         <member name="F:System.Windows.Controls.AutoCompleteBox.SelectedItemProperty">
             <summary>
@@ -1248,6 +1235,14 @@
             </summary>
             <param name="newItem">The new item.</param>
         </member>
+        <member name="P:System.Windows.Controls.AutoCompleteBox.Text">
+            <summary>
+            Gets or sets the text in the text box portion of the
+            <see cref="T:System.Windows.Controls.AutoCompleteBox" /> control.
+            </summary>
+            <value>The text in the text box portion of the
+            <see cref="T:System.Windows.Controls.AutoCompleteBox" /> control.</value>
+        </member>
         <member name="F:System.Windows.Controls.AutoCompleteBox.TextProperty">
             <summary>
             Identifies the
@@ -1264,6 +1259,21 @@
             </summary>
             <param name="d">AutoCompleteBox that changed its Text.</param>
             <param name="e">Event arguments.</param>
+        </member>
+        <member name="P:System.Windows.Controls.AutoCompleteBox.SearchText">
+            <summary>
+            Gets the text that is used to filter items in the
+            <see cref="P:System.Windows.Controls.AutoCompleteBox.ItemsSource" />
+            item collection.
+            </summary>
+            <value>The text that is used to filter items in the
+            <see cref="P:System.Windows.Controls.AutoCompleteBox.ItemsSource" />
+            item collection.</value>
+            <remarks>
+            The SearchText value is typically the same as the 
+            Text property, but is set after the TextChanged event occurs 
+            and before the Populating event.
+            </remarks>
         </member>
         <member name="F:System.Windows.Controls.AutoCompleteBox.SearchTextProperty">
             <summary>
@@ -1282,6 +1292,27 @@
             <param name="d">AutoCompleteBox that changed its SearchText.</param>
             <param name="e">Event arguments.</param>
         </member>
+        <member name="P:System.Windows.Controls.AutoCompleteBox.FilterMode">
+            <summary>
+            Gets or sets how the text in the text box is used to filter items
+            specified by the
+            <see cref="P:System.Windows.Controls.AutoCompleteBox.ItemsSource" />
+            property for display in the drop-down.
+            </summary>
+            <value>One of the
+            <see cref="T:System.Windows.Controls.AutoCompleteFilterMode" />
+            values The default is
+            <see cref="F:System.Windows.Controls.AutoCompleteFilterMode.StartsWith" />.</value>
+            <exception cref="T:System.ArgumentException">The specified value is
+            not a valid
+            <see cref="T:System.Windows.Controls.AutoCompleteFilterMode" />.</exception>
+            <remarks>
+            Use the FilterMode property to specify how possible matches are 
+            filtered. For example, possible matches can be filtered in a 
+            predefined or custom way. The search mode is automatically set to 
+            Custom if you set the ItemFilter property. 
+            </remarks>
+        </member>
         <member name="F:System.Windows.Controls.AutoCompleteBox.FilterModeProperty">
             <summary>
             Gets the identifier for the
@@ -1295,6 +1326,22 @@
             </summary>
             <param name="d">AutoCompleteBox that changed its FilterMode.</param>
             <param name="e">Event arguments.</param>
+        </member>
+        <member name="P:System.Windows.Controls.AutoCompleteBox.ItemFilter">
+            <summary>
+            Gets or sets the custom method that uses user-entered text to filter
+            the items specified by the
+            <see cref="P:System.Windows.Controls.AutoCompleteBox.ItemsSource" />
+            property for display in the drop-down.
+            </summary>
+            <value>The custom method that uses the user-entered text to filter
+            the items specified by the
+            <see cref="P:System.Windows.Controls.AutoCompleteBox.ItemsSource" />
+            property. The default is null.</value>
+            <remarks>
+            The filter mode is automatically set to Custom if you set the 
+            ItemFilter property. 
+            </remarks>
         </member>
         <member name="F:System.Windows.Controls.AutoCompleteBox.ItemFilterProperty">
             <summary>
@@ -1313,6 +1360,22 @@
             <param name="d">AutoCompleteBox that changed its ItemFilter.</param>
             <param name="e">Event arguments.</param>
         </member>
+        <member name="P:System.Windows.Controls.AutoCompleteBox.TextFilter">
+            <summary>
+            Gets or sets the custom method that uses the user-entered text to
+            filter items specified by the
+            <see cref="P:System.Windows.Controls.AutoCompleteBox.ItemsSource" />
+            property in a text-based way for display in the drop-down.
+            </summary>
+            <value>The custom method that uses the user-entered text to filter
+            items specified by the
+            <see cref="P:System.Windows.Controls.AutoCompleteBox.ItemsSource" />
+            property in a text-based way for display in the drop-down.</value>
+            <remarks>
+            The search mode is automatically set to Custom if you set the 
+            TextFilter property. 
+            </remarks>
+        </member>
         <member name="F:System.Windows.Controls.AutoCompleteBox.TextFilterProperty">
             <summary>
             Identifies the
@@ -1322,6 +1385,14 @@
             <value>The identifier for the
             <see cref="P:System.Windows.Controls.AutoCompleteBox.TextFilter" />
             dependency property.</value>
+        </member>
+        <member name="P:System.Windows.Controls.AutoCompleteBox.Placeholder">
+            <summary>
+            Gets or sets the content of the placeholder which is overlaid over
+            the textbox when it is empty.
+            </summary>
+            <value>The content of the placeholder which is overlaid over the textbox
+             when it is empty.</value>
         </member>
         <member name="F:System.Windows.Controls.AutoCompleteBox.PlaceholderProperty">
             <summary>
@@ -1334,6 +1405,19 @@
             dependency property.
             </value>
         </member>
+        <member name="P:System.Windows.Controls.AutoCompleteBox.PlaceholderTemplate">
+            <summary>
+            Gets or sets the <see cref="T:System.Windows.DataTemplate" /> used
+            to display the placeholder of the control.
+            </summary>
+            <value>The <see cref="T:System.Windows.DataTemplate" /> used to
+            display the placeholder of the control.</value>
+            <remarks>
+            You use the PlaceholderTemplate property to specify the visualization 
+            of the data objects in the Placeholder of the AutoCompleteBox 
+            control.
+            </remarks>
+        </member>
         <member name="F:System.Windows.Controls.AutoCompleteBox.PlaceholderTemplateProperty">
             <summary>
             Identifies the
@@ -1344,6 +1428,20 @@
             <see cref="P:System.Windows.Controls.AutoCompleteBox.PlaceholderTemplate"/>
             dependency property.
             </value>
+        </member>
+        <member name="P:System.Windows.Controls.AutoCompleteBox.PlaceholderTemplateSelector">
+            <summary>
+            Gets or sets the <see cref="T:System.Windows.Controls.DataTemplateSelector" /> used
+            to display the placeholder of the control.
+            </summary>
+            <value>The <see cref="T:System.Windows.Controls.DataTemplateSelector" /> used to
+            display the placeholder of the control.</value>
+            <remarks>
+            You use the PlaceholderTemplateSelector property to add custom logic to decide which
+            template to apply to the AutoCompleteBox' placeholder.
+            Please note that the PlaceholderTemplateSelector is only used if the PlaceholderTemplate
+            is set to null.
+            </remarks>
         </member>
         <member name="F:System.Windows.Controls.AutoCompleteBox.PlaceholderTemplateSelectorProperty">
             <summary>
@@ -1356,6 +1454,11 @@
             dependency property.
             </value>
         </member>
+        <member name="P:System.Windows.Controls.AutoCompleteBox.DropDownPopup">
+            <summary>
+            Gets or sets the drop down popup control.
+            </summary>
+        </member>
         <member name="F:System.Windows.Controls.AutoCompleteBox._text">
             <summary>
             The TextBox template part.
@@ -1366,13 +1469,53 @@
             The SelectionAdapter.
             </summary>
         </member>
+        <member name="P:System.Windows.Controls.AutoCompleteBox.TextBox">
+            <summary>
+            Gets or sets the Text template part.
+            </summary>
+        </member>
+        <member name="P:System.Windows.Controls.AutoCompleteBox.SelectionAdapter">
+            <summary>
+            Gets or sets the selection adapter used to populate the drop-down
+            with a list of selectable items.
+            </summary>
+            <value>The selection adapter used to populate the drop-down with a
+            list of selectable items.</value>
+            <remarks>
+            You can use this property when you create an automation peer to 
+            use with AutoCompleteBox or deriving from AutoCompleteBox to 
+            create a custom control.
+            </remarks>
+        </member>
         <member name="F:System.Windows.Controls.AutoCompleteBox.TextChangedEvent">
             <summary>
             Occurs when the text in the text box portion of the
             <see cref="T:System.Windows.Controls.AutoCompleteBox" /> changes.
             </summary>
         </member>
+        <member name="E:System.Windows.Controls.AutoCompleteBox.TextChanged">
+            <summary>
+            Occurs when the text in the text box portion of the
+            <see cref="T:System.Windows.Controls.AutoCompleteBox" /> changes.
+            </summary>
+        </member>
         <member name="F:System.Windows.Controls.AutoCompleteBox.PopulatingEvent">
+            <summary>
+            Occurs when the
+            <see cref="T:System.Windows.Controls.AutoCompleteBox" /> is
+            populating the drop-down with possible matches based on the
+            <see cref="P:System.Windows.Controls.AutoCompleteBox.Text" />
+            property.
+            </summary>
+            <remarks>
+            If the event is canceled, by setting the PopulatingEventArgs.Cancel 
+            property to true, the AutoCompleteBox will not automatically 
+            populate the selection adapter contained in the drop-down. 
+            In this case, if you want possible matches to appear, you must 
+            provide the logic for populating the selection adapter.
+            </remarks>
+        </member>
+        <member name="E:System.Windows.Controls.AutoCompleteBox.Populating">
             <summary>
             Occurs when the
             <see cref="T:System.Windows.Controls.AutoCompleteBox" /> is
@@ -1397,7 +1540,23 @@
             property.
             </summary>
         </member>
+        <member name="E:System.Windows.Controls.AutoCompleteBox.Populated">
+            <summary>
+            Occurs when the
+            <see cref="T:System.Windows.Controls.AutoCompleteBox" /> has
+            populated the drop-down with possible matches based on the
+            <see cref="P:System.Windows.Controls.AutoCompleteBox.Text" />
+            property.
+            </summary>
+        </member>
         <member name="F:System.Windows.Controls.AutoCompleteBox.DropDownOpeningEvent">
+            <summary>
+            Occurs when the value of the
+            <see cref="P:System.Windows.Controls.AutoCompleteBox.IsDropDownOpen" />
+            property is changing from false to true.
+            </summary>
+        </member>
+        <member name="E:System.Windows.Controls.AutoCompleteBox.DropDownOpening">
             <summary>
             Occurs when the value of the
             <see cref="P:System.Windows.Controls.AutoCompleteBox.IsDropDownOpen" />
@@ -1411,7 +1570,21 @@
             property has changed from false to true and the drop-down is open.
             </summary>
         </member>
+        <member name="E:System.Windows.Controls.AutoCompleteBox.DropDownOpened">
+            <summary>
+            Occurs when the value of the
+            <see cref="P:System.Windows.Controls.AutoCompleteBox.IsDropDownOpen" />
+            property has changed from false to true and the drop-down is open.
+            </summary>
+        </member>
         <member name="F:System.Windows.Controls.AutoCompleteBox.DropDownClosingEvent">
+            <summary>
+            Occurs when the
+            <see cref="P:System.Windows.Controls.AutoCompleteBox.IsDropDownOpen" />
+            property is changing from true to false.
+            </summary>
+        </member>
+        <member name="E:System.Windows.Controls.AutoCompleteBox.DropDownClosing">
             <summary>
             Occurs when the
             <see cref="P:System.Windows.Controls.AutoCompleteBox.IsDropDownOpen" />
@@ -1425,12 +1598,46 @@
             property was changed from true to false and the drop-down is open.
             </summary>
         </member>
+        <member name="E:System.Windows.Controls.AutoCompleteBox.DropDownClosed">
+            <summary>
+            Occurs when the
+            <see cref="P:System.Windows.Controls.AutoCompleteBox.IsDropDownOpen" />
+            property was changed from true to false and the drop-down is open.
+            </summary>
+        </member>
         <member name="F:System.Windows.Controls.AutoCompleteBox.SelectionChangedEvent">
             <summary>
             Occurs when the selected item in the drop-down portion of the
             <see cref="T:System.Windows.Controls.AutoCompleteBox" /> has
             changed.
             </summary>
+        </member>
+        <member name="E:System.Windows.Controls.AutoCompleteBox.SelectionChanged">
+            <summary>
+            Occurs when the selected item in the drop-down portion of the
+            <see cref="T:System.Windows.Controls.AutoCompleteBox" /> has
+            changed.
+            </summary>
+        </member>
+        <member name="P:System.Windows.Controls.AutoCompleteBox.ValueMemberBinding">
+            <summary>
+            Gets or sets the  <see cref="T:System.Windows.Data.Binding" /> that
+            is used to get the values for display in the text portion of
+            the <see cref="T:System.Windows.Controls.AutoCompleteBox" />
+            control.
+            </summary>
+            <value>The <see cref="T:System.Windows.Data.Binding" /> object used
+            when binding to a collection property.</value>
+        </member>
+        <member name="P:System.Windows.Controls.AutoCompleteBox.ValueMemberPath">
+            <summary>
+            Gets or sets the property path that is used to get values for
+            display in the text portion of the
+            <see cref="T:System.Windows.Controls.AutoCompleteBox" /> control.
+            </summary>
+            <value>The property path that is used to get values for display in
+            the text portion of the
+            <see cref="T:System.Windows.Controls.AutoCompleteBox" /> control.</value>
         </member>
         <member name="M:System.Windows.Controls.AutoCompleteBox.#cctor">
             <summary>
@@ -1873,362 +2080,6 @@
             snap directly to the new visual state.
             </param>
         </member>
-        <member name="P:System.Windows.Controls.AutoCompleteBox.Interaction">
-            <summary>
-            Gets or sets the helper that provides all of the standard
-            interaction functionality. Making it internal for subclass access.
-            </summary>
-        </member>
-        <member name="P:System.Windows.Controls.AutoCompleteBox.MinimumPrefixLength">
-            <summary>
-            Gets or sets the minimum number of characters required to be entered
-            in the text box before the
-            <see cref="T:System.Windows.Controls.AutoCompleteBox" /> displays
-            possible matches.
-            matches.
-            </summary>
-            <value>
-            The minimum number of characters to be entered in the text box
-            before the <see cref="T:System.Windows.Controls.AutoCompleteBox" />
-            displays possible matches. The default is 1.
-            </value>
-            <remarks>
-            If you set MinimumPrefixLength to -1, the AutoCompleteBox will
-            not provide possible matches. There is no maximum value, but
-            setting MinimumPrefixLength to value that is too large will
-            prevent the AutoCompleteBox from providing possible matches as well.
-            </remarks>
-        </member>
-        <member name="P:System.Windows.Controls.AutoCompleteBox.MinimumPopulateDelay">
-            <summary>
-            Gets or sets the minimum delay, in milliseconds, after text is typed
-            in the text box before the
-            <see cref="T:System.Windows.Controls.AutoCompleteBox" /> control
-            populates the list of possible matches in the drop-down.
-            </summary>
-            <value>The minimum delay, in milliseconds, after text is typed in
-            the text box, but before the
-            <see cref="T:System.Windows.Controls.AutoCompleteBox" /> populates
-            the list of possible matches in the drop-down. The default is 0.</value>
-            <exception cref="T:System.ArgumentException">The set value is less than 0.</exception>
-        </member>
-        <member name="P:System.Windows.Controls.AutoCompleteBox.IsTextCompletionEnabled">
-            <summary>
-            Gets or sets a value indicating whether the first possible match
-            found during the filtering process will be displayed automatically
-            in the text box.
-            </summary>
-            <value>
-            True if the first possible match found will be displayed
-            automatically in the text box; otherwise, false. The default is
-            false.
-            </value>
-        </member>
-        <member name="P:System.Windows.Controls.AutoCompleteBox.ItemTemplate">
-            <summary>
-            Gets or sets the <see cref="T:System.Windows.DataTemplate" /> used
-            to display each item in the drop-down portion of the control.
-            </summary>
-            <value>The <see cref="T:System.Windows.DataTemplate" /> used to
-            display each item in the drop-down. The default is null.</value>
-            <remarks>
-            You use the ItemTemplate property to specify the visualization 
-            of the data objects in the drop-down portion of the AutoCompleteBox 
-            control. If your AutoCompleteBox is bound to a collection and you 
-            do not provide specific display instructions by using a 
-            DataTemplate, the resulting UI of each item is a string 
-            representation of each object in the underlying collection. 
-            </remarks>
-        </member>
-        <member name="P:System.Windows.Controls.AutoCompleteBox.ItemContainerStyle">
-            <summary>
-            Gets or sets the <see cref="T:System.Windows.Style" /> that is
-            applied to the selection adapter contained in the drop-down portion
-            of the <see cref="T:System.Windows.Controls.AutoCompleteBox" />
-            control.
-            </summary>
-            <value>The <see cref="T:System.Windows.Style" /> applied to the
-            selection adapter contained in the drop-down portion of the
-            <see cref="T:System.Windows.Controls.AutoCompleteBox" /> control.
-            The default is null.</value>
-            <remarks>
-            The default selection adapter contained in the drop-down is a 
-            ListBox control. 
-            </remarks>
-        </member>
-        <member name="P:System.Windows.Controls.AutoCompleteBox.TextBoxStyle">
-            <summary>
-            Gets or sets the <see cref="T:System.Windows.Style" /> applied to
-            the text box portion of the
-            <see cref="T:System.Windows.Controls.AutoCompleteBox" /> control.
-            </summary>
-            <value>The <see cref="T:System.Windows.Style" /> applied to the text
-            box portion of the
-            <see cref="T:System.Windows.Controls.AutoCompleteBox" /> control.
-            The default is null.</value>
-        </member>
-        <member name="P:System.Windows.Controls.AutoCompleteBox.MaxDropDownHeight">
-            <summary>
-            Gets or sets the maximum height of the drop-down portion of the
-            <see cref="T:System.Windows.Controls.AutoCompleteBox" /> control.
-            </summary>
-            <value>The maximum height of the drop-down portion of the
-            <see cref="T:System.Windows.Controls.AutoCompleteBox" /> control.
-            The default is <see cref="F:System.Double.PositiveInfinity" />.</value>
-            <exception cref="T:System.ArgumentException">The specified value is less than 0.</exception>
-        </member>
-        <member name="P:System.Windows.Controls.AutoCompleteBox.IsDropDownOpen">
-            <summary>
-            Gets or sets a value indicating whether the drop-down portion of
-            the control is open.
-            </summary>
-            <value>
-            True if the drop-down is open; otherwise, false. The default is
-            false.
-            </value>
-        </member>
-        <member name="P:System.Windows.Controls.AutoCompleteBox.ItemsSource">
-            <summary>
-            Gets or sets a collection that is used to generate the items for the
-            drop-down portion of the
-            <see cref="T:System.Windows.Controls.AutoCompleteBox" /> control.
-            </summary>
-            <value>The collection that is used to generate the items of the
-            drop-down portion of the
-            <see cref="T:System.Windows.Controls.AutoCompleteBox" /> control.</value>
-        </member>
-        <member name="P:System.Windows.Controls.AutoCompleteBox.SelectedItem">
-            <summary>
-            Gets or sets the selected item in the drop-down.
-            </summary>
-            <value>The selected item in the drop-down.</value>
-            <remarks>
-            If the IsTextCompletionEnabled property is true and text typed by 
-            the user matches an item in the ItemsSource collection, which is 
-            then displayed in the text box, the SelectedItem property will be 
-            a null reference.
-            </remarks>
-        </member>
-        <member name="P:System.Windows.Controls.AutoCompleteBox.Text">
-            <summary>
-            Gets or sets the text in the text box portion of the
-            <see cref="T:System.Windows.Controls.AutoCompleteBox" /> control.
-            </summary>
-            <value>The text in the text box portion of the
-            <see cref="T:System.Windows.Controls.AutoCompleteBox" /> control.</value>
-        </member>
-        <member name="P:System.Windows.Controls.AutoCompleteBox.SearchText">
-            <summary>
-            Gets the text that is used to filter items in the
-            <see cref="P:System.Windows.Controls.AutoCompleteBox.ItemsSource" />
-            item collection.
-            </summary>
-            <value>The text that is used to filter items in the
-            <see cref="P:System.Windows.Controls.AutoCompleteBox.ItemsSource" />
-            item collection.</value>
-            <remarks>
-            The SearchText value is typically the same as the 
-            Text property, but is set after the TextChanged event occurs 
-            and before the Populating event.
-            </remarks>
-        </member>
-        <member name="P:System.Windows.Controls.AutoCompleteBox.FilterMode">
-            <summary>
-            Gets or sets how the text in the text box is used to filter items
-            specified by the
-            <see cref="P:System.Windows.Controls.AutoCompleteBox.ItemsSource" />
-            property for display in the drop-down.
-            </summary>
-            <value>One of the
-            <see cref="T:System.Windows.Controls.AutoCompleteFilterMode" />
-            values The default is
-            <see cref="F:System.Windows.Controls.AutoCompleteFilterMode.StartsWith" />.</value>
-            <exception cref="T:System.ArgumentException">The specified value is
-            not a valid
-            <see cref="T:System.Windows.Controls.AutoCompleteFilterMode" />.</exception>
-            <remarks>
-            Use the FilterMode property to specify how possible matches are 
-            filtered. For example, possible matches can be filtered in a 
-            predefined or custom way. The search mode is automatically set to 
-            Custom if you set the ItemFilter property. 
-            </remarks>
-        </member>
-        <member name="P:System.Windows.Controls.AutoCompleteBox.ItemFilter">
-            <summary>
-            Gets or sets the custom method that uses user-entered text to filter
-            the items specified by the
-            <see cref="P:System.Windows.Controls.AutoCompleteBox.ItemsSource" />
-            property for display in the drop-down.
-            </summary>
-            <value>The custom method that uses the user-entered text to filter
-            the items specified by the
-            <see cref="P:System.Windows.Controls.AutoCompleteBox.ItemsSource" />
-            property. The default is null.</value>
-            <remarks>
-            The filter mode is automatically set to Custom if you set the 
-            ItemFilter property. 
-            </remarks>
-        </member>
-        <member name="P:System.Windows.Controls.AutoCompleteBox.TextFilter">
-            <summary>
-            Gets or sets the custom method that uses the user-entered text to
-            filter items specified by the
-            <see cref="P:System.Windows.Controls.AutoCompleteBox.ItemsSource" />
-            property in a text-based way for display in the drop-down.
-            </summary>
-            <value>The custom method that uses the user-entered text to filter
-            items specified by the
-            <see cref="P:System.Windows.Controls.AutoCompleteBox.ItemsSource" />
-            property in a text-based way for display in the drop-down.</value>
-            <remarks>
-            The search mode is automatically set to Custom if you set the 
-            TextFilter property. 
-            </remarks>
-        </member>
-        <member name="P:System.Windows.Controls.AutoCompleteBox.Placeholder">
-            <summary>
-            Gets or sets the content of the placeholder which is overlaid over
-            the textbox when it is empty.
-            </summary>
-            <value>The content of the placeholder which is overlaid over the textbox
-             when it is empty.</value>
-        </member>
-        <member name="P:System.Windows.Controls.AutoCompleteBox.PlaceholderTemplate">
-            <summary>
-            Gets or sets the <see cref="T:System.Windows.DataTemplate" /> used
-            to display the placeholder of the control.
-            </summary>
-            <value>The <see cref="T:System.Windows.DataTemplate" /> used to
-            display the placeholder of the control.</value>
-            <remarks>
-            You use the PlaceholderTemplate property to specify the visualization 
-            of the data objects in the Placeholder of the AutoCompleteBox 
-            control.
-            </remarks>
-        </member>
-        <member name="P:System.Windows.Controls.AutoCompleteBox.PlaceholderTemplateSelector">
-            <summary>
-            Gets or sets the <see cref="T:System.Windows.Controls.DataTemplateSelector" /> used
-            to display the placeholder of the control.
-            </summary>
-            <value>The <see cref="T:System.Windows.Controls.DataTemplateSelector" /> used to
-            display the placeholder of the control.</value>
-            <remarks>
-            You use the PlaceholderTemplateSelector property to add custom logic to decide which
-            template to apply to the AutoCompleteBox' placeholder.
-            Please note that the PlaceholderTemplateSelector is only used if the PlaceholderTemplate
-            is set to null.
-            </remarks>
-        </member>
-        <member name="P:System.Windows.Controls.AutoCompleteBox.DropDownPopup">
-            <summary>
-            Gets or sets the drop down popup control.
-            </summary>
-        </member>
-        <member name="P:System.Windows.Controls.AutoCompleteBox.TextBox">
-            <summary>
-            Gets or sets the Text template part.
-            </summary>
-        </member>
-        <member name="P:System.Windows.Controls.AutoCompleteBox.SelectionAdapter">
-            <summary>
-            Gets or sets the selection adapter used to populate the drop-down
-            with a list of selectable items.
-            </summary>
-            <value>The selection adapter used to populate the drop-down with a
-            list of selectable items.</value>
-            <remarks>
-            You can use this property when you create an automation peer to 
-            use with AutoCompleteBox or deriving from AutoCompleteBox to 
-            create a custom control.
-            </remarks>
-        </member>
-        <member name="E:System.Windows.Controls.AutoCompleteBox.TextChanged">
-            <summary>
-            Occurs when the text in the text box portion of the
-            <see cref="T:System.Windows.Controls.AutoCompleteBox" /> changes.
-            </summary>
-        </member>
-        <member name="E:System.Windows.Controls.AutoCompleteBox.Populating">
-            <summary>
-            Occurs when the
-            <see cref="T:System.Windows.Controls.AutoCompleteBox" /> is
-            populating the drop-down with possible matches based on the
-            <see cref="P:System.Windows.Controls.AutoCompleteBox.Text" />
-            property.
-            </summary>
-            <remarks>
-            If the event is canceled, by setting the PopulatingEventArgs.Cancel 
-            property to true, the AutoCompleteBox will not automatically 
-            populate the selection adapter contained in the drop-down. 
-            In this case, if you want possible matches to appear, you must 
-            provide the logic for populating the selection adapter.
-            </remarks>
-        </member>
-        <member name="E:System.Windows.Controls.AutoCompleteBox.Populated">
-            <summary>
-            Occurs when the
-            <see cref="T:System.Windows.Controls.AutoCompleteBox" /> has
-            populated the drop-down with possible matches based on the
-            <see cref="P:System.Windows.Controls.AutoCompleteBox.Text" />
-            property.
-            </summary>
-        </member>
-        <member name="E:System.Windows.Controls.AutoCompleteBox.DropDownOpening">
-            <summary>
-            Occurs when the value of the
-            <see cref="P:System.Windows.Controls.AutoCompleteBox.IsDropDownOpen" />
-            property is changing from false to true.
-            </summary>
-        </member>
-        <member name="E:System.Windows.Controls.AutoCompleteBox.DropDownOpened">
-            <summary>
-            Occurs when the value of the
-            <see cref="P:System.Windows.Controls.AutoCompleteBox.IsDropDownOpen" />
-            property has changed from false to true and the drop-down is open.
-            </summary>
-        </member>
-        <member name="E:System.Windows.Controls.AutoCompleteBox.DropDownClosing">
-            <summary>
-            Occurs when the
-            <see cref="P:System.Windows.Controls.AutoCompleteBox.IsDropDownOpen" />
-            property is changing from true to false.
-            </summary>
-        </member>
-        <member name="E:System.Windows.Controls.AutoCompleteBox.DropDownClosed">
-            <summary>
-            Occurs when the
-            <see cref="P:System.Windows.Controls.AutoCompleteBox.IsDropDownOpen" />
-            property was changed from true to false and the drop-down is open.
-            </summary>
-        </member>
-        <member name="E:System.Windows.Controls.AutoCompleteBox.SelectionChanged">
-            <summary>
-            Occurs when the selected item in the drop-down portion of the
-            <see cref="T:System.Windows.Controls.AutoCompleteBox" /> has
-            changed.
-            </summary>
-        </member>
-        <member name="P:System.Windows.Controls.AutoCompleteBox.ValueMemberBinding">
-            <summary>
-            Gets or sets the  <see cref="T:System.Windows.Data.Binding" /> that
-            is used to get the values for display in the text portion of
-            the <see cref="T:System.Windows.Controls.AutoCompleteBox" />
-            control.
-            </summary>
-            <value>The <see cref="T:System.Windows.Data.Binding" /> object used
-            when binding to a collection property.</value>
-        </member>
-        <member name="P:System.Windows.Controls.AutoCompleteBox.ValueMemberPath">
-            <summary>
-            Gets or sets the property path that is used to get values for
-            display in the text portion of the
-            <see cref="T:System.Windows.Controls.AutoCompleteBox" /> control.
-            </summary>
-            <value>The property path that is used to get values for display in
-            the text portion of the
-            <see cref="T:System.Windows.Controls.AutoCompleteBox" /> control.</value>
-        </member>
         <member name="T:System.Windows.Controls.AutoCompleteSearch">
             <summary>
             A predefined set of filter functions for the known, built-in 
@@ -2490,25 +2341,6 @@
             </summary>
             <QualityBand>Stable</QualityBand>
         </member>
-        <member name="M:System.Windows.Controls.ISelectionAdapter.HandleKeyDown(System.Windows.Input.KeyEventArgs)">
-            <summary>
-            Provides handling for the
-            <see cref="E:System.Windows.UIElement.KeyDown" /> event that occurs
-            when a key is pressed while the drop-down portion of the
-            <see cref="T:System.Windows.Controls.AutoCompleteBox" /> has focus.
-            </summary>
-            <param name="e">A <see cref="T:System.Windows.Input.KeyEventArgs" />
-            that contains data about the
-            <see cref="E:System.Windows.UIElement.KeyDown" /> event.</param>
-        </member>
-        <member name="M:System.Windows.Controls.ISelectionAdapter.CreateAutomationPeer">
-            <summary>
-            Returns an automation peer for the selection adapter, for use by the
-            Silverlight automation infrastructure.
-            </summary>
-            <returns>An automation peer for the selection adapter, if one is
-            available; otherwise, null.</returns>
-        </member>
         <member name="P:System.Windows.Controls.ISelectionAdapter.SelectedItem">
             <summary>
             Gets or sets the selected item.
@@ -2541,6 +2373,25 @@
             Occurs when a selection has been canceled.
             </summary>
         </member>
+        <member name="M:System.Windows.Controls.ISelectionAdapter.HandleKeyDown(System.Windows.Input.KeyEventArgs)">
+            <summary>
+            Provides handling for the
+            <see cref="E:System.Windows.UIElement.KeyDown" /> event that occurs
+            when a key is pressed while the drop-down portion of the
+            <see cref="T:System.Windows.Controls.AutoCompleteBox" /> has focus.
+            </summary>
+            <param name="e">A <see cref="T:System.Windows.Input.KeyEventArgs" />
+            that contains data about the
+            <see cref="E:System.Windows.UIElement.KeyDown" /> event.</param>
+        </member>
+        <member name="M:System.Windows.Controls.ISelectionAdapter.CreateAutomationPeer">
+            <summary>
+            Returns an automation peer for the selection adapter, for use by the
+            Silverlight automation infrastructure.
+            </summary>
+            <returns>An automation peer for the selection adapter, if one is
+            available; otherwise, null.</returns>
+        </member>
         <member name="T:System.Windows.Controls.PopulatedEventArgs">
             <summary>
             Provides data for the
@@ -2548,6 +2399,15 @@
             event.
             </summary>
             <QualityBand>Stable</QualityBand>
+        </member>
+        <member name="P:System.Windows.Controls.PopulatedEventArgs.Data">
+            <summary>
+            Gets the list of possible matches added to the drop-down portion of
+            the <see cref="T:System.Windows.Controls.AutoCompleteBox" />
+            control.
+            </summary>
+            <value>The list of possible matches added to the
+            <see cref="T:System.Windows.Controls.AutoCompleteBox" />.</value>
         </member>
         <member name="M:System.Windows.Controls.PopulatedEventArgs.#ctor(System.Collections.IEnumerable)">
             <summary>
@@ -2567,15 +2427,6 @@
             drop-down portion of the
             <see cref="T:System.Windows.Controls.AutoCompleteBox" /> control.</param>
             <param name="routedEvent">The routed event identifier for this instance.</param>
-        </member>
-        <member name="P:System.Windows.Controls.PopulatedEventArgs.Data">
-            <summary>
-            Gets the list of possible matches added to the drop-down portion of
-            the <see cref="T:System.Windows.Controls.AutoCompleteBox" />
-            control.
-            </summary>
-            <value>The list of possible matches added to the
-            <see cref="T:System.Windows.Controls.AutoCompleteBox" />.</value>
         </member>
         <member name="T:System.Windows.Controls.PopulatedEventHandler">
             <summary>
@@ -2598,6 +2449,24 @@
             </summary>
             <QualityBand>Stable</QualityBand>
         </member>
+        <member name="P:System.Windows.Controls.PopulatingEventArgs.Parameter">
+            <summary>
+            Gets the text that is used to determine which items to display in
+            the <see cref="T:System.Windows.Controls.AutoCompleteBox" />
+            control.
+            </summary>
+            <value>The text that is used to determine which items to display in
+            the <see cref="T:System.Windows.Controls.AutoCompleteBox" />.</value>
+        </member>
+        <member name="P:System.Windows.Controls.PopulatingEventArgs.Cancel">
+            <summary>
+            Gets or sets a value indicating whether the
+            <see cref="E:System.Windows.Controls.AutoCompleteBox.Populating" />
+            event should be canceled.
+            </summary>
+            <value>True to cancel the event, otherwise false. The default is
+            false.</value>
+        </member>
         <member name="M:System.Windows.Controls.PopulatingEventArgs.#ctor(System.String)">
             <summary>
             Initializes a new instance of the
@@ -2619,24 +2488,6 @@
             <see cref="T:System.Windows.Controls.AutoCompleteBox" /> control.</param>
             <param name="routedEvent">The routed event identifier for this instance.</param>
         </member>
-        <member name="P:System.Windows.Controls.PopulatingEventArgs.Parameter">
-            <summary>
-            Gets the text that is used to determine which items to display in
-            the <see cref="T:System.Windows.Controls.AutoCompleteBox" />
-            control.
-            </summary>
-            <value>The text that is used to determine which items to display in
-            the <see cref="T:System.Windows.Controls.AutoCompleteBox" />.</value>
-        </member>
-        <member name="P:System.Windows.Controls.PopulatingEventArgs.Cancel">
-            <summary>
-            Gets or sets a value indicating whether the
-            <see cref="E:System.Windows.Controls.AutoCompleteBox.Populating" />
-            event should be canceled.
-            </summary>
-            <value>True to cancel the event, otherwise false. The default is
-            false.</value>
-        </member>
         <member name="T:System.Windows.Controls.PopulatingEventHandler">
             <summary>
             Represents the method that will handle the
@@ -2654,6 +2505,57 @@
             <summary>
             PopupHelper is a simple wrapper type that helps abstract platform
             differences out of the Popup.
+            </summary>
+        </member>
+        <member name="P:System.Windows.Controls.PopupHelper.UsesClosingVisualState">
+            <summary>
+            Gets a value indicating whether a visual popup state is being used
+            in the current template for the Closed state. Setting this value to
+            true will delay the actual setting of Popup.IsOpen to false until
+            after the visual state's transition for Closed is complete.
+            </summary>
+        </member>
+        <member name="P:System.Windows.Controls.PopupHelper.Parent">
+            <summary>
+            Gets or sets the parent control.
+            </summary>
+        </member>
+        <member name="P:System.Windows.Controls.PopupHelper.MaxDropDownHeight">
+            <summary>
+            Gets or sets the maximum drop down height value.
+            </summary>
+        </member>
+        <member name="P:System.Windows.Controls.PopupHelper.Popup">
+            <summary>
+            Gets the Popup control instance.
+            </summary>
+        </member>
+        <member name="P:System.Windows.Controls.PopupHelper.IsOpen">
+            <summary>
+            Gets or sets a value indicating whether the actual Popup is open.
+            </summary>
+        </member>
+        <member name="P:System.Windows.Controls.PopupHelper.PopupChild">
+            <summary>
+            Gets or sets the popup child framework element. Can be used if an
+            assumption is made on the child type.
+            </summary>
+        </member>
+        <member name="E:System.Windows.Controls.PopupHelper.Closed">
+            <summary>
+            The Closed event is fired after the Popup closes.
+            </summary>
+        </member>
+        <member name="E:System.Windows.Controls.PopupHelper.FocusChanged">
+            <summary>
+            Fired when the popup children have a focus event change, allows the
+            parent control to update visual states or react to the focus state.
+            </summary>
+        </member>
+        <member name="E:System.Windows.Controls.PopupHelper.UpdateVisualStates">
+            <summary>
+            Fired when the popup children intercept an event that may indicate
+            the need for a visual state update by the parent control.
             </summary>
         </member>
         <member name="M:System.Windows.Controls.PopupHelper.#ctor(System.Windows.Controls.Control)">
@@ -2761,57 +2663,6 @@
             <param name="sender">The source object.</param>
             <param name="e">The event data.</param>
         </member>
-        <member name="P:System.Windows.Controls.PopupHelper.UsesClosingVisualState">
-            <summary>
-            Gets a value indicating whether a visual popup state is being used
-            in the current template for the Closed state. Setting this value to
-            true will delay the actual setting of Popup.IsOpen to false until
-            after the visual state's transition for Closed is complete.
-            </summary>
-        </member>
-        <member name="P:System.Windows.Controls.PopupHelper.Parent">
-            <summary>
-            Gets or sets the parent control.
-            </summary>
-        </member>
-        <member name="P:System.Windows.Controls.PopupHelper.MaxDropDownHeight">
-            <summary>
-            Gets or sets the maximum drop down height value.
-            </summary>
-        </member>
-        <member name="P:System.Windows.Controls.PopupHelper.Popup">
-            <summary>
-            Gets the Popup control instance.
-            </summary>
-        </member>
-        <member name="P:System.Windows.Controls.PopupHelper.IsOpen">
-            <summary>
-            Gets or sets a value indicating whether the actual Popup is open.
-            </summary>
-        </member>
-        <member name="P:System.Windows.Controls.PopupHelper.PopupChild">
-            <summary>
-            Gets or sets the popup child framework element. Can be used if an
-            assumption is made on the child type.
-            </summary>
-        </member>
-        <member name="E:System.Windows.Controls.PopupHelper.Closed">
-            <summary>
-            The Closed event is fired after the Popup closes.
-            </summary>
-        </member>
-        <member name="E:System.Windows.Controls.PopupHelper.FocusChanged">
-            <summary>
-            Fired when the popup children have a focus event change, allows the
-            parent control to update visual states or react to the focus state.
-            </summary>
-        </member>
-        <member name="E:System.Windows.Controls.PopupHelper.UpdateVisualStates">
-            <summary>
-            Fired when the popup children intercept an event that may indicate
-            the need for a visual state update by the parent control.
-            </summary>
-        </member>
         <member name="T:System.Windows.Controls.RoutedPropertyChangingEventArgs`1">
             <summary>
             Provides event data for various routed events that track property values
@@ -2821,56 +2672,6 @@
             The type of the value for the dependency property that is changing.
             </typeparam>
             <QualityBand>Preview</QualityBand>
-        </member>
-        <member name="F:System.Windows.Controls.RoutedPropertyChangingEventArgs`1._cancel">
-            <summary>
-            Private member variable for Cancel property.
-            </summary>
-        </member>
-        <member name="M:System.Windows.Controls.RoutedPropertyChangingEventArgs`1.#ctor(System.Windows.DependencyProperty,`0,`0,System.Boolean)">
-            <summary>
-            Initializes a new instance of the
-            <see cref="T:System.Windows.Controls.RoutedPropertyChangingEventArgs`1" />
-            class.
-            </summary>
-            <param name="property">
-            The <see cref="T:System.Windows.DependencyProperty" /> identifier
-            for the property that is changing.
-            </param>
-            <param name="oldValue">The previous value of the property.</param>
-            <param name="newValue">
-            The new value of the property, assuming that the property change is
-            not cancelled.
-            </param>
-            <param name="isCancelable">
-            True if the property change is cancellable by setting
-            <see cref="P:System.Windows.Controls.RoutedPropertyChangingEventArgs`1.Cancel" />
-            to true in event handling. false if the property change is not
-            cancellable.
-            </param>
-        </member>
-        <member name="M:System.Windows.Controls.RoutedPropertyChangingEventArgs`1.#ctor(System.Windows.DependencyProperty,`0,`0,System.Boolean,System.Windows.RoutedEvent)">
-            <summary>
-            Initializes a new instance of the
-            <see cref="T:System.Windows.Controls.RoutedPropertyChangingEventArgs`1" />
-            class.
-            </summary>
-            <param name="property">
-            The <see cref="T:System.Windows.DependencyProperty" /> identifier
-            for the property that is changing.
-            </param>
-            <param name="oldValue">The previous value of the property.</param>
-            <param name="newValue">
-            The new value of the property, assuming that the property change is
-            not cancelled.
-            </param>
-            <param name="isCancelable">
-            True if the property change is cancellable by setting
-            <see cref="P:System.Windows.Controls.RoutedPropertyChangingEventArgs`1.Cancel" />
-            to true in event handling. false if the property change is not
-            cancellable.
-            </param>
-            <param name="routedEvent">The routed event identifier for this instance.</param>
         </member>
         <member name="P:System.Windows.Controls.RoutedPropertyChangingEventArgs`1.Property">
             <summary>
@@ -2927,6 +2728,11 @@
             is false.
             </exception>
         </member>
+        <member name="F:System.Windows.Controls.RoutedPropertyChangingEventArgs`1._cancel">
+            <summary>
+            Private member variable for Cancel property.
+            </summary>
+        </member>
         <member name="P:System.Windows.Controls.RoutedPropertyChangingEventArgs`1.InCoercion">
             <summary>
             Gets or sets a value indicating whether internal value coercion is
@@ -2940,6 +2746,51 @@
             This is a total hack to work around the class hierarchy for Value
             coercion in NumericUpDown.
             </remarks>
+        </member>
+        <member name="M:System.Windows.Controls.RoutedPropertyChangingEventArgs`1.#ctor(System.Windows.DependencyProperty,`0,`0,System.Boolean)">
+            <summary>
+            Initializes a new instance of the
+            <see cref="T:System.Windows.Controls.RoutedPropertyChangingEventArgs`1" />
+            class.
+            </summary>
+            <param name="property">
+            The <see cref="T:System.Windows.DependencyProperty" /> identifier
+            for the property that is changing.
+            </param>
+            <param name="oldValue">The previous value of the property.</param>
+            <param name="newValue">
+            The new value of the property, assuming that the property change is
+            not cancelled.
+            </param>
+            <param name="isCancelable">
+            True if the property change is cancellable by setting
+            <see cref="P:System.Windows.Controls.RoutedPropertyChangingEventArgs`1.Cancel" />
+            to true in event handling. false if the property change is not
+            cancellable.
+            </param>
+        </member>
+        <member name="M:System.Windows.Controls.RoutedPropertyChangingEventArgs`1.#ctor(System.Windows.DependencyProperty,`0,`0,System.Boolean,System.Windows.RoutedEvent)">
+            <summary>
+            Initializes a new instance of the
+            <see cref="T:System.Windows.Controls.RoutedPropertyChangingEventArgs`1" />
+            class.
+            </summary>
+            <param name="property">
+            The <see cref="T:System.Windows.DependencyProperty" /> identifier
+            for the property that is changing.
+            </param>
+            <param name="oldValue">The previous value of the property.</param>
+            <param name="newValue">
+            The new value of the property, assuming that the property change is
+            not cancelled.
+            </param>
+            <param name="isCancelable">
+            True if the property change is cancellable by setting
+            <see cref="P:System.Windows.Controls.RoutedPropertyChangingEventArgs`1.Cancel" />
+            to true in event handling. false if the property change is not
+            cancellable.
+            </param>
+            <param name="routedEvent">The routed event identifier for this instance.</param>
         </member>
         <member name="T:System.Windows.Controls.RoutedPropertyChangingEventHandler`1">
             <summary>
@@ -2967,6 +2818,41 @@
             The Selector instance.
             </summary>
         </member>
+        <member name="P:System.Windows.Controls.SelectorSelectionAdapter.IgnoringSelectionChanged">
+            <summary>
+            Gets or sets a value indicating whether the selection change event 
+            should not be fired.
+            </summary>
+        </member>
+        <member name="P:System.Windows.Controls.SelectorSelectionAdapter.SelectorControl">
+            <summary>
+            Gets or sets the underlying
+            <see cref="T:System.Windows.Controls.Primitives.Selector" />
+            control.
+            </summary>
+            <value>The underlying
+            <see cref="T:System.Windows.Controls.Primitives.Selector" />
+            control.</value>
+        </member>
+        <member name="E:System.Windows.Controls.SelectorSelectionAdapter.SelectionChanged">
+            <summary>
+            Occurs when the
+            <see cref="P:System.Windows.Controls.SelectorSelectionAdapter.SelectedItem" />
+            property value changes.
+            </summary>
+        </member>
+        <member name="E:System.Windows.Controls.SelectorSelectionAdapter.Commit">
+            <summary>
+            Occurs when an item is selected and is committed to the underlying
+            <see cref="T:System.Windows.Controls.Primitives.Selector" />
+            control.
+            </summary>
+        </member>
+        <member name="E:System.Windows.Controls.SelectorSelectionAdapter.Cancel">
+            <summary>
+            Occurs when a selection is canceled before it is committed.
+            </summary>
+        </member>
         <member name="M:System.Windows.Controls.SelectorSelectionAdapter.#ctor">
             <summary>
             Initializes a new instance of the
@@ -2986,6 +2872,20 @@
             <see cref="T:System.Windows.Controls.Primitives.Selector" /> control
             to wrap as a
             <see cref="T:System.Windows.Controls.SelectorSelectionAdapter" />.</param>
+        </member>
+        <member name="P:System.Windows.Controls.SelectorSelectionAdapter.SelectedItem">
+            <summary>
+            Gets or sets the selected item of the selection adapter.
+            </summary>
+            <value>The selected item of the underlying selection adapter.</value>
+        </member>
+        <member name="P:System.Windows.Controls.SelectorSelectionAdapter.ItemsSource">
+            <summary>
+            Gets or sets a collection that is used to generate the content of
+            the selection adapter.
+            </summary>
+            <value>The collection used to generate content for the selection
+            adapter.</value>
         </member>
         <member name="M:System.Windows.Controls.SelectorSelectionAdapter.ResetScrollViewer">
             <summary>
@@ -3077,55 +2977,6 @@
             </summary>
             <returns>An automation peer for use by the Silverlight automation
             infrastructure.</returns>
-        </member>
-        <member name="P:System.Windows.Controls.SelectorSelectionAdapter.IgnoringSelectionChanged">
-            <summary>
-            Gets or sets a value indicating whether the selection change event 
-            should not be fired.
-            </summary>
-        </member>
-        <member name="P:System.Windows.Controls.SelectorSelectionAdapter.SelectorControl">
-            <summary>
-            Gets or sets the underlying
-            <see cref="T:System.Windows.Controls.Primitives.Selector" />
-            control.
-            </summary>
-            <value>The underlying
-            <see cref="T:System.Windows.Controls.Primitives.Selector" />
-            control.</value>
-        </member>
-        <member name="E:System.Windows.Controls.SelectorSelectionAdapter.SelectionChanged">
-            <summary>
-            Occurs when the
-            <see cref="P:System.Windows.Controls.SelectorSelectionAdapter.SelectedItem" />
-            property value changes.
-            </summary>
-        </member>
-        <member name="E:System.Windows.Controls.SelectorSelectionAdapter.Commit">
-            <summary>
-            Occurs when an item is selected and is committed to the underlying
-            <see cref="T:System.Windows.Controls.Primitives.Selector" />
-            control.
-            </summary>
-        </member>
-        <member name="E:System.Windows.Controls.SelectorSelectionAdapter.Cancel">
-            <summary>
-            Occurs when a selection is canceled before it is committed.
-            </summary>
-        </member>
-        <member name="P:System.Windows.Controls.SelectorSelectionAdapter.SelectedItem">
-            <summary>
-            Gets or sets the selected item of the selection adapter.
-            </summary>
-            <value>The selected item of the underlying selection adapter.</value>
-        </member>
-        <member name="P:System.Windows.Controls.SelectorSelectionAdapter.ItemsSource">
-            <summary>
-            Gets or sets a collection that is used to generate the content of
-            the selection adapter.
-            </summary>
-            <value>The collection used to generate content for the selection
-            adapter.</value>
         </member>
         <member name="T:System.Windows.Controls.Properties.Resources">
             <summary>
@@ -3293,233 +3144,16 @@
               Looks up a localized string similar to Cannot parse text &apos;{0}&apos;.
             </summary>
         </member>
-        <member name="T:System.Windows.Automation.Peers.RatingAutomationPeer">
-            <summary>
-            Exposes Rating types to UI Automation.
-            </summary>
-            <QualityBand>Preview</QualityBand>
-        </member>
-        <member name="M:System.Windows.Automation.Peers.RatingAutomationPeer.CreateItemAutomationPeer(System.Object)">
-            <summary>
-            Provides initialization for base class values when called by the constructor
-            of a derived class.
-            </summary>
-            <param name="item">The item to create the automation peer for.</param>
-            <returns>The item automation peer.</returns>
-        </member>
-        <member name="M:System.Windows.Automation.Peers.RatingAutomationPeer.#ctor(System.Windows.Controls.Rating)">
-            <summary>
-            Initializes a new instance of the <see cref="T:System.Windows.Automation.Peers.RatingAutomationPeer"/> class.
-            </summary>
-            <param name="owner">The Rating that is associated with this
-            RatingAutomationPeer.</param>
-        </member>
-        <member name="M:System.Windows.Automation.Peers.RatingAutomationPeer.GetNameCore">
-            <summary>
-            Returns a name if no name is set.
-            </summary>
-            <returns>A name if no name is set.</returns>
-        </member>
-        <member name="M:System.Windows.Automation.Peers.RatingAutomationPeer.GetLocalizedControlTypeCore">
-            <summary>
-            Returns the localized control type.
-            </summary>
-            <returns>The localized control type.</returns>
-        </member>
-        <member name="M:System.Windows.Automation.Peers.RatingAutomationPeer.GetAutomationControlTypeCore">
-            <summary>
-            Gets the control type for the Rating that is associated
-            with this RatingAutomationPeer.  This method is called by
-            GetAutomationControlType.
-            </summary>
-            <returns>List AutomationControlType.</returns>
-        </member>
-        <member name="M:System.Windows.Automation.Peers.RatingAutomationPeer.GetPattern(System.Windows.Automation.Peers.PatternInterface)">
-            <summary>
-            Gets the control pattern for the Rating that is associated
-            with this RatingAutomationPeer.
-            </summary>
-            <param name="patternInterface">The desired PatternInterface.</param>
-            <returns>The desired AutomationPeer or null.</returns>
-        </member>
-        <member name="M:System.Windows.Automation.Peers.RatingAutomationPeer.GetChildrenCore">
-            <summary>
-            Gets the collection of child elements of 
-            the <see cref="T:System.Windows.Controls.ItemsControl"/> that is 
-            associated with this <see cref="T:System.Windows.Automation.Peers.ItemsControlAutomationPeer"/>.
-            </summary>
-            <returns>
-            A collection of RatingItemAutomationPeer elements, or null if the
-            Rating that is associated with this RatingAutomationPeer is
-            empty.
-            </returns>
-        </member>
-        <member name="M:System.Windows.Automation.Peers.RatingAutomationPeer.GetSelection">
-            <summary>
-            Retrieves a UI Automation provider for each child element that is 
-            selected.
-            </summary>
-            <returns>An array of UI Automation providers.</returns>
-            <remarks>
-            This API supports the .NET Framework infrastructure and is not 
-            intended to be used directly from your code.
-            </remarks>
-        </member>
-        <member name="M:System.Windows.Automation.Peers.RatingAutomationPeer.SetValue(System.String)">
-            <summary>
-            Sets a rating value.
-            </summary>
-            <param name="value">The value of the rating.</param>
-        </member>
-        <member name="P:System.Windows.Automation.Peers.RatingAutomationPeer.OwnerRating">
-            <summary>
-            Gets the Rating that owns this RatingAutomationPeer.
-            </summary>
-            <value>The Rating.</value>
-        </member>
-        <member name="P:System.Windows.Automation.Peers.RatingAutomationPeer.CanSelectMultiple">
-            <summary>
-            Gets a value indicating whether the UI Automation provider 
-            allows more than one child element to be selected concurrently.
-            </summary>
-            <returns>true if multiple selection is allowed; otherwise, false.
-            </returns>
-            <remarks>
-            This API supports the .NET Framework infrastructure and is not 
-            intended to be used directly from your code.
-            </remarks>
-        </member>
-        <member name="P:System.Windows.Automation.Peers.RatingAutomationPeer.IsSelectionRequired">
-            <summary>
-            Gets a value indicating whether the UI Automation provider 
-            requires at least one child element to be selected.
-            </summary>
-            <returns>true if selection is required; otherwise, false.
-            </returns>
-            <remarks>
-            This API supports the .NET Framework infrastructure and is not 
-            intended to be used directly from your code.
-            </remarks>
-        </member>
-        <member name="P:System.Windows.Automation.Peers.RatingAutomationPeer.IsReadOnly">
-            <summary>
-            Gets a value indicating whether the Rating is read-only.
-            </summary>
-        </member>
-        <member name="P:System.Windows.Automation.Peers.RatingAutomationPeer.Value">
-            <summary>
-            Gets the rating value.
-            </summary>
-        </member>
-        <member name="T:System.Windows.Automation.Peers.RatingItemAutomationPeer">
-            <summary>
-            Exposes RatingItem types to UI Automation.
-            </summary>
-            <QualityBand>Preview</QualityBand>
-        </member>
-        <member name="M:System.Windows.Automation.Peers.RatingItemAutomationPeer.#ctor(System.Windows.Controls.RatingItem)">
-            <summary>
-            Initializes a new instance of the RatingAutomationPeer class.
-            </summary>
-            <param name="owner">
-            The Rating that is associated with this
-            RatingAutomationPeer.
-            </param>
-        </member>
-        <member name="M:System.Windows.Automation.Peers.RatingItemAutomationPeer.GetLocalizedControlTypeCore">
-            <summary>
-            Returns the localized control type.
-            </summary>
-            <returns>The localized control type.</returns>
-        </member>
-        <member name="M:System.Windows.Automation.Peers.RatingItemAutomationPeer.GetAutomationControlTypeCore">
-            <summary>
-            Gets the control type for the RatingItem that is associated
-            with this RatingItemAutomationPeer.  This method is called by
-            GetAutomationControlType.
-            </summary>
-            <returns>Custom AutomationControlType.</returns>
-        </member>
-        <member name="M:System.Windows.Automation.Peers.RatingItemAutomationPeer.GetClassNameCore">
-            <summary>
-            Gets the name of the RatingItem that is associated with this
-            RatingItemAutomationPeer.  This method is called by GetClassName.
-            </summary>
-            <returns>The name RatingItem.</returns>
-        </member>
-        <member name="M:System.Windows.Automation.Peers.RatingItemAutomationPeer.GetPattern(System.Windows.Automation.Peers.PatternInterface)">
-            <summary>
-            Gets the control pattern for the RatingItem that is associated
-            with this RatingItemAutomationPeer.
-            </summary>
-            <param name="patternInterface">The desired PatternInterface.</param>
-            <returns>The desired AutomationPeer or null.</returns>
-        </member>
-        <member name="M:System.Windows.Automation.Peers.RatingItemAutomationPeer.GetNameCore">
-            <summary>
-            Returns the name of the rating item.  Uses the index of the rating
-            item in the list.
-            </summary>
-            <returns>The name of the rating item.</returns>
-        </member>
-        <member name="M:System.Windows.Automation.Peers.RatingItemAutomationPeer.System#Windows#Automation#Provider#ISelectionItemProvider#AddToSelection">
-            <summary>
-            Adds the RatingItem to the collection of selected items.
-            </summary>
-            <remarks>
-            This API supports the .NET Framework infrastructure and is not 
-            intended to be used directly from your code.
-            </remarks>
-        </member>
-        <member name="M:System.Windows.Automation.Peers.RatingItemAutomationPeer.System#Windows#Automation#Provider#ISelectionItemProvider#RemoveFromSelection">
-            <summary>
-            Removes the current Rating from the collection of selected
-            items.
-            </summary>
-            <remarks>
-            This API supports the .NET Framework infrastructure and is not 
-            intended to be used directly from your code.
-            </remarks>
-        </member>
-        <member name="M:System.Windows.Automation.Peers.RatingItemAutomationPeer.System#Windows#Automation#Provider#ISelectionItemProvider#Select">
-            <summary>
-            Clears selection from currently selected items and then proceeds to
-            select the current Rating.
-            </summary>
-            <remarks>
-            This API supports the .NET Framework infrastructure and is not 
-            intended to be used directly from your code.
-            </remarks>
-        </member>
-        <member name="P:System.Windows.Automation.Peers.RatingItemAutomationPeer.OwnerRatingItem">
-            <summary>
-            Gets the RatingItem that owns this RatingItemAutomationPeer.
-            </summary>
-        </member>
-        <member name="P:System.Windows.Automation.Peers.RatingItemAutomationPeer.System#Windows#Automation#Provider#ISelectionItemProvider#IsSelected">
-            <summary>
-            Gets a value indicating whether the Rating is selected.
-            </summary>
-            <remarks>
-            This API supports the .NET Framework infrastructure and is not 
-            intended to be used directly from your code.
-            </remarks>
-        </member>
-        <member name="P:System.Windows.Automation.Peers.RatingItemAutomationPeer.System#Windows#Automation#Provider#ISelectionItemProvider#SelectionContainer">
-            <summary>
-            Gets the UI Automation provider that implements ISelectionProvider
-            and acts as the container for the calling object.
-            </summary>
-            <remarks>
-            This API supports the .NET Framework infrastructure and is not 
-            intended to be used directly from your code.
-            </remarks>
-        </member>
         <member name="T:System.Windows.Controls.Primitives.Clipper">
             <summary>
             Clips a ratio of its content.
             </summary>
             <QualityBand>Preview</QualityBand>
+        </member>
+        <member name="P:System.Windows.Controls.Primitives.Clipper.RatioVisible">
+            <summary>
+            Gets or sets the percentage of the item visible.
+            </summary>
         </member>
         <member name="F:System.Windows.Controls.Primitives.Clipper.RatioVisibleProperty">
             <summary>
@@ -3550,9 +3184,39 @@
             Updates the clip geometry.
             </summary>
         </member>
-        <member name="P:System.Windows.Controls.Primitives.Clipper.RatioVisible">
+        <member name="T:System.Windows.Controls.Primitives.LinearClipper">
             <summary>
-            Gets or sets the percentage of the item visible.
+            Clips the content of the control in a given direction.
+            </summary>
+            <QualityBand>Preview</QualityBand>
+        </member>
+        <member name="P:System.Windows.Controls.Primitives.LinearClipper.ExpandDirection">
+            <summary>
+            Gets or sets the clipped edge.
+            </summary>
+        </member>
+        <member name="F:System.Windows.Controls.Primitives.LinearClipper.ExpandDirectionProperty">
+            <summary>
+            Identifies the ExpandDirection dependency property.
+            </summary>
+        </member>
+        <member name="M:System.Windows.Controls.Primitives.LinearClipper.OnExpandDirectionChanged(System.Windows.DependencyObject,System.Windows.DependencyPropertyChangedEventArgs)">
+            <summary>
+            ExpandDirectionProperty property changed handler.
+            </summary>
+            <param name="d">ExpandDirectionView that changed its ExpandDirection.</param>
+            <param name="e">Event arguments.</param>
+        </member>
+        <member name="M:System.Windows.Controls.Primitives.LinearClipper.OnExpandDirectionChanged(System.Windows.Controls.ExpandDirection,System.Windows.Controls.ExpandDirection)">
+            <summary>
+            ExpandDirectionProperty property changed handler.
+            </summary>
+            <param name="oldValue">Old value.</param>
+            <param name="newValue">New value.</param>        
+        </member>
+        <member name="M:System.Windows.Controls.Primitives.LinearClipper.ClipContent">
+            <summary>
+            Updates the clip geometry.
             </summary>
         </member>
         <member name="T:System.Windows.Controls.EnumerableFunctions">
@@ -3605,41 +3269,6 @@
             <param name="values">A sequence of values.</param>
             <param name="percent">The percentage of values.</param>
             <returns>A sequence of percentages.</returns>
-        </member>
-        <member name="T:System.Windows.Controls.Primitives.LinearClipper">
-            <summary>
-            Clips the content of the control in a given direction.
-            </summary>
-            <QualityBand>Preview</QualityBand>
-        </member>
-        <member name="F:System.Windows.Controls.Primitives.LinearClipper.ExpandDirectionProperty">
-            <summary>
-            Identifies the ExpandDirection dependency property.
-            </summary>
-        </member>
-        <member name="M:System.Windows.Controls.Primitives.LinearClipper.OnExpandDirectionChanged(System.Windows.DependencyObject,System.Windows.DependencyPropertyChangedEventArgs)">
-            <summary>
-            ExpandDirectionProperty property changed handler.
-            </summary>
-            <param name="d">ExpandDirectionView that changed its ExpandDirection.</param>
-            <param name="e">Event arguments.</param>
-        </member>
-        <member name="M:System.Windows.Controls.Primitives.LinearClipper.OnExpandDirectionChanged(System.Windows.Controls.ExpandDirection,System.Windows.Controls.ExpandDirection)">
-            <summary>
-            ExpandDirectionProperty property changed handler.
-            </summary>
-            <param name="oldValue">Old value.</param>
-            <param name="newValue">New value.</param>        
-        </member>
-        <member name="M:System.Windows.Controls.Primitives.LinearClipper.ClipContent">
-            <summary>
-            Updates the clip geometry.
-            </summary>
-        </member>
-        <member name="P:System.Windows.Controls.Primitives.LinearClipper.ExpandDirection">
-            <summary>
-            Gets or sets the clipped edge.
-            </summary>
         </member>
         <member name="T:System.Windows.Controls.NullableConverter`1">
             <summary>
@@ -3716,6 +3345,11 @@
             </summary>
             <QualityBand>Preview</QualityBand>
         </member>
+        <member name="P:System.Windows.Controls.Rating.DisplayValue">
+            <summary>
+            Gets or sets the actual value of the Rating control.
+            </summary>
+        </member>
         <member name="F:System.Windows.Controls.Rating.DisplayValueProperty">
             <summary>
             Identifies the DisplayValue dependency property.
@@ -3731,6 +3365,22 @@
         <member name="M:System.Windows.Controls.Rating.OnDisplayValueChanged">
             <summary>
             DisplayValueProperty property changed handler.
+            </summary>
+        </member>
+        <member name="P:System.Windows.Controls.Rating.HoveredRatingItem">
+            <summary>
+            Gets or sets the rating item hovered over.
+            </summary>
+        </member>
+        <member name="P:System.Windows.Controls.Rating.Interaction">
+            <summary>
+            Gets the helper that provides all of the standard
+            interaction functionality.
+            </summary>
+        </member>
+        <member name="P:System.Windows.Controls.Rating.ItemCount">
+            <summary>
+            Gets or sets the number of rating items.
             </summary>
         </member>
         <member name="F:System.Windows.Controls.Rating.ItemCountProperty">
@@ -3751,6 +3401,11 @@
             </summary>
             <param name="newValue">The new value.</param>
         </member>
+        <member name="P:System.Windows.Controls.Rating.IsReadOnly">
+            <summary>
+            Gets or sets a value indicating whether the Rating is read-only.
+            </summary>
+        </member>
         <member name="F:System.Windows.Controls.Rating.IsReadOnlyProperty">
             <summary>
             Identifies the IsReadOnly dependency property.
@@ -3770,6 +3425,11 @@
             <param name="oldValue">Old value.</param>
             <param name="newValue">New value.</param>        
         </member>
+        <member name="P:System.Windows.Controls.Rating.SelectionMode">
+            <summary>
+            Gets or sets the selection mode.
+            </summary>
+        </member>
         <member name="F:System.Windows.Controls.Rating.SelectionModeProperty">
             <summary>
             Identifies the SelectionMode dependency property.
@@ -3788,6 +3448,11 @@
             </summary>
             <param name="oldValue">Old value.</param>
             <param name="newValue">New value.</param>        
+        </member>
+        <member name="P:System.Windows.Controls.Rating.Value">
+            <summary>
+            Gets or sets the rating value.
+            </summary>
         </member>
         <member name="F:System.Windows.Controls.Rating.ValueProperty">
             <summary>
@@ -3815,6 +3480,11 @@
             <param name="e">Information about the event.</param>
         </member>
         <member name="F:System.Windows.Controls.Rating.ValueChangedEvent">
+            <summary>
+            This event is raised when the value of the rating is changed.
+            </summary>
+        </member>
+        <member name="E:System.Windows.Controls.Rating.ValueChanged">
             <summary>
             This event is raised when the value of the rating is changed.
             </summary>
@@ -3981,47 +3651,6 @@
             </summary>
             <param name="useTransitions">A value indicating whether to use transitions.</param>
         </member>
-        <member name="P:System.Windows.Controls.Rating.DisplayValue">
-            <summary>
-            Gets or sets the actual value of the Rating control.
-            </summary>
-        </member>
-        <member name="P:System.Windows.Controls.Rating.HoveredRatingItem">
-            <summary>
-            Gets or sets the rating item hovered over.
-            </summary>
-        </member>
-        <member name="P:System.Windows.Controls.Rating.Interaction">
-            <summary>
-            Gets the helper that provides all of the standard
-            interaction functionality.
-            </summary>
-        </member>
-        <member name="P:System.Windows.Controls.Rating.ItemCount">
-            <summary>
-            Gets or sets the number of rating items.
-            </summary>
-        </member>
-        <member name="P:System.Windows.Controls.Rating.IsReadOnly">
-            <summary>
-            Gets or sets a value indicating whether the Rating is read-only.
-            </summary>
-        </member>
-        <member name="P:System.Windows.Controls.Rating.SelectionMode">
-            <summary>
-            Gets or sets the selection mode.
-            </summary>
-        </member>
-        <member name="P:System.Windows.Controls.Rating.Value">
-            <summary>
-            Gets or sets the rating value.
-            </summary>
-        </member>
-        <member name="E:System.Windows.Controls.Rating.ValueChanged">
-            <summary>
-            This event is raised when the value of the rating is changed.
-            </summary>
-        </member>
         <member name="T:System.Windows.Controls.RatingItem">
             <summary>
             An item used in a rating control.
@@ -4058,6 +3687,11 @@
             A value indicating whether the actual value is being set.
             </summary>
         </member>
+        <member name="P:System.Windows.Controls.RatingItem.DisplayValue">
+            <summary>
+            Gets the actual value.
+            </summary>
+        </member>
         <member name="F:System.Windows.Controls.RatingItem.DisplayValueProperty">
             <summary>
             Identifies the DisplayValue dependency property.
@@ -4082,6 +3716,11 @@
             A value indicating whether the read only value is being set.
             </summary>
         </member>
+        <member name="P:System.Windows.Controls.RatingItem.IsReadOnly">
+            <summary>
+            Gets a value indicating whether the control is read-only.
+            </summary>
+        </member>
         <member name="F:System.Windows.Controls.RatingItem.IsReadOnlyProperty">
             <summary>
             Identifies the IsReadOnly dependency property.
@@ -4100,6 +3739,16 @@
             </summary>
             <param name="oldValue">Old value.</param>
             <param name="newValue">New value.</param>        
+        </member>
+        <member name="P:System.Windows.Controls.RatingItem.ParentRating">
+            <summary>
+            Gets or sets the parent rating of this rating item.
+            </summary>
+        </member>
+        <member name="P:System.Windows.Controls.RatingItem.Value">
+            <summary>
+            Gets or sets the value property.
+            </summary>
         </member>
         <member name="F:System.Windows.Controls.RatingItem.ValueProperty">
             <summary>
@@ -4164,26 +3813,6 @@
             </summary>
             <returns>A AccordionItemAutomationPeer object for the AccordionItem.</returns>
         </member>
-        <member name="P:System.Windows.Controls.RatingItem.DisplayValue">
-            <summary>
-            Gets the actual value.
-            </summary>
-        </member>
-        <member name="P:System.Windows.Controls.RatingItem.IsReadOnly">
-            <summary>
-            Gets a value indicating whether the control is read-only.
-            </summary>
-        </member>
-        <member name="P:System.Windows.Controls.RatingItem.ParentRating">
-            <summary>
-            Gets or sets the parent rating of this rating item.
-            </summary>
-        </member>
-        <member name="P:System.Windows.Controls.RatingItem.Value">
-            <summary>
-            Gets or sets the value property.
-            </summary>
-        </member>
         <member name="T:System.Windows.Controls.RatingSelectionMode">
             <summary>
             This type is used to determine the state of the item selected and the
@@ -4208,13 +3837,6 @@
             <typeparam name="T0">The type of the first value.</typeparam>
             <typeparam name="T1">The type of the second value.</typeparam>
         </member>
-        <member name="M:System.Windows.Controls.Tuple`2.#ctor(`0,`1)">
-            <summary>
-            Initializes a new instance of the Tuple structure.
-            </summary>
-            <param name="first">The first value.</param>
-            <param name="second">The second value.</param>
-        </member>
         <member name="P:System.Windows.Controls.Tuple`2.First">
             <summary>
             Gets the first value.
@@ -4224,6 +3846,13 @@
             <summary>
             Gets the second value.
             </summary>
+        </member>
+        <member name="M:System.Windows.Controls.Tuple`2.#ctor(`0,`1)">
+            <summary>
+            Initializes a new instance of the Tuple structure.
+            </summary>
+            <param name="first">The first value.</param>
+            <param name="second">The second value.</param>
         </member>
         <member name="T:System.Windows.Controls.Tuple">
             <summary>
@@ -4239,6 +3868,377 @@
             <param name="arg0">The type of the first argument.</param>
             <param name="arg1">The type of the second argument.</param>
             <returns>The tuple to return.</returns>
+        </member>
+        <member name="T:System.Windows.Automation.Peers.AutoCompleteBoxAutomationPeer">
+            <summary>
+            Exposes AutoCompleteBox types to UI Automation.
+            </summary>
+            <QualityBand>Stable</QualityBand>
+        </member>
+        <member name="F:System.Windows.Automation.Peers.AutoCompleteBoxAutomationPeer.AutoCompleteBoxClassNameCore">
+            <summary>
+            The name reported as the core class name.
+            </summary>
+        </member>
+        <member name="P:System.Windows.Automation.Peers.AutoCompleteBoxAutomationPeer.OwnerAutoCompleteBox">
+            <summary>
+            Gets the AutoCompleteBox that owns this
+            AutoCompleteBoxAutomationPeer.
+            </summary>
+        </member>
+        <member name="P:System.Windows.Automation.Peers.AutoCompleteBoxAutomationPeer.System#Windows#Automation#Provider#ISelectionProvider#CanSelectMultiple">
+            <summary>
+            Gets a value indicating whether the UI automation provider allows
+            more than one child element to be selected concurrently.
+            </summary>
+            <remarks>
+            This API supports the .NET Framework infrastructure and is not 
+            intended to be used directly from your code.
+            </remarks>
+            <value>True if multiple selection is allowed; otherwise, false.</value>
+        </member>
+        <member name="P:System.Windows.Automation.Peers.AutoCompleteBoxAutomationPeer.System#Windows#Automation#Provider#ISelectionProvider#IsSelectionRequired">
+            <summary>
+            Gets a value indicating whether the UI automation provider
+            requires at least one child element to be selected.
+            </summary>
+            <remarks>
+            This API supports the .NET Framework infrastructure and is not 
+            intended to be used directly from your code.
+            </remarks>
+            <value>True if selection is required; otherwise, false.</value>
+        </member>
+        <member name="M:System.Windows.Automation.Peers.AutoCompleteBoxAutomationPeer.#ctor(System.Windows.Controls.AutoCompleteBox)">
+            <summary>
+            Initializes a new instance of the AutoCompleteBoxAutomationPeer
+            class.
+            </summary>
+            <param name="owner">
+            The AutoCompleteBox that is associated with this
+            AutoCompleteBoxAutomationPeer.
+            </param>
+        </member>
+        <member name="M:System.Windows.Automation.Peers.AutoCompleteBoxAutomationPeer.GetAutomationControlTypeCore">
+            <summary>
+            Gets the control type for the AutoCompleteBox that is associated
+            with this AutoCompleteBoxAutomationPeer. This method is called by
+            GetAutomationControlType.
+            </summary>
+            <returns>ComboBox AutomationControlType.</returns>
+        </member>
+        <member name="M:System.Windows.Automation.Peers.AutoCompleteBoxAutomationPeer.GetClassNameCore">
+            <summary>
+            Gets the name of the AutoCompleteBox that is associated with this
+            AutoCompleteBoxAutomationPeer. This method is called by
+            GetClassName.
+            </summary>
+            <returns>The name AutoCompleteBox.</returns>
+        </member>
+        <member name="M:System.Windows.Automation.Peers.AutoCompleteBoxAutomationPeer.GetPattern(System.Windows.Automation.Peers.PatternInterface)">
+            <summary>
+            Gets the control pattern for the AutoCompleteBox that is associated
+            with this AutoCompleteBoxAutomationPeer.
+            </summary>
+            <param name="patternInterface">The desired PatternInterface.</param>
+            <returns>The desired AutomationPeer or null.</returns>
+        </member>
+        <member name="M:System.Windows.Automation.Peers.AutoCompleteBoxAutomationPeer.System#Windows#Automation#Provider#IExpandCollapseProvider#Expand">
+            <summary>
+            Blocking method that returns after the element has been expanded.
+            </summary>
+            <remarks>
+            This API supports the .NET Framework infrastructure and is not 
+            intended to be used directly from your code.
+            </remarks>
+        </member>
+        <member name="M:System.Windows.Automation.Peers.AutoCompleteBoxAutomationPeer.System#Windows#Automation#Provider#IExpandCollapseProvider#Collapse">
+            <summary>
+            Blocking method that returns after the element has been collapsed.
+            </summary>
+            <remarks>
+            This API supports the .NET Framework infrastructure and is not 
+            intended to be used directly from your code.
+            </remarks>
+        </member>
+        <member name="P:System.Windows.Automation.Peers.AutoCompleteBoxAutomationPeer.System#Windows#Automation#Provider#IExpandCollapseProvider#ExpandCollapseState">
+            <summary>
+            Gets an element's current Collapsed or Expanded state.
+            </summary>
+            <remarks>
+            This API supports the .NET Framework infrastructure and is not 
+            intended to be used directly from your code.
+            </remarks>
+        </member>
+        <member name="M:System.Windows.Automation.Peers.AutoCompleteBoxAutomationPeer.RaiseExpandCollapseAutomationEvent(System.Boolean,System.Boolean)">
+            <summary>
+            Raises the ExpandCollapse automation event.
+            </summary>
+            <param name="oldValue">The old value.</param>
+            <param name="newValue">The new value.</param>
+        </member>
+        <member name="M:System.Windows.Automation.Peers.AutoCompleteBoxAutomationPeer.System#Windows#Automation#Provider#IValueProvider#SetValue(System.String)">
+            <summary>
+            Sets the value of a control.
+            </summary>
+            <param name="value">The value to set. The provider is responsible
+            for converting the value to the appropriate data type.</param>
+        </member>
+        <member name="P:System.Windows.Automation.Peers.AutoCompleteBoxAutomationPeer.System#Windows#Automation#Provider#IValueProvider#IsReadOnly">
+            <summary>
+            Gets a value indicating whether the value of a control is
+            read-only.
+            </summary>
+            <value>True if the value is read-only; false if it can be modified.</value>
+        </member>
+        <member name="P:System.Windows.Automation.Peers.AutoCompleteBoxAutomationPeer.System#Windows#Automation#Provider#IValueProvider#Value">
+            <summary>
+            Gets the value of the control.
+            </summary>
+            <value>The value of the control.</value>
+        </member>
+        <member name="M:System.Windows.Automation.Peers.AutoCompleteBoxAutomationPeer.GetChildrenCore">
+            <summary>
+            Gets the collection of child elements of the AutoCompleteBox that
+            are associated with this AutoCompleteBoxAutomationPeer. This method
+            is called by GetChildren.
+            </summary>
+            <returns>
+            A collection of automation peer elements, or an empty collection
+            if there are no child elements.
+            </returns>
+        </member>
+        <member name="M:System.Windows.Automation.Peers.AutoCompleteBoxAutomationPeer.System#Windows#Automation#Provider#ISelectionProvider#GetSelection">
+            <summary>
+            Retrieves a UI automation provider for each child element that is
+            selected.
+            </summary>
+            <returns>An array of UI automation providers.</returns>
+            <remarks>
+            This API supports the .NET Framework infrastructure and is not 
+            intended to be used directly from your code.
+            </remarks>
+        </member>
+        <member name="T:System.Windows.Automation.Peers.RatingAutomationPeer">
+            <summary>
+            Exposes Rating types to UI Automation.
+            </summary>
+            <QualityBand>Preview</QualityBand>
+        </member>
+        <member name="M:System.Windows.Automation.Peers.RatingAutomationPeer.CreateItemAutomationPeer(System.Object)">
+            <summary>
+            Provides initialization for base class values when called by the constructor
+            of a derived class.
+            </summary>
+            <param name="item">The item to create the automation peer for.</param>
+            <returns>The item automation peer.</returns>
+        </member>
+        <member name="P:System.Windows.Automation.Peers.RatingAutomationPeer.OwnerRating">
+            <summary>
+            Gets the Rating that owns this RatingAutomationPeer.
+            </summary>
+            <value>The Rating.</value>
+        </member>
+        <member name="M:System.Windows.Automation.Peers.RatingAutomationPeer.#ctor(System.Windows.Controls.Rating)">
+            <summary>
+            Initializes a new instance of the <see cref="T:System.Windows.Automation.Peers.RatingAutomationPeer"/> class.
+            </summary>
+            <param name="owner">The Rating that is associated with this
+            RatingAutomationPeer.</param>
+        </member>
+        <member name="M:System.Windows.Automation.Peers.RatingAutomationPeer.GetNameCore">
+            <summary>
+            Returns a name if no name is set.
+            </summary>
+            <returns>A name if no name is set.</returns>
+        </member>
+        <member name="M:System.Windows.Automation.Peers.RatingAutomationPeer.GetLocalizedControlTypeCore">
+            <summary>
+            Returns the localized control type.
+            </summary>
+            <returns>The localized control type.</returns>
+        </member>
+        <member name="M:System.Windows.Automation.Peers.RatingAutomationPeer.GetAutomationControlTypeCore">
+            <summary>
+            Gets the control type for the Rating that is associated
+            with this RatingAutomationPeer.  This method is called by
+            GetAutomationControlType.
+            </summary>
+            <returns>List AutomationControlType.</returns>
+        </member>
+        <member name="M:System.Windows.Automation.Peers.RatingAutomationPeer.GetPattern(System.Windows.Automation.Peers.PatternInterface)">
+            <summary>
+            Gets the control pattern for the Rating that is associated
+            with this RatingAutomationPeer.
+            </summary>
+            <param name="patternInterface">The desired PatternInterface.</param>
+            <returns>The desired AutomationPeer or null.</returns>
+        </member>
+        <member name="M:System.Windows.Automation.Peers.RatingAutomationPeer.GetChildrenCore">
+            <summary>
+            Gets the collection of child elements of 
+            the <see cref="T:System.Windows.Controls.ItemsControl"/> that is 
+            associated with this <see cref="T:System.Windows.Automation.Peers.ItemsControlAutomationPeer"/>.
+            </summary>
+            <returns>
+            A collection of RatingItemAutomationPeer elements, or null if the
+            Rating that is associated with this RatingAutomationPeer is
+            empty.
+            </returns>
+        </member>
+        <member name="P:System.Windows.Automation.Peers.RatingAutomationPeer.CanSelectMultiple">
+            <summary>
+            Gets a value indicating whether the UI Automation provider 
+            allows more than one child element to be selected concurrently.
+            </summary>
+            <returns>true if multiple selection is allowed; otherwise, false.
+            </returns>
+            <remarks>
+            This API supports the .NET Framework infrastructure and is not 
+            intended to be used directly from your code.
+            </remarks>
+        </member>
+        <member name="M:System.Windows.Automation.Peers.RatingAutomationPeer.GetSelection">
+            <summary>
+            Retrieves a UI Automation provider for each child element that is 
+            selected.
+            </summary>
+            <returns>An array of UI Automation providers.</returns>
+            <remarks>
+            This API supports the .NET Framework infrastructure and is not 
+            intended to be used directly from your code.
+            </remarks>
+        </member>
+        <member name="P:System.Windows.Automation.Peers.RatingAutomationPeer.IsSelectionRequired">
+            <summary>
+            Gets a value indicating whether the UI Automation provider 
+            requires at least one child element to be selected.
+            </summary>
+            <returns>true if selection is required; otherwise, false.
+            </returns>
+            <remarks>
+            This API supports the .NET Framework infrastructure and is not 
+            intended to be used directly from your code.
+            </remarks>
+        </member>
+        <member name="P:System.Windows.Automation.Peers.RatingAutomationPeer.IsReadOnly">
+            <summary>
+            Gets a value indicating whether the Rating is read-only.
+            </summary>
+        </member>
+        <member name="M:System.Windows.Automation.Peers.RatingAutomationPeer.SetValue(System.String)">
+            <summary>
+            Sets a rating value.
+            </summary>
+            <param name="value">The value of the rating.</param>
+        </member>
+        <member name="P:System.Windows.Automation.Peers.RatingAutomationPeer.Value">
+            <summary>
+            Gets the rating value.
+            </summary>
+        </member>
+        <member name="T:System.Windows.Automation.Peers.RatingItemAutomationPeer">
+            <summary>
+            Exposes RatingItem types to UI Automation.
+            </summary>
+            <QualityBand>Preview</QualityBand>
+        </member>
+        <member name="P:System.Windows.Automation.Peers.RatingItemAutomationPeer.OwnerRatingItem">
+            <summary>
+            Gets the RatingItem that owns this RatingItemAutomationPeer.
+            </summary>
+        </member>
+        <member name="M:System.Windows.Automation.Peers.RatingItemAutomationPeer.#ctor(System.Windows.Controls.RatingItem)">
+            <summary>
+            Initializes a new instance of the RatingAutomationPeer class.
+            </summary>
+            <param name="owner">
+            The Rating that is associated with this
+            RatingAutomationPeer.
+            </param>
+        </member>
+        <member name="M:System.Windows.Automation.Peers.RatingItemAutomationPeer.GetLocalizedControlTypeCore">
+            <summary>
+            Returns the localized control type.
+            </summary>
+            <returns>The localized control type.</returns>
+        </member>
+        <member name="M:System.Windows.Automation.Peers.RatingItemAutomationPeer.GetAutomationControlTypeCore">
+            <summary>
+            Gets the control type for the RatingItem that is associated
+            with this RatingItemAutomationPeer.  This method is called by
+            GetAutomationControlType.
+            </summary>
+            <returns>Custom AutomationControlType.</returns>
+        </member>
+        <member name="M:System.Windows.Automation.Peers.RatingItemAutomationPeer.GetClassNameCore">
+            <summary>
+            Gets the name of the RatingItem that is associated with this
+            RatingItemAutomationPeer.  This method is called by GetClassName.
+            </summary>
+            <returns>The name RatingItem.</returns>
+        </member>
+        <member name="M:System.Windows.Automation.Peers.RatingItemAutomationPeer.GetPattern(System.Windows.Automation.Peers.PatternInterface)">
+            <summary>
+            Gets the control pattern for the RatingItem that is associated
+            with this RatingItemAutomationPeer.
+            </summary>
+            <param name="patternInterface">The desired PatternInterface.</param>
+            <returns>The desired AutomationPeer or null.</returns>
+        </member>
+        <member name="M:System.Windows.Automation.Peers.RatingItemAutomationPeer.GetNameCore">
+            <summary>
+            Returns the name of the rating item.  Uses the index of the rating
+            item in the list.
+            </summary>
+            <returns>The name of the rating item.</returns>
+        </member>
+        <member name="M:System.Windows.Automation.Peers.RatingItemAutomationPeer.System#Windows#Automation#Provider#ISelectionItemProvider#AddToSelection">
+            <summary>
+            Adds the RatingItem to the collection of selected items.
+            </summary>
+            <remarks>
+            This API supports the .NET Framework infrastructure and is not 
+            intended to be used directly from your code.
+            </remarks>
+        </member>
+        <member name="P:System.Windows.Automation.Peers.RatingItemAutomationPeer.System#Windows#Automation#Provider#ISelectionItemProvider#IsSelected">
+            <summary>
+            Gets a value indicating whether the Rating is selected.
+            </summary>
+            <remarks>
+            This API supports the .NET Framework infrastructure and is not 
+            intended to be used directly from your code.
+            </remarks>
+        </member>
+        <member name="M:System.Windows.Automation.Peers.RatingItemAutomationPeer.System#Windows#Automation#Provider#ISelectionItemProvider#RemoveFromSelection">
+            <summary>
+            Removes the current Rating from the collection of selected
+            items.
+            </summary>
+            <remarks>
+            This API supports the .NET Framework infrastructure and is not 
+            intended to be used directly from your code.
+            </remarks>
+        </member>
+        <member name="M:System.Windows.Automation.Peers.RatingItemAutomationPeer.System#Windows#Automation#Provider#ISelectionItemProvider#Select">
+            <summary>
+            Clears selection from currently selected items and then proceeds to
+            select the current Rating.
+            </summary>
+            <remarks>
+            This API supports the .NET Framework infrastructure and is not 
+            intended to be used directly from your code.
+            </remarks>
+        </member>
+        <member name="P:System.Windows.Automation.Peers.RatingItemAutomationPeer.System#Windows#Automation#Provider#ISelectionItemProvider#SelectionContainer">
+            <summary>
+            Gets the UI Automation provider that implements ISelectionProvider
+            and acts as the container for the calling object.
+            </summary>
+            <remarks>
+            This API supports the .NET Framework infrastructure and is not 
+            intended to be used directly from your code.
+            </remarks>
         </member>
     </members>
 </doc>

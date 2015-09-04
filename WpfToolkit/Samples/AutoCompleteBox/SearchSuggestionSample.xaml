@@ -10,7 +10,7 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:system="clr-namespace:System;assembly=mscorlib"
     xmlns:samplesCommon="clr-namespace:System.Windows.Controls.Samples"
-    xmlns:input="clr-namespace:System.Windows.Controls;assembly=System.Windows.Controls.Input.Toolkit">
+    xmlns:input="clr-namespace:System.Windows.Controls;assembly=DotNetProjects.Input.Toolkit">
 
     <UserControl.Resources>
         <ImageBrush x:Key="SearchSuggestionsImageBrush" ImageSource="Venice.jpg" Stretch="None" />

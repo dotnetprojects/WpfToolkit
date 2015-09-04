@@ -20,7 +20,7 @@
 <UserControl x:Class="System.Windows.Controls.Samples.AutoCompleteComboBox"
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" 
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" 
-    xmlns:input="clr-namespace:System.Windows.Controls;assembly=System.Windows.Controls.Input.Toolkit">
+    xmlns:input="clr-namespace:System.Windows.Controls;assembly=DotNetProjects.Input.Toolkit">
     <StackPanel>
         <StackPanel.Resources>
 

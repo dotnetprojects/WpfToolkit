@@ -9,7 +9,7 @@
     <OutputType>library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>WPF.Themes</RootNamespace>
-    <AssemblyName>WPF.Themes</AssemblyName>
+    <AssemblyName>DotNetProjects.WPF.Themes</AssemblyName>
     <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
@@ -368,13 +368,13 @@
     </BootstrapperPackage>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Input\Controls.Input.Toolkit.csproj">
+    <ProjectReference Include="..\Input\DotNetProjects.Input.Toolkit.csproj">
       <Project>{83e92aa1-85bc-4b5a-a126-cdccf2c6e968}</Project>
-      <Name>Controls.Input.Toolkit</Name>
+      <Name>DotNetProjects.Input.Toolkit</Name>
     </ProjectReference>
-    <ProjectReference Include="..\Layout\Controls.Layout.Toolkit.csproj">
+    <ProjectReference Include="..\Layout\DotNetProjects.Layout.Toolkit.csproj">
       <Project>{82123c26-ffd4-455d-b5d9-78e72f465961}</Project>
-      <Name>Controls.Layout.Toolkit</Name>
+      <Name>DotNetProjects.Layout.Toolkit</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
