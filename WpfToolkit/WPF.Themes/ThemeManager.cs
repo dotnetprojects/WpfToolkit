@@ -1,12 +1,7 @@
-﻿using System.Windows.Input;
-
-namespace WPF.Themes
+﻿namespace WPF.Themes
 {
     using System;
-    using System.Collections.Generic;
-    using System.Linq;
     using System.Reflection;
-    using System.Text;
     using System.Windows;
     using System.Windows.Controls;
     
@@ -16,8 +11,8 @@ namespace WPF.Themes
         {
             if (theme != null)
             {
-                Assembly assembly = Assembly.LoadFrom("WPF.Themes.dll");
-                string packUri = String.Format(@"/WPF.Themes;component/{0}/Theme.xaml", theme);
+                Assembly assembly = Assembly.LoadFrom("DotNetProjects.WPF.Themes.dll");
+                string packUri = String.Format(@"/DotNetProjects.WPF.Themes;component/{0}/Theme.xaml", theme);
                 return Application.LoadComponent(new Uri(packUri, UriKind.Relative)) as ResourceDictionary;
             }
             return null;
@@ -25,8 +20,7 @@ namespace WPF.Themes
 
         public static string[] GetThemes()
         {
-            string[] themes = new string[] 
-            { 
+            string[] themes = { 
                 "ExpressionDark", "ExpressionLight", 
                 "RainierOrange", "RainierPurple", "RainierRadialBlue", 
                 "ShinyBlue", "ShinyRed", 
@@ -55,7 +49,7 @@ namespace WPF.Themes
 
         public static void ApplyTheme(this Application app, string theme)
         {
-            ResourceDictionary dictionary = ThemeManager.GetThemeResourceDictionary(theme);
+            ResourceDictionary dictionary = GetThemeResourceDictionary(theme);
 
             if (dictionary != null)
             {
@@ -66,7 +60,7 @@ namespace WPF.Themes
 
         public static void ApplyTheme(this ContentControl control, string theme)
         {
-            ResourceDictionary dictionary = ThemeManager.GetThemeResourceDictionary(theme);
+            ResourceDictionary dictionary = GetThemeResourceDictionary(theme);
 
             if (dictionary != null)
             {
@@ -119,9 +113,6 @@ namespace WPF.Themes
             }
         }
 
-        #endregion
-
-
-
+        #endregion	  
     }
 }
