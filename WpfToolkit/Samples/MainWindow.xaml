@@ -5,6 +5,7 @@
     xmlns:dataVisualisation="clr-namespace:System.Windows.Controls.Samples.DataVisualisation"
     xmlns:themes="clr-namespace:System.Windows.Controls.Samples.Themes"
     xmlns:treeMap="clr-namespace:System.Windows.Controls.Samples.TreeMap"
+    xmlns:primitives="clr-namespace:System.Windows.Controls.Primitives;assembly=DotNetProjects.Layout.Toolkit"
     Title="Main Window" Height="800" Width="900">
     <Grid>
         <TabControl>
@@ -43,6 +44,13 @@
             </TabItem>
             <TabItem Header="RatingSample">
                 <samples:RatingSample />
+            </TabItem>
+            <TabItem Header="Issue#16">
+                <Grid>
+                    <primitives:ExpandableContentControl Percentage="1" RevealMode="Right">
+                        <Button Width="300" Height="300">123</Button>
+                    </primitives:ExpandableContentControl>
+                </Grid>
             </TabItem>
         </TabControl>
     </Grid>
