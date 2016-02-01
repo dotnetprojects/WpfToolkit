@@ -1416,7 +1416,12 @@ namespace System.Windows.Controls
             }
             set
             {
-                _valueBindingEvaluator = new BindingEvaluator<string>(value);
+                if (_valueBindingEvaluator == null)
+                {
+                    _valueBindingEvaluator = new BindingEvaluator<string>();
+                    AddLogicalChild(_valueBindingEvaluator);
+                }
+                _valueBindingEvaluator.ValueBinding = value;
             }
         }
 

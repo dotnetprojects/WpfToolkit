@@ -2736,7 +2736,7 @@
             <param name="d">The dependency object on which the dependency property has changed.</param>
             <param name="e">The event args containing the old and new values of the dependency property.</param>
         </member>
-        <!-- Badly formed XML comment ignored for member "P:System.Windows.Controls.ZoomableCanvas.Offset" -->
+        <!-- Ungültiger XML-Kommentar wurde für den Member "P:System.Windows.Controls.ZoomableCanvas.Offset" ignoriert -->
         <member name="F:System.Windows.Controls.ZoomableCanvas.ScaleProperty">
             <summary>
             Identifies the <see cref="P:System.Windows.Controls.ZoomableCanvas.Scale"/> dependency property.
@@ -2764,7 +2764,7 @@
             <param name="d">The dependency object on which the dependency property has changed.</param>
             <param name="e">The event args containing the old and new values of the dependency property.</param>
         </member>
-        <!-- Badly formed XML comment ignored for member "P:System.Windows.Controls.ZoomableCanvas.Scale" -->
+        <!-- Ungültiger XML-Kommentar wurde für den Member "P:System.Windows.Controls.ZoomableCanvas.Scale" ignoriert -->
         <member name="F:System.Windows.Controls.ZoomableCanvas.RealizationLimitProperty">
             <summary>
             Identifies the <see cref="P:System.Windows.Controls.ZoomableCanvas.RealizationLimit"/> dependency property.
@@ -3433,7 +3433,7 @@
             Prioritization and lazy enumeration added by Kael Rowan.
             </remarks>
         </member>
-        <!-- Badly formed XML comment ignored for member "T:System.Collections.Generic.PriorityQuadTree`1.QuadNode" -->
+        <!-- Ungültiger XML-Kommentar wurde für den Member "T:System.Collections.Generic.PriorityQuadTree`1.QuadNode" ignoriert -->
         <member name="M:System.Collections.Generic.PriorityQuadTree`1.QuadNode.#ctor(`0,System.Windows.Rect,System.Double)">
             <summary>
             Construct new QuadNode to wrap the given node with given bounds.
