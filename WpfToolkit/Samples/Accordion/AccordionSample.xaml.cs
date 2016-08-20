@@ -178,5 +178,10 @@ namespace System.Windows.Controls.Samples
         {
             acc.Width = 300;
         }
+
+        private void Button_OnClick(object sender, RoutedEventArgs e)
+        {
+            button.Height += 50;
+        }
     }
 }

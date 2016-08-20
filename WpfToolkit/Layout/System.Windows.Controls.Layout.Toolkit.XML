@@ -1463,35 +1463,6 @@
             <param name="useTransitions">If set to <c>true</c> use transitions.</param>
             <remarks>The header will follow the parent accordionitem states.</remarks>
         </member>
-        <member name="T:System.Windows.Controls.Primitives.ExpandableContentControl">
-            <summary>
-            Represents a control with a single piece of content that expands or 
-            collapses in a sliding motion to a specified desired size.
-            </summary>
-            <QualityBand>Preview</QualityBand>
-        </member>
-        <member name="F:System.Windows.Controls.Primitives.ExpandableContentControl._clippingRectangle">
-            <summary>
-            The Geometry used to clip this control. The control will potentially
-            have less available space than the content it is arranging. That
-            part will be clipped.
-            </summary>
-        </member>
-        <member name="F:System.Windows.Controls.Primitives.ExpandableContentControl.ElementContentSiteName">
-            <summary>
-            The name of the ContentSite template part.
-            </summary>
-        </member>
-        <member name="F:System.Windows.Controls.Primitives.ExpandableContentControl._contentSite">
-            <summary>
-            BackingField for the ContentSite property.
-            </summary>
-        </member>
-        <member name="P:System.Windows.Controls.Primitives.ExpandableContentControl.ContentSite">
-            <summary>
-            Gets or sets the ContentSite template part.
-            </summary>
-        </member>
         <member name="P:System.Windows.Controls.Primitives.ExpandableContentControl.RevealMode">
             <summary>
             Gets or sets the direction in which the ExpandableContentControl 
@@ -1503,21 +1474,14 @@
             Identifies the RevealMode dependency property.
             </summary>
         </member>
-        <member name="M:System.Windows.Controls.Primitives.ExpandableContentControl.OnRevealModePropertyChanged(System.Windows.DependencyObject,System.Windows.DependencyPropertyChangedEventArgs)">
-            <summary>
-            RevealModeProperty property changed handler.
-            </summary>
-            <param name="d">ExpandableContentControl that changed its RevealMode.</param>
-            <param name="e">Event arguments.</param>
-        </member>
-        <member name="P:System.Windows.Controls.Primitives.ExpandableContentControl.IsVerticalRevealMode">
-            <summary>
-            Gets a value indicating whether the content should be revealed vertically.
-            </summary>
-        </member>
         <member name="P:System.Windows.Controls.Primitives.ExpandableContentControl.IsHorizontalRevealMode">
             <summary>
             Gets a value indicating whether the content should be revealed horizontally.
+            </summary>
+        </member>
+        <member name="P:System.Windows.Controls.Primitives.ExpandableContentControl.IsVerticalRevealMode">
+            <summary>
+            Gets a value indicating whether the content should be revealed verticaly.
             </summary>
         </member>
         <member name="P:System.Windows.Controls.Primitives.ExpandableContentControl.Percentage">
@@ -1532,137 +1496,10 @@
             Identifies the Percentage dependency property.
             </summary>
         </member>
-        <member name="M:System.Windows.Controls.Primitives.ExpandableContentControl.CoercePercentageProperty(System.Windows.DependencyObject,System.Object)">
-            <summary>
-            Coerce the percentage property as necessary.
-            </summary>
-            <param name="d"></param>
-            <param name="baseValue"></param>
-            <returns></returns>
-        </member>
-        <member name="M:System.Windows.Controls.Primitives.ExpandableContentControl.OnPercentagePropertyChanged(System.Windows.DependencyObject,System.Windows.DependencyPropertyChangedEventArgs)">
-            <summary>
-            PercentageProperty property changed handler.
-            </summary>
-            <param name="d">Page that changed its Percentage.</param>
-            <param name="e">Event arguments.</param>
-        </member>
-        <member name="P:System.Windows.Controls.Primitives.ExpandableContentControl.TargetSize">
-            <summary>
-            Gets or sets the desired size of the ExpandableContentControl content.
-            </summary>
-            <remarks>Use the percentage property to animate to this size.</remarks>
-        </member>
-        <member name="F:System.Windows.Controls.Primitives.ExpandableContentControl.TargetSizeProperty">
-            <summary>
-            Identifies the TargetSize dependency property.
-            </summary>
-        </member>
-        <member name="M:System.Windows.Controls.Primitives.ExpandableContentControl.OnTargetSizePropertyChanged(System.Windows.DependencyObject,System.Windows.DependencyPropertyChangedEventArgs)">
-            <summary>
-            TargetSizeProperty property changed handler.
-            </summary>
-            <param name="d">ExpandableContentControl that changed its TargetSize.</param>
-            <param name="e">Event arguments.</param>
-        </member>
-        <member name="E:System.Windows.Controls.Primitives.ExpandableContentControl.ContentSizeChanged">
-            <summary>
-            Occurs when the content changed its size.
-            </summary>
-        </member>
-        <member name="M:System.Windows.Controls.Primitives.ExpandableContentControl.MeasureOverride(System.Windows.Size)">
-            <summary>
-            Does a measure pass of the control and its content. The content will
-            get measured according to the TargetSize and is clipped.
-            </summary>
-            <param name="availableSize">The available size that this object can 
-            give to child objects. Infinity can be specified as a value to 
-            indicate that the object will size to whatever content is available.</param>
-            <returns>
-            The size that this object determines it needs during layout, based 
-            on its calculations of child object allotted sizes.
-            </returns>
-        </member>
-        <member name="M:System.Windows.Controls.Primitives.ExpandableContentControl.MeasureContent(System.Windows.Size)">
-            <summary>
-            Measures the content with a specific size.
-            </summary>
-            <param name="desiredSize">The size passed to the content.</param>
-        </member>
-        <member name="M:System.Windows.Controls.Primitives.ExpandableContentControl.CalculateDesiredContentSize">
-            <summary>
-            Interprets TargetSize.
-            </summary>
-            <returns>A size that can be safely used to measure content.</returns>
-        </member>
-        <member name="M:System.Windows.Controls.Primitives.ExpandableContentControl.ArrangeOverride(System.Windows.Size)">
-            <summary>
-            Arranges the control and its content. Content is arranged according
-            to the TargetSize and clipped.
-            </summary>
-            <param name="finalSize">The final area within the parent that this 
-            object should use to arrange itself and its children.</param>
-            <returns>The actual size used.</returns>
-        </member>
-        <member name="M:System.Windows.Controls.Primitives.ExpandableContentControl.UpdateClip(System.Windows.Size)">
-            <summary>
-            Updates the clip geometry.
-            </summary>
-            <param name="arrangeSize">Size of the visible part of the control.</param>
-        </member>
-        <member name="M:System.Windows.Controls.Primitives.ExpandableContentControl.RecalculatePercentage(System.Windows.Size)">
-            <summary>
-            Recalculates the percentage based on a new size.
-            </summary>
-            <param name="value">The new size used to base percentages on.</param>
-            <returns>The new percentage value</returns>
-        </member>
-        <member name="M:System.Windows.Controls.Primitives.ExpandableContentControl.CalculatePercentage(System.Windows.Controls.Primitives.ExpandableContentControl,System.Windows.Size)">
-            <summary>
-            Recalculates the percentage based on a new size.
-            </summary>
-            <param name="expandableContentControl">The control which is going to be evaluated</param>
-            <param name="value">The new size used to base percentages on.</param>
-            <returns>The new percentage value</returns>
-        </member>
-        <member name="M:System.Windows.Controls.Primitives.ExpandableContentControl.SetRevealDimension">
-            <summary>
-            Sets the dimensions according to the current percentage.
-            </summary>
-        </member>
-        <member name="M:System.Windows.Controls.Primitives.ExpandableContentControl.SetNonRevealDimension">
-            <summary>
-            Sets the opposite dimension.
-            </summary>
-        </member>
         <member name="P:System.Windows.Controls.Primitives.ExpandableContentControl.RelevantContentSize">
             <summary>
             Gets the content current visible size.
             </summary>
-        </member>
-        <member name="M:System.Windows.Controls.Primitives.ExpandableContentControl.#cctor">
-            <summary>
-            Static constructor for the <see cref="T:System.Windows.Controls.Primitives.ExpandableContentControl"/> class.
-            </summary>
-        </member>
-        <member name="M:System.Windows.Controls.Primitives.ExpandableContentControl.#ctor">
-            <summary>
-            Initializes a new instance of the <see cref="T:System.Windows.Controls.Primitives.ExpandableContentControl"/> class.
-            </summary>
-        </member>
-        <member name="M:System.Windows.Controls.Primitives.ExpandableContentControl.OnApplyTemplate">
-            <summary>
-            Builds the visual tree for the ExpandableContentControl control when a 
-            new template is applied.
-            </summary>
-        </member>
-        <member name="M:System.Windows.Controls.Primitives.ExpandableContentControl.OnContentSiteSizeChanged(System.Object,System.Windows.SizeChangedEventArgs)">
-            <summary>
-            Raises the ContentSizeChanged event.
-            </summary>
-            <param name="sender">The sender.</param>
-            <param name="e">The <see cref="T:System.Windows.SizeChangedEventArgs"/> 
-            instance containing the event data.</param>
         </member>
         <member name="T:System.Windows.Controls.AccordionItem">
             <summary>
@@ -1910,14 +1747,6 @@
             <summary>
             Starts an action, such as resize, collapse or expand.
             </summary>
-        </member>
-        <member name="M:System.Windows.Controls.AccordionItem.OnExpandSiteContentSizeChanged(System.Object,System.Windows.SizeChangedEventArgs)">
-            <summary>
-            Called when the content changes size.
-            </summary>
-            <param name="sender">The sender.</param>
-            <param name="e">The <see cref="T:System.Windows.SizeChangedEventArgs"/> 
-            instance containing the event data.</param>
         </member>
         <member name="P:System.Windows.Controls.AccordionItem.ShouldFillWidth">
             <summary>
@@ -4491,6 +4320,36 @@
             <returns>A sequence of numbers from start to (but not including) bound where each number is a given step greater than the previous number.</returns>
             <param name="start">The number to start from.</param>
             <param name="bound">The number to stop before.</param>
+        </member>
+        <member name="T:XamlGeneratedNamespace.GeneratedInternalTypeHelper">
+            <summary>
+            GeneratedInternalTypeHelper
+            </summary>
+        </member>
+        <member name="M:XamlGeneratedNamespace.GeneratedInternalTypeHelper.CreateInstance(System.Type,System.Globalization.CultureInfo)">
+            <summary>
+            CreateInstance
+            </summary>
+        </member>
+        <member name="M:XamlGeneratedNamespace.GeneratedInternalTypeHelper.GetPropertyValue(System.Reflection.PropertyInfo,System.Object,System.Globalization.CultureInfo)">
+            <summary>
+            GetPropertyValue
+            </summary>
+        </member>
+        <member name="M:XamlGeneratedNamespace.GeneratedInternalTypeHelper.SetPropertyValue(System.Reflection.PropertyInfo,System.Object,System.Object,System.Globalization.CultureInfo)">
+            <summary>
+            SetPropertyValue
+            </summary>
+        </member>
+        <member name="M:XamlGeneratedNamespace.GeneratedInternalTypeHelper.CreateDelegate(System.Type,System.Object,System.String)">
+            <summary>
+            CreateDelegate
+            </summary>
+        </member>
+        <member name="M:XamlGeneratedNamespace.GeneratedInternalTypeHelper.AddEventHandler(System.Reflection.EventInfo,System.Object,System.Delegate)">
+            <summary>
+            AddEventHandler
+            </summary>
         </member>
     </members>
 </doc>

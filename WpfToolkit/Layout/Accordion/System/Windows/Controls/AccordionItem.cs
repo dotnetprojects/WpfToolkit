@@ -3,14 +3,11 @@
 // Please see http://go.microsoft.com/fwlink/?LinkID=131993] for details.
 // All other rights reserved.
 
-using System.Collections.ObjectModel;
 using System.Globalization;
-using System.Linq;
 using System.Windows.Automation.Peers;
 using System.Windows.Controls.Primitives;
 using System.Windows.Input;
 using System.Windows.Media;
-using System.Windows.Media.Animation;
 using System.Diagnostics;
 using System.Diagnostics.CodeAnalysis;
 
@@ -108,75 +105,10 @@ namespace System.Windows.Controls
             }
             set
             {
-                if (_expandSite != null)
-                {
-                    _expandSite.ContentSizeChanged -= OnExpandSiteContentSizeChanged;
-                }               
                 _expandSite = value;
-
-                if (_expandSite != null)
-                {
-                    _expandSite.ContentSizeChanged += OnExpandSiteContentSizeChanged;
-                }
             }
         }
 
-#if SILVERLIGHT
-        // WPF uses different logic in StartAction() to handle when AccordionItem's next action
-        // should be processed. This makes keeping track of storyboards unnecessary.
-
-        /// <summary>
-        /// Gets or sets the collapse storyboard.
-        /// </summary>
-        /// <value>The collapse storyboard.</value>
-        private Storyboard CollapseStoryboard
-        {
-            get { return _collapseStoryboard; }
-            set
-            {
-                if (_collapseStoryboard != null)
-                {
-                    _collapseStoryboard.Completed -= OnStoryboardFinished;
-                }
-                _collapseStoryboard = value;
-                if (_collapseStoryboard != null)
-                {
-                    _collapseStoryboard.Completed += OnStoryboardFinished;
-                }
-            }
-        }
-
-        /// <summary>
-        /// BackingField for CollapseStoryboard.
-        /// </summary>
-        private Storyboard _collapseStoryboard;
-
-        /// <summary>
-        /// Gets or sets the expand storyboard.
-        /// </summary>
-        /// <value>The expand storyboard.</value>
-        private Storyboard ExpandStoryboard
-        {
-            get { return _expandStoryboard; }
-            set
-            {
-                if (_expandStoryboard != null)
-                {
-                    _expandStoryboard.Completed -= OnStoryboardFinished;
-                }
-                _expandStoryboard = value;
-                if (_expandStoryboard != null)
-                {
-                    _expandStoryboard.Completed += OnStoryboardFinished;
-                }
-            }
-        }
-
-        /// <summary>
-        /// BackingField for ExpandStoryboard.
-        /// </summary>
-        private Storyboard _expandStoryboard;
-#endif
         #endregion
 
         /// <summary>
@@ -265,7 +197,7 @@ namespace System.Windows.Controls
 #if SILVERLIGHT
                 ctrl.ExpandSite.Percentage = ctrl.IsSelected ? 1 : 0;
 #else
-                ctrl.ExpandSite.RecalculatePercentage(ctrl.IsSelected ? 1 : 0);
+ //               ctrl.ExpandSite.RecalculatePercentage(ctrl.IsSelected ? 1 : 0);
 #endif
             }
 
@@ -509,32 +441,6 @@ namespace System.Windows.Controls
 
                 throw new InvalidOperationException(Properties.Resources.AccordionItem_InvalidWriteToContentTargetSize);
             }
-
-            // Pass the value to the expandSite
-            // This is done explicitly so an animation action can be scheduled
-            // deterministicly.
-            ExpandableContentControl expandSite = source.ExpandSite;
-            if (expandSite != null && !expandSite.TargetSize.Equals(targetSize))
-            {
-                expandSite.TargetSize = targetSize;
-                if (source.IsSelected)
-                {
-                    if (source.ParentAccordion != null && source.ParentAccordion.IsResizing)
-                    {
-                        // if the accordion is resizing, this item should snap immediately
-#if SILVERLIGHT
-                        expandSite.Percentage = 1;
-#else
-                        expandSite.RecalculatePercentage(1);
-#endif
-                    }
-                    else
-                    {
-                        // otherwise schedule the resize
-                        source.Schedule(AccordionAction.Resize);
-                    }
-                }
-            }
         }
         #endregion public Size ContentTargetSize
 
@@ -551,19 +457,6 @@ namespace System.Windows.Controls
         /// </summary>
         /// <value>The scheduled action.</value>
         internal AccordionAction ScheduledAction { get; private set; }
-
-#if SILVERLIGHT
-        /// <summary>
-        /// Occurs when the accordionItem is selected.
-        /// </summary>
-        public event RoutedEventHandler Selected;
-
-        /// <summary>
-        /// Occurs when the accordionItem is unselected.
-        /// </summary>
-        public event RoutedEventHandler Unselected;
-
-#else
 
         /// <summary>
         /// Occurs when the accordionItem is selected.
@@ -600,7 +493,6 @@ namespace System.Windows.Controls
         {
             DefaultStyleKeyProperty.OverrideMetadata(typeof(AccordionItem), new FrameworkPropertyMetadata(typeof(AccordionItem)));
         }
-#endif
 
         /// <summary>
         /// Initializes a new instance of the AccordionItem class.
@@ -781,35 +673,6 @@ namespace System.Windows.Controls
             }
         }
 #endif
-
-        /// <summary>
-        /// Called when the content changes size.
-        /// </summary>
-        /// <param name="sender">The sender.</param>
-        /// <param name="e">The <see cref="System.Windows.SizeChangedEventArgs"/> 
-        /// instance containing the event data.</param>
-        private void OnExpandSiteContentSizeChanged(object sender, SizeChangedEventArgs e)
-        {
-            // only needed if we are not currently already working on a transition
-            // if a sizechange occurs during a transition, it is not possible
-            // to distinquish between one triggered by the expand/collapse 
-            // storyboard, or one by the content itself.
-            if (IsSelected && _isBusyWithAction == false)
-            {
-                // only undertake this in a situation where the resized content
-                // can be shown, ie. in a non-fixed scenario.
-                if ((!ShouldFillWidth && e.PreviousSize.Width != e.NewSize.Width) ||
-                    (!ShouldFillHeight && e.PreviousSize.Height != e.NewSize.Height))
-                {
-                    // since size has changed, a fresh approach should be taken
-                    ExpandSite.MeasureContent(ExpandSite.CalculateDesiredContentSize());
-                    ExpandSite.RecalculatePercentage(ExpandSite.TargetSize);
-
-                    // schedule a resize to move to this new size
-                    Schedule(AccordionAction.Resize);
-                }
-            }
-        }
 
         /// <summary>
         /// Gets a value indicating whether the AccordionItem fills width.
