@@ -186,8 +186,8 @@
                 HorizontalAlignment="Left"
                 MinimumPopulateDelay="0"
                 MinimumPrefixLength="0"
-                IsTextCompletionEnabled="False"
-                FilterMode="None"
+                IsTextCompletionEnabled="True"
+                FilterMode="Contains"
                 Opacity="0.75"
                 Grid.Column="1"
             />
