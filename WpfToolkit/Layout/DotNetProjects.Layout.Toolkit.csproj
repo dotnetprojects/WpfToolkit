@@ -85,7 +85,7 @@
       <Link>Common\BindingEvaluator.cs</Link>
     </Compile>
     <Compile Include="..\Common\System\Windows\Controls\Extensions.cs">
-      <Link>Common\Extensions.cs</Link>
+      <Link>Extensions\Extensions.cs</Link>
     </Compile>
     <Compile Include="..\Common\System\Windows\Controls\InteractionHelper.cs">
       <Link>Common\InteractionHelper.cs</Link>
@@ -126,10 +126,10 @@
     </Compile>
     <Compile Include="TransitioningContentControl\System\Windows\Controls\TransitioningContentControl.cs" />
     <Compile Include="ZoomableCanvas\LinkedListExtensions.cs" />
-    <Compile Include="ZoomableCanvas\MathExtensions.cs" />
+    <Compile Include="Extensions\MathExtensions.cs" />
     <Compile Include="ZoomableCanvas\PriorityQuadTree.cs" />
     <Compile Include="ZoomableCanvas\PriorityQueue.cs" />
-    <Compile Include="ZoomableCanvas\RectExtensions.cs" />
+    <Compile Include="Extensions\RectExtensions.cs" />
     <Compile Include="ZoomableCanvas\VirtualPanel.cs" />
     <Compile Include="ZoomableCanvas\ZoomableCanvas.cs" />
     <EmbeddedResource Include="Properties\Resources.resx">

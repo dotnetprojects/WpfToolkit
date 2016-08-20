@@ -6,6 +6,7 @@
 using System;
 using System.Globalization;
 using System.Windows.Controls;
+using System.Windows.Controls.Extensions;
 
 namespace System.Windows.Controls
 {

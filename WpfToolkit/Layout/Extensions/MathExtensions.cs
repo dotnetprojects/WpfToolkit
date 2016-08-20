@@ -1,10 +1,11 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Diagnostics.CodeAnalysis;
 
-namespace System
+namespace System.Windows.Controls.Extensions
 {
     /// <summary>Provides extension methods for trigonometric, logarithmic, and other common mathematical functions.</summary>
-    public static class MathExtensions
+    internal static class MathExtensions
     {
         #region Approximation
 

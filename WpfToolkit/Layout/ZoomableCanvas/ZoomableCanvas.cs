@@ -4,9 +4,11 @@ using System.Collections.Generic;
 using System.Collections.Specialized;
 using System.Diagnostics.CodeAnalysis;
 using System.Linq;
+using System.Windows.Controls.Extensions;
 using System.Windows.Controls.Primitives;
 using System.Windows.Input;
 using System.Windows.Media;
+using System.Windows.Shapes;
 using System.Windows.Threading;
 
 namespace System.Windows.Controls

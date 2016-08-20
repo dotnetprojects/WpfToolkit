@@ -69,14 +69,14 @@
             <returns>Returns the evaluated T value of the bound dependency
             property.</returns>
         </member>
-        <member name="T:System.Windows.Controls.Extensions">
+        <member name="T:System.Windows.Controls.Extensions.Extensions">
             <summary>
             This set of internal extension methods provide general solutions and 
             utilities in a small enough number to not warrant a dedicated extension
             methods class.
             </summary>
         </member>
-        <member name="M:System.Windows.Controls.Extensions.Invert(System.Windows.Media.Matrix,System.Windows.Media.Matrix@)">
+        <member name="M:System.Windows.Controls.Extensions.Extensions.Invert(System.Windows.Media.Matrix,System.Windows.Media.Matrix@)">
             <summary>
             Inverts a Matrix. The Invert functionality on the Matrix type is 
             internal to the framework only. Since Matrix is a struct, an out 
@@ -89,7 +89,7 @@
             successfully inverted. If the determinant is 0.0, then it cannot 
             be inverted and the original instance will remain untouched.</returns>
         </member>
-        <member name="M:System.Windows.Controls.Extensions.Contains(System.String,System.String,System.StringComparison)">
+        <member name="M:System.Windows.Controls.Extensions.Extensions.Contains(System.String,System.String,System.StringComparison)">
             <summary>
             An implementation of the Contains member of string that takes in a 
             string comparison. The traditional .NET string Contains member uses 

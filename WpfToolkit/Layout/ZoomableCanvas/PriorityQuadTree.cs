@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Linq;
 using System.Windows;
+using System.Windows.Controls.Extensions;
 
 namespace System.Collections.Generic
 {

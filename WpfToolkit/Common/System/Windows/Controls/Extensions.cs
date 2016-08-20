@@ -7,7 +7,7 @@ using System;
 using System.Windows;
 using System.Windows.Media;
 
-namespace System.Windows.Controls
+namespace System.Windows.Controls.Extensions
 {
     /// <summary>
     /// This set of internal extension methods provide general solutions and 

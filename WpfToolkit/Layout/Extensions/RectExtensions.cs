@@ -1,11 +1,12 @@
 ﻿using System;
+using System.Windows;
 
-namespace System.Windows
+namespace System.Windows.Controls.Extensions
 {
     /// <summary>
     /// Provides extension methods for rects.
     /// </summary>
-	public static class RectExtensions
+	internal static class RectExtensions
 	{
         /// <summary>
         /// Returns the center point of the <see cref="Rect"/>.
