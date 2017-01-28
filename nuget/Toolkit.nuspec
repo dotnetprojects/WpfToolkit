@@ -6,7 +6,7 @@
     <authors>DotNetProjects</authors>
     <owners>DotNetProjects</owners>
     <licenseUrl>http://opensource.org/licenses/MS-PL</licenseUrl>
-    <projectUrl>hhttps://github.com/dotnetprojects/wpftoolkit</projectUrl>
+    <projectUrl>https://github.com/dotnetprojects/wpftoolkit</projectUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <description>wpf toolkit fork of the MS WPF Toolkit (https://wpf.codeplex.com/releases/view/40535)</description>
     <copyright>Copyright 2015</copyright>
