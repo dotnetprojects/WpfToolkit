@@ -65,9 +65,9 @@ namespace System.Windows.Controls.DataVisualization
                 TargetNullValue = valueBinding.TargetNullValue,
                 ValidatesOnDataErrors = valueBinding.ValidatesOnDataErrors,
 #endif
-#if !NO_VALIDATESONNOTIFYDATAERRORS
-                ValidatesOnNotifyDataErrors = valueBinding.ValidatesOnNotifyDataErrors,
-#endif
+//#if !NO_VALIDATESONNOTIFYDATAERRORS
+//                ValidatesOnNotifyDataErrors = valueBinding.ValidatesOnNotifyDataErrors,
+//#endif
             };
 
             SetBinding(BindingExtractor.ValueProperty, binding);

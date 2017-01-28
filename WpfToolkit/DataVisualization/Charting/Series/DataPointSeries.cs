@@ -767,6 +767,7 @@ namespace System.Windows.Controls.DataVisualization.Charting
             LegendItem legendItem = new LegendItem() { Owner = owner };
             legendItem.SetBinding(LegendItem.StyleProperty, new Binding(ActualLegendItemStyleName) { Source = this });
             legendItem.SetBinding(LegendItem.ContentProperty, new Binding(TitleName) { Source = this });
+            legendItem.SetBinding(LegendItem.VisibilityProperty, new Binding(VisibilityName) { Source = this });
             return legendItem;
         }
 

@@ -18,6 +18,11 @@ namespace System.Windows.Controls.DataVisualization.Charting
         /// </summary>
         protected const string TitleName = "Title";
 
+        /// <summary>
+        /// The name of the Visibility property.
+        /// </summary>
+        protected const string VisibilityName = "Visibility";
+
         #region public ISeriesHost SeriesHost
         /// <summary>
         /// Gets or sets the parent instance the Series belongs to.

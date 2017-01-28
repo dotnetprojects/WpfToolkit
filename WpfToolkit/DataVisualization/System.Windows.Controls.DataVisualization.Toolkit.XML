@@ -5282,12 +5282,7 @@
         </member>
         <member name="P:System.Windows.Controls.DataVisualization.Charting.Compatible.AreaSeries.TransitionEasingFunction">
             <summary>
-            Gets or sets the IEasingFunction to use for data transitions.
-            </summary>
-        </member>
-        <member name="F:System.Windows.Controls.DataVisualization.Charting.Compatible.AreaSeries.TransitionEasingFunctionProperty">
-            <summary>
-            Identifies the TransitionEasingFunction dependency property.
+            Gets or sets a placeholder for the TransitionEasingFunction dependency property.
             </summary>
         </member>
         <member name="T:System.Windows.Controls.DataVisualization.Charting.Compatible.BarSeries">
@@ -5411,12 +5406,7 @@
         </member>
         <member name="P:System.Windows.Controls.DataVisualization.Charting.Compatible.BarSeries.TransitionEasingFunction">
             <summary>
-            Gets or sets the IEasingFunction to use for data transitions.
-            </summary>
-        </member>
-        <member name="F:System.Windows.Controls.DataVisualization.Charting.Compatible.BarSeries.TransitionEasingFunctionProperty">
-            <summary>
-            Identifies the TransitionEasingFunction dependency property.
+            Gets or sets a placeholder for the TransitionEasingFunction dependency property.
             </summary>
         </member>
         <member name="T:System.Windows.Controls.DataVisualization.Charting.Compatible.ColumnSeries">
@@ -5540,12 +5530,7 @@
         </member>
         <member name="P:System.Windows.Controls.DataVisualization.Charting.Compatible.ColumnSeries.TransitionEasingFunction">
             <summary>
-            Gets or sets the IEasingFunction to use for data transitions.
-            </summary>
-        </member>
-        <member name="F:System.Windows.Controls.DataVisualization.Charting.Compatible.ColumnSeries.TransitionEasingFunctionProperty">
-            <summary>
-            Identifies the TransitionEasingFunction dependency property.
+            Gets or sets a placeholder for the TransitionEasingFunction dependency property.
             </summary>
         </member>
         <member name="T:System.Windows.Controls.DataVisualization.Charting.Compatible.LineSeries">
@@ -5689,12 +5674,7 @@
         </member>
         <member name="P:System.Windows.Controls.DataVisualization.Charting.Compatible.LineSeries.TransitionEasingFunction">
             <summary>
-            Gets or sets the IEasingFunction to use for data transitions.
-            </summary>
-        </member>
-        <member name="F:System.Windows.Controls.DataVisualization.Charting.Compatible.LineSeries.TransitionEasingFunctionProperty">
-            <summary>
-            Identifies the TransitionEasingFunction dependency property.
+            Gets or sets a placeholder for the TransitionEasingFunction dependency property.
             </summary>
         </member>
         <member name="T:System.Windows.Controls.DataVisualization.Charting.Compatible.ScatterSeries">
@@ -5835,12 +5815,7 @@
         </member>
         <member name="P:System.Windows.Controls.DataVisualization.Charting.Compatible.ScatterSeries.TransitionEasingFunction">
             <summary>
-            Gets or sets the IEasingFunction to use for data transitions.
-            </summary>
-        </member>
-        <member name="F:System.Windows.Controls.DataVisualization.Charting.Compatible.ScatterSeries.TransitionEasingFunctionProperty">
-            <summary>
-            Identifies the TransitionEasingFunction dependency property.
+            Gets or sets a placeholder for the TransitionEasingFunction dependency property.
             </summary>
         </member>
         <member name="T:System.Windows.Controls.DataVisualization.Charting.Compatible.SelectionEnabledToSelectionModeConverter">
@@ -5987,11 +5962,6 @@
             <summary>
             Gets or sets the easing function to use when transitioning the
             data points.
-            </summary>
-        </member>
-        <member name="F:System.Windows.Controls.DataVisualization.Charting.DataPointSeries.TransitionEasingFunctionProperty">
-            <summary>
-            Identifies the TransitionEasingFunction dependency property.
             </summary>
         </member>
         <member name="P:System.Windows.Controls.DataVisualization.Charting.DataPointSeries.IsSelectionEnabled">
@@ -8247,6 +8217,11 @@
             The name of the Title property.
             </summary>
         </member>
+        <member name="F:System.Windows.Controls.DataVisualization.Charting.Series.VisibilityName">
+            <summary>
+            The name of the Visibility property.
+            </summary>
+        </member>
         <member name="P:System.Windows.Controls.DataVisualization.Charting.Series.SeriesHost">
             <summary>
             Gets or sets the parent instance the Series belongs to.
@@ -8624,12 +8599,7 @@
         </member>
         <member name="P:System.Windows.Controls.DataVisualization.Charting.SeriesDefinition.TransitionEasingFunction">
             <summary>
-            Gets or sets the IEasingFunction to use for data transitions.
-            </summary>
-        </member>
-        <member name="F:System.Windows.Controls.DataVisualization.Charting.SeriesDefinition.TransitionEasingFunctionProperty">
-            <summary>
-            Identifies the TransitionEasingFunction dependency property.
+            Gets or sets a placeholder for the TransitionEasingFunction dependency property.
             </summary>
         </member>
         <member name="T:System.Windows.Controls.DataVisualization.Charting.SeriesSelectionMode">
@@ -9588,11 +9558,6 @@
         <member name="F:System.Windows.Controls.DataVisualization.ObjectPool`1.DefaultMinimumObjectsInThePool">
             <summary>
             The default minimum number objects to keep in the pool.
-            </summary>
-        </member>
-        <member name="F:System.Windows.Controls.DataVisualization.ObjectPool`1._traversing">
-            <summary>
-            A value indicating whether the pool is being traversed.
             </summary>
         </member>
         <member name="F:System.Windows.Controls.DataVisualization.ObjectPool`1._createObject">
@@ -12149,6 +12114,36 @@
         <member name="M:System.Windows.Controls.WeakEventListener`3.Detach">
             <summary>
             Detaches from the subscribed event.
+            </summary>
+        </member>
+        <member name="T:XamlGeneratedNamespace.GeneratedInternalTypeHelper">
+            <summary>
+            GeneratedInternalTypeHelper
+            </summary>
+        </member>
+        <member name="M:XamlGeneratedNamespace.GeneratedInternalTypeHelper.CreateInstance(System.Type,System.Globalization.CultureInfo)">
+            <summary>
+            CreateInstance
+            </summary>
+        </member>
+        <member name="M:XamlGeneratedNamespace.GeneratedInternalTypeHelper.GetPropertyValue(System.Reflection.PropertyInfo,System.Object,System.Globalization.CultureInfo)">
+            <summary>
+            GetPropertyValue
+            </summary>
+        </member>
+        <member name="M:XamlGeneratedNamespace.GeneratedInternalTypeHelper.SetPropertyValue(System.Reflection.PropertyInfo,System.Object,System.Object,System.Globalization.CultureInfo)">
+            <summary>
+            SetPropertyValue
+            </summary>
+        </member>
+        <member name="M:XamlGeneratedNamespace.GeneratedInternalTypeHelper.CreateDelegate(System.Type,System.Object,System.String)">
+            <summary>
+            CreateDelegate
+            </summary>
+        </member>
+        <member name="M:XamlGeneratedNamespace.GeneratedInternalTypeHelper.AddEventHandler(System.Reflection.EventInfo,System.Object,System.Delegate)">
+            <summary>
+            AddEventHandler
             </summary>
         </member>
     </members>
