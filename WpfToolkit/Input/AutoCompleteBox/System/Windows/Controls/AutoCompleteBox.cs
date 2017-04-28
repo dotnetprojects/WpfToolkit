@@ -2323,7 +2323,10 @@ namespace System.Windows.Controls
                 _skipSelectedItemTextUpdate = true;
             }
             SelectedItem = selectedItem;
-            SelectionAdapter.SelectedItem = selectedItem;
+            if (SelectionAdapter != null)
+            {
+                SelectionAdapter.SelectedItem = selectedItem;
+            }
 
             // Restore updates for TextSelection
             if (_ignoreTextSelectionChange)
