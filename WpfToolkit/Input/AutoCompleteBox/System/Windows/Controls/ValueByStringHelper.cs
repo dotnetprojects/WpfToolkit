@@ -20,6 +20,7 @@ namespace System.Windows.Controls
                     if (prp == null)
                         return null;
                     retVal = prp.GetValue(retVal, null);
+                    _sb.Clear();
                 }
                 else if (ch == '[')
                 {
