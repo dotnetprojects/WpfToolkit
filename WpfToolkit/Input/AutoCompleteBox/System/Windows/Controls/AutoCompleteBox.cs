@@ -2062,8 +2062,8 @@ namespace System.Windows.Controls
         {
             if (ValueMemberPath != null)
             {
-                var readValue = ValueByStringHelper.GetValue(ValueMemberPath, value);
-                return readValue != null ? readValue.ToString() : string.Empty;
+                var readValue = ValueByStringHelper.GetStringValue(ValueMemberPath, _valueMemberBinding, value);
+                return readValue != null ? readValue : string.Empty;
             }
 
             return value == null ? string.Empty : value.ToString();
