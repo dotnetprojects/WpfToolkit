@@ -87,9 +87,6 @@
     </Page>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="..\Common\System\Windows\Controls\BindingEvaluator.cs">
-      <Link>Common\BindingEvaluator.cs</Link>
-    </Compile>
     <Compile Include="..\Common\System\Windows\Controls\Extensions.cs">
       <Link>Extensions\Extensions.cs</Link>
     </Compile>

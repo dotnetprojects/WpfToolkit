@@ -4,71 +4,6 @@
         <name>DotNetProjects.Layout.Toolkit</name>
     </assembly>
     <members>
-        <member name="T:System.Windows.Controls.BindingEvaluator`1">
-            <summary>
-            A framework element that permits a binding to be evaluated in a new data
-            context leaf node.
-            </summary>
-            <typeparam name="T">The type of dynamic binding to return.</typeparam>
-        </member>
-        <member name="F:System.Windows.Controls.BindingEvaluator`1._binding">
-            <summary>
-            Gets or sets the string value binding used by the control.
-            </summary>
-        </member>
-        <member name="P:System.Windows.Controls.BindingEvaluator`1.Value">
-            <summary>
-            Gets or sets the data item string value.
-            </summary>
-        </member>
-        <member name="F:System.Windows.Controls.BindingEvaluator`1.ValueProperty">
-            <summary>
-            Identifies the Value dependency property.
-            </summary>
-        </member>
-        <member name="P:System.Windows.Controls.BindingEvaluator`1.ValueBinding">
-            <summary>
-            Gets or sets the value binding.
-            </summary>
-        </member>
-        <member name="M:System.Windows.Controls.BindingEvaluator`1.#ctor">
-            <summary>
-            Initializes a new instance of the BindingEvaluator class.
-            </summary>
-        </member>
-        <member name="M:System.Windows.Controls.BindingEvaluator`1.#ctor(System.Windows.Data.Binding)">
-            <summary>
-            Initializes a new instance of the BindingEvaluator class,
-            setting the initial binding to the provided parameter.
-            </summary>
-            <param name="binding">The initial string value binding.</param>
-        </member>
-        <member name="M:System.Windows.Controls.BindingEvaluator`1.ClearDataContext">
-            <summary>
-            Clears the data context so that the control does not keep a
-            reference to the last-looked up item.
-            </summary>
-        </member>
-        <member name="M:System.Windows.Controls.BindingEvaluator`1.GetDynamicValue(System.Object,System.Boolean)">
-            <summary>
-            Updates the data context of the framework element and returns the 
-            updated binding value.
-            </summary>
-            <param name="o">The object to use as the data context.</param>
-            <param name="clearDataContext">If set to true, this parameter will
-            clear the data context immediately after retrieving the value.</param>
-            <returns>Returns the evaluated T value of the bound dependency
-            property.</returns>
-        </member>
-        <member name="M:System.Windows.Controls.BindingEvaluator`1.GetDynamicValue(System.Object)">
-            <summary>
-            Updates the data context of the framework element and returns the 
-            updated binding value.
-            </summary>
-            <param name="o">The object to use as the data context.</param>
-            <returns>Returns the evaluated T value of the bound dependency
-            property.</returns>
-        </member>
         <member name="T:System.Windows.Controls.Extensions.Extensions">
             <summary>
             This set of internal extension methods provide general solutions and 
@@ -3390,7 +3325,7 @@
             <param name="d">The dependency object on which the dependency property has changed.</param>
             <param name="e">The event args containing the old and new values of the dependency property.</param>
         </member>
-        <!-- Ungültiger XML-Kommentar wurde für den Member "P:System.Windows.Controls.ZoomableCanvas.Offset" ignoriert -->
+        <!-- Badly formed XML comment ignored for member "P:System.Windows.Controls.ZoomableCanvas.Offset" -->
         <member name="F:System.Windows.Controls.ZoomableCanvas.ScaleProperty">
             <summary>
             Identifies the <see cref="P:System.Windows.Controls.ZoomableCanvas.Scale"/> dependency property.
@@ -3418,7 +3353,7 @@
             <param name="d">The dependency object on which the dependency property has changed.</param>
             <param name="e">The event args containing the old and new values of the dependency property.</param>
         </member>
-        <!-- Ungültiger XML-Kommentar wurde für den Member "P:System.Windows.Controls.ZoomableCanvas.Scale" ignoriert -->
+        <!-- Badly formed XML comment ignored for member "P:System.Windows.Controls.ZoomableCanvas.Scale" -->
         <member name="F:System.Windows.Controls.ZoomableCanvas.RealizationLimitProperty">
             <summary>
             Identifies the <see cref="P:System.Windows.Controls.ZoomableCanvas.RealizationLimit"/> dependency property.
@@ -4060,7 +3995,7 @@
             Prioritization and lazy enumeration added by Kael Rowan.
             </remarks>
         </member>
-        <!-- Ungültiger XML-Kommentar wurde für den Member "T:System.Collections.Generic.PriorityQuadTree`1.QuadNode" ignoriert -->
+        <!-- Badly formed XML comment ignored for member "T:System.Collections.Generic.PriorityQuadTree`1.QuadNode" -->
         <member name="M:System.Collections.Generic.PriorityQuadTree`1.QuadNode.#ctor(`0,System.Windows.Rect,System.Double)">
             <summary>
             Construct new QuadNode to wrap the given node with given bounds.

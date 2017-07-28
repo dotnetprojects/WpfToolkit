@@ -161,12 +161,6 @@ namespace System.Windows.Controls
         internal InteractionHelper Interaction { get; set; }
 
         /// <summary>
-        /// Gets or sets the BindingEvaluator, a framework element that can
-        /// provide updated string values from a single binding.
-        /// </summary>
-        private BindingEvaluator<string> _valueBindingEvaluator;
-
-        /// <summary>
         /// A weak event listener for the collection changed event.
         /// </summary>
         private WeakEventListener<AutoCompleteBox, object, NotifyCollectionChangedEventArgs> _collectionChangedWeakEventListener;
@@ -1400,6 +1394,7 @@ namespace System.Windows.Controls
         }
 #endif
 
+        private Binding _valueMemberBinding;
         /// <summary>
         /// Gets or sets the  <see cref="T:System.Windows.Data.Binding" /> that
         /// is used to get the values for display in the text portion of
@@ -1412,16 +1407,19 @@ namespace System.Windows.Controls
         {
             get
             {
-                return _valueBindingEvaluator != null ? _valueBindingEvaluator.ValueBinding : null;
+                return _valueMemberBinding;
             }
             set
             {
-                if (_valueBindingEvaluator == null)
+                _valueMemberBinding = value;
+                if (_valueMemberBinding != null && _valueMemberBinding.Path != null)
                 {
-                    _valueBindingEvaluator = new BindingEvaluator<string>();
-                    AddLogicalChild(_valueBindingEvaluator);
+                    ValueMemberPath = _valueMemberBinding.Path.Path;
                 }
-                _valueBindingEvaluator.ValueBinding = value;
+                else
+                {
+                    ValueMemberPath = null;
+                }
             }
         }
 
@@ -1433,17 +1431,7 @@ namespace System.Windows.Controls
         /// <value>The property path that is used to get values for display in
         /// the text portion of the
         /// <see cref="T:System.Windows.Controls.AutoCompleteBox" /> control.</value>
-        public string ValueMemberPath
-        {
-            get
-            {
-                return (ValueMemberBinding != null) ? ValueMemberBinding.Path.Path : null;
-            }
-            set
-            {
-                ValueMemberBinding = value == null ? null : new Binding(value);
-            }
-        }
+        public string ValueMemberPath { get; set; }
 
 #if !SILVERLIGHT
         /// <summary>
@@ -2054,12 +2042,7 @@ namespace System.Windows.Controls
         /// <returns>Formatted Value.</returns>
         private string FormatValue(object value, bool clearDataContext)
         {
-            string str = FormatValue(value);
-            if (clearDataContext && _valueBindingEvaluator != null)
-            {
-                _valueBindingEvaluator.ClearDataContext();
-            }
-            return str;
+            return FormatValue(value);
         }
 
         /// <summary>
@@ -2077,9 +2060,10 @@ namespace System.Windows.Controls
         /// </remarks>
         protected virtual string FormatValue(object value)
         {
-            if (_valueBindingEvaluator != null)
+            if (ValueMemberPath != null)
             {
-                return _valueBindingEvaluator.GetDynamicValue(value) ?? string.Empty;
+                var readValue = ValueByStringHelper.GetValue(ValueMemberPath, value);
+                return readValue != null ? readValue.ToString() : string.Empty;
             }
 
             return value == null ? string.Empty : value.ToString();
@@ -2522,12 +2506,6 @@ namespace System.Windows.Controls
                     _view.RemoveAt(view_index);
                     view_count--;
                 }
-            }
-
-            // Clear the evaluator to discard a reference to the last item
-            if (_valueBindingEvaluator != null)
-            {
-                _valueBindingEvaluator.ClearDataContext();
             }
         }
 

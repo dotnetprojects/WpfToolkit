@@ -87,9 +87,6 @@
     </Page>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="..\Common\System\Windows\Controls\BindingEvaluator.cs">
-      <Link>Common\BindingEvaluator.cs</Link>
-    </Compile>
     <Compile Include="..\Common\System\Windows\Controls\Extensions.cs">
       <Link>Common\Extensions.cs</Link>
     </Compile>
@@ -126,6 +123,7 @@
     <Compile Include="AutoCompleteBox\System\Windows\Controls\RoutedPropertyChangingEventArgs.cs" />
     <Compile Include="AutoCompleteBox\System\Windows\Controls\RoutedPropertyChangingEventHandler.cs" />
     <Compile Include="AutoCompleteBox\System\Windows\Controls\SelectorSelectionAdapter.cs" />
+    <Compile Include="AutoCompleteBox\System\Windows\Controls\ValueByStringHelper.cs" />
     <Compile Include="GlobalSuppressions.cs" />
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>
