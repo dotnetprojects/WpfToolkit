@@ -32,6 +32,14 @@ namespace System.Windows.Controls
                 }
             }
 
+            if (_sb.Length>0)
+            {
+                var prp = retVal.GetType().GetProperty(_sb.ToString());
+                if (prp == null)
+                    return null;
+                retVal = prp.GetValue(retVal, null);
+            }
+
             return retVal;
         }
     }
