@@ -8,6 +8,16 @@
         <StartupObject />
     </PropertyGroup>
     <ItemGroup>
+        <Reference Include="System.ComponentModel.DataAnnotations" />
+        <Reference Include="System.Web" />
+    </ItemGroup>
+    <ItemGroup>
+        <ProjectReference Include="..\DataVisualization\DotNetProjects.DataVisualization.Toolkit.csproj" />
+        <ProjectReference Include="..\Input\DotNetProjects.Input.Toolkit.csproj" />
+        <ProjectReference Include="..\Layout\DotNetProjects.Layout.Toolkit.csproj" />
+        <ProjectReference Include="..\WPF.Themes\DotNetProjects.WPF.Themes.csproj" />
+    </ItemGroup>
+    <ItemGroup>
         <Compile Remove="AutoCompleteBox\DataGridAutoCompleteBox.xaml.cs" />
         <Compile Remove="AutoCompleteBox\DataGridAutoCompleteBoxEdit.xaml.cs" />
     </ItemGroup>
@@ -18,12 +28,6 @@
     <ItemGroup>
         <Page Remove="AutoCompleteBox\DataGridAutoCompleteBox.xaml" />
         <Page Remove="AutoCompleteBox\DataGridAutoCompleteBoxEdit.xaml" />
-    </ItemGroup>
-    <ItemGroup>
-        <ProjectReference Include="..\DataVisualization\DotNetProjects.DataVisualization.Toolkit.csproj" />
-        <ProjectReference Include="..\Input\DotNetProjects.Input.Toolkit.csproj" />
-        <ProjectReference Include="..\Layout\DotNetProjects.Layout.Toolkit.csproj" />
-        <ProjectReference Include="..\WPF.Themes\DotNetProjects.WPF.Themes.csproj" />
     </ItemGroup>
     <ItemGroup>
         <Resource Include="AutoCompleteBox\Bing.png" />
