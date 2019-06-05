@@ -770,7 +770,7 @@ namespace System.Windows.Controls.DataVisualization.Charting
         }
 
         private Rectangle SelectionRect;
-        private Point SelectionStartPoint, endPoint;
+        private Point SelectionStartPoint;
         private void SelectionArea_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
         {
             if (Keyboard.Modifiers == ModifierKeys.Control)
