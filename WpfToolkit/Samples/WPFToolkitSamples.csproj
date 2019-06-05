@@ -1,35 +1,35 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project Sdk="Microsoft.NET.Sdk">
-  <PropertyGroup>
-      <OutputType>WinExe</OutputType>
-    <RootNamespace>System.Windows.Controls.Samples</RootNamespace>
-      <TargetFramework>net40</TargetFramework>
-      <ApplicationIcon />
-      <StartupObject />
-  </PropertyGroup>
-  <ItemGroup>
-    <Compile Remove="AutoCompleteBox\DataGridAutoCompleteBox.xaml.cs" />
-    <Compile Remove="AutoCompleteBox\DataGridAutoCompleteBoxEdit.xaml.cs" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Remove="AutoCompleteBox\DataGridAutoCompleteBox.xaml" />
-    <None Remove="AutoCompleteBox\DataGridAutoCompleteBoxEdit.xaml" />
-  </ItemGroup>
-  <ItemGroup>
-    <Page Remove="AutoCompleteBox\DataGridAutoCompleteBox.xaml" />
-    <Page Remove="AutoCompleteBox\DataGridAutoCompleteBoxEdit.xaml" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\DataVisualization\DotNetProjects.DataVisualization.Toolkit.csproj" />
-    <ProjectReference Include="..\Input\DotNetProjects.Input.Toolkit.csproj" />
-    <ProjectReference Include="..\Layout\DotNetProjects.Layout.Toolkit.csproj" />
-    <ProjectReference Include="..\WPF.Themes\DotNetProjects.WPF.Themes.csproj" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="AutoCompleteBox\Bing.png" />
-    <Resource Include="AutoCompleteBox\Venice.jpg" />
-    <Resource Include="Accordion\Bing.png" />
-    <Resource Include="Rating\Images\Casablanca.jpg" />
-    <EmbeddedResource Include="BlogPostData.xml" />
-  </ItemGroup>
+    <PropertyGroup>
+        <OutputType>WinExe</OutputType>
+        <RootNamespace>System.Windows.Controls.Samples</RootNamespace>
+        <TargetFramework>net40</TargetFramework>
+        <ApplicationIcon />
+        <StartupObject />
+    </PropertyGroup>
+    <ItemGroup>
+        <Compile Remove="AutoCompleteBox\DataGridAutoCompleteBox.xaml.cs" />
+        <Compile Remove="AutoCompleteBox\DataGridAutoCompleteBoxEdit.xaml.cs" />
+    </ItemGroup>
+    <ItemGroup>
+        <None Remove="AutoCompleteBox\DataGridAutoCompleteBox.xaml" />
+        <None Remove="AutoCompleteBox\DataGridAutoCompleteBoxEdit.xaml" />
+    </ItemGroup>
+    <ItemGroup>
+        <Page Remove="AutoCompleteBox\DataGridAutoCompleteBox.xaml" />
+        <Page Remove="AutoCompleteBox\DataGridAutoCompleteBoxEdit.xaml" />
+    </ItemGroup>
+    <ItemGroup>
+        <ProjectReference Include="..\DataVisualization\DotNetProjects.DataVisualization.Toolkit.csproj" />
+        <ProjectReference Include="..\Input\DotNetProjects.Input.Toolkit.csproj" />
+        <ProjectReference Include="..\Layout\DotNetProjects.Layout.Toolkit.csproj" />
+        <ProjectReference Include="..\WPF.Themes\DotNetProjects.WPF.Themes.csproj" />
+    </ItemGroup>
+    <ItemGroup>
+        <Resource Include="AutoCompleteBox\Bing.png" />
+        <Resource Include="AutoCompleteBox\Venice.jpg" />
+        <Resource Include="Accordion\Bing.png" />
+        <Resource Include="Rating\Images\Casablanca.jpg" />
+        <EmbeddedResource Include="BlogPostData.xml" />
+    </ItemGroup>
 </Project>
