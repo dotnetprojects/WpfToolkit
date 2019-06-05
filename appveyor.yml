@@ -27,21 +27,21 @@ after_build:
 test: off
 
 artifacts:
-  - path: WpfToolkit\DataVisualization\bin\Release\DotNetProjects.DataVisualization.Toolkit.dll
+  - path: WpfToolkit\DataVisualization\bin\Release\net40\DotNetProjects.DataVisualization.Toolkit.dll
     name: DotNetProjects.DataVisualization.Toolkit.dll
-  - path: WpfToolkit\DataVisualization\bin\Release\DotNetProjects.DataVisualization.Toolkit.pdb
+  - path: WpfToolkit\DataVisualization\bin\Release\net40\DotNetProjects.DataVisualization.Toolkit.pdb
     name: DotNetProjects.DataVisualization.Toolkit.pdb
-  - path: WpfToolkit\Input\bin\Release\DotNetProjects.Input.Toolkit.dll
+  - path: WpfToolkit\Input\bin\Release\net40\DotNetProjects.Input.Toolkit.dll
     name: DotNetProjects.Input.Toolkit.dll
-  - path: WpfToolkit\Input\bin\Release\DotNetProjects.Input.Toolkit.pdb
+  - path: WpfToolkit\Input\bin\Release\net40\DotNetProjects.Input.Toolkit.pdb
     name: DotNetProjects.Input.Toolkit.pdb
-  - path: WpfToolkit\Layout\bin\Release\DotNetProjects.Layout.Toolkit.dll
+  - path: WpfToolkit\Layout\bin\Release\net40\DotNetProjects.Layout.Toolkit.dll
     name: DotNetProjects.Layout.Toolkit.dll
-  - path: WpfToolkit\Layout\bin\Release\DotNetProjects.Layout.Toolkit.pdb
+  - path: WpfToolkit\Layout\bin\Release\net40\DotNetProjects.Layout.Toolkit.pdb
     name: DotNetProjects.Layout.Toolkit.pdb
-  - path: WpfToolkit\WPF.Themes\bin\Release\DotNetProjects.WPF.Themes.dll
+  - path: WpfToolkit\WPF.Themes\bin\Release\net40\DotNetProjects.WPF.Themes.dll
     name: DotNetProjects.WPF.Themes.dll
-  - path: WpfToolkit\WPF.Themes\bin\Release\DotNetProjects.WPF.Themes.pdb
+  - path: WpfToolkit\WPF.Themes\bin\Release\net40\DotNetProjects.WPF.Themes.pdb
     name: DotNetProjects.WPF.Themes.pdb
   - path: '**\DotNetProjects.*.nupkg'
 
