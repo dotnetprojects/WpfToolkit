@@ -6,12 +6,35 @@ branches:
 
 image: Visual Studio 2017
 
-dotnet_csproj:
-  patch: true
-  file: '**\*.csproj;**\*.props'
-  assembly_version: '{version}'
-  file_version: '{version}'
-  informational_version: '{version}'
+install:
+  ps: |
+    $versionPrefix = [Version]$Env:APPVEYOR_BUILD_VERSION
+    $prNumber = $Env:APPVEYOR_PULL_REQUEST_NUMBER
+    $sourceBranch = $Env:APPVEYOR_REPO_BRANCH
+    $sourceCommit = $Env:APPVEYOR_REPO_COMMIT.Substring(0,8)
+    if ($prNumber)
+    {
+      $versionLabel = "pr${prNumber}"
+      $versionSuffix = "-${versionLabel}+$sourceCommit"
+    }
+    elseif ($sourceBranch.StartsWith('release') -Or $sourceBranch.StartsWith('hotfix'))
+    {
+      $versionLabel = "rc"
+      $versionSuffix = "-$versionLabel-$buildNumber+$sourceCommit"
+    }
+    elseif ($sourceBranch -ne 'master')
+    {
+      $versionLabel = "dev"
+      $versionSuffix = "-$versionLabel-$buildNumber+$sourceCommit"
+    }
+    else
+    {
+      $versionSuffix = ""
+    }
+    $version = "$versionPrefix$versionSuffix"
+    Write-Host "Version set to: $version"
+    Add-AppveyorMessage -Message "Version set to: $version" -Category Information
+    Update-AppveyorBuild -Version "$version"
 
 configuration: Release
 
@@ -19,28 +42,14 @@ before_build:
   - nuget restore WpfToolkit\WPFToolkit.sln
 
 build:
-  project: WpfToolkit\WPFToolkit.sln
+  project: 'WpfToolkit\WPFToolkit.sln'
 
 test: off
 
 artifacts:
-  - path: WpfToolkit\DataVisualization\bin\Release\net40\DotNetProjects.DataVisualization.Toolkit.dll
-    name: DotNetProjects.DataVisualization.Toolkit.dll
-  - path: WpfToolkit\DataVisualization\bin\Release\net40\DotNetProjects.DataVisualization.Toolkit.pdb
-    name: DotNetProjects.DataVisualization.Toolkit.pdb
-  - path: WpfToolkit\Input\bin\Release\net40\DotNetProjects.Input.Toolkit.dll
-    name: DotNetProjects.Input.Toolkit.dll
-  - path: WpfToolkit\Input\bin\Release\net40\DotNetProjects.Input.Toolkit.pdb
-    name: DotNetProjects.Input.Toolkit.pdb
-  - path: WpfToolkit\Layout\bin\Release\net40\DotNetProjects.Layout.Toolkit.dll
-    name: DotNetProjects.Layout.Toolkit.dll
-  - path: WpfToolkit\Layout\bin\Release\net40\DotNetProjects.Layout.Toolkit.pdb
-    name: DotNetProjects.Layout.Toolkit.pdb
-  - path: WpfToolkit\WPF.Themes\bin\Release\net40\DotNetProjects.WPF.Themes.dll
-    name: DotNetProjects.WPF.Themes.dll
-  - path: WpfToolkit\WPF.Themes\bin\Release\net40\DotNetProjects.WPF.Themes.pdb
-    name: DotNetProjects.WPF.Themes.pdb
-  - path: '**\DotNetProjects.*.nupkg'
+  - path: '**\bin\$(configuration)\net40\DotNetProjects.*.dll'
+  - path: '**\bin\$(configuration)\net40\DotNetProjects.*.pdb'
+  - path: '**\bin\$(configuration)\DotNetProjects.*.nupkg'
 
 #uncomment to publish to NuGet
 deploy:
@@ -48,5 +57,3 @@ deploy:
   api_key:
     secure: OrhpK2cLXXcoWW+hU6xAv3eeKIbATEFbenteoFsi9EfM1yyDof6ZuNKAsA3Vy6vb
   artifact: /.*\.nupkg/
-  
-  

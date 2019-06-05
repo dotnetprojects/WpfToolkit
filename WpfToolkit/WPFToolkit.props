@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+    <PropertyGroup>
+        <Company>Microsoft Corp.</Company>
+        <Product>WPF Toolkit</Product>
+        <Copyright>Copyright © 2010 Microsoft Corp. All rights reserved.</Copyright>
+        <Version Condition="'$(APPVEYOR_BUILD_VERSION)' != ''">$(APPVEYOR_BUILD_VERSION)</Version>
+        <Version Condition="'$(Version)' == ''">0.1.0-dev</Version>
+        <AssemblyVersion>$([System.Text.RegularExpressions.Regex]::Match($(Version), '(\d+)\.(\d+)')).0.0</AssemblyVersion>
+    </PropertyGroup>
+</Project>
