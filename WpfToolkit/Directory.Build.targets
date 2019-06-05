@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+	<!-- See https://github.com/dotnet/project-system/issues/2488 -->
+	<Target Name="WorkaroundForXAMLIntellisenseBuildIssue" AfterTargets="_CheckCompileDesignTimePrerequisite">
+		<PropertyGroup>
+			<BuildingProject>False</BuildingProject>
+		</PropertyGroup>
+	</Target>
+
+	<Target Name="ForceGenerationOfBindingRedirects" AfterTargets="ResolveAssemblyReferences" BeforeTargets="GenerateBindingRedirects" 
+					Condition="'$(AutoGenerateBindingRedirects)' == 'True'">
+		<PropertyGroup>
+			<GenerateBindingRedirectsOutputType>True</GenerateBindingRedirectsOutputType>
+		</PropertyGroup>
+	</Target>
+	
+	<!--
+	<PropertyGroup>
+		<MarkupCompilePass1DependsOn>$(MarkupCompilePass1DependsOn);GetPublicKeyTokenBeforeWpfBuild</MarkupCompilePass1DependsOn>
+	</PropertyGroup>
+	-->
+
+	<Target Name="GetPublicKeyTokenBeforeWpfBuild" Condition="'$(SignAssembly)' == 'True' AND '$(AssemblyPublicKeyToken)' == ''">
+		<PropertyGroup>
+			<AssemblyName Condition="'$(AssemblyName)' == ''">$(TargetName)</AssemblyName>
+			<!--<AssemblyVersion Condition="'$(AssemblyVersion)' == ''">$(Version)</AssemblyVersion>-->
+		</PropertyGroup>
+		<GetPublicKeyToken KeyFile="$(AssemblyOriginatorKeyFile)">
+			<Output TaskParameter="PublicKeyToken" PropertyName="AssemblyPublicKeyToken" />
+		</GetPublicKeyToken>
+		<Message Importance="High" Text="Preparing XAML generation for $(AssemblyName), Version=$(@AssemblyVersion), PublicKeyToken=$(AssemblyPublicKeyToken)." />
+	</Target>
+	
+	<UsingTask TaskName="GetPublicKeyToken" TaskFactory="CodeTaskFactory" AssemblyFile="$(MSBuildToolsPath)\Microsoft.Build.Tasks.Core.dll" >
+		<ParameterGroup>
+			<KeyFile ParameterType="System.String" Required="True" />
+			<PublicKeyToken ParameterType="System.String" Output="True" />
+		</ParameterGroup>
+		<Task>
+			<Code Type="Fragment" Language="cs">
+				<![CDATA[
+				if (!System.IO.File.Exists(KeyFile))
+				{
+					PublicKeyToken = null;
+				}
+				else
+				{
+					var keyBytes = System.IO.File.ReadAllBytes(KeyFile);
+					byte[] publicKey;
+					try
+					{
+						publicKey = new System.Reflection.StrongNameKeyPair(keyBytes).PublicKey;
+					}
+					catch (Exception)
+					{
+						publicKey = keyBytes;
+					}
+
+					using (var csp = new System.Security.Cryptography.SHA1CryptoServiceProvider())
+					{
+						var hashBytes = csp.ComputeHash(publicKey);
+						var token = new System.Text.StringBuilder(16);
+						for (int i = 0; i < 8; i++)
+						{
+							token.AppendFormat("{0:x2}", hashBytes[hashBytes.Length - i - 1]);
+						}
+						PublicKeyToken = token.ToString();
+					}
+				}
+				]]>
+			</Code>
+		</Task>
+	</UsingTask>
+</Project>

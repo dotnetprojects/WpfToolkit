@@ -4,20 +4,11 @@
 // All other rights reserved.
 
 using System;
-using System.Reflection;
 using System.Resources;
-using System.Runtime.InteropServices;
 using System.Windows.Markup;
 
 // Silverlight/WPF shared settings
-[assembly: AssemblyCompany("Microsoft Corporation")]
-[assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCopyright("© Microsoft Corporation.  All rights reserved.")]
-[assembly: AssemblyCulture("")]
-[assembly: AssemblyTitle("System.Windows.Controls.DataVisualization.Toolkit")]
-[assembly: AssemblyTrademark("")]
 [assembly: CLSCompliant(true)]
-[assembly: ComVisible(false)]
 [assembly: NeutralResourcesLanguage("en-US")]
 [assembly: XmlnsDefinition("clr-namespace:System.Windows.Controls.DataVisualization;assembly=DotNetProjects.DataVisualization.Toolkit", "System.Windows.Controls.DataVisualization")]
 [assembly: XmlnsDefinition("clr-namespace:System.Windows.Controls.DataVisualization.Charting;assembly=DotNetProjects.DataVisualization.Toolkit", "System.Windows.Controls.DataVisualization.Charting")]

@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 14
-VisualStudioVersion = 14.0.23107.0
+# Visual Studio 15
+VisualStudioVersion = 15.0.28307.645
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DotNetProjects.DataVisualization.Toolkit", "DataVisualization\DotNetProjects.DataVisualization.Toolkit.csproj", "{066FB4E3-8F9C-42D0-9982-8B1F238FAF63}"
 EndProject
@@ -13,6 +13,12 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DotNetProjects.Layout.Toolk
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DotNetProjects.WPF.Themes", "WPF.Themes\DotNetProjects.WPF.Themes.csproj", "{CD3CD636-D63E-4BD5-9FE9-2B63DA6F0616}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "msbuild", "msbuild", "{CF03A010-41ED-49BD-84C0-110F1BEB5A0B}"
+	ProjectSection(SolutionItems) = preProject
+		Directory.Build.props = Directory.Build.props
+		Directory.Build.targets = Directory.Build.targets
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -22,8 +28,8 @@ Global
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
 		{066FB4E3-8F9C-42D0-9982-8B1F238FAF63}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{066FB4E3-8F9C-42D0-9982-8B1F238FAF63}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{066FB4E3-8F9C-42D0-9982-8B1F238FAF63}.Release with Code Analysis|Any CPU.ActiveCfg = Release with Code Analysis|Any CPU
-		{066FB4E3-8F9C-42D0-9982-8B1F238FAF63}.Release with Code Analysis|Any CPU.Build.0 = Release with Code Analysis|Any CPU
+		{066FB4E3-8F9C-42D0-9982-8B1F238FAF63}.Release with Code Analysis|Any CPU.ActiveCfg = Release|Any CPU
+		{066FB4E3-8F9C-42D0-9982-8B1F238FAF63}.Release with Code Analysis|Any CPU.Build.0 = Release|Any CPU
 		{066FB4E3-8F9C-42D0-9982-8B1F238FAF63}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{066FB4E3-8F9C-42D0-9982-8B1F238FAF63}.Release|Any CPU.Build.0 = Release|Any CPU
 		{50A16FB2-1BE3-4C26-94F5-EC0FEBC70C28}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
@@ -53,5 +59,8 @@ Global
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {C3470880-3D21-4697-8A10-EE5981C01579}
 	EndGlobalSection
 EndGlobal
