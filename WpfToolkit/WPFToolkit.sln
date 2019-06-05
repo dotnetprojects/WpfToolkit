@@ -3,20 +3,25 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.28307.645
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DotNetProjects.DataVisualization.Toolkit", "DataVisualization\DotNetProjects.DataVisualization.Toolkit.csproj", "{066FB4E3-8F9C-42D0-9982-8B1F238FAF63}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DotNetProjects.DataVisualization.Toolkit", "DataVisualization\DotNetProjects.DataVisualization.Toolkit.csproj", "{066FB4E3-8F9C-42D0-9982-8B1F238FAF63}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WPFToolkitSamples", "Samples\WPFToolkitSamples.csproj", "{50A16FB2-1BE3-4C26-94F5-EC0FEBC70C28}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WPFToolkitSamples", "Samples\WPFToolkitSamples.csproj", "{50A16FB2-1BE3-4C26-94F5-EC0FEBC70C28}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DotNetProjects.Input.Toolkit", "Input\DotNetProjects.Input.Toolkit.csproj", "{83E92AA1-85BC-4B5A-A126-CDCCF2C6E968}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DotNetProjects.Input.Toolkit", "Input\DotNetProjects.Input.Toolkit.csproj", "{83E92AA1-85BC-4B5A-A126-CDCCF2C6E968}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DotNetProjects.Layout.Toolkit", "Layout\DotNetProjects.Layout.Toolkit.csproj", "{82123C26-FFD4-455D-B5D9-78E72F465961}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DotNetProjects.Layout.Toolkit", "Layout\DotNetProjects.Layout.Toolkit.csproj", "{82123C26-FFD4-455D-B5D9-78E72F465961}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DotNetProjects.WPF.Themes", "WPF.Themes\DotNetProjects.WPF.Themes.csproj", "{CD3CD636-D63E-4BD5-9FE9-2B63DA6F0616}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DotNetProjects.WPF.Themes", "WPF.Themes\DotNetProjects.WPF.Themes.csproj", "{CD3CD636-D63E-4BD5-9FE9-2B63DA6F0616}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "msbuild", "msbuild", "{CF03A010-41ED-49BD-84C0-110F1BEB5A0B}"
 	ProjectSection(SolutionItems) = preProject
 		Directory.Build.props = Directory.Build.props
 		Directory.Build.targets = Directory.Build.targets
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "ci", "ci", "{6D8DCDC8-C505-4208-A21E-B12A0395D1C1}"
+	ProjectSection(SolutionItems) = preProject
+		..\appveyor.yml = ..\appveyor.yml
 	EndProjectSection
 EndProject
 Global

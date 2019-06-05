@@ -4,6 +4,8 @@ branches:
   only:
     - master
 
+image: Visual Studio 2017
+
 assembly_info:
   patch: true
   file: AssemblyInfo.*
@@ -46,6 +48,5 @@ deploy:
   api_key:
     secure: OrhpK2cLXXcoWW+hU6xAv3eeKIbATEFbenteoFsi9EfM1yyDof6ZuNKAsA3Vy6vb
   artifact: /.*\.nupkg/
-  
   
   
