@@ -4,9 +4,11 @@
         <TargetFramework>net40</TargetFramework>
         <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
         <RootNamespace>System.Windows.Controls</RootNamespace>
+        <AssemblyVersion>3.5.40128.1</AssemblyVersion>
+        <FileVersion>3.5.50211.1</FileVersion>
+        <Description>WPF Toolkit Input</Description>
         <SignAssembly>true</SignAssembly>
         <AssemblyOriginatorKeyFile>DotNetProjects.snk</AssemblyOriginatorKeyFile>
-        <Description>WPF Toolkit Input</Description>
     </PropertyGroup>
     <ItemGroup>
         <Compile Include="..\Common\System\Windows\Controls\Extensions.cs">

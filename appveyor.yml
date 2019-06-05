@@ -6,14 +6,17 @@ branches:
 
 image: Visual Studio 2017
 
-assembly_info:
+dotnet_csproj:
   patch: true
-  file: AssemblyInfo.*
-  assembly_version: "{version}"
-  assembly_file_version: "{version}"
-  assembly_informational_version: "{version}"
+  file: '**\*.csproj;**\*.props'
+  assembly_version: '{version}'
+  file_version: '{version}'
+  informational_version: '{version}'
 
 configuration: Release
+
+before_build:
+  - nuget restore WpfToolkit\WPFToolkit.sln
 
 build:
   project: WpfToolkit\WPFToolkit.sln

@@ -3,6 +3,8 @@
     <PropertyGroup>
         <RootNamespace>System.Windows.Controls</RootNamespace>
         <TargetFramework>net40</TargetFramework>
+        <AssemblyVersion>3.5.40128.1</AssemblyVersion>
+        <FileVersion>3.5.50211.1</FileVersion>
         <Description>WPF Toolkit Layout</Description>
         <SignAssembly>true</SignAssembly>
         <AssemblyOriginatorKeyFile>DotNetProjects.snk</AssemblyOriginatorKeyFile>

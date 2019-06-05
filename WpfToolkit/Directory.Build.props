@@ -4,9 +4,9 @@
         <Company>Microsoft Corp.</Company>
         <Product>WPF Toolkit</Product>
         <Copyright>Copyright © 2010 Microsoft Corp. All rights reserved.</Copyright>
-        <Version Condition="'$(Version)' == ''">3.5.50211.1</Version>
-        <AssemblyVersion>3.5.40128.1</AssemblyVersion>
-        <FileVersion>$(Version)</FileVersion>
+        <AssemblyVersion>0.1.0.0</AssemblyVersion>
+        <FileVersion>$(AssemblyVersion)</FileVersion>
+        <InformationalVersion>$(AssemblyVersion)</InformationalVersion>
     </PropertyGroup>
 
     <PropertyGroup Condition="'$(MSBuildProjectExtension)' != '.csproj' and '$(MSBuildProjectExtension)' != '.vbproj'">
