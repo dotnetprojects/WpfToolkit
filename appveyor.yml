@@ -21,9 +21,6 @@ before_build:
 build:
   project: WpfToolkit\WPFToolkit.sln
 
-after_build:
-  - ps: .\nuget\pack.ps1
-
 test: off
 
 artifacts:

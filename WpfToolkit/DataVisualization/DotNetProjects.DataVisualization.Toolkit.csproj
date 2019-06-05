@@ -8,6 +8,7 @@
         <SignAssembly>true</SignAssembly>
         <AssemblyOriginatorKeyFile>DotNetProjects.snk</AssemblyOriginatorKeyFile>
         <Description>WPF Toolkit Data Visualization Controls</Description>
+        <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
     </PropertyGroup>
     <ItemGroup>
         <EmbeddedResource Include="System.Windows.Controls.DataVisualization\TreeMap.png" />

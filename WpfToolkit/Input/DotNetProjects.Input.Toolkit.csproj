@@ -9,6 +9,7 @@
         <Description>WPF Toolkit Input</Description>
         <SignAssembly>true</SignAssembly>
         <AssemblyOriginatorKeyFile>DotNetProjects.snk</AssemblyOriginatorKeyFile>
+        <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
     </PropertyGroup>
     <ItemGroup>
         <Compile Include="..\Common\System\Windows\Controls\Extensions.cs">
