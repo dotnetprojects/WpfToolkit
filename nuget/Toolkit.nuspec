@@ -12,13 +12,13 @@
     <copyright>Copyright 2015</copyright>
   </metadata>
   <files>
-    <file src="..\WpfToolkit\DataVisualization\bin\Release\DotNetProjects.DataVisualization.Toolkit.dll" target="lib\net40" />
-    <file src="..\WpfToolkit\DataVisualization\bin\Release\DotNetProjects.DataVisualization.Toolkit.pdb" target="lib\net40" />
-    <file src="..\WpfToolkit\Input\bin\Release\DotNetProjects.Input.Toolkit.dll" target="lib\net40" />
-    <file src="..\WpfToolkit\Input\bin\Release\DotNetProjects.Input.Toolkit.pdb" target="lib\net40" />
-    <file src="..\WpfToolkit\Layout\bin\Release\DotNetProjects.Layout.Toolkit.dll" target="lib\net40" />
-    <file src="..\WpfToolkit\Layout\bin\Release\DotNetProjects.Layout.Toolkit.pdb" target="lib\net40" />
-	<file src="..\WpfToolkit\WPF.Themes\bin\Release\DotNetProjects.WPF.Themes.dll" target="lib\net40" />
-    <file src="..\WpfToolkit\WPF.Themes\bin\Release\DotNetProjects.WPF.Themes.pdb" target="lib\net40" />
+    <file src="..\WpfToolkit\DataVisualization\bin\Release\net40\DotNetProjects.DataVisualization.Toolkit.dll" target="lib\net40" />
+    <file src="..\WpfToolkit\DataVisualization\bin\Release\net40\DotNetProjects.DataVisualization.Toolkit.pdb" target="lib\net40" />
+    <file src="..\WpfToolkit\Input\bin\Release\net40\DotNetProjects.Input.Toolkit.dll" target="lib\net40" />
+    <file src="..\WpfToolkit\Input\bin\Release\net40\DotNetProjects.Input.Toolkit.pdb" target="lib\net40" />
+    <file src="..\WpfToolkit\Layout\bin\Release\net40\DotNetProjects.Layout.Toolkit.dll" target="lib\net40" />
+    <file src="..\WpfToolkit\Layout\bin\Release\net40\DotNetProjects.Layout.Toolkit.pdb" target="lib\net40" />
+	<file src="..\WpfToolkit\WPF.Themes\bin\Release\net40\DotNetProjects.WPF.Themes.dll" target="lib\net40" />
+    <file src="..\WpfToolkit\WPF.Themes\bin\Release\net40\DotNetProjects.WPF.Themes.pdb" target="lib\net40" />
   </files>
 </package>
