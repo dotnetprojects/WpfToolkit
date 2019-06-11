@@ -1,74 +1,43 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
-	<!-- See https://github.com/dotnet/project-system/issues/2488 -->
-	<Target Name="WorkaroundForXAMLIntellisenseBuildIssue" AfterTargets="_CheckCompileDesignTimePrerequisite">
-		<PropertyGroup>
-			<BuildingProject>False</BuildingProject>
-		</PropertyGroup>
-	</Target>
+    <!--  
+    Workarounds to enable WPF builds in .NET Core style projects
+    -->
 
-	<Target Name="ForceGenerationOfBindingRedirects" AfterTargets="ResolveAssemblyReferences" BeforeTargets="GenerateBindingRedirects" 
-					Condition="'$(AutoGenerateBindingRedirects)' == 'True'">
-		<PropertyGroup>
-			<GenerateBindingRedirectsOutputType>True</GenerateBindingRedirectsOutputType>
-		</PropertyGroup>
-	</Target>
-	
-	<!--
-	<PropertyGroup>
-		<MarkupCompilePass1DependsOn>$(MarkupCompilePass1DependsOn);GetPublicKeyTokenBeforeWpfBuild</MarkupCompilePass1DependsOn>
-	</PropertyGroup>
-	-->
+    <!-- See https://github.com/dotnet/project-system/issues/2488 -->
+    <Target Name="WorkaroundForXAMLIntellisenseBuildIssue" AfterTargets="_CheckCompileDesignTimePrerequisite">
+        <PropertyGroup>
+            <BuildingProject>False</BuildingProject>
+        </PropertyGroup>
+    </Target>
 
-	<Target Name="GetPublicKeyTokenBeforeWpfBuild" Condition="'$(SignAssembly)' == 'True' AND '$(AssemblyPublicKeyToken)' == ''">
-		<PropertyGroup>
-			<AssemblyName Condition="'$(AssemblyName)' == ''">$(TargetName)</AssemblyName>
-			<!--<AssemblyVersion Condition="'$(AssemblyVersion)' == ''">$(Version)</AssemblyVersion>-->
-		</PropertyGroup>
-		<GetPublicKeyToken KeyFile="$(AssemblyOriginatorKeyFile)">
-			<Output TaskParameter="PublicKeyToken" PropertyName="AssemblyPublicKeyToken" />
-		</GetPublicKeyToken>
-		<Message Importance="High" Text="Preparing XAML generation for $(AssemblyName), Version=$(@AssemblyVersion), PublicKeyToken=$(AssemblyPublicKeyToken)." />
-	</Target>
-	
-	<UsingTask TaskName="GetPublicKeyToken" TaskFactory="CodeTaskFactory" AssemblyFile="$(MSBuildToolsPath)\Microsoft.Build.Tasks.Core.dll" >
-		<ParameterGroup>
-			<KeyFile ParameterType="System.String" Required="True" />
-			<PublicKeyToken ParameterType="System.String" Output="True" />
-		</ParameterGroup>
-		<Task>
-			<Code Type="Fragment" Language="cs">
-				<![CDATA[
-				if (!System.IO.File.Exists(KeyFile))
-				{
-					PublicKeyToken = null;
-				}
-				else
-				{
-					var keyBytes = System.IO.File.ReadAllBytes(KeyFile);
-					byte[] publicKey;
-					try
-					{
-						publicKey = new System.Reflection.StrongNameKeyPair(keyBytes).PublicKey;
-					}
-					catch (Exception)
-					{
-						publicKey = keyBytes;
-					}
+    <Target Name="ForceGenerationOfBindingRedirects" AfterTargets="ResolveAssemblyReferences" BeforeTargets="GenerateBindingRedirects" 
+            Condition="'$(AutoGenerateBindingRedirects)' == 'True'">
+        <PropertyGroup>
+            <GenerateBindingRedirectsOutputType>True</GenerateBindingRedirectsOutputType>
+        </PropertyGroup>
+    </Target>
 
-					using (var csp = new System.Security.Cryptography.SHA1CryptoServiceProvider())
-					{
-						var hashBytes = csp.ComputeHash(publicKey);
-						var token = new System.Text.StringBuilder(16);
-						for (int i = 0; i < 8; i++)
-						{
-							token.AppendFormat("{0:x2}", hashBytes[hashBytes.Length - i - 1]);
-						}
-						PublicKeyToken = token.ToString();
-					}
-				}
-				]]>
-			</Code>
-		</Task>
-	</UsingTask>
+    <!--  
+    NuGet Package creation 
+    -->
+
+    <PropertyGroup Condition="'$(GeneratePackageOnBuild)' == 'True'">
+        <IncludeSymbols Condition="'$(IsSourceLinkable)' != 'True'">True</IncludeSymbols>
+        <IncludeSource Condition="'$(IsSourceLinkable)' != 'True'">True</IncludeSource>
+    </PropertyGroup>
+
+    <PropertyGroup Condition="'$(IsSourceLinkable)' == 'True'">
+        <!-- Optional: Publish the repository URL in the built .nupkg (in the NuSpec <Repository> element) -->
+        <PublishRepositoryUrl>True</PublishRepositoryUrl>
+        <!-- Optional: Embed source files that are not tracked by the source control manager in the PDB -->
+        <EmbedUntrackedSources>true</EmbedUntrackedSources>
+
+        <!-- Include PDB in NuGet package itself: this is required for Azure Artifact service -->
+        <AllowedOutputExtensionsInPackageBuildOutputFolder>$(AllowedOutputExtensionsInPackageBuildOutputFolder);.pdb</AllowedOutputExtensionsInPackageBuildOutputFolder>
+    </PropertyGroup>
+
+    <ItemGroup Condition="'$(IsSourceLinkable)' == 'True'">
+        <PackageReference Include="Microsoft.SourceLink.GitHub" Version="1.0.0-beta2-18618-05" PrivateAssets="All"/>
+    </ItemGroup>
 </Project>
