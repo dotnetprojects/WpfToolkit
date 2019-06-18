@@ -111,11 +111,6 @@ namespace System.Windows.Controls
 
         #endregion
 
-        /// <summary>
-        /// Indicates that the control is currently executing an action.
-        /// </summary>
-        private bool _isBusyWithAction;
-
         #region public ExpandDirection ExpandDirection
         /// <summary>
         /// Determines whether the ExpandDirection property may be written.
@@ -651,7 +646,6 @@ namespace System.Windows.Controls
             }
 
             ScheduledAction = AccordionAction.None;
-            _isBusyWithAction = true;
             layoutAction();
         }
 

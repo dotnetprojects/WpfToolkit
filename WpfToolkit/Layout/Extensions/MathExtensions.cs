@@ -73,28 +73,24 @@ namespace System.Windows.Controls.Extensions
         /// <returns>Parameter a or b, whichever is larger.</returns>
         /// <param name="a">The first of two 8-bit unsigned integers to compare.</param>
         /// <param name="b">The second of two 8-bit unsigned integers to compare.</param>
-        [CLSCompliant(false)]
         [SuppressMessage("Microsoft.Naming", "CA1704:IdentifiersShouldBeSpelledCorrectly")]
         public static sbyte AtLeast(this sbyte a, sbyte b) { return Math.Max(a, b); }
         /// <summary>Returns the larger of two 16-bit unsigned integers.</summary>
         /// <returns>Parameter a or b, whichever is larger.</returns>
         /// <param name="a">The first of two 16-bit unsigned integers to compare.</param>
         /// <param name="b">The second of two 16-bit unsigned integers to compare.</param>
-        [CLSCompliant(false)]
         [SuppressMessage("Microsoft.Naming", "CA1704:IdentifiersShouldBeSpelledCorrectly")]
         public static ushort AtLeast(this ushort a, ushort b) { return Math.Max(a, b); }
         /// <summary>Returns the larger of two 32-bit unsigned integers.</summary>
         /// <returns>Parameter a or b, whichever is larger.</returns>
         /// <param name="a">The first of two 32-bit unsigned integers to compare.</param>
         /// <param name="b">The second of two 32-bit unsigned integers to compare.</param>
-        [CLSCompliant(false)]
         [SuppressMessage("Microsoft.Naming", "CA1704:IdentifiersShouldBeSpelledCorrectly")]
         public static uint AtLeast(this uint a, uint b) { return Math.Max(a, b); }
         /// <summary>Returns the larger of two 64-bit unsigned integers.</summary>
         /// <returns>Parameter a or b, whichever is larger.</returns>
         /// <param name="a">The first of two 64-bit unsigned integers to compare.</param>
         /// <param name="b">The second of two 64-bit unsigned integers to compare.</param>
-        [CLSCompliant(false)]
         [SuppressMessage("Microsoft.Naming", "CA1704:IdentifiersShouldBeSpelledCorrectly")]
         public static ulong AtLeast(this ulong a, ulong b) { return Math.Max(a, b); }
         
@@ -144,28 +140,24 @@ namespace System.Windows.Controls.Extensions
         /// <returns>Parameter a or b, whichever is smaller.</returns>
         /// <param name="a">The first of two 8-bit signed integers to compare.</param>
         /// <param name="b">The second of two 8-bit signed integers to compare.</param>
-        [CLSCompliant(false)]
         [SuppressMessage("Microsoft.Naming", "CA1704:IdentifiersShouldBeSpelledCorrectly")]
         public static sbyte AtMost(this sbyte a, sbyte b) { return Math.Min(a, b); }
         /// <summary>Returns the smaller of two 16-bit unsigned integers.</summary>
         /// <returns>Parameter a or b, whichever is smaller.</returns>
         /// <param name="a">The first of two 16-bit unsigned integers to compare.</param>
         /// <param name="b">The second of two 16-bit unsigned integers to compare.</param>
-        [CLSCompliant(false)]
         [SuppressMessage("Microsoft.Naming", "CA1704:IdentifiersShouldBeSpelledCorrectly")]
         public static ushort AtMost(this ushort a, ushort b) { return Math.Min(a, b); }
         /// <summary>Returns the smaller of two 32-bit unsigned integers.</summary>
         /// <returns>Parameter a or b, whichever is smaller.</returns>
         /// <param name="a">The first of two 32-bit unsigned integers to compare.</param>
         /// <param name="b">The second of two 32-bit unsigned integers to compare.</param>
-        [CLSCompliant(false)]
         [SuppressMessage("Microsoft.Naming", "CA1704:IdentifiersShouldBeSpelledCorrectly")]
         public static uint AtMost(this uint a, uint b) { return Math.Min(a, b); }
         /// <summary>Returns the smaller of two 64-bit unsigned integers.</summary>
         /// <returns>Parameter a or b, whichever is smaller.</returns>
         /// <param name="a">The first of two 64-bit unsigned integers to compare.</param>
         /// <param name="b">The second of two 64-bit unsigned integers to compare.</param>
-        [CLSCompliant(false)]
         [SuppressMessage("Microsoft.Naming", "CA1704:IdentifiersShouldBeSpelledCorrectly")]
         public static ulong AtMost(this ulong a, ulong b) { return Math.Min(a, b); }
 
@@ -223,7 +215,6 @@ namespace System.Windows.Controls.Extensions
         /// <param name="value">The value to restrict between a and b.</param>
         /// <param name="a">The first of two 8-bit signed integers to compare.</param>
         /// <param name="b">The second of two 8-bit signed integers to compare.</param>
-        [CLSCompliant(false)]
         [SuppressMessage("Microsoft.Naming", "CA1704:IdentifiersShouldBeSpelledCorrectly")]
         public static sbyte Clamp(this sbyte value, sbyte a, sbyte b) { return a < b ? Math.Min(Math.Max(value, a), b) : Math.Max(Math.Min(value, a), b); }
         /// <summary>Returns the value constrained inclusively between two 16-bit unsigned integers.</summary>
@@ -231,7 +222,6 @@ namespace System.Windows.Controls.Extensions
         /// <param name="value">The value to restrict between a and b.</param>
         /// <param name="a">The first of two 16-bit unsigned integers to compare.</param>
         /// <param name="b">The second of two 16-bit unsigned integers to compare.</param>
-        [CLSCompliant(false)]
         [SuppressMessage("Microsoft.Naming", "CA1704:IdentifiersShouldBeSpelledCorrectly")]
         public static ushort Clamp(this ushort value, ushort a, ushort b) { return a < b ? Math.Min(Math.Max(value, a), b) : Math.Max(Math.Min(value, a), b); }
         /// <summary>Returns the value constrained inclusively between two 32-bit unsigned integers.</summary>
@@ -239,7 +229,6 @@ namespace System.Windows.Controls.Extensions
         /// <param name="value">The value to restrict between a and b.</param>
         /// <param name="a">The first of two 32-bit unsigned integers to compare.</param>
         /// <param name="b">The second of two 32-bit unsigned integers to compare.</param>
-        [CLSCompliant(false)]
         [SuppressMessage("Microsoft.Naming", "CA1704:IdentifiersShouldBeSpelledCorrectly")]
         public static uint Clamp(this uint value, uint a, uint b) { return a < b ? Math.Min(Math.Max(value, a), b) : Math.Max(Math.Min(value, a), b); }
         /// <summary>Returns the value constrained inclusively between two 64-bit unsigned integers.</summary>
@@ -247,7 +236,6 @@ namespace System.Windows.Controls.Extensions
         /// <param name="value">The value to restrict between a and b.</param>
         /// <param name="a">The first of two 64-bit unsigned integers to compare.</param>
         /// <param name="b">The second of two 64-bit unsigned integers to compare.</param>
-        [CLSCompliant(false)]
         [SuppressMessage("Microsoft.Naming", "CA1704:IdentifiersShouldBeSpelledCorrectly")]
         public static ulong Clamp(this ulong value, ulong a, ulong b) { return a < b ? Math.Min(Math.Max(value, a), b) : Math.Max(Math.Min(value, a), b); }
 
@@ -492,7 +480,6 @@ namespace System.Windows.Controls.Extensions
         /// <returns>An 8-bit signed integer, x, such that 0 ≤ x ≤ <see cref="F:System.SByte.MaxValue"/>.</returns>
         /// <param name="value">A number in the range <see cref="F:System.SByte.MinValue"/> &lt; value ≤ <see cref="F:System.SByte.MaxValue"/>.</param>
         /// <exception cref="T:System.OverflowException">value equals <see cref="F:System.SByte.MinValue"/>.</exception>
-        [CLSCompliant(false)]
         public static sbyte Abs(this sbyte value) { return Math.Abs(value); }
 
         /// <summary>Produces the full product of two 32-bit numbers.</summary>
@@ -585,7 +572,6 @@ namespace System.Windows.Controls.Extensions
         /// <summary>Returns a value indicating the sign of an 8-bit signed integer.</summary>
         /// <returns>A number indicating the sign of value.Number Description -1 value is less than zero. 0 value is equal to zero. 1 value is greater than zero.</returns>
         /// <param name="value">A signed number.</param>
-        [CLSCompliant(false)]
         public static int Sign(this sbyte value) { return Math.Sign(value); }
 
         /// <summary>Returns the square root of a specified number.</summary>

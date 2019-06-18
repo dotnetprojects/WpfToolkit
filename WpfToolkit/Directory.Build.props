@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+    <Import Project="WPFToolkit.props" />
+
+    <PropertyGroup>
+        <IsSourceLinkable Condition="'$(IsSourceLinkable)' == ''">False</IsSourceLinkable>
+    </PropertyGroup>
+
+    <PropertyGroup Condition="'$(MSBuildProjectExtension)' != '.csproj' and '$(MSBuildProjectExtension)' != '.vbproj'">
+        <LanguageTargets Condition="Exists('$(MSBuildProjectDirectory)\$(AssemblyName).csproj')">$(MSBuildToolsPath)\Microsoft.CSharp.targets</LanguageTargets>
+        <LanguageTargets Condition="Exists('$(MSBuildProjectDirectory)\$(AssemblyName).vbproj')">$(MSBuildToolsPath)\Microsoft.VisualBasic.targets</LanguageTargets>
+    </PropertyGroup>
+
+    <ItemGroup>
+        <Reference Include="PresentationCore" />
+        <Reference Include="PresentationFramework" />
+        <Reference Include="System.Xaml" />
+        <Reference Include="WindowsBase" />
+        <Reference Include="UIAutomationProvider" />
+        <Reference Include="UIAutomationTypes" />
+        <Reference Include="WindowsBase" />
+    </ItemGroup>
+
+    <ItemGroup>
+        <ProjectCapability Include="DynamicDependentFile" />
+    </ItemGroup>
+
+    <!--WPF items -->
+    <ItemGroup>
+        <ApplicationDefinition Include="App.xaml" Condition="Exists('App.xaml')">
+            <SubType>Designer</SubType>
+            <Generator Condition="'$(DesignTimeBuild)' == 'true'">MSBuild:UpdateDesignTimeXaml</Generator>
+            <Generator Condition="'$(DesignTimeBuild)' != 'true'">MSBuild:Compile</Generator>
+        </ApplicationDefinition>
+
+        <!--Pages -->
+        <Page Include="**\*.xaml" Exclude="@(ApplicationDefinition)">
+            <SubType>Designer</SubType>
+            <Generator Condition="'$(DesignTimeBuild)' == 'true'">MSBuild:UpdateDesignTimeXaml</Generator>
+            <Generator Condition="'$(DesignTimeBuild)' != 'true'">MSBuild:Compile</Generator>
+        </Page>
+        <Compile Update="**\*.xaml.cs">
+            <SubType>Code</SubType>
+            <DependentUpon>%(Filename)</DependentUpon>
+        </Compile>
+
+        <!-- Resources -->
+        <EmbeddedResource Update="Properties\Resources.resx">
+            <Generator>ResXFileCodeGenerator</Generator>
+            <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+        </EmbeddedResource>
+        <Compile Update="Properties\Resources.Designer.cs">
+            <AutoGen>True</AutoGen>
+            <DependentUpon>Resources.resx</DependentUpon>
+            <DesignTime>True</DesignTime>
+        </Compile>
+
+        <!-- Settings -->
+        <None Update="Properties\Settings.settings">
+            <Generator>SettingsSingleFileGenerator</Generator>
+            <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+        </None>
+        <Compile Update="Properties\Settings.Designer.cs">
+            <AutoGen>True</AutoGen>
+            <DependentUpon>Settings.settings</DependentUpon>
+        </Compile>
+    </ItemGroup>
+</Project>

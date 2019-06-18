@@ -3,10 +3,6 @@
 // Please see http://go.microsoft.com/fwlink/?LinkID=131993 for details.
 // All other rights reserved.
 
-using System.Collections.Generic;
-using System.Windows;
-using System.Windows.Controls;
-
 namespace System.Windows.Controls.DataVisualization.Charting
 {
     /// <summary>
@@ -39,44 +35,7 @@ namespace System.Windows.Controls.DataVisualization.Charting
                 "Open",
                 typeof(double),
                 typeof(CandlestickDataPoint),
-                new PropertyMetadata(0.0, OnOpenPropertyChanged));
-
-        /// <summary>
-        /// SizeProperty property changed handler.
-        /// </summary>
-        /// <param name="d">BubbleDataPoint that changed its Size.</param>
-        /// <param name="e">Event arguments.</param>
-        private static void OnOpenPropertyChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
-        {
-            //BubbleDataPoint source = (BubbleDataPoint)d;
-            //double oldValue = (double)e.OldValue;
-            //double newValue = (double)e.NewValue;
-            //source.OnSizePropertyChanged(oldValue, newValue);
-        }
-
-        /// <summary>
-        /// SizeProperty property changed handler.
-        /// </summary>
-        /// <param name="oldValue">Old value.</param>
-        /// <param name="newValue">New value.</param>        
-        private void OnOpenPropertyChanged(double oldValue, double newValue)
-        {
-            //RoutedPropertyChangedEventHandler<double> handler = SizePropertyChanged;
-            //if (handler != null)
-            //{
-            //    handler(this, new RoutedPropertyChangedEventArgs<double>(oldValue, newValue));
-            //}
-
-            //if (this.State == DataPointState.Created)
-            //{
-            //    this.ActualSize = newValue;
-            //}
-        }
-
-        /// <summary>
-        /// This event is raised when the size property is changed.
-        /// </summary>
-        internal event RoutedPropertyChangedEventHandler<double> OpenPropertyChanged;
+                new PropertyMetadata(0.0));
 
         #endregion public double Open
 
@@ -98,44 +57,7 @@ namespace System.Windows.Controls.DataVisualization.Charting
                 "Close",
                 typeof(double),
                 typeof(CandlestickDataPoint),
-                new PropertyMetadata(0.0, OnClosePropertyChanged));
-
-        /// <summary>
-        /// SizeProperty property changed handler.
-        /// </summary>
-        /// <param name="d">BubbleDataPoint that changed its Size.</param>
-        /// <param name="e">Event arguments.</param>
-        private static void OnClosePropertyChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
-        {
-            //BubbleDataPoint source = (BubbleDataPoint)d;
-            //double oldValue = (double)e.OldValue;
-            //double newValue = (double)e.NewValue;
-            //source.OnSizePropertyChanged(oldValue, newValue);
-        }
-
-        /// <summary>
-        /// SizeProperty property changed handler.
-        /// </summary>
-        /// <param name="oldValue">Old value.</param>
-        /// <param name="newValue">New value.</param>        
-        private void OnClosePropertyChanged(double oldValue, double newValue)
-        {
-            //RoutedPropertyChangedEventHandler<double> handler = SizePropertyChanged;
-            //if (handler != null)
-            //{
-            //    handler(this, new RoutedPropertyChangedEventArgs<double>(oldValue, newValue));
-            //}
-
-            //if (this.State == DataPointState.Created)
-            //{
-            //    this.ActualSize = newValue;
-            //}
-        }
-
-        /// <summary>
-        /// This event is raised when the size property is changed.
-        /// </summary>
-        internal event RoutedPropertyChangedEventHandler<double> ClosePropertyChanged;
+                new PropertyMetadata(0.0));
 
         #endregion public double Close
 
@@ -157,44 +79,7 @@ namespace System.Windows.Controls.DataVisualization.Charting
                 "High",
                 typeof(double),
                 typeof(CandlestickDataPoint),
-                new PropertyMetadata(0.0, OnHighPropertyChanged));
-
-        /// <summary>
-        /// SizeProperty property changed handler.
-        /// </summary>
-        /// <param name="d">BubbleDataPoint that changed its Size.</param>
-        /// <param name="e">Event arguments.</param>
-        private static void OnHighPropertyChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
-        {
-            //BubbleDataPoint source = (BubbleDataPoint)d;
-            //double oldValue = (double)e.OldValue;
-            //double newValue = (double)e.NewValue;
-            //source.OnSizePropertyChanged(oldValue, newValue);
-        }
-
-        /// <summary>
-        /// SizeProperty property changed handler.
-        /// </summary>
-        /// <param name="oldValue">Old value.</param>
-        /// <param name="newValue">New value.</param>        
-        private void OnHighPropertyChanged(double oldValue, double newValue)
-        {
-            //RoutedPropertyChangedEventHandler<double> handler = SizePropertyChanged;
-            //if (handler != null)
-            //{
-            //    handler(this, new RoutedPropertyChangedEventArgs<double>(oldValue, newValue));
-            //}
-
-            //if (this.State == DataPointState.Created)
-            //{
-            //    this.ActualSize = newValue;
-            //}
-        }
-
-        /// <summary>
-        /// This event is raised when the size property is changed.
-        /// </summary>
-        internal event RoutedPropertyChangedEventHandler<double> HighPropertyChanged;
+                new PropertyMetadata(0.0));
 
         #endregion public double High
 
@@ -216,44 +101,7 @@ namespace System.Windows.Controls.DataVisualization.Charting
                 "Low",
                 typeof(double),
                 typeof(CandlestickDataPoint),
-                new PropertyMetadata(0.0, OnLowPropertyChanged));
-
-        /// <summary>
-        /// SizeProperty property changed handler.
-        /// </summary>
-        /// <param name="d">BubbleDataPoint that changed its Size.</param>
-        /// <param name="e">Event arguments.</param>
-        private static void OnLowPropertyChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
-        {
-            //BubbleDataPoint source = (BubbleDataPoint)d;
-            //double oldValue = (double)e.OldValue;
-            //double newValue = (double)e.NewValue;
-            //source.OnSizePropertyChanged(oldValue, newValue);
-        }
-
-        /// <summary>
-        /// SizeProperty property changed handler.
-        /// </summary>
-        /// <param name="oldValue">Old value.</param>
-        /// <param name="newValue">New value.</param>        
-        private void OnLowPropertyChanged(double oldValue, double newValue)
-        {
-            //RoutedPropertyChangedEventHandler<double> handler = SizePropertyChanged;
-            //if (handler != null)
-            //{
-            //    handler(this, new RoutedPropertyChangedEventArgs<double>(oldValue, newValue));
-            //}
-
-            //if (this.State == DataPointState.Created)
-            //{
-            //    this.ActualSize = newValue;
-            //}
-        }
-
-        /// <summary>
-        /// This event is raised when the size property is changed.
-        /// </summary>
-        internal event RoutedPropertyChangedEventHandler<double> LowPropertyChanged;
+                new PropertyMetadata(0.0));
 
         #endregion public double Low
 
