@@ -3,7 +3,6 @@
 // Please see http://go.microsoft.com/fwlink/?LinkID=131993] for details.
 // All other rights reserved.
 
-using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
@@ -15,7 +14,6 @@ using System.Windows.Automation.Peers;
 using System.Windows.Controls.Primitives;
 using System.Windows.Data;
 using System.Windows.Input;
-using System.Windows.Interop;
 using System.Windows.Markup;
 using System.Windows.Media;
 using System.Windows.Threading;
@@ -1301,8 +1299,8 @@ namespace System.Windows.Controls
         /// </summary>
         public event RoutedPropertyChangingEventHandler<bool> DropDownOpening
         {
-            add { AddHandler(PopulatedEvent, value); }
-            remove { RemoveHandler(PopulatedEvent, value); }
+            add { AddHandler(DropDownOpeningEvent, value); }
+            remove { RemoveHandler(DropDownOpeningEvent, value); }
         }
 #endif
 
