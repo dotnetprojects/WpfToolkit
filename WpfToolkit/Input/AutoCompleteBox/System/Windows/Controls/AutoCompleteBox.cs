@@ -1777,7 +1777,7 @@ namespace System.Windows.Controls
         {
             base.OnGotFocus(e);
             FocusChanged(HasFocus());
-            TextBox.Focus();
+            if (TextBox != null) TextBox.Focus();
         }
 
 #if !SILVERLIGHT
