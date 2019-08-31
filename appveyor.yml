@@ -1,5 +1,12 @@
 version: 6.0.{build}
 
+dotnet_csproj:
+  patch: true
+  file: '**\*.csproj'
+  version: '{version}'
+  assembly_version: '{version}'
+  file_version: '{version}'
+  
 branches:
   only:
     - master
