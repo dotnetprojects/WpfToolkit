@@ -7,6 +7,7 @@ dotnet_csproj:
   package_version: '{version}' 
   assembly_version: '{version}'
   file_version: '{version}'
+  informational_version: '{version}'
   
 branches:
   only:
