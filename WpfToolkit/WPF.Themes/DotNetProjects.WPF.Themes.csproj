@@ -3,9 +3,9 @@
   <PropertyGroup>
     <RootNamespace>WPF.Themes</RootNamespace>
     <TargetFramework>net40</TargetFramework>
-      <Company>Impilo Software</Company>
+      <Company>DotNetProjects</Company>
       <Product>WPF.Themes</Product>
-      <Copyright>"Copyright © Impilo Software 2008"</Copyright>
+      <Copyright>2019 DotNetProjects</Copyright>
       <!--
       <AssemblyVersion>1.0.0.0</AssemblyVersion>
       <FileVersion>1.0.0.0</FileVersion>
@@ -13,6 +13,8 @@
       <SignAssembly>true</SignAssembly>
     <AssemblyOriginatorKeyFile>DotNetProjects.snk</AssemblyOriginatorKeyFile>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    <PackageId>DotNetProjects.WpfToolkit.Themes</PackageId>
+    <Authors>DotNetProjects</Authors>
   </PropertyGroup>
   <ItemGroup>
     <ProjectReference Include="..\Input\DotNetProjects.Input.Toolkit.csproj" />

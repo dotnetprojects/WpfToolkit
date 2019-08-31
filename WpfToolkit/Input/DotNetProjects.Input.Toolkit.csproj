@@ -12,6 +12,11 @@
         <SignAssembly>true</SignAssembly>
         <AssemblyOriginatorKeyFile>DotNetProjects.snk</AssemblyOriginatorKeyFile>
         <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+        <PackageId>DotNetProjects.WpfToolkit.Input</PackageId>
+        <Authors>DotNetProjects</Authors>
+        <Company>DotNetProjects</Company>
+        <Product>DotNetProjects.WPF Toolkit</Product>
+        <Copyright>2019 DotNetProjects</Copyright>
     </PropertyGroup>
     <ItemGroup>
         <Compile Include="..\Common\System\Windows\Controls\Extensions.cs">
