@@ -1,12 +1,8 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk.WindowsDesktop">
     <PropertyGroup>
         <RootNamespace>System.Windows.Controls.DataVisualization</RootNamespace>
-        <TargetFramework>net40</TargetFramework>
-        <!--
-        <AssemblyVersion>4.0.0.0</AssemblyVersion>
-        <FileVersion>4.0.0.0</FileVersion>
-        -->
+        <TargetFrameworks>netcoreapp3.0;net4</TargetFrameworks>
+        <UseWPF>true</UseWPF>
         <SignAssembly>true</SignAssembly>
         <AssemblyOriginatorKeyFile>DotNetProjects.snk</AssemblyOriginatorKeyFile>
         <Description>WPF Toolkit Data Visualization Controls</Description>
@@ -18,17 +14,6 @@
         <Copyright>2019 DotNetProjects</Copyright>
     </PropertyGroup>
     <ItemGroup>
-        <EmbeddedResource Include="System.Windows.Controls.DataVisualization\TreeMap.png" />
-        <EmbeddedResource Include="System.Windows.Controls.DataVisualization.Charting\AreaSeries.png" />
-        <EmbeddedResource Include="System.Windows.Controls.DataVisualization.Charting\BarSeries.png" />
-        <EmbeddedResource Include="System.Windows.Controls.DataVisualization.Charting\BubbleSeries.png" />
-        <EmbeddedResource Include="System.Windows.Controls.DataVisualization.Charting\CategoryAxis.png" />
-        <EmbeddedResource Include="System.Windows.Controls.DataVisualization.Charting\Chart.png" />
-        <EmbeddedResource Include="System.Windows.Controls.DataVisualization.Charting\ColumnSeries.png" />
-        <EmbeddedResource Include="System.Windows.Controls.DataVisualization.Charting\DateTimeAxis.png" />
-        <EmbeddedResource Include="System.Windows.Controls.DataVisualization.Charting\LinearAxis.png" />
-        <EmbeddedResource Include="System.Windows.Controls.DataVisualization.Charting\LineSeries.png" />
-        <EmbeddedResource Include="System.Windows.Controls.DataVisualization.Charting\PieSeries.png" />
-        <EmbeddedResource Include="System.Windows.Controls.DataVisualization.Charting\ScatterSeries.png" />
+        <EmbeddedResource Include="System.Windows.Controls.DataVisualization\**\*.png" /> 
     </ItemGroup>
 </Project>

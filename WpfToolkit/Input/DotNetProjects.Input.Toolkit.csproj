@@ -1,13 +1,8 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk.WindowsDesktop">
     <PropertyGroup>
-        <TargetFramework>net40</TargetFramework>
-        <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+        <TargetFrameworks>netcoreapp3.0;net4</TargetFrameworks>
+        <UseWPF>true</UseWPF>
         <RootNamespace>System.Windows.Controls</RootNamespace>
-        <!--
-        <AssemblyVersion>3.5.40128.1</AssemblyVersion>
-        <FileVersion>3.5.50211.1</FileVersion>
-        -->
         <Description>WPF Toolkit Input</Description>
         <SignAssembly>true</SignAssembly>
         <AssemblyOriginatorKeyFile>DotNetProjects.snk</AssemblyOriginatorKeyFile>
@@ -42,8 +37,6 @@
         </Compile>
     </ItemGroup>
     <ItemGroup>
-        <EmbeddedResource Include="System.Windows.Controls\AutoCompleteBox.png" />
-        <EmbeddedResource Include="System.Windows.Controls\Rating.png" />
-        <EmbeddedResource Include="System.Windows.Controls\RatingItem.png" />
+        <EmbeddedResource Include="System.Windows.Controls\**\*.png" />
     </ItemGroup>
 </Project>

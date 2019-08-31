@@ -1,12 +1,8 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk.WindowsDesktop">
     <PropertyGroup>
         <RootNamespace>System.Windows.Controls</RootNamespace>
-        <TargetFramework>net40</TargetFramework>
-        <!--
-        <AssemblyVersion>3.5.40128.1</AssemblyVersion>
-        <FileVersion>3.5.50211.1</FileVersion>
-        -->
+        <TargetFrameworks>netcoreapp3.0;net4</TargetFrameworks>
+        <UseWPF>true</UseWPF>
         <Description>WPF Toolkit Layout</Description>
         <SignAssembly>true</SignAssembly>
         <AssemblyOriginatorKeyFile>DotNetProjects.snk</AssemblyOriginatorKeyFile>
@@ -41,8 +37,6 @@
         </Compile>
     </ItemGroup>
     <ItemGroup>
-        <EmbeddedResource Include="System.Windows.Controls\Accordion.png" />
-        <EmbeddedResource Include="System.Windows.Controls\TransitioningContentControl.png" />
-        <EmbeddedResource Include="System.Windows.Controls.Primitives\ExpandableContentControl.png" />
+        <EmbeddedResource Include="System.Windows.Controls\**\*.png" />
     </ItemGroup>
 </Project>

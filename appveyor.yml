@@ -4,37 +4,10 @@ branches:
   only:
     - master
 
-image: Visual Studio 2017
+image: Visual Studio 2019 Preview
 
 install:
-  ps: |
-    $versionPrefix = [Version]$Env:APPVEYOR_BUILD_VERSION
-    $prNumber = $Env:APPVEYOR_PULL_REQUEST_NUMBER
-    $sourceBranch = $Env:APPVEYOR_REPO_BRANCH
-    $sourceCommit = $Env:APPVEYOR_REPO_COMMIT.Substring(0,8)
-    if ($prNumber)
-    {
-      $versionLabel = "pr${prNumber}"
-      $versionSuffix = "-${versionLabel}+$sourceCommit"
-    }
-    elseif ($sourceBranch.StartsWith('release') -Or $sourceBranch.StartsWith('hotfix'))
-    {
-      $versionLabel = "rc"
-      $versionSuffix = "-$versionLabel-$buildNumber+$sourceCommit"
-    }
-    elseif ($sourceBranch -ne 'master')
-    {
-      $versionLabel = "dev"
-      $versionSuffix = "-$versionLabel-$buildNumber+$sourceCommit"
-    }
-    else
-    {
-      $versionSuffix = ""
-    }
-    $version = "$versionPrefix$versionSuffix"
-    Write-Host "Version set to: $version"
-    Add-AppveyorMessage -Message "Version set to: $version" -Category Information
-    Update-AppveyorBuild -Version "$version"
+  - cmd: choco install dotnetcore-sdk --pre
 
 configuration: Release
 
