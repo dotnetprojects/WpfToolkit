@@ -201,7 +201,7 @@ namespace System.Windows.Controls
         /// </summary>
         public RatingSelectionMode SelectionMode
         {
-            get { return (RatingSelectionMode) GetValue(SelectionModeProperty); }
+            get { return (RatingSelectionMode)GetValue(SelectionModeProperty); }
             set { SetValue(SelectionModeProperty, value); }
         }
 
@@ -514,7 +514,7 @@ namespace System.Windows.Controls
                     }
                     else
                     {
-                        IUpdateVisualState updateVisualState = (IUpdateVisualState) ratingItem;
+                        IUpdateVisualState updateVisualState = (IUpdateVisualState)ratingItem;
                         updateVisualState.UpdateVisualState(true);
                     }
                 }
@@ -608,7 +608,7 @@ namespace System.Windows.Controls
         /// <param name="e">Information about the event.</param>
         private void RatingItemMouseEnter(object sender, MouseEventArgs e)
         {
-            HoveredRatingItem = (RatingItem) sender;
+            HoveredRatingItem = (RatingItem)sender;
             UpdateHoverStates();
         }
 
@@ -738,7 +738,11 @@ namespace System.Windows.Controls
             {
                 case Key.Left:
                     {
-                        RatingItem ratingItem = FocusManager.GetFocusedElement(Application.Current.MainWindow) as RatingItem;
+
+                        RatingItem ratingItem = null;
+                        if (Application.Current.CheckAccess())
+                            ratingItem = FocusManager.GetFocusedElement(Application.Current.MainWindow) as RatingItem;
+
                         if (ratingItem != null)
                         {
                             ratingItem = GetRatingItemAtOffsetFrom(ratingItem, -1);
@@ -758,7 +762,10 @@ namespace System.Windows.Controls
                     break;
                 case Key.Right:
                     {
-                        RatingItem ratingItem = FocusManager.GetFocusedElement(Application.Current.MainWindow) as RatingItem;
+                        RatingItem ratingItem = null;
+                        if (Application.Current.CheckAccess())
+                            ratingItem = FocusManager.GetFocusedElement(Application.Current.MainWindow) as RatingItem;
+
                         if (ratingItem != null)
                         {
                             ratingItem = GetRatingItemAtOffsetFrom(ratingItem, 1);
@@ -773,7 +780,7 @@ namespace System.Windows.Controls
                             {
                                 e.Handled = true;
                             }
-                        }                        
+                        }
                     }
                     break;
                 case Key.Add:
