@@ -249,22 +249,18 @@ namespace System.Windows.Controls.DataVisualization.Charting
             dataPoint.SetBinding(DataPoint.StyleProperty, new Binding(ActualDataPointStyleName) { Source = this });
             // Start DataContext null to avoid Binding warnings in the output window
             LegendItem.DataContext = null;
-#if !SILVERLIGHT
             if (null == LegendItem.Parent)
             {
-#endif
                 LegendItem.Loaded += delegate
                 {
                     // Wait for Loaded to set the DataPoint
                     LegendItem.DataContext = dataPoint;
                 };
-#if !SILVERLIGHT
             }
             else
             {
                 LegendItem.DataContext = dataPoint;
             }
-#endif
         }
 
         /// <summary>
@@ -336,12 +332,7 @@ namespace System.Windows.Controls.DataVisualization.Charting
                 {
                     if (enumerator.MoveNext())
                     {
-                        PaletteResources =
-#if SILVERLIGHT
-                            enumerator.Current.ShallowCopy();
-#else
-                            enumerator.Current;
-#endif
+                        PaletteResources = enumerator.Current;
                         Resources.MergedDictionaries.Add(PaletteResources);
                     }
                 }

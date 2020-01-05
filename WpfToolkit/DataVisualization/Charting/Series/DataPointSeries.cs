@@ -11,9 +11,7 @@ using System.Windows.Controls.DataVisualization.Collections;
 using System.Windows.Data;
 using System.Windows.Media;
 using System.Windows.Media.Animation;
-#if !SILVERLIGHT
 using System.Diagnostics.CodeAnalysis;
-#endif
 
 namespace System.Windows.Controls.DataVisualization.Charting
 {
@@ -43,7 +41,6 @@ namespace System.Windows.Controls.DataVisualization.Charting
         /// </summary>
         protected internal const string ActualLegendItemStyleName = "ActualLegendItemStyle";
 
-#if !SILVERLIGHT
         /// <summary>
         /// Event that is raised when selection is changed.
         /// </summary>
@@ -53,7 +50,6 @@ namespace System.Windows.Controls.DataVisualization.Charting
                 RoutingStrategy.Bubble,
                 typeof(SelectionChangedEventHandler),
                 typeof(DataPointSeries));
-#endif
 
         /// <summary>
         /// Queue of hide/reveal storyboards to play.
@@ -392,15 +388,11 @@ namespace System.Windows.Controls.DataVisualization.Charting
         /// <summary>
         /// Event raised when selection has changed.
         /// </summary>
-#if SILVERLIGHT
-        public event SelectionChangedEventHandler SelectionChanged;
-#else
         public event SelectionChangedEventHandler SelectionChanged
         {
             add { AddHandler(SelectionChangedEvent, value); }
             remove { RemoveHandler(SelectionChangedEvent, value); }
         }
-#endif
 
         /// <summary>
         /// Tracks whether a call to OnSelectedItemPropertyChanged is already in progress.
@@ -496,15 +488,7 @@ namespace System.Windows.Controls.DataVisualization.Charting
                 {
                     newValues.Add(newValue);
                 }
-#if SILVERLIGHT
-                SelectionChangedEventHandler handler = SelectionChanged;
-                if (null != handler)
-                {
-                    handler(this, new SelectionChangedEventArgs(oldValues, newValues));
-                }
-#else
                 RaiseEvent(new SelectionChangedEventArgs(SelectionChangedEvent, oldValues, newValues));
-#endif
             }
         }
         #endregion public object SelectedItem
@@ -635,7 +619,6 @@ namespace System.Windows.Controls.DataVisualization.Charting
                 new PropertyMetadata(TimeSpan.FromSeconds(0.5)));
         #endregion public TimeSpan TransitionDuration
 
-#if !SILVERLIGHT
         /// <summary>
         /// Initializes the static members of the DataPointSeries class.
         /// </summary>
@@ -645,15 +628,11 @@ namespace System.Windows.Controls.DataVisualization.Charting
             DefaultStyleKeyProperty.OverrideMetadata(typeof(DataPointSeries), new FrameworkPropertyMetadata(typeof(DataPointSeries)));
         }
 
-#endif
         /// <summary>
         /// Initializes a new instance of the DataPointSeries class.
         /// </summary>
         protected DataPointSeries()
         {
-#if SILVERLIGHT
-            this.DefaultStyleKey = typeof(DataPointSeries);
-#endif
             ClipGeometry = new RectangleGeometry();
             Clip = ClipGeometry;
         }
@@ -1029,10 +1008,8 @@ namespace System.Windows.Controls.DataVisualization.Charting
 
             ActiveDataPointCount--;
 
-#if !SILVERLIGHT
             // Cancel any Storyboards that might be holding the State property's value
             dataPoint.BeginAnimation(DataPoint.StateProperty, null);
-#endif
             dataPoint.State = DataPointState.PendingRemoval;
         }
 

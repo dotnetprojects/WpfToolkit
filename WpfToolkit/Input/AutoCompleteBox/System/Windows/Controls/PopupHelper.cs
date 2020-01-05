@@ -19,13 +19,6 @@ namespace System.Windows.Controls
     /// </summary>
     internal class PopupHelper
     {
-#if SILVERLIGHT
-        /// <summary>
-        /// A value indicating whether Silverlight has loaded at least once, 
-        /// so that the wrapping canvas is not recreated.
-        /// </summary>
-        private bool _hasControlLoaded;
-#endif
 
         /// <summary>
         /// Gets a value indicating whether a visual popup state is being used
@@ -39,18 +32,6 @@ namespace System.Windows.Controls
         /// Gets or sets the parent control.
         /// </summary>
         private Control Parent { get; set; }
-
-#if SILVERLIGHT
-        /// <summary>
-        /// Gets or sets the expansive area outside of the popup.
-        /// </summary>
-        private Canvas OutsidePopupCanvas { get; set; }
-
-        /// <summary>
-        /// Gets or sets the canvas for the popup child.
-        /// </summary>
-        private Canvas PopupChildCanvas { get; set; }
-#endif
 
         /// <summary>
         /// Gets or sets the maximum drop down height value.
@@ -122,28 +103,13 @@ namespace System.Windows.Controls
         [SuppressMessage("Microsoft.Design", "CA1031:DoNotCatchGeneralExceptionTypes", Justification = "This try-catch pattern is used by other popup controls to keep the runtime up.")]
         public void Arrange()
         {
-            if (Popup == null
-                || PopupChild == null
-#if SILVERLIGHT
- || OutsidePopupCanvas == null
-#endif
- || Application.Current == null
-#if SILVERLIGHT
- || Application.Current.Host == null
-                || Application.Current.Host.Content == null
-#endif
- || false)
+            if (Popup == null || PopupChild == null || Application.Current == null)
             {
                 return;
             }
 
-#if SILVERLIGHT
-            Content hostContent = Application.Current.Host.Content;
-            double rootWidth = hostContent.ActualWidth;
-            double rootHeight = hostContent.ActualHeight;
-#else
             UIElement u = Parent;
-            if (Application.Current.Windows.Count > 0)
+            if (Application.Current.CheckAccess() && Application.Current.Windows.Count > 0)
             {
                 // TODO: USE THE CURRENT WINDOW INSTEAD! WALK THE TREE!
                 u = Application.Current.Windows[0];
@@ -160,7 +126,6 @@ namespace System.Windows.Controls
 
             double rootWidth = w.ActualWidth;
             double rootHeight = w.ActualHeight;
-#endif
 
             double popupContentWidth = PopupChild.ActualWidth;
             double popupContentHeight = PopupChild.ActualHeight;
@@ -172,29 +137,6 @@ namespace System.Windows.Controls
 
             double rootOffsetX = 0;
             double rootOffsetY = 0;
-
-#if SILVERLIGHT
-            // Getting the transform will throw if the popup is no longer in 
-            // the visual tree.  This can happen if you first open the popup 
-            // and then click on something else on the page that removes it 
-            // from the live tree.
-            MatrixTransform mt = null;
-            try
-            {
-                mt = Parent.TransformToVisual(null) as MatrixTransform;
-            }
-            catch
-            {
-                OnClosed(EventArgs.Empty); // IsDropDownOpen = false;
-            }
-            if (mt == null)
-            {
-                return;
-            }
-
-            rootOffsetX = mt.Matrix.OffsetX;
-            rootOffsetY = mt.Matrix.OffsetY;
-#endif
 
             double myControlHeight = Parent.ActualHeight;
             double myControlWidth = Parent.ActualWidth;
@@ -254,19 +196,6 @@ namespace System.Windows.Controls
             Popup.HorizontalOffset = 0;
             Popup.VerticalOffset = 0;
 
-#if SILVERLIGHT
-            OutsidePopupCanvas.Width = rootWidth;
-            OutsidePopupCanvas.Height = rootHeight;
-
-            // Transform the transparent canvas to the plugin's coordinate 
-            // space origin.
-            Matrix transformToRootMatrix = mt.Matrix;
-            Matrix newMatrix;
-            transformToRootMatrix.Invert(out newMatrix);
-            mt.Matrix = newMatrix;
-
-            OutsidePopupCanvas.RenderTransform = mt;
-#endif
             PopupChild.MinWidth = myControlWidth;
             PopupChild.MaxWidth = rootWidth;
             PopupChild.MinHeight = 0;

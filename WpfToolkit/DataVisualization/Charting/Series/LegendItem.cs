@@ -16,7 +16,6 @@ namespace System.Windows.Controls.DataVisualization.Charting
         /// </summary>
         public object Owner { get; set; }
 
-#if !SILVERLIGHT
         /// <summary>
         /// Initializes the static members of the LegendItem class.
         /// </summary>
@@ -25,15 +24,11 @@ namespace System.Windows.Controls.DataVisualization.Charting
             DefaultStyleKeyProperty.OverrideMetadata(typeof(LegendItem), new FrameworkPropertyMetadata(typeof(LegendItem)));
         }
 
-#endif
         /// <summary>
         /// Initializes a new instance of the LegendItem class.
         /// </summary>
         public LegendItem()
         {
-#if SILVERLIGHT
-            this.DefaultStyleKey = typeof(LegendItem);
-#endif
         }
     }
 }

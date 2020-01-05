@@ -17,7 +17,6 @@ namespace System.Windows.Controls.DataVisualization.Charting
     [TemplateVisualState(Name = DataPoint.StateRevealHidden, GroupName = DataPoint.GroupRevealStates)]
     public partial class AreaDataPoint : DataPoint
     {
-#if !SILVERLIGHT
         /// <summary>
         /// Initializes the static members of the AreaDataPoint class.
         /// </summary>
@@ -26,15 +25,11 @@ namespace System.Windows.Controls.DataVisualization.Charting
             DefaultStyleKeyProperty.OverrideMetadata(typeof(AreaDataPoint), new FrameworkPropertyMetadata(typeof(AreaDataPoint)));
         }
 
-#endif
         /// <summary>
         /// Initializes a new instance of the AreaDataPoint class.
         /// </summary>
         public AreaDataPoint()
         {
-#if SILVERLIGHT
-            this.DefaultStyleKey = typeof(AreaDataPoint);
-#endif
         }
     }
 }

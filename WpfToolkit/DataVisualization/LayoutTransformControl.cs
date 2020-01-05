@@ -8,10 +8,8 @@ using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Markup;
 using System.Windows.Media;
-#if !SILVERLIGHT
 using System.IO;
 using System.Text;
-#endif
 
 namespace System.Windows.Controls.DataVisualization
 {
@@ -102,11 +100,7 @@ namespace System.Windows.Controls.DataVisualization
         {
             // Can't tab to LayoutTransformControl
             IsTabStop = false;
-#if SILVERLIGHT
-            // Disable layout rounding because its rounding of values confuses 
-            // things.
-            UseLayoutRounding = false;
-#endif
+
             // Hard coded template is never meant to be changed and avoids the 
             // need for generic.xaml.
             string templateXaml =
@@ -119,14 +113,10 @@ namespace System.Windows.Controls.DataVisualization
                         "</Grid.RenderTransform>" +
                     "</Grid>" +
                 "</ControlTemplate>";
-#if SILVERLIGHT
-            Template = (ControlTemplate)XamlReader.Load(templateXaml);
-#else
             using (MemoryStream stream = new MemoryStream(Encoding.UTF8.GetBytes(templateXaml)))
             {
                 Template = (ControlTemplate)XamlReader.Load(stream);
             }
-#endif
         }
 
         /// <summary>

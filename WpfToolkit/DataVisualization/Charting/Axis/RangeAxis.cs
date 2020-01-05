@@ -140,7 +140,6 @@ namespace System.Windows.Controls.DataVisualization.Charting
             }
         }
 
-#if !SILVERLIGHT
         /// <summary>
         /// Initializes the static members of the RangeAxis class.
         /// </summary>
@@ -150,15 +149,11 @@ namespace System.Windows.Controls.DataVisualization.Charting
             DefaultStyleKeyProperty.OverrideMetadata(typeof(RangeAxis), new FrameworkPropertyMetadata(typeof(RangeAxis)));
         }
 
-#endif
         /// <summary>
         /// Instantiates a new instance of the RangeAxis class.
         /// </summary>
         protected RangeAxis()
         {
-#if SILVERLIGHT
-            this.DefaultStyleKey = typeof(RangeAxis);
-#endif
             this._labelPool = new ObjectPool<Control>(() => CreateAxisLabel());
             this._majorTickMarkPool = new ObjectPool<Line>(() => CreateMajorTickMark());
             this._minorTickMarkPool = new ObjectPool<Line>(() => CreateMinorTickMark());

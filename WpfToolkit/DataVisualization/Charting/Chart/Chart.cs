@@ -433,7 +433,6 @@ namespace System.Windows.Controls.DataVisualization.Charting
                 null);
         #endregion public Style TitleStyle
 
-#if !SILVERLIGHT
         /// <summary>
         /// Initializes the static members of the Chart class.
         /// </summary>
@@ -443,15 +442,11 @@ namespace System.Windows.Controls.DataVisualization.Charting
             DefaultStyleKeyProperty.OverrideMetadata(typeof(Chart), new FrameworkPropertyMetadata(typeof(Chart)));
         }
 
-#endif
         /// <summary>
         /// Initializes a new instance of the Chart class.
         /// </summary>
         public Chart()
         {
-#if SILVERLIGHT
-            DefaultStyleKey = typeof(Chart);
-#endif
             // Create the backing collection for Series
             UniqueObservableCollection<ISeries> series = new UniqueObservableCollection<ISeries>();
             series.CollectionChanged += new NotifyCollectionChangedEventHandler(SeriesCollectionChanged);

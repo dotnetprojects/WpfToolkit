@@ -294,14 +294,8 @@ namespace System.Windows.Controls.DataVisualization
         /// </returns>
         public static IEnumerable<TResult> CastWrapper<TResult>(this IEnumerable source)
         {
-#if SILVERLIGHT
-            // Certain flavors of this platform have a bug which causes Cast<T> to raise an exception incorrectly.
-            // Work around that by using the more general OfType<T> method instead for no loss of functionality.
-            return source.OfType<TResult>();
-#else
             // No issues on this platform - call directly through to Cast<T>
             return source.Cast<TResult>();
-#endif
         }
     }
 }

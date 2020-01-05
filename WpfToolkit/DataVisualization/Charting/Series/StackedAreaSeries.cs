@@ -101,18 +101,7 @@ namespace System.Windows.Controls.DataVisualization.Charting
         [SuppressMessage("Microsoft.Performance", "CA1822:MarkMembersAsStatic", Justification = "Silverlight implementation is not static.")]
         protected void SetPolygonPointsProperty(Polygon polygon, PointCollection pointCollection)
         {
-#if SILVERLIGHT
-            // Changing .Points during an Arrange pass can create a layout cycle on Silverlight
-            if (!polygon.Points.SequenceEqual(pointCollection))
-            {
-#endif
-                polygon.Points = pointCollection;
-#if SILVERLIGHT
-                // In rare cases, Silverlight doesn't update the line visual to match the new points;
-                // calling InvalidateArrange works around that problem.
-                polygon.InvalidateArrange();
-            }
-#endif
+            polygon.Points = pointCollection;
         }
 
         /// <summary>

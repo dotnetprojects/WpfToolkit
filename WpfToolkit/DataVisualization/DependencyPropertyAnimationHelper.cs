@@ -66,15 +66,7 @@ namespace System.Windows.Controls.DataVisualization
 
             if (storyBoard != null)
             {
-#if SILVERLIGHT
-                // Save current value
-                object currentValue = target.GetValue(animatingDependencyProperty);
-#endif
                 storyBoard.Stop();
-#if SILVERLIGHT
-                // Restore that value so it doesn't snap back to its starting value
-                target.SetValue(animatingDependencyProperty, currentValue);
-#endif
                 target.Resources.Remove(GetStoryboardKey(propertyPath));
             }
 

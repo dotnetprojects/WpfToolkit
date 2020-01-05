@@ -79,7 +79,6 @@ namespace System.Windows.Controls.DataVisualization.Charting
                 new PropertyMetadata(null));
         #endregion public string FormattedContent
 
-#if !SILVERLIGHT
         /// <summary>
         /// Initializes the static members of the AxisLabel class.
         /// </summary>
@@ -88,16 +87,12 @@ namespace System.Windows.Controls.DataVisualization.Charting
         {
             DefaultStyleKeyProperty.OverrideMetadata(typeof(AxisLabel), new FrameworkPropertyMetadata(typeof(AxisLabel)));
         }
-
-#endif     
+        
         /// <summary>
         /// Instantiates a new instance of the AxisLabel class.
         /// </summary>
         public AxisLabel()
         {
-#if SILVERLIGHT
-            this.DefaultStyleKey = typeof(AxisLabel);
-#endif
             this.SetBinding(FormattedContentProperty, new Binding { Converter = new StringFormatConverter(), ConverterParameter = StringFormat ?? "{0}" });
         }
 
