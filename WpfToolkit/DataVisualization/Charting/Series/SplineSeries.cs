@@ -117,7 +117,6 @@ namespace System.Windows.Controls.DataVisualization.Charting
                 null);
         #endregion public Style PathStyle
 
-#if !SILVERLIGHT
         /// <summary>
         /// Initializes the static members of the LineSeries class.
         /// </summary>
@@ -127,15 +126,11 @@ namespace System.Windows.Controls.DataVisualization.Charting
             DefaultStyleKeyProperty.OverrideMetadata(typeof(SplineSeries), new FrameworkPropertyMetadata(typeof(SplineSeries)));
         }
 
-#endif
         /// <summary>
         /// Initializes a new instance of the LineSeries class.
         /// </summary>
         public SplineSeries()
         {
-#if SILVERLIGHT
-            this.DefaultStyleKey = typeof(SplineSeries);
-#endif
         }
 
         /// <summary>

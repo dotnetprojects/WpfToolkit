@@ -7,7 +7,7 @@ using System;
 using System.Resources;
 using System.Windows.Markup;
 
-// Silverlight/WPF shared settings
+// WPF shared settings
 [assembly: CLSCompliant(true)]
 [assembly: NeutralResourcesLanguage("en-US")]
 [assembly: XmlnsDefinition("clr-namespace:System.Windows.Controls.DataVisualization;assembly=DotNetProjects.DataVisualization.Toolkit", "System.Windows.Controls.DataVisualization")]

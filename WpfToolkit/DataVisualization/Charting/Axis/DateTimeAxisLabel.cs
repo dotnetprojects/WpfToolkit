@@ -379,7 +379,6 @@ namespace System.Windows.Controls.DataVisualization.Charting
         }
         #endregion public string MillisecondsIntervalStringFormat
 
-#if !SILVERLIGHT
         /// <summary>
         /// Initializes the static members of the DateTimeAxisLabel class.
         /// </summary>
@@ -387,18 +386,13 @@ namespace System.Windows.Controls.DataVisualization.Charting
         static DateTimeAxisLabel()
         {
             DefaultStyleKeyProperty.OverrideMetadata(typeof(DateTimeAxisLabel), new FrameworkPropertyMetadata(typeof(DateTimeAxisLabel)));
-        }
-
-#endif    
+        }  
 
         /// <summary>
         /// Instantiates a new instance of the DateTimeAxisLabel class.
         /// </summary>
         public DateTimeAxisLabel()
         {
-#if SILVERLIGHT
-            this.DefaultStyleKey = typeof(DateTimeAxisLabel);
-#endif
         }
 
         /// <summary>

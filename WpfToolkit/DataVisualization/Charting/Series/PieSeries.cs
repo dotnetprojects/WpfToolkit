@@ -70,7 +70,6 @@ namespace System.Windows.Controls.DataVisualization.Charting
         /// </summary>
         private IEnumerator<ResourceDictionary> _resourceDictionaryEnumerator;
 
-#if !SILVERLIGHT
         /// <summary>
         /// Initializes the static members of the PieSeries class.
         /// </summary>
@@ -79,15 +78,11 @@ namespace System.Windows.Controls.DataVisualization.Charting
             DefaultStyleKeyProperty.OverrideMetadata(typeof(PieSeries), new FrameworkPropertyMetadata(typeof(PieSeries)));
         }
 
-#endif
         /// <summary>
         /// Initializes a new instance of the PieSeries class.
         /// </summary>
         public PieSeries()
         {
-#if SILVERLIGHT
-            this.DefaultStyleKey = typeof(PieSeries);
-#endif
             this.ResourceDictionaryDispenser = new ResourceDictionaryDispenser();
             ResourceDictionaryDispenser.ResourceDictionariesChanged += delegate
             {
@@ -151,12 +146,7 @@ namespace System.Windows.Controls.DataVisualization.Charting
 
             if (_resourceDictionaryEnumerator.MoveNext())
             {
-                ResourceDictionary paletteResources =
-#if SILVERLIGHT
-                    _resourceDictionaryEnumerator.Current.ShallowCopy();
-#else
-                    _resourceDictionaryEnumerator.Current;
-#endif
+                ResourceDictionary paletteResources = _resourceDictionaryEnumerator.Current;
                 pieDataPoint.PaletteResources = paletteResources;
                 pieDataPoint.Resources.MergedDictionaries.Add(paletteResources);
             }

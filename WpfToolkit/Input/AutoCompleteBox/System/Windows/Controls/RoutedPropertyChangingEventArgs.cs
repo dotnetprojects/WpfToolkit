@@ -139,8 +139,7 @@ namespace System.Windows.Controls
             Cancel = false;
         }
 
-#if !SILVERLIGHT
-                /// <summary>
+        /// <summary>
         /// Initializes a new instance of the
         /// <see cref="T:System.Windows.Controls.RoutedPropertyChangingEventArgs`1" />
         /// class.
@@ -171,6 +170,5 @@ namespace System.Windows.Controls
             IsCancelable = isCancelable;
             Cancel = false;
         }
-#endif
     }
 }

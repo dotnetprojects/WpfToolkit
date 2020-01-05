@@ -374,9 +374,6 @@ namespace System.Windows.Controls
         /// Gets the implementation root of the Control.
         /// </summary>
         /// <param name="dependencyObject">The DependencyObject.</param>
-        /// <remarks>
-        /// Implements Silverlight's corresponding internal property on Control.
-        /// </remarks>
         /// <returns>Returns the implementation root or null.</returns>
         public static FrameworkElement GetImplementationRoot(DependencyObject dependencyObject)
         {

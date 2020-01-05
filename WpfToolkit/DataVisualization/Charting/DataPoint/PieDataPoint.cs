@@ -479,7 +479,6 @@ namespace System.Windows.Controls.DataVisualization.Charting
         /// </summary>
         private UIElement SliceElement { get; set; }
 
-#if !SILVERLIGHT
         /// <summary>
         /// Initializes the static members of the PieDataPoint class.
         /// </summary>
@@ -489,16 +488,11 @@ namespace System.Windows.Controls.DataVisualization.Charting
             DefaultStyleKeyProperty.OverrideMetadata(typeof(PieDataPoint), new FrameworkPropertyMetadata(typeof(PieDataPoint)));
         }
 
-#endif
         /// <summary>
         /// Initializes a new instance of the PieDataPoint class.
         /// </summary>
         public PieDataPoint()
         {
-#if SILVERLIGHT
-            DefaultStyleKey = typeof(PieDataPoint);
-#endif
-
             if (DesignerProperties.GetIsInDesignMode(this))
             {
                 // Create default design-mode-friendly settings

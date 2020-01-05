@@ -84,13 +84,6 @@ namespace System.Windows.Controls
         /// </summary>
         internal InteractionHelper Interaction { get; private set; }
 
-#if SILVERLIGHT
-        /// <summary>
-        /// Gets or sets the items control helper class.
-        /// </summary>
-        private ItemsControlHelper ItemsControlHelper { get; set; }
-#endif
-
         #region public int ItemCount
         /// <summary>
         /// Gets or sets the number of rating items.
@@ -201,50 +194,6 @@ namespace System.Windows.Controls
             UpdateHoverStates();
         }
         #endregion public bool IsReadOnly
-
-#if SILVERLIGHT
-        #region public Style ItemContainerStyle
-        /// <summary>
-        /// Gets or sets the item container style.
-        /// </summary>
-        public Style ItemContainerStyle
-        {
-            get { return GetValue(ItemContainerStyleProperty) as Style; }
-            set { SetValue(ItemContainerStyleProperty, value); }
-        }
-
-        /// <summary>
-        /// Identifies the ItemContainerStyle dependency property.
-        /// </summary>
-        public static readonly DependencyProperty ItemContainerStyleProperty =
-            DependencyProperty.Register(
-                "ItemContainerStyle",
-                typeof(Style),
-                typeof(Rating),
-                new PropertyMetadata(null, OnItemContainerStyleChanged));
-
-        /// <summary>
-        /// ItemContainerStyleProperty property changed handler.
-        /// </summary>
-        /// <param name="d">Rating that changed its ItemContainerStyle.</param>
-        /// <param name="e">Event arguments.</param>
-        private static void OnItemContainerStyleChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
-        {
-            Rating source = (Rating)d;
-            Style newValue = (Style)e.NewValue;
-            source.OnItemContainerStyleChanged(newValue);
-        }
-
-        /// <summary>
-        /// ItemContainerStyleProperty property changed handler.
-        /// </summary>
-        /// <param name="newValue">New value.</param>        
-        protected virtual void OnItemContainerStyleChanged(Style newValue)
-        {
-            ItemsControlHelper.UpdateItemContainerStyle(newValue);
-        }
-        #endregion public Style ItemContainerStyle
-#endif
 
         #region public RatingSelectionMode SelectionMode
         /// <summary>
@@ -368,9 +317,6 @@ namespace System.Windows.Controls
         /// <summary>
         /// This event is raised when the value of the rating is changed.
         /// </summary>
-#if SILVERLIGHT
-        public event RoutedPropertyChangedEventHandler<double?> ValueChanged;
-#else
         public static readonly RoutedEvent ValueChangedEvent = EventManager.RegisterRoutedEvent("ValueChanged", RoutingStrategy.Bubble, typeof(RoutedPropertyChangedEventHandler<double?>), typeof(Rating));
 
         /// <summary>
@@ -381,11 +327,9 @@ namespace System.Windows.Controls
             add { AddHandler(ValueChangedEvent, value); }
             remove { RemoveHandler(ValueChangedEvent, value); }
         }
-#endif
 
         #endregion public double? Value
 
-#if !SILVERLIGHT
         /// <summary>
         /// Initializes the static members of the ColumnDataPoint class.
         /// </summary>
@@ -394,27 +338,12 @@ namespace System.Windows.Controls
             DefaultStyleKeyProperty.OverrideMetadata(typeof(Rating), new FrameworkPropertyMetadata(typeof(Rating)));
         }
 
-#endif    
         /// <summary>
         /// Initializes a new instance of the Rating control.
         /// </summary>
         public Rating()
         {
             this.Interaction = new InteractionHelper(this);
-
-#if SILVERLIGHT
-            this.DefaultStyleKey = typeof(Rating);
-            this.ItemsControlHelper = new ItemsControlHelper(this);
-        }
-
-        /// <summary>
-        /// Applies control template to the items control.
-        /// </summary>
-        public override void OnApplyTemplate()
-        {
-            ItemsControlHelper.OnApplyTemplate();
-            base.OnApplyTemplate();
-#endif
         }
 
         /// <summary>
@@ -702,17 +631,9 @@ namespace System.Windows.Controls
         /// <returns>A sequence of rating items.</returns>
         internal IEnumerable<RatingItem> GetRatingItems()
         {
-#if SILVERLIGHT
-            return
-                Enumerable
-                    .Range(0, this.Items.Count)
-                    .Select(index => (RatingItem)ItemContainerGenerator.ContainerFromIndex(index))
-                    .Where(ratingItem => ratingItem != null);
-#else
             // The query above returns null in WPF
             // Either way, WPF will already contain the RatingItem objects in the Items collection.
             return this.Items.Cast<RatingItem>();
-#endif
         }
 
         /// <summary>
@@ -817,11 +738,7 @@ namespace System.Windows.Controls
             {
                 case Key.Left:
                     {
-#if SILVERLIGHT
-                        RatingItem ratingItem = FocusManager.GetFocusedElement() as RatingItem;
-#else
                         RatingItem ratingItem = FocusManager.GetFocusedElement(Application.Current.MainWindow) as RatingItem;
-#endif
                         if (ratingItem != null)
                         {
                             ratingItem = GetRatingItemAtOffsetFrom(ratingItem, -1);
@@ -841,11 +758,7 @@ namespace System.Windows.Controls
                     break;
                 case Key.Right:
                     {
-#if SILVERLIGHT
-                        RatingItem ratingItem = FocusManager.GetFocusedElement() as RatingItem;
-#else
                         RatingItem ratingItem = FocusManager.GetFocusedElement(Application.Current.MainWindow) as RatingItem;
-#endif
                         if (ratingItem != null)
                         {
                             ratingItem = GetRatingItemAtOffsetFrom(ratingItem, 1);

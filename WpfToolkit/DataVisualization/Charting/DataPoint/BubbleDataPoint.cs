@@ -132,7 +132,6 @@ namespace System.Windows.Controls.DataVisualization.Charting
 
         #endregion public double ActualSize
 
-#if !SILVERLIGHT
         /// <summary>
         /// Initializes the static members of the BubbleDataPoint class.
         /// </summary>
@@ -142,15 +141,11 @@ namespace System.Windows.Controls.DataVisualization.Charting
             DefaultStyleKeyProperty.OverrideMetadata(typeof(BubbleDataPoint), new FrameworkPropertyMetadata(typeof(BubbleDataPoint)));
         }
 
-#endif
         /// <summary>
         /// Initializes a new instance of the bubble data point.
         /// </summary>
         public BubbleDataPoint()
         {
-#if SILVERLIGHT
-            this.DefaultStyleKey = typeof(BubbleDataPoint);
-#endif
         }
     }
 }

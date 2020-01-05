@@ -25,13 +25,7 @@ namespace System.Windows.Controls
         {
             if (!_isInDesignMode.HasValue)
             {
-#if SILVERLIGHT
-                _isInDesignMode =
-                    (null == Application.Current) ||
-                    Application.Current.GetType() == typeof(Application);
-#else
                 _isInDesignMode = System.ComponentModel.DesignerProperties.GetIsInDesignMode(element);
-#endif
             }
             return _isInDesignMode.Value;
         }

@@ -110,8 +110,6 @@ namespace System.Windows.Controls.DataVisualization.Charting
         private const string ShadowName = "PART_Shadow";
         private Grid Shadow { get; set; }
 
-
-#if !SILVERLIGHT
         /// <summary>
         /// Initializes the static members of the BarDataPoint class.
         /// </summary>
@@ -119,16 +117,12 @@ namespace System.Windows.Controls.DataVisualization.Charting
         {
             DefaultStyleKeyProperty.OverrideMetadata(typeof(CandlestickDataPoint), new FrameworkPropertyMetadata(typeof(CandlestickDataPoint)));
         }
-#endif
 
         /// <summary>
         /// Initializes a new instance of the ScatterDataPoint class.
         /// </summary>
         public CandlestickDataPoint()
         {
-#if SILVERLIGHT
-            this.DefaultStyleKey = typeof(CandlestickDataPoint);
-#endif
         }
 
         public override void OnApplyTemplate()

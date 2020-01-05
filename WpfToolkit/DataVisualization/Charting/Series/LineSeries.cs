@@ -70,7 +70,6 @@ namespace System.Windows.Controls.DataVisualization.Charting
                 null);
         #endregion public Style PolylineStyle
 
-#if !SILVERLIGHT
         /// <summary>
         /// Initializes the static members of the LineSeries class.
         /// </summary>
@@ -80,15 +79,11 @@ namespace System.Windows.Controls.DataVisualization.Charting
             DefaultStyleKeyProperty.OverrideMetadata(typeof(LineSeries), new FrameworkPropertyMetadata(typeof(LineSeries)));
         }
 
-#endif
         /// <summary>
         /// Initializes a new instance of the LineSeries class.
         /// </summary>
         public LineSeries()
         {
-#if SILVERLIGHT
-            this.DefaultStyleKey = typeof(LineSeries);
-#endif
         }
 
         /// <summary>

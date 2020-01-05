@@ -17,7 +17,6 @@ namespace System.Windows.Automation.Peers
     /// <QualityBand>Preview</QualityBand>
     public sealed partial class RatingAutomationPeer : ItemsControlAutomationPeer, IValueProvider, ISelectionProvider
     {
-#if !SILVERLIGHT
         /// <summary>
         /// Provides initialization for base class values when called by the constructor
         /// of a derived class.
@@ -34,7 +33,7 @@ namespace System.Windows.Automation.Peers
             }
             return peer;
         }
-#endif
+
         /// <summary>
         /// Gets the Rating that owns this RatingAutomationPeer.
         /// </summary>

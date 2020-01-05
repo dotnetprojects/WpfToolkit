@@ -12,25 +12,19 @@ namespace System.Windows.Controls.DataVisualization.Charting
     /// </summary>
     public class NumericAxisLabel : AxisLabel
     {
-#if !SILVERLIGHT
         /// <summary>
         /// Initializes the static members of the NumericAxisLabel class.
         /// </summary>
         static NumericAxisLabel()
         {
             DefaultStyleKeyProperty.OverrideMetadata(typeof(NumericAxisLabel), new FrameworkPropertyMetadata(typeof(NumericAxisLabel)));
-        }
-
-#endif    
+        }   
 
         /// <summary>
         /// Instantiates a new instance of the NumericAxisLabel class.
         /// </summary>
         public NumericAxisLabel()
         {
-#if SILVERLIGHT
-            this.DefaultStyleKey = typeof(NumericAxisLabel);
-#endif
         }
     }
 }

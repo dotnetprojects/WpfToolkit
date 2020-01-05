@@ -112,7 +112,6 @@ namespace System.Windows.Controls.DataVisualization.Charting
         /// </summary>
         private bool _synchronizingSelectedItems;
 
-#if !SILVERLIGHT
         /// <summary>
         /// Performs one-time initialization of DefinitionSeries data.
         /// </summary>
@@ -121,16 +120,12 @@ namespace System.Windows.Controls.DataVisualization.Charting
         {
             DefaultStyleKeyProperty.OverrideMetadata(typeof(DefinitionSeries), new FrameworkPropertyMetadata(typeof(DefinitionSeries)));
         }
-#endif
 
         /// <summary>
         /// Initializes a new instance of the DefinitionSeries class.
         /// </summary>
         protected DefinitionSeries()
         {
-#if SILVERLIGHT
-            this.DefaultStyleKey = typeof(DefinitionSeries);
-#endif
             _seriesDefinitions.CollectionChanged += new NotifyCollectionChangedEventHandler(SeriesDefinitionsCollectionChanged);
             _seriesAreaChildrenListAdapter.Collection = _seriesDefinitions;
             _selectedItems.CollectionChanged += new NotifyCollectionChangedEventHandler(SelectedItemsCollectionChanged);
@@ -500,23 +495,12 @@ namespace System.Windows.Controls.DataVisualization.Charting
             // Pass the SelectionChanged event on to any listeners
             IList removedItems = removedDataItems.Select(di => di.Value).ToArray();
             IList addedItems = addedDataItems.Select(di => di.Value).ToArray();
-#if SILVERLIGHT
-            SelectionChangedEventHandler handler = SelectionChanged;
-            if (null != handler)
-            {
-                handler(this, new SelectionChangedEventArgs(removedItems, addedItems));
-            }
-#else
             RaiseEvent(new SelectionChangedEventArgs(SelectionChangedEvent, removedItems, addedItems));
-#endif
         }
 
         /// <summary>
         /// Occurs when the selection of a DefinitionSeries changes.
         /// </summary>
-#if SILVERLIGHT
-        public event SelectionChangedEventHandler SelectionChanged;
-#else
         public event SelectionChangedEventHandler SelectionChanged
         {
             add { AddHandler(SelectionChangedEvent, value); }
@@ -528,7 +512,6 @@ namespace System.Windows.Controls.DataVisualization.Charting
         /// </summary>
         public static readonly RoutedEvent SelectionChangedEvent =
             EventManager.RegisterRoutedEvent("SelectionChanged", RoutingStrategy.Bubble, typeof(SelectionChangedEventHandler), typeof(DefinitionSeries));
-#endif
 
         /// <summary>
         /// Builds the visual tree for the control when a new template is applied.

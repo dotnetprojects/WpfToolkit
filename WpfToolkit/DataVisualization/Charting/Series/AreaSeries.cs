@@ -68,7 +68,6 @@ namespace System.Windows.Controls.DataVisualization.Charting
                 null);
         #endregion public Style PathStyle
 
-#if !SILVERLIGHT
         /// <summary>
         /// Initializes the static members of the AreaSeries class.
         /// </summary>
@@ -78,15 +77,11 @@ namespace System.Windows.Controls.DataVisualization.Charting
             DefaultStyleKeyProperty.OverrideMetadata(typeof(AreaSeries), new FrameworkPropertyMetadata(typeof(AreaSeries)));
         }
 
-#endif
         /// <summary>
         /// Initializes a new instance of the AreaSeries class.
         /// </summary>
         public AreaSeries()
         {
-#if SILVERLIGHT
-            this.DefaultStyleKey = typeof(AreaSeries);
-#endif
         }
 
         /// <summary>

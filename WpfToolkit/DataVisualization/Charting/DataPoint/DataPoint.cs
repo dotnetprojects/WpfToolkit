@@ -774,9 +774,6 @@ namespace System.Windows.Controls.DataVisualization.Charting
         /// <summary>
         /// Gets the implementation root of the Control.
         /// </summary>
-        /// <remarks>
-        /// Implements Silverlight's corresponding internal property on Control.
-        /// </remarks>
         private FrameworkElement ImplementationRoot
         {
             get

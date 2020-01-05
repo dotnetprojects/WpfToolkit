@@ -688,9 +688,7 @@ namespace System.Windows.Controls
             }
 
             source.OnSelectionChanged(new SelectionChangedEventArgs(
-#if !SILVERLIGHT
                 SelectionChangedEvent,
-#endif
                 removed,
                 added));
         }
@@ -1200,9 +1198,6 @@ namespace System.Windows.Controls
         /// Occurs when the text in the text box portion of the
         /// <see cref="T:System.Windows.Controls.AutoCompleteBox" /> changes.
         /// </summary>
-#if SILVERLIGHT
-        public event RoutedEventHandler TextChanged;
-#else
         public static readonly RoutedEvent TextChangedEvent = EventManager.RegisterRoutedEvent("TextChanged", RoutingStrategy.Bubble, typeof(RoutedEventHandler), typeof(AutoCompleteBox));
 
         /// <summary>
@@ -1214,7 +1209,6 @@ namespace System.Windows.Controls
             add { AddHandler(TextChangedEvent, value); }
             remove { RemoveHandler(TextChangedEvent, value); }
         }
-#endif
 
         /// <summary>
         /// Occurs when the
@@ -1230,9 +1224,6 @@ namespace System.Windows.Controls
         /// In this case, if you want possible matches to appear, you must 
         /// provide the logic for populating the selection adapter.
         /// </remarks>
-#if SILVERLIGHT
-        public event PopulatingEventHandler Populating;
-#else
         public static readonly RoutedEvent PopulatingEvent = EventManager.RegisterRoutedEvent("Populating", RoutingStrategy.Bubble, typeof(PopulatingEventHandler), typeof(AutoCompleteBox));
 
         /// <summary>
@@ -1254,7 +1245,6 @@ namespace System.Windows.Controls
             add { AddHandler(PopulatingEvent, value); }
             remove { RemoveHandler(PopulatingEvent, value); }
         }
-#endif
 
         /// <summary>
         /// Occurs when the
@@ -1263,9 +1253,6 @@ namespace System.Windows.Controls
         /// <see cref="P:System.Windows.Controls.AutoCompleteBox.Text" />
         /// property.
         /// </summary>
-#if SILVERLIGHT
-        public event PopulatedEventHandler Populated;
-#else
         public static readonly RoutedEvent PopulatedEvent = EventManager.RegisterRoutedEvent("Populated", RoutingStrategy.Bubble, typeof(PopulatedEventHandler), typeof(AutoCompleteBox));
 
         /// <summary>
@@ -1280,16 +1267,12 @@ namespace System.Windows.Controls
             add { AddHandler(PopulatedEvent, value); }
             remove { RemoveHandler(PopulatedEvent, value); }
         }
-#endif
 
         /// <summary>
         /// Occurs when the value of the
         /// <see cref="P:System.Windows.Controls.AutoCompleteBox.IsDropDownOpen" />
         /// property is changing from false to true.
         /// </summary>
-#if SILVERLIGHT
-        public event RoutedPropertyChangingEventHandler<bool> DropDownOpening;
-#else
         public static readonly RoutedEvent DropDownOpeningEvent = EventManager.RegisterRoutedEvent("DropDownOpening", RoutingStrategy.Bubble, typeof(RoutedPropertyChangingEventHandler<bool>), typeof(AutoCompleteBox));
 
         /// <summary>
@@ -1302,16 +1285,12 @@ namespace System.Windows.Controls
             add { AddHandler(DropDownOpeningEvent, value); }
             remove { RemoveHandler(DropDownOpeningEvent, value); }
         }
-#endif
 
         /// <summary>
         /// Occurs when the value of the
         /// <see cref="P:System.Windows.Controls.AutoCompleteBox.IsDropDownOpen" />
         /// property has changed from false to true and the drop-down is open.
         /// </summary>
-#if SILVERLIGHT
-        public event RoutedPropertyChangedEventHandler<bool> DropDownOpened;
-#else
         public static readonly RoutedEvent DropDownOpenedEvent = EventManager.RegisterRoutedEvent("DropDownOpened", RoutingStrategy.Bubble, typeof(RoutedPropertyChangedEventHandler<bool>), typeof(AutoCompleteBox));
 
         /// <summary>
@@ -1324,16 +1303,12 @@ namespace System.Windows.Controls
             add { AddHandler(DropDownOpenedEvent, value); }
             remove { RemoveHandler(DropDownOpenedEvent, value); }
         }
-#endif
 
         /// <summary>
         /// Occurs when the
         /// <see cref="P:System.Windows.Controls.AutoCompleteBox.IsDropDownOpen" />
         /// property is changing from true to false.
         /// </summary>
-#if SILVERLIGHT
-        public event RoutedPropertyChangingEventHandler<bool> DropDownClosing;
-#else
         public static readonly RoutedEvent DropDownClosingEvent = EventManager.RegisterRoutedEvent("DropDownClosing", RoutingStrategy.Bubble, typeof(RoutedPropertyChangingEventHandler<bool>), typeof(AutoCompleteBox));
 
         /// <summary>
@@ -1346,16 +1321,12 @@ namespace System.Windows.Controls
             add { AddHandler(DropDownClosingEvent, value); }
             remove { RemoveHandler(DropDownClosingEvent, value); }
         }
-#endif
 
         /// <summary>
         /// Occurs when the
         /// <see cref="P:System.Windows.Controls.AutoCompleteBox.IsDropDownOpen" />
         /// property was changed from true to false and the drop-down is open.
         /// </summary>
-#if SILVERLIGHT
-        public event RoutedPropertyChangedEventHandler<bool> DropDownClosed;
-#else
         public static readonly RoutedEvent DropDownClosedEvent = EventManager.RegisterRoutedEvent("DropDownClosed", RoutingStrategy.Bubble, typeof(RoutedPropertyChangedEventHandler<bool>), typeof(AutoCompleteBox));
 
         /// <summary>
@@ -1368,16 +1339,12 @@ namespace System.Windows.Controls
             add { AddHandler(DropDownClosedEvent, value); }
             remove { RemoveHandler(DropDownClosedEvent, value); }
         }
-#endif
 
         /// <summary>
         /// Occurs when the selected item in the drop-down portion of the
         /// <see cref="T:System.Windows.Controls.AutoCompleteBox" /> has
         /// changed.
         /// </summary>
-#if SILVERLIGHT
-        public event SelectionChangedEventHandler SelectionChanged;
-#else
         public static readonly RoutedEvent SelectionChangedEvent = EventManager.RegisterRoutedEvent("SelectionChanged", RoutingStrategy.Bubble, typeof(SelectionChangedEventHandler), typeof(AutoCompleteBox));
 
         /// <summary>
@@ -1390,7 +1357,6 @@ namespace System.Windows.Controls
             add { AddHandler(SelectionChangedEvent, value); }
             remove { RemoveHandler(SelectionChangedEvent, value); }
         }
-#endif
 
         private Binding _valueMemberBinding;
         /// <summary>
@@ -1642,10 +1608,8 @@ namespace System.Windows.Controls
             }
         }
 
-#if !SILVERLIGHT
         /// <summary>
-        /// Handles the PreviewKeyDown event on the TextBox for WPF. This method
-        /// is not implemented for Silverlight.
+        /// Handles the PreviewKeyDown event on the TextBox for WPF.
         /// </summary>
         /// <param name="sender">The source object.</param>
         /// <param name="e">The event data.</param>
@@ -1653,7 +1617,6 @@ namespace System.Windows.Controls
         {
             OnKeyDown(e);
         }
-#endif
 
         /// <summary>
         /// Connects to the DropDownPopup Closed event.
@@ -1998,15 +1961,7 @@ namespace System.Windows.Controls
         /// that contains the event data.</param>
         protected virtual void OnDropDownClosing(RoutedPropertyChangingEventArgs<bool> e)
         {
-#if SILVERLIGHT
-            RoutedPropertyChangingEventHandler<bool> handler = DropDownClosing;
-            if (handler != null)
-            {
-                handler(this, e);
-            }
-#else
             RaiseEvent(e);
-#endif
         }
 
         /// <summary>
@@ -2019,15 +1974,8 @@ namespace System.Windows.Controls
         /// which contains the event data.</param>
         protected virtual void OnDropDownClosed(RoutedPropertyChangedEventArgs<bool> e)
         {
-#if SILVERLIGHT
-            RoutedPropertyChangedEventHandler<bool> handler = DropDownClosed;
-            if (handler != null)
-            {
-                handler(this, e);
-            }
-#else
+
             RaiseEvent(e);
-#endif
         }
 
         /// <summary>

@@ -556,22 +556,12 @@ namespace System.Windows.Controls.DataVisualization.Charting
                 if (null != _seriesHost)
                 {
                     DataPoint legendItemDataPoint = ((DefinitionSeries)_seriesHost).InternalCreateDataPoint();
-#if SILVERLIGHT
-                    // Apply default style (hard)
-                    ContentPresenter container = new ContentPresenter { Content = legendItemDataPoint, Width = 1, Height = 1 };
-                    Popup popup = new Popup { Child = container };
-                    container.SizeChanged += delegate
-                    {
-                        popup.Child = null;
-                        popup.IsOpen = false;
-                    };
-                    popup.IsOpen = true;
-#else
+
                     // Apply default style (easy)
                     ContentControl contentControl = new ContentControl();
                     contentControl.Content = legendItemDataPoint;
                     contentControl.Content = null;
-#endif
+
                     legendItemDataPoint.SetBinding(DataPoint.StyleProperty, new Binding("ActualDataPointStyle") { Source = this });
                     _legendItem.DataContext = legendItemDataPoint;
                 }

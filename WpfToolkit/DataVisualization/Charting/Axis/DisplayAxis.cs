@@ -493,7 +493,6 @@ namespace System.Windows.Controls.DataVisualization.Charting
         [SuppressMessage("Microsoft.Design", "CA1024:UsePropertiesWhereAppropriate", Justification = "Returns the coordinates of the grid lines.")]
         protected abstract IEnumerable<UnitValue> GetMajorGridLineCoordinates(Size availableSize);
 
-#if !SILVERLIGHT
         /// <summary>
         /// Initializes the static members of the DisplayAxis class.
         /// </summary>
@@ -503,18 +502,12 @@ namespace System.Windows.Controls.DataVisualization.Charting
             DefaultStyleKeyProperty.OverrideMetadata(typeof(DisplayAxis), new FrameworkPropertyMetadata(typeof(DisplayAxis)));
         }
 
-#endif
         /// <summary>
         /// Instantiates a new instance of the DisplayAxis class.
         /// </summary>
         protected DisplayAxis()
         {
             this.OrientedPanel = new OrientedPanel();
-#if SILVERLIGHT
-            this.DefaultStyleKey = typeof(DisplayAxis);
-            this.OrientedPanel.UseLayoutRounding = true;
-#endif
-
             this.DependentAxisGrid = new Grid();
 
             this.TitleLayoutTransformControl = new LayoutTransformControl();
