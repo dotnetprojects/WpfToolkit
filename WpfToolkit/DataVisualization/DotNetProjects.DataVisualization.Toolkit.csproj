@@ -15,6 +15,7 @@
         <Version>1.0.0</Version>
         <AssemblyVersion>1.0.0.0</AssemblyVersion>
         <FileVersion>1.0.0.0</FileVersion>
+        <PackageLicenseExpression>MS-PL</PackageLicenseExpression>
     </PropertyGroup>
     <ItemGroup>
         <EmbeddedResource Include="System.Windows.Controls.DataVisualization\**\*.png" /> 

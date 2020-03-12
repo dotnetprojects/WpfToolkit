@@ -7,13 +7,14 @@
       <Product>WPF.Themes</Product>
       <Copyright>2019 DotNetProjects</Copyright>
       <SignAssembly>true</SignAssembly>
-    <AssemblyOriginatorKeyFile>DotNetProjects.snk</AssemblyOriginatorKeyFile>
-    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
-    <PackageId>DotNetProjects.WpfToolkit.Themes</PackageId>
-    <Authors>DotNetProjects</Authors>
+      <AssemblyOriginatorKeyFile>DotNetProjects.snk</AssemblyOriginatorKeyFile>
+      <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+      <PackageId>DotNetProjects.WpfToolkit.Themes</PackageId>
+      <Authors>DotNetProjects</Authors>
       <Version>1.0.0</Version>
       <AssemblyVersion>1.0.0.0</AssemblyVersion>
       <FileVersion>1.0.0.0</FileVersion>
+      <PackageLicenseExpression>MS-PL</PackageLicenseExpression>
   </PropertyGroup>
   <ItemGroup>
     <ProjectReference Include="..\Input\DotNetProjects.Input.Toolkit.csproj" />
