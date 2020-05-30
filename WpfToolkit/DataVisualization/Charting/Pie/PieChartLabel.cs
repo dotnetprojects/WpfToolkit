@@ -66,6 +66,7 @@ namespace System.Windows.Controls.DataVisualization.Charting
         /// Connected - A line connecting the arc midpoint and label is displayed.
         /// Auto - If at least one pie slice is very small, all pie slices use the Connected display mode. Otherwise, they all use ArcMidpoint.
         /// AutoMixed - Connected display mode is used for all small pie slices, and ArcMidpoint is used for all other slices.
+        /// InsideArc - Display the label inside ARC
         /// </summary>
         public DisplayMode DisplayMode
         {
