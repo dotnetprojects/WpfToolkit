@@ -150,7 +150,6 @@
             </chartingToolkit:Chart>
 
             <chartingToolkit:Chart Title="Demo"
-                                   Grid.ColumnSpan="2"
                                    Grid.Row="5"
                                    Grid.RowSpan="2"
                                    Grid.Column="0"
@@ -158,6 +157,16 @@
                                    VerticalAlignment="Stretch">
                 <chartingToolkit:LabeledPieSeries DependentValuePath="Value"
                                                   IndependentValuePath="Key" LabelDisplayMode="Connected"
+                                                  ItemsSource="{Binding Data}" />
+            </chartingToolkit:Chart>
+            <chartingToolkit:Chart Title="Demo"
+                                   Grid.Row="5"
+                                   Grid.RowSpan="2"
+                                   Grid.Column="1"
+                                   HorizontalAlignment="Stretch"
+                                   VerticalAlignment="Stretch">
+                <chartingToolkit:LabeledPieSeries DependentValuePath="Value"
+                                                  IndependentValuePath="Key" LabelDisplayMode="InsideArc"
                                                   ItemsSource="{Binding Data}" />
             </chartingToolkit:Chart>
         </Grid>
