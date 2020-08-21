@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 15
-VisualStudioVersion = 15.0.28307.645
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30404.54
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DotNetProjects.DataVisualization.Toolkit", "DataVisualization\DotNetProjects.DataVisualization.Toolkit.csproj", "{066FB4E3-8F9C-42D0-9982-8B1F238FAF63}"
 EndProject
@@ -24,6 +24,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "ci", "ci", "{6D8DCDC8-C505-
 	ProjectSection(SolutionItems) = preProject
 		..\appveyor.yml = ..\appveyor.yml
 	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WpfTest", "WpfTest\WpfTest.csproj", "{9456F323-C500-4BD1-86C7-9CD842320B16}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -62,6 +64,12 @@ Global
 		{CD3CD636-D63E-4BD5-9FE9-2B63DA6F0616}.Release with Code Analysis|Any CPU.Build.0 = Release|Any CPU
 		{CD3CD636-D63E-4BD5-9FE9-2B63DA6F0616}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{CD3CD636-D63E-4BD5-9FE9-2B63DA6F0616}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9456F323-C500-4BD1-86C7-9CD842320B16}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9456F323-C500-4BD1-86C7-9CD842320B16}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9456F323-C500-4BD1-86C7-9CD842320B16}.Release with Code Analysis|Any CPU.ActiveCfg = Release|Any CPU
+		{9456F323-C500-4BD1-86C7-9CD842320B16}.Release with Code Analysis|Any CPU.Build.0 = Release|Any CPU
+		{9456F323-C500-4BD1-86C7-9CD842320B16}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9456F323-C500-4BD1-86C7-9CD842320B16}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

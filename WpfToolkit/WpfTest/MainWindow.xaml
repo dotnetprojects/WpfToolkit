@@ -1,0 +1,75 @@
+﻿<Window x:Class="WpfTest.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WpfTest"
+        mc:Ignorable="d"
+        xmlns:toolkit="clr-namespace:System.Windows.Controls;assembly=DotNetProjects.Input.Toolkit"
+        Title="AutoCompleteBox in ListView" Height="300" Width="350" WindowStartupLocation="CenterScreen">
+
+    <!-- Required Template to show the names of the Items in the ItemsList -->
+    <Window.Resources>
+        <DataTemplate x:Key="AutoCompleteBoxItemTemplate">
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Background="Transparent">
+                <Label Content="{Binding Name}"/>
+            </StackPanel>
+        </DataTemplate>
+    </Window.Resources>
+
+    <StackPanel Margin="5">
+        <StackPanel Orientation="Horizontal" Margin="0 5 0 0">
+            <StackPanel Width="{Binding ElementName=FirstColumnWidth, Path=ActualWidth}">
+                <TextBlock Text="ACB binded to Cart.Item"/>
+
+                <!-- ACB that binds correctly -->
+                <toolkit:AutoCompleteBox 
+                                  ItemsSource="{Binding Path=ItemsList}"
+                                   ValueMemberPath="Name"
+                                   SelectedItem="{Binding Path=Cart.Item, Mode=TwoWay}"
+                                   ItemTemplate="{StaticResource AutoCompleteBoxItemTemplate}"/>
+            </StackPanel>
+
+            <StackPanel Margin="15 0 0 0">
+                <TextBlock Text="Value of Cart.Item.Name"/>
+                <TextBlock Text="{Binding Path=Cart.Item.Name}"/>
+            </StackPanel>
+        </StackPanel>
+
+        <TextBlock Margin="0 30 0 0" HorizontalAlignment="Center" Text="ListView with CartsList as ItemsListSource"/>
+        <ListView ItemsSource="{Binding CartsList}">
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn x:Name="FirstColumnWidth">
+                        <GridViewColumn.Header>
+                            <TextBlock Text="ACB binded to each Cart.Item"/>
+                        </GridViewColumn.Header>
+                        <GridViewColumn.CellTemplate>
+                            <DataTemplate>
+                                <!-- ACB that doesn't bind correctly -->
+                                <toolkit:AutoCompleteBox
+                                  ItemsSource="{
+                                        Binding RelativeSource={RelativeSource AncestorType=Window},
+                                        Path=DataContext.ItemsList}"
+                                   ValueMemberPath="Name"
+                                   SelectedItem="{Binding Path=Item, Mode=TwoWay}"
+                                   ItemTemplate="{StaticResource AutoCompleteBoxItemTemplate}"/>
+                            </DataTemplate>
+                        </GridViewColumn.CellTemplate>
+                    </GridViewColumn>
+
+                    <GridViewColumn >
+                        <GridViewColumn.Header>
+                            <TextBlock Text="Value of each Cart.Item.Name"/>
+                        </GridViewColumn.Header>
+                        <GridViewColumn.CellTemplate>
+                            <DataTemplate>
+                                <TextBlock Text="{Binding Path=Item.Name}"/>
+                            </DataTemplate>
+                        </GridViewColumn.CellTemplate>
+                    </GridViewColumn>
+                </GridView>
+            </ListView.View>
+        </ListView>
+    </StackPanel>
+</Window>

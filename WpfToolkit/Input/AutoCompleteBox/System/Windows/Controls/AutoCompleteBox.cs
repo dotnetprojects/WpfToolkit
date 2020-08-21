@@ -1395,7 +1395,26 @@ namespace System.Windows.Controls
         /// <value>The property path that is used to get values for display in
         /// the text portion of the
         /// <see cref="T:System.Windows.Controls.AutoCompleteBox" /> control.</value>
-        public string ValueMemberPath { get; set; }
+        public string ValueMemberPath
+        {
+            get { return (string)GetValue(ValueMemberPathProperty); }
+            set { SetValue(ValueMemberPathProperty, value); }
+        }
+
+        public static readonly DependencyProperty ValueMemberPathProperty =
+            DependencyProperty.Register("ValueMemberPath", typeof(string), typeof(AutoCompleteBox), new PropertyMetadata(null, ValueMemberPathChanged));
+
+        /// <summary>
+        /// Handle the change of the ValueMemberPath property.
+        /// </summary>
+        /// <param name="sender">The source object.</param>
+        /// <param name="e">The event data.</param>
+        private static void ValueMemberPathChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
+        {
+            AutoCompleteBox source = d as AutoCompleteBox;
+            source.OnSelectedItemChanged(source.SelectedItem);
+        }
+
 
 #if !SILVERLIGHT
         /// <summary>
