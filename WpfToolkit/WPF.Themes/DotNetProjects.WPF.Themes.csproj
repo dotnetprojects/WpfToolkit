@@ -1,7 +1,7 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk.WindowsDesktop">
   <PropertyGroup>
     <RootNamespace>WPF.Themes</RootNamespace>
-      <TargetFrameworks>netcoreapp3.0;net4</TargetFrameworks>
+      <TargetFrameworks>netcoreapp3.1;.net5.0-windows;net4</TargetFrameworks>
       <UseWPF>true</UseWPF>
       <Company>DotNetProjects</Company>
       <Product>WPF.Themes</Product>

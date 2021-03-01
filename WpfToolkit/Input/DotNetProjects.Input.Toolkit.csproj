@@ -1,6 +1,6 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk.WindowsDesktop">
     <PropertyGroup>
-        <TargetFrameworks>netcoreapp3.0;net4</TargetFrameworks>
+        <TargetFrameworks>netcoreapp3.1;.net5.0-windows;net4</TargetFrameworks>
         <UseWPF>true</UseWPF>
         <RootNamespace>System.Windows.Controls</RootNamespace>
         <Description>WPF Toolkit Input</Description>

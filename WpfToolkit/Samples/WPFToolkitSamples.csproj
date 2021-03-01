@@ -2,14 +2,14 @@
 <PropertyGroup>
         <OutputType>WinExe</OutputType>
         <RootNamespace>System.Windows.Controls.Samples</RootNamespace>
-        <TargetFramework>net45</TargetFramework>
+        <TargetFrameworks>netcoreapp3.1;.net5.0-windows;net4</TargetFrameworks>
     <UseWPF>true</UseWPF>
         <ApplicationIcon />
         <StartupObject />
     </PropertyGroup>
     <ItemGroup>
-        <Reference Include="System.ComponentModel.DataAnnotations" />
-        <Reference Include="System.Web" />
+        <Reference Include="System.ComponentModel.DataAnnotations" Condition="!($(DefineConstants.Contains(NETCOREAPP)) or $(DefineConstants.Contains(NET5_0)))"/>
+        <Reference Include="System.Web" Condition="!($(DefineConstants.Contains(NETCOREAPP)) or $(DefineConstants.Contains(NET5_0)))"/>
     </ItemGroup>
     <ItemGroup>
         <ProjectReference Include="..\DataVisualization\DotNetProjects.DataVisualization.Toolkit.csproj" />
