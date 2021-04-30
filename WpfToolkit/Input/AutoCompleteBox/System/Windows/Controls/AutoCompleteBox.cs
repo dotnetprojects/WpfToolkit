@@ -2321,7 +2321,7 @@ namespace System.Windows.Controls
                         // case sensitive matching function for their scenario.
                         object top = FilterMode == AutoCompleteFilterMode.StartsWith || FilterMode == AutoCompleteFilterMode.StartsWithCaseSensitive
                             ? _view[0]
-                            : TryGetMatch(text, _view, AutoCompleteSearch.GetFilter(AutoCompleteFilterMode.StartsWith));
+                            : TryGetMatch(text, SelectedItem, _view, AutoCompleteSearch.GetFilter(AutoCompleteFilterMode.StartsWith));
 
                         // If the search was successful, update SelectedItem
                         if (top != null)
@@ -2352,7 +2352,7 @@ namespace System.Windows.Controls
                     //
                     // This change provides the behavior that most people expect
                     // to find: a lookup for the value is always performed.
-                    newSelectedItem = TryGetMatch(text, _view, AutoCompleteSearch.GetFilter(AutoCompleteFilterMode.EqualsCaseSensitive));
+                    newSelectedItem = TryGetMatch(text, SelectedItem, _view, AutoCompleteSearch.GetFilter(AutoCompleteFilterMode.EqualsCaseSensitive));
                 }
             }
 
@@ -2365,12 +2365,20 @@ namespace System.Windows.Controls
         /// text match.
         /// </summary>
         /// <param name="searchText">The search text.</param>
+        /// <param name="priorityView">The view reference with priorty (check before the rest of views).</param>
         /// <param name="view">The view reference.</param>
         /// <param name="predicate">The predicate to use for the partial or 
         /// exact match.</param>
         /// <returns>Returns the object or null.</returns>
-        private object TryGetMatch(string searchText, ObservableCollection<object> view, AutoCompleteFilterPredicate<string> predicate)
-        {
+        private object TryGetMatch(string searchText, object priorityView,ObservableCollection<object> view, AutoCompleteFilterPredicate<string> predicate)
+        { 
+            if (priorityView != null)
+            {
+                if (predicate(searchText, FormatValue(priorityView)))
+                {
+                    return priorityView;
+                }
+            }
             if (view != null && view.Count > 0)
             {
                 foreach (object o in view)
