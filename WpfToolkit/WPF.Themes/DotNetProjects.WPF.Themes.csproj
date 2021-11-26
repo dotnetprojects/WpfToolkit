@@ -1,11 +1,11 @@
-﻿<Project Sdk="Microsoft.NET.Sdk.WindowsDesktop">
+﻿<Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
     <RootNamespace>WPF.Themes</RootNamespace>
-      <TargetFrameworks>netcoreapp3.0;net4</TargetFrameworks>
+      <TargetFrameworks>net5.0-windows;net6.0-windows;net4</TargetFrameworks>
       <UseWPF>true</UseWPF>
       <Company>DotNetProjects</Company>
       <Product>WPF.Themes</Product>
-      <Copyright>2019 DotNetProjects</Copyright>
+      <Copyright>2021 DotNetProjects</Copyright>
       <SignAssembly>true</SignAssembly>
       <AssemblyOriginatorKeyFile>DotNetProjects.snk</AssemblyOriginatorKeyFile>
       <GeneratePackageOnBuild>true</GeneratePackageOnBuild>

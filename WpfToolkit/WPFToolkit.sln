@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio Version 16
-VisualStudioVersion = 16.0.30404.54
+# Visual Studio Version 17
+VisualStudioVersion = 17.1.31911.260
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DotNetProjects.DataVisualization.Toolkit", "DataVisualization\DotNetProjects.DataVisualization.Toolkit.csproj", "{066FB4E3-8F9C-42D0-9982-8B1F238FAF63}"
 EndProject
@@ -13,19 +13,12 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DotNetProjects.Layout.Toolk
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DotNetProjects.WPF.Themes", "WPF.Themes\DotNetProjects.WPF.Themes.csproj", "{CD3CD636-D63E-4BD5-9FE9-2B63DA6F0616}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "msbuild", "msbuild", "{CF03A010-41ED-49BD-84C0-110F1BEB5A0B}"
-	ProjectSection(SolutionItems) = preProject
-		Directory.Build.props = Directory.Build.props
-		Directory.Build.targets = Directory.Build.targets
-		WPFToolkit.props = WPFToolkit.props
-	EndProjectSection
-EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "ci", "ci", "{6D8DCDC8-C505-4208-A21E-B12A0395D1C1}"
 	ProjectSection(SolutionItems) = preProject
 		..\appveyor.yml = ..\appveyor.yml
 	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WpfTest", "WpfTest\WpfTest.csproj", "{9456F323-C500-4BD1-86C7-9CD842320B16}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WpfTest", "WpfTest\WpfTest.csproj", "{9456F323-C500-4BD1-86C7-9CD842320B16}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
