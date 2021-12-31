@@ -1,17 +1,19 @@
 ﻿namespace WPF.Themes
 {
     using System;
+    using System.IO;
     using System.Reflection;
     using System.Windows;
     using System.Windows.Controls;
-    
+
     public static class ThemeManager
     {
         public static ResourceDictionary GetThemeResourceDictionary(string theme)
         {
             if (theme != null)
             {
-                Assembly assembly = Assembly.LoadFrom("DotNetProjects.WPF.Themes.dll");
+                string basePath = Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location);
+                Assembly assembly = Assembly.LoadFrom(Path.Combine(basePath, "DotNetProjects.WPF.Themes.dll"));
                 string packUri = String.Format(@"/DotNetProjects.WPF.Themes;component/{0}/Theme.xaml", theme);
                 return Application.LoadComponent(new Uri(packUri, UriKind.Relative)) as ResourceDictionary;
             }
@@ -20,19 +22,19 @@
 
         public static string[] GetThemes()
         {
-            string[] themes = { 
-                "ExpressionDark", "ExpressionLight", 
-                "RainierOrange", "RainierPurple", "RainierRadialBlue", 
-                "ShinyBlue", "ShinyRed", 
+            string[] themes = {
+                "ExpressionDark", "ExpressionLight",
+                "RainierOrange", "RainierPurple", "RainierRadialBlue",
+                "ShinyBlue", "ShinyRed",
                 "ShinyDarkTeal", "ShinyDarkGreen", "ShinyDarkPurple",
                 "SunnyOrange", "JetPack",
-                "DavesGlossyControls", 
-                "WhistlerBlue", 
-                "BureauBlack", "BureauBlue", 
-                "BubbleCreme", 
+                "DavesGlossyControls",
+                "WhistlerBlue",
+                "BureauBlack", "BureauBlue",
+                "BubbleCreme",
                 "TwilightBlue",
-                "UXMusingsRed", "UXMusingsGreen", 
-                "UXMusingsRoughRed", "UXMusingsRoughGreen", 
+                "UXMusingsRed", "UXMusingsGreen",
+                "UXMusingsRoughRed", "UXMusingsRoughGreen",
                 "UXMusingsBubblyBlue", "MoonUICore",
                 "MetroDark", "MetroLight",
                 "IG", "Office2010Blue",
@@ -40,7 +42,8 @@
             return themes;
         }
 
-        public static string[] Themes {
+        public static string[] Themes
+        {
             get
             {
                 return GetThemes();
